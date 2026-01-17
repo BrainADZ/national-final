@@ -102,21 +102,22 @@ export default function TestimonialsSection() {
    * Responsive visible cards:
    * - mobile: 1
    * - md: 2
-   * - lg: 4
+   * - lg: 4  
    */
   const [perView, setPerView] = useState(4);
 
-  useEffect(() => {
-    const update = () => {
-      const w = window.innerWidth;
-      if (w < 768) setPerView(1);
-      else if (w < 1024) setPerView(2);
-      else setPerView(5);
-    };
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
+useEffect(() => {
+  const update = () => {
+    const w = window.innerWidth;
+    if (w < 768) setPerView(1);
+    else if (w < 1024) setPerView(2);
+    else setPerView(4); // desktop = 4 testimonials
+  };
+
+  update();
+  window.addEventListener("resize", update);
+  return () => window.removeEventListener("resize", update);
+}, []);
 
   // clones for infinite loop
   const clones = useMemo(() => {
