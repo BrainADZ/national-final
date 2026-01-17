@@ -43,8 +43,8 @@ export async function sendEnquiryMail(params: {
 }) {
   const transporter = getTransport();
 
-  const to = process.env.ADMIN_EMAIL;
-  if (!to) throw new Error("ADMIN_EMAIL missing in env.");
+  const to = process.env.ENQUIRY_ADMIN_EMAIL;
+  if (!to) throw new Error("ENQUIRY_ADMIN_EMAIL missing in env.");
 
   const fromName = process.env.MAIL_FROM_NAME || "NESF Website";
   const fromEmail = process.env.MAIL_FROM_EMAIL || process.env.SMTP_USER!;
