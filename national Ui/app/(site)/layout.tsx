@@ -9,8 +9,8 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <Navbar />
       <AOSProvider />
       <FloatingActions
-        whatsappNumber="919999999999"
-        linkedinUrl="https://www.linkedin.com/company/national-engineers/"
+        whatsappNumber="919574011132"
+        linkedinUrl="https://www.linkedin.com/company/national-engineers-steel-fabricators/"
       />
       {children}
       <Footer />

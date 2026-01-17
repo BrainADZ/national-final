@@ -63,7 +63,7 @@ const INDUSTRIES: Industry[] = [
 export default function IndustriesSection() {
   return (
     <section className="bg-[#f4f5f7] py-16 lg:py-20">
-      <div className="mx-auto max-w-[1700px] px-2 lg:px-4">
+      <div className="mx-auto max-w-425 px-2 lg:px-4">
         {/* Heading */}
         <div className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#ee9d54]">
@@ -73,7 +73,7 @@ export default function IndustriesSection() {
             Actively Serving Industries
           </h2>
           <p className="mt-3 text-sm text-gray-600 md:text-base">
-            National Engineers partners with a wide range of process and
+            We partners with a wide range of process and
             manufacturing industries, delivering application-engineered
             heat-transfer and pressure equipment designed for demanding operating
             conditions.
@@ -114,7 +114,7 @@ export default function IndustriesSection() {
               </p>
 
               {/* Bottom accent */}
-              <div className="mt-6 h-[3px] w-16 rounded-full bg-[#ee9d54]/70 opacity-0 transition group-hover:opacity-100" />
+              <div className="mt-6 h-0.75 w-16 rounded-full bg-[#ee9d54]/70 opacity-0 transition group-hover:opacity-100" />
             </div>
           ))}
         </div>

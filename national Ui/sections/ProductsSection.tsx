@@ -24,7 +24,7 @@ const PRODUCTS = [
       "Surge tanks help stabilize pressure and flow by absorbing sudden spikes and fluctuations in the system. They reduce water hammer and pump cycling, protecting pumps, valves, and piping while improving overall system reliability and smooth operation.",
   },
   {
-    title: "Silos / Storage Tanks",
+    title: "Silos & Storage Tanks",
     image:
       "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1400&h=1400&fit=crop",
     tag: "Railways",
@@ -71,7 +71,7 @@ export default function ProductsSection() {
             </h2>
 
             <p className="mt-3 max-w-2xl text-sm text-black/70">
-              Precision-built equipment designed for durability, performance and
+              Precision-built equipment designed for durability, performance, and
               application-specific requirements.
             </p>
           </div>
@@ -174,7 +174,7 @@ export default function ProductsSection() {
           </h3>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-black/70">
             Download our catalogue to view complete product specifications,
-            applications and custom solutions.
+            applications, and custom solutions.
           </p>
 
           <div className="mt-8">

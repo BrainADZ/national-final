@@ -38,20 +38,23 @@ export const createFeedback = async (req: Request, res: Response) => {
       data: { id: doc._id },
     });
   } catch (err: any) {
-    // ✅ Handle mongoose validation errors properly
     if (err instanceof mongoose.Error.ValidationError) {
       const firstKey = Object.keys(err.errors || {})[0];
       const firstError = firstKey ? err.errors[firstKey] : null;
 
-      // Default message
       let msg = "Validation failed. Please check your inputs.";
 
-      // Friendly messages
       if (firstError?.path === "message" && firstError?.kind === "minlength") {
         msg = "Message must be at least 5 characters.";
-      } else if (firstError?.path === "fullName" && firstError?.kind === "minlength") {
+      } else if (
+        firstError?.path === "fullName" &&
+        firstError?.kind === "minlength"
+      ) {
         msg = "Full Name is too short.";
-      } else if (firstError?.path === "subject" && firstError?.kind === "minlength") {
+      } else if (
+        firstError?.path === "subject" &&
+        firstError?.kind === "minlength"
+      ) {
         msg = "Feedback / Suggestion is too short.";
       }
 
@@ -80,6 +83,42 @@ export const listFeedback = async (_req: Request, res: Response) => {
     });
   } catch (err) {
     console.error("listFeedback error:", err);
+    return res.status(500).json({
+      success: false,
+      message: "Server error. Please try again later.",
+    });
+  }
+};
+
+// ✅ (Admin) delete feedback
+export const deleteFeedback = async (req: Request, res: Response) => {
+  try {
+    // ✅ IMPORTANT: force string (fix TS error)
+    const id = String(req.params.id || "").trim();
+
+    if (!id || !mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid feedback id.",
+      });
+    }
+
+    const deleted = await Feedback.findByIdAndDelete(id);
+
+    if (!deleted) {
+      return res.status(404).json({
+        success: false,
+        message: "Feedback not found.",
+      });
+    }
+
+    return res.json({
+      success: true,
+      message: "Feedback deleted successfully.",
+      data: { id: deleted._id },
+    });
+  } catch (err) {
+    console.error("deleteFeedback error:", err);
     return res.status(500).json({
       success: false,
       message: "Server error. Please try again later.",

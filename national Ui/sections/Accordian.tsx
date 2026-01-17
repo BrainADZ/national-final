@@ -12,7 +12,7 @@ const FAQS: FaqItem[] = [
   {
     question: "What kind of equipment does National Engineers manufacture?",
     answer:
-      "We manufacture engineered, custom-fabricated steel process equipment which includes pressure vessels, air receivers, heat exchangers, reactors & boilers, process piping skids, storage tanks & silos, along with structural steelwork and HVAC ducting.",
+      "We manufacture engineered, custom-fabricated steel process equipment which includes pressure vessels, air receivers, heat exchangers, boilers, process piping skids, storage tanks & silos, along with structural steelwork and HVAC ducting.",
   },
   {
     question: "Do you provide custom-designed solutions?",
@@ -27,17 +27,17 @@ const FAQS: FaqItem[] = [
   {
     question: "What is your typical project turnaround time?",
     answer:
-      "Lead time varies by scope, design complexity, approvals, and material availability. For standard or repeat designs, we can usually deliver faster, while custom-engineered equipment is planned with a clear project schedule and covers engineering, procurement, fabrication, inspection/testing, and dispatch/erection which is agreed at the ordering stage. We keep you updated throughout and can prioritize/expedite when required to meet critical shutdown or commissioning dates.",
+      "Lead time varies by scope, design complexity, approvals, and material availability. For standard or repeat designs, we can usually deliver faster, while custom-engineered equipment is planned with a clear project schedule and covers engineering, procurement, fabrication, inspection or testing, and dispatch or erection which is agreed at the ordering stage. We keep you updated throughout and can prioritize or expedite when required to meet critical shutdown or commissioning dates.",
   },
   {
     question: "How do you ensure quality and reliability?",
     answer:
-      "We follow a disciplined QA/QC system, use qualified welding procedures, and maintain full traceability. Our safety-first culture and code-compliant practices help ensure consistent quality, reliable performance, and on-time delivery.",
+      "We follow a disciplined QA and QC system, use qualified welding procedures, and maintain full traceability. Our safety-first culture and code-compliant practices help ensure consistent quality, reliable performance, and on-time delivery.",
   },
     {
     question: "What materials do you work with?",
     answer:
-      "We fabricate in Mild Steel, Stainless Steel, and other specialty/exotic metals as required by the application which is selected to match your process conditions, corrosion requirements, and applicable standards.",
+      "We fabricate in Mild Steel, Stainless Steel, and other speciality or exotic metals as required by the application which is selected to match your process conditions, corrosion requirements, and applicable standards.",
   },
 ];
 

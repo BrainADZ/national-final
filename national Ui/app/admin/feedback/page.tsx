@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Search, Mail, User, MessageSquare, Calendar, X } from "lucide-react";
+import {
+  Search,
+  Mail,
+  User,
+  MessageSquare,
+  Calendar,
+  X,
+  Trash2,
+} from "lucide-react";
 
 type Feedback = {
   _id: string;
@@ -29,6 +37,9 @@ export default function AdminFeedbackPage() {
 
   const [q, setQ] = useState("");
   const [selected, setSelected] = useState<Feedback | null>(null);
+
+  // delete state
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
     const query = q.trim().toLowerCase();
@@ -67,13 +78,52 @@ export default function AdminFeedbackPage() {
         return;
       }
 
-      // data can be {data: []} (as per controller) or direct []
+      // data can be {data: []} or direct []
       const list = Array.isArray(data?.data) ? data.data : Array.isArray(data) ? data : [];
       setItems(list);
     } catch {
       setError("Server not reachable. Please try again.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const deleteFeedback = async (id: string) => {
+    const ok = confirm("Delete this feedback? This action cannot be undone.");
+    if (!ok) return;
+
+    try {
+      setDeletingId(id);
+
+      const token = localStorage.getItem("admin_token");
+      if (!token) {
+        alert("Not logged in.");
+        return;
+      }
+
+      // Backend endpoint expected:
+      // DELETE /admin/feedback/:id
+      const res = await fetch(`${API}/admin/feedback/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      const data = await res.json().catch(() => null);
+
+      if (!res.ok) {
+        alert(data?.message || "Failed to delete feedback.");
+        return;
+      }
+
+      // Remove from UI without refetch
+      setItems((prev) => prev.filter((x) => x._id !== id));
+
+      // If modal open for same feedback, close it
+      setSelected((prev) => (prev?._id === id ? null : prev));
+    } catch {
+      alert("Server not reachable. Please try again.");
+    } finally {
+      setDeletingId(null);
     }
   };
 
@@ -168,9 +218,26 @@ export default function AdminFeedbackPage() {
                     </div>
 
                     <div className="shrink-0 text-xs text-gray-500">
-                      <div className="inline-flex items-center gap-2">
-                        <Calendar className="h-4 w-4 text-gray-400" />
-                        {formatDate(f.createdAt)}
+                      <div className="flex items-center gap-2">
+                        <div className="inline-flex items-center gap-2">
+                          <Calendar className="h-4 w-4 text-gray-400" />
+                          {formatDate(f.createdAt)}
+                        </div>
+
+                        {/* ✅ Delete button */}
+                        <button
+                          type="button"
+                          onClick={(ev) => {
+                            ev.stopPropagation();
+                            deleteFeedback(f._id);
+                          }}
+                          disabled={deletingId === f._id}
+                          className="rounded-lg border border-gray-200 p-2 text-red-600 hover:bg-red-50 disabled:opacity-60"
+                          aria-label="Delete feedback"
+                          title="Delete"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -181,18 +248,25 @@ export default function AdminFeedbackPage() {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* ✅ Responsive Modal */}
       {selected && (
-        <div className="fixed inset-0 z-100">
+        <div className="fixed inset-0 z-[100] p-4 sm:p-6">
           <button
             aria-label="Close"
             className="absolute inset-0 bg-black/50"
             onClick={() => setSelected(null)}
           />
-          <div className="absolute left-1/2 top-1/2 w-[92vw] max-w-2xl -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl bg-white shadow-2xl">
+
+          <div
+            className="absolute left-1/2 top-1/2 w-[92vw] max-w-2xl -translate-x-1/2 -translate-y-1/2
+                       overflow-hidden rounded-2xl bg-white shadow-2xl max-h-[90vh]"
+            role="dialog"
+            aria-modal="true"
+          >
             <div className="h-1.5 w-full bg-[#ee9d54]" />
 
-            <div className="flex items-start justify-between gap-4 px-6 py-5">
+            {/* Header */}
+            <div className="flex items-start justify-between gap-4 px-6 py-5 border-b border-gray-100">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ee9d54]">
                   Feedback Detail
@@ -213,7 +287,8 @@ export default function AdminFeedbackPage() {
               </button>
             </div>
 
-            <div className="px-6 pb-6">
+            {/* ✅ Scrollable body */}
+            <div className="px-6 pb-6 overflow-y-auto max-h-[calc(90vh-86px)]">
               <div className="rounded-xl border border-gray-100 bg-gray-50 p-4">
                 <p className="text-sm font-bold text-gray-900">{selected.fullName}</p>
                 <p className="mt-1 text-sm text-gray-600">{selected.email}</p>
@@ -226,7 +301,18 @@ export default function AdminFeedbackPage() {
                 </p>
               </div>
 
-              <div className="mt-5 flex justify-end">
+              <div className="mt-5 flex justify-end gap-2">
+                {/* Optional: Delete inside modal (same UI style) */}
+                <button
+                  type="button"
+                  onClick={() => deleteFeedback(selected._id)}
+                  disabled={deletingId === selected._id}
+                  className="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50 disabled:opacity-60"
+                >
+                  <Trash2 className="h-4 w-4" />
+                  Delete
+                </button>
+
                 <button
                   onClick={() => setSelected(null)}
                   className="rounded-xl bg-[#ee9d54] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-95"

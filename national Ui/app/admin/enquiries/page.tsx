@@ -14,6 +14,7 @@ import {
   X,
   Download,
   Filter,
+  Trash2,
 } from "lucide-react";
 
 type Attachment = {
@@ -57,7 +58,7 @@ function bytesToSize(bytes: number) {
 
 function getFileUrl(apiBase: string | undefined, filePath: string) {
   if (!apiBase) return "";
-  const origin = apiBase.replace(/\/api\/?$/, ""); // http://localhost:5000
+  const origin = apiBase.replace(/\/api\/?$/, "");
   const normalized = filePath.replace(/\\/g, "/");
   const idx = normalized.toLowerCase().lastIndexOf("uploads/");
   if (idx !== -1) return `${origin}/${normalized.slice(idx)}`;
@@ -66,7 +67,6 @@ function getFileUrl(apiBase: string | undefined, filePath: string) {
 
 // Convert yyyy-mm-dd input to range start/end
 function startOfDayISO(d: string) {
-  // local day start
   const dt = new Date(`${d}T00:00:00`);
   return dt.getTime();
 }
@@ -85,9 +85,12 @@ export default function AdminEnquiriesPage() {
   const [q, setQ] = useState("");
   const [selected, setSelected] = useState<Enquiry | null>(null);
 
-  // ✅ date filter (yyyy-mm-dd)
+  // date filter (yyyy-mm-dd)
   const [fromDate, setFromDate] = useState<string>("");
   const [toDate, setToDate] = useState<string>("");
+
+  // delete state
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   const fetchEnquiries = async () => {
     setLoading(true);
@@ -114,12 +117,55 @@ export default function AdminEnquiriesPage() {
         return;
       }
 
-      const list = Array.isArray(data?.data) ? data.data : Array.isArray(data) ? data : [];
+      const list = Array.isArray(data?.data)
+        ? data.data
+        : Array.isArray(data)
+        ? data
+        : [];
       setItems(list);
     } catch {
       setError("Server not reachable. Please try again.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const deleteEnquiry = async (id: string) => {
+    const ok = confirm("Delete this enquiry? This action cannot be undone.");
+    if (!ok) return;
+
+    try {
+      setDeletingId(id);
+
+      const token = localStorage.getItem("admin_token");
+      if (!token) {
+        alert("Not logged in.");
+        return;
+      }
+
+      // Backend endpoint expected:
+      // DELETE /admin/enquiries/:id
+      const res = await fetch(`${API}/admin/enquiries/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      const data = await res.json().catch(() => null);
+
+      if (!res.ok) {
+        alert(data?.message || "Failed to delete enquiry.");
+        return;
+      }
+
+      // Remove from UI without refetch
+      setItems((prev) => prev.filter((x) => x._id !== id));
+
+      // If modal open for same enquiry, close it
+      setSelected((prev) => (prev?._id === id ? null : prev));
+    } catch {
+      alert("Server not reachable. Please try again.");
+    } finally {
+      setDeletingId(null);
     }
   };
 
@@ -131,7 +177,6 @@ export default function AdminEnquiriesPage() {
   const filtered = useMemo(() => {
     const query = q.trim().toLowerCase();
 
-    // date range boundaries (ms)
     const hasFrom = Boolean(fromDate);
     const hasTo = Boolean(toDate);
     const fromMs = hasFrom ? startOfDayISO(fromDate) : null;
@@ -140,9 +185,9 @@ export default function AdminEnquiriesPage() {
     return items.filter((e) => {
       // text search
       if (query) {
-        const hay = `${e.fullName} ${e.company || ""} ${e.phone} ${e.email || ""} ${
-          e.message
-        }`.toLowerCase();
+        const hay = `${e.fullName} ${e.company || ""} ${e.phone} ${
+          e.email || ""
+        } ${e.message}`.toLowerCase();
         if (!hay.includes(query)) return false;
       }
 
@@ -178,7 +223,7 @@ export default function AdminEnquiriesPage() {
 
     const ws = XLSX.utils.json_to_sheet(rows);
     ws["!cols"] = [
-      { wch: 6 },  // SNo
+      { wch: 6 }, // SNo
       { wch: 22 }, // Date
       { wch: 18 }, // FullName
       { wch: 18 }, // Company
@@ -209,7 +254,9 @@ export default function AdminEnquiriesPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ee9d54]">
               Admin
             </p>
-            <h2 className="mt-2 text-2xl font-extrabold text-gray-900">Enquiries</h2>
+            <h2 className="mt-2 text-2xl font-extrabold text-gray-900">
+              Enquiries
+            </h2>
             <p className="mt-1 text-sm text-gray-600">
               View website enquiry submissions and download attachments.
             </p>
@@ -244,7 +291,7 @@ export default function AdminEnquiriesPage() {
           />
         </div>
 
-        {/* ✅ Date filter row */}
+        {/* Date filter row */}
         <div className="mt-4 grid gap-3 sm:grid-cols-3">
           <div className="rounded-xl border border-gray-200 bg-white px-3 py-2.5">
             <label className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">
@@ -349,14 +396,33 @@ export default function AdminEnquiriesPage() {
 
                     <div className="mt-2 flex items-start gap-2">
                       <MessageSquare className="mt-0.5 h-4 w-4 text-[#ee9d54]" />
-                      <p className="line-clamp-2 text-sm text-gray-700">{e.message}</p>
+                      <p className="line-clamp-2 text-sm text-gray-700">
+                        {e.message}
+                      </p>
                     </div>
                   </div>
 
                   <div className="shrink-0 text-xs text-gray-500">
-                    <div className="inline-flex items-center gap-2">
-                      <Calendar className="h-4 w-4 text-gray-400" />
-                      {formatDate(e.createdAt)}
+                    <div className="flex items-center gap-2">
+                      <div className="inline-flex items-center gap-2">
+                        <Calendar className="h-4 w-4 text-gray-400" />
+                        {formatDate(e.createdAt)}
+                      </div>
+
+                      {/* ✅ Delete button */}
+                      <button
+                        type="button"
+                        onClick={(ev) => {
+                          ev.stopPropagation();
+                          deleteEnquiry(e._id);
+                        }}
+                        disabled={deletingId === e._id}
+                        className="rounded-lg border border-gray-200 p-2 text-red-600 hover:bg-red-50 disabled:opacity-60"
+                        aria-label="Delete enquiry"
+                        title="Delete"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -366,18 +432,24 @@ export default function AdminEnquiriesPage() {
         )}
       </div>
 
-      {/* Modal */}
+      {/* ✅ Responsive Modal */}
       {selected && (
-        <div className="fixed inset-0 z-[100]">
+        <div className="fixed inset-0 z-[100] p-4 sm:p-6">
           <button
             aria-label="Close"
             className="absolute inset-0 bg-black/50"
             onClick={() => setSelected(null)}
           />
-          <div className="absolute left-1/2 top-1/2 w-[92vw] max-w-2xl -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl bg-white shadow-2xl">
+          <div
+            className="absolute left-1/2 top-1/2 w-[92vw] max-w-2xl -translate-x-1/2 -translate-y-1/2
+                       overflow-hidden rounded-2xl bg-white shadow-2xl max-h-[90vh]"
+            role="dialog"
+            aria-modal="true"
+          >
             <div className="h-1.5 w-full bg-[#ee9d54]" />
 
-            <div className="flex items-start justify-between gap-4 px-6 py-5">
+            {/* Header */}
+            <div className="flex items-start justify-between gap-4 px-6 py-5 border-b border-gray-100">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ee9d54]">
                   Enquiry Detail
@@ -385,7 +457,9 @@ export default function AdminEnquiriesPage() {
                 <h3 className="mt-2 text-lg font-extrabold text-gray-900">
                   {selected.fullName}
                 </h3>
-                <p className="mt-1 text-xs text-gray-500">{formatDate(selected.createdAt)}</p>
+                <p className="mt-1 text-xs text-gray-500">
+                  {formatDate(selected.createdAt)}
+                </p>
               </div>
 
               <button
@@ -396,13 +470,16 @@ export default function AdminEnquiriesPage() {
               </button>
             </div>
 
-            <div className="px-6 pb-6">
+            {/* ✅ Scrollable Body */}
+            <div className="px-6 pb-6 overflow-y-auto max-h-[calc(90vh-86px)]">
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="rounded-xl border border-gray-100 bg-gray-50 p-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">
                     Phone
                   </p>
-                  <p className="mt-2 text-sm font-bold text-gray-900">{selected.phone}</p>
+                  <p className="mt-2 text-sm font-bold text-gray-900">
+                    {selected.phone}
+                  </p>
                 </div>
 
                 <div className="rounded-xl border border-gray-100 bg-gray-50 p-4">
@@ -449,13 +526,26 @@ export default function AdminEnquiriesPage() {
               </div>
 
               <div className="mt-4 rounded-xl border border-gray-100 bg-white p-4">
-                <p className="text-sm font-semibold text-gray-900">Requirement / Message</p>
+                <p className="text-sm font-semibold text-gray-900">
+                  Requirement / Message
+                </p>
                 <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-gray-700">
                   {selected.message}
                 </p>
               </div>
 
-              <div className="mt-5 flex justify-end">
+              <div className="mt-5 flex justify-end gap-2">
+                {/* Optional: Delete inside modal (minimal) */}
+                <button
+                  type="button"
+                  onClick={() => deleteEnquiry(selected._id)}
+                  disabled={deletingId === selected._id}
+                  className="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50 disabled:opacity-60"
+                >
+                  <Trash2 className="h-4 w-4" />
+                  Delete
+                </button>
+
                 <button
                   onClick={() => setSelected(null)}
                   className="rounded-xl bg-[#ee9d54] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-95"

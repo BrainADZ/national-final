@@ -1,4 +1,5 @@
  import { Linkedin, Instagram, Youtube } from "lucide-react";
+import Link from "next/link";
 
  export default function Footer() {
   return (
@@ -22,34 +23,34 @@
 {/* Social Media */}
 <div className="flex items-center gap-4 mt-6">
   {/* YouTube */}
-  <a
+  <Link
     href="https://youtube.com/@national_engineers?si=AMV0srGlRfVUdmyo"
     target="_blank"
     aria-label="YouTube"
     className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition hover:border-[#ee9d54] hover:bg-[#ee9d54]/10 hover:text-[#ee9d54]"
   >
     <Youtube className="h-5 w-5" />
-  </a>
+  </Link>
 
   {/* Instagram */}
-  <a
+  <Link
     href="https://www.instagram.com/nationalengrs?igsh=dWNscnFxbmNxa2hz&utm_source=qr"
     target="_blank"
     aria-label="Instagram"
     className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition hover:border-[#ee9d54] hover:bg-[#ee9d54]/10 hover:text-[#ee9d54]"
   >
     <Instagram className="h-5 w-5" />
-  </a>
+  </Link>
 
   {/* LinkedIn */}
-  <a
+  <Link
     href="https://www.linkedin.com/company/national-engineers-steel-fabricators/"
     target="_blank"
     aria-label="LinkedIn"
     className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition hover:border-[#ee9d54] hover:bg-[#ee9d54]/10 hover:text-[#ee9d54]"
   >
     <Linkedin className="h-5 w-5" />
-  </a>
+  </Link>
 </div>
 
 
@@ -59,11 +60,12 @@
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-3 text-sm">
-            <li><a className="hover:text-[#ee9d54] transition" href="#">Home</a></li>
-            <li><a className="hover:text-[#ee9d54] transition" href="#">About Us</a></li>
-            <li><a className="hover:text-[#ee9d54] transition" href="#">Industries Served</a></li>
-            <li><a className="hover:text-[#ee9d54] transition" href="#">Gallery</a></li>
-            <li><a className="hover:text-[#ee9d54] transition" href="#">Contact</a></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/">Home</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/about">About Us</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="#">Products</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/careers">Carrers</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/Gallery">Gallery</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/contact">Contact</Link></li>
           </ul>
         </div>
 
@@ -71,11 +73,11 @@
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Products</h3>
           <ul className="space-y-3 text-sm">
-            <li><a className="hover:text-[#ee9d54] transition" href="#">Heat Exchangers</a></li>
-            <li><a className="hover:text-[#ee9d54] transition" href="#">Pressure Vessels</a></li>
-            <li><a className="hover:text-[#ee9d54] transition" href="#">Reactors</a></li>
-            <li><a className="hover:text-[#ee9d54] transition" href="#">Columns & Towers</a></li>
-            <li><a className="hover:text-[#ee9d54] transition" href="#">Fabrication Services</a></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="#">Heat Exchangers</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="#">Pressure Vessels</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="#">Reactors</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="#">Columns & Towers</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="#">Fabrication Services</Link></li>
           </ul>
         </div>
 
@@ -96,7 +98,7 @@ Plot No. 1022, Cross Road No.87,<br/>
 
           <p className="mt-3 text-sm text-gray-400">
             <span className="font-medium text-gray-200">Email:</span><br />
-            niraj@nationalengrs.com
+            admin@nationalengrs.com
           </p>
         </div>
       </div>
@@ -111,8 +113,8 @@ Plot No. 1022, Cross Road No.87,<br/>
         </p>
 
         <div className="flex gap-6 mt-3 md:mt-0 pb-5 md:pd-2">
-          <a href="#" className="hover:text-[#ee9d54] transition">Privacy Policy</a>
-          <a href="#" className="hover:text-[#ee9d54] transition">Terms of Service</a>
+          <Link href="/privacy-policies" className="hover:text-[#ee9d54] transition">Privacy Policy</Link>
+          <Link href="#" className="hover:text-[#ee9d54] transition">Terms of Service</Link>
         </div>
       </div>
     </footer>

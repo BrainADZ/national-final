@@ -83,19 +83,24 @@ export default function MdDeskSection() {
                   <span className="font-semibold text-gray-900">1990</span> in{" "}
                   <span className="font-semibold text-gray-900">Surat</span>, serving
                   critical sectors such as oil and gas, fertilizers, petrochemicals,
-                  chemicals, steel, effluent treatment, shipbuilding, and man made
+                  chemicals, steel, effluent treatment, shipbuilding, and man-made
                   fibre. Our journey has been shaped by challenging assignments and the
-                  long term trust of our clients in India and overseas.
+                  long-term trust of our clients in India and overseas.
                 </p>
 
                 <p>
                   We are committed to delivering engineered steel solutions that combine
                   innovative design, robust fabrication, and disciplined project quality
-                  management. From pressure vessels, heat exchangers, reactors,
+                  management. 
+                  <br/>
+                  <br/>
+                  From pressure vessels, heat exchangers, reactors,
                   multilayer vessels, storage tanks, silos, and structural jobs to
                   complex, custom built equipment, every job is executed with a strong
                   focus on safety, reliability, and adherence to national and
-                  international standards. Our team of technocrats, engineers, and
+                  international standards.
+                  <br/>
+                  <br/> Our team of technocrats, engineers, and
                   skilled workers is our greatest strength, and they take personal
                   ownership of each project we undertake.
                 </p>

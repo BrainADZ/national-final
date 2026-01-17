@@ -9,7 +9,7 @@ type TabKey = "story" | "mission" | "vision";
 
 const TAB_CONTENT: Record<TabKey, string> = {
   story:
-    "To emerge as a trusted leader in precision engineering and fabrication, recognized for excellence, reliability, and long-lasting value We envision a future where our pressure vessels, heat exchangers, boilers, structural steelwork, and custom-engineered solutions consistently set industry benchmarks for safety, quality, and innovation.Rooted in integrity and driven by continuous improvement, we aim to empower our people, elevate our capabilities, and build enduring partnerships with clients across industries. NESF aspires to contribute to a resilient, technology-forward industrial landscape by delivering engineering solutions that stand strong for generations.",
+    "NESF is built to lead in precision engineering and fabrication setting higher standards in safety, quality, and reliability. From pressure vessels and heat exchangers to boilers and structural steelwork, we deliver solutions that endure. Anchored in integrity and continuous improvement, we empower our people, elevate capability, and forge long-term partnerships that create lasting industrial value.",
   mission:
     "Our mission is to deliver high-quality, safe, and reliable engineering and fabrication solutions that meet the evolving needs of our clients and industries. We are committed to manufacturing precision-built pressure vessels, heat exchangers, boilers, structural steelwork, and custom-fabricated components with uncompromising attention to detail and adherence to established standards.",
   vision:
@@ -30,9 +30,10 @@ export default function AboutSection() {
           </p>
 
           <h2 className="mt-4 text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
-            Precision Manufacturing | Industrial Solutions |
+            Precision Engineering for Industrial Applications
+
             <br />
-            <span className="text-[#ee9d54]">Nationwide Expertise</span>
+            <span className="text-[#ee9d54]">Industrial Expertise</span>
           </h2>
 
           <p className="mt-5 max-w-3xl text-sm leading-relaxed text-gray-600 md:text-base">

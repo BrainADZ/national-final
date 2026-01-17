@@ -19,6 +19,7 @@ import {
   FileText,
   ChevronDown,
   ArrowRight,
+  MessageCircle,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -41,10 +42,10 @@ type ApiJob = {
 type Job = {
   id: string; // _id
   title: string;
-  department: string; // (not in API, using "General" unless you add it)
+  department: string;
   location: string;
-  type: string; // Full-time / Internship
-  experience: string; // "1–4 years"
+  type: string;
+  experience: string;
   salary: string;
   summary: string;
   responsibilities: string[];
@@ -59,13 +60,15 @@ function formatType(t: ApiJob["type"]) {
 }
 
 function formatExp(min: number, max: number) {
-  // 0–0 -> 0 years, 0–3 -> 0–3 years
   if (min === max) return `${min} years`;
   return `${min}–${max} years`;
 }
 
 export default function CareersPage() {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+  // ✅ consistent tick icon sizing everywhere
+  const bulletIconClass = "h-3.5 w-3.5 shrink-0 text-[#ee9d54] mt-0.5";
 
   const [jobs, setJobs] = useState<Job[]>([]);
   const [jobsLoading, setJobsLoading] = useState(true);
@@ -74,8 +77,8 @@ export default function CareersPage() {
   const [activeJobId, setActiveJobId] = useState<string | null>(null);
 
   // Apply form state
-  const [jobAppliedFor, setJobAppliedFor] = useState<string>(""); // title
-  const [jobAppliedForId, setJobAppliedForId] = useState<string | null>(null); // _id (optional if general)
+  const [jobAppliedFor, setJobAppliedFor] = useState<string>("");
+  const [jobAppliedForId, setJobAppliedForId] = useState<string | null>(null);
 
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
@@ -89,25 +92,26 @@ export default function CareersPage() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
-const resumeInputRef = useRef<HTMLInputElement | null>(null);
+
+  const resumeInputRef = useRef<HTMLInputElement | null>(null);
+
   const selectedJob = useMemo(() => {
     return jobs.find((j) => j.title === jobAppliedFor);
   }, [jobs, jobAppliedFor]);
 
-const resetForm = () => {
-  setFullName("");
-  setPhone("");
-  setEmail("");
-  setExperience("");
-  setLocation("");
-  setNoticePeriod("");
-  setMessage("");
-  setResume(null);
-  setFormError(null);
+  const resetForm = () => {
+    setFullName("");
+    setPhone("");
+    setEmail("");
+    setExperience("");
+    setLocation("");
+    setNoticePeriod("");
+    setMessage("");
+    setResume(null);
+    setFormError(null);
 
-  if (resumeInputRef.current) resumeInputRef.current.value = "";
-};
-
+    if (resumeInputRef.current) resumeInputRef.current.value = "";
+  };
 
   const validatePhone = (value: string) => {
     const cleaned = value.replace(/\s/g, "");
@@ -135,14 +139,12 @@ const resetForm = () => {
       }
 
       const list: ApiJob[] = Array.isArray(data?.data) ? data.data : [];
-
-      // Only active jobs on public careers page
       const active = list.filter((j) => j.isActive);
 
       const mapped: Job[] = active.map((j) => ({
         id: j._id,
         title: j.title,
-        department: "General", // you can add department in API later
+        department: "General",
         location: j.location,
         type: formatType(j.type),
         experience: formatExp(j.experienceMin, j.experienceMax),
@@ -161,7 +163,7 @@ const resetForm = () => {
         setJobAppliedFor((prev) => prev || mapped[0].title);
         setJobAppliedForId((prev) => prev ?? mapped[0].id);
       }
-    } catch (e) {
+    } catch {
       setJobsError("Server not reachable.");
     } finally {
       setJobsLoading(false);
@@ -189,8 +191,6 @@ const resetForm = () => {
       setSubmitting(true);
 
       const fd = new FormData();
-
-      // If user selected General Application, jobId may be null.
       if (jobAppliedForId) fd.append("jobId", jobAppliedForId);
       fd.append("jobTitle", jobAppliedFor);
 
@@ -205,25 +205,23 @@ const resetForm = () => {
 
       fd.append("resume", resume);
 
-const res = await fetch(`${API}/careers/`, {
-  method: "POST",
-  body: fd,
-});
+      const res = await fetch(`${API}/careers/`, {
+        method: "POST",
+        body: fd,
+      });
 
-const data = await res.json().catch(() => null);
+      const data = await res.json().catch(() => null);
 
-if (!res.ok) {
-  setFormError(data?.message || "Failed to submit application.");
-  return;
-}
+      if (!res.ok) {
+        setFormError(data?.message || "Failed to submit application.");
+        return;
+      }
 
-setSuccess(true);
-resetForm();
+      setSuccess(true);
+      resetForm();
 
-// optional: user ko apply section pe success dikhane ke liye
-document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
-
-    } catch (err) {
+      document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
+    } catch {
       setFormError("Something went wrong. Please try again.");
     } finally {
       setSubmitting(false);
@@ -266,7 +264,7 @@ document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
         <div className="h-10 w-full bg-linear-to-b from-black/10 to-white" />
       </section>
 
-      {/* CULTURE SECTION (your added section) */}
+      {/* CULTURE SECTION */}
       <section className="bg-white">
         <div className="mx-auto max-w-425 px-4 py-12 sm:py-16">
           <div className="grid items-center gap-10 lg:grid-cols-2">
@@ -330,7 +328,7 @@ document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
 
       {/* WHY WORK WITH US */}
       <section className="mx-auto max-w-425 px-4 py-12">
-        <h2 className="text-2xl font-extrabold text-gray-900">Why work with National Engineers</h2>
+        <h2 className="text-2xl font-extrabold text-gray-900">Why work with NESF</h2>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-600">
           We operate with a practical, delivery-driven approach. You will work on real requirements, improve professional
           skills, and grow in a team that values timelines, accuracy, and accountability.
@@ -391,9 +389,8 @@ document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
                       setJobAppliedFor(job.title);
                       setJobAppliedForId(job.id);
                     }}
-                    className={`w-full rounded-2xl border p-5 text-left shadow-sm transition ${
-                      active ? "border-orange-200 bg-white" : "border-gray-100 bg-white hover:border-gray-200"
-                    }`}
+                    className={`w-full rounded-2xl border p-5 text-left shadow-sm transition ${active ? "border-orange-200 bg-white" : "border-gray-100 bg-white hover:border-gray-200"
+                      }`}
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>
@@ -465,7 +462,7 @@ document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
                       <ul className="mt-3 space-y-2 text-sm text-gray-600">
                         {selectedJob.responsibilities.map((r, i) => (
                           <li key={i} className="flex gap-2">
-                            <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#ee9d54]" />
+                            <CheckCircle2 className={bulletIconClass} strokeWidth={2} />
                             {r}
                           </li>
                         ))}
@@ -477,7 +474,7 @@ document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
                       <ul className="mt-3 space-y-2 text-sm text-gray-600">
                         {selectedJob.requirements.map((r, i) => (
                           <li key={i} className="flex gap-2">
-                            <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#ee9d54]" />
+                            <CheckCircle2 className={bulletIconClass} strokeWidth={2} />
                             {r}
                           </li>
                         ))}
@@ -489,7 +486,7 @@ document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
                           <ul className="mt-3 space-y-2 text-sm text-gray-600">
                             {selectedJob.skillsGoodToHave.map((r, i) => (
                               <li key={i} className="flex gap-2">
-                                <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#ee9d54]" />
+                                <CheckCircle2 className={bulletIconClass} strokeWidth={2} />
                                 {r}
                               </li>
                             ))}
@@ -544,15 +541,15 @@ document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
               <p className="text-sm font-bold text-gray-900">Application Guidelines</p>
               <ul className="mt-3 space-y-2 text-sm text-gray-600">
                 <li className="flex gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#ee9d54]" />
+                  <CheckCircle2 className={bulletIconClass} strokeWidth={2} />
                   Upload resume in PDF/DOC/DOCX (max 5MB).
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#ee9d54]" />
+                  <CheckCircle2 className={bulletIconClass} strokeWidth={2} />
                   Mention your current location and notice period (if applicable).
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#ee9d54]" />
+                  <CheckCircle2 className={bulletIconClass} strokeWidth={2} />
                   Add a short message about your experience and role interest.
                 </li>
               </ul>
@@ -561,14 +558,19 @@ document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
             <div className="mt-6 rounded-3xl border border-gray-100 bg-gray-50 p-6">
               <p className="text-sm font-bold text-gray-900">HR Contact</p>
               <div className="mt-3 space-y-2 text-sm text-gray-600">
-                <div className="flex items-center gap-2">
-                  <Mail className="h-4 w-4 text-gray-400" />
-                  admin@nationalengineers.com
-                </div>
-                <div className="flex items-center gap-2">
+                <Link
+                  href="https://wa.me/919574011132"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-gray-900"
+                >
+                  <MessageCircle className="h-4 w-4 text-gray-400" />
+                  WhatsApp: +91 95740 11132
+                </Link>
+                <Link href="tel:919574011132" className="flex items-center gap-2">
                   <Phone className="h-4 w-4 text-gray-400" />
-                  +91 95740 11132
-                </div>
+                  Tel: +91 95740 11132
+                </Link>
               </div>
               <p className="mt-3 text-xs text-gray-500">Response time may vary depending on openings and profile match.</p>
             </div>
@@ -724,7 +726,7 @@ document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
                     <Upload className="h-4 w-4 text-gray-400" />
                     <input
                       required
-                       ref={resumeInputRef}
+                      ref={resumeInputRef}
                       type="file"
                       accept=".pdf,.doc,.docx"
                       className="w-full text-sm outline-none file:mr-3 file:rounded-md file:border-0 file:bg-gray-100 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-gray-800 hover:file:bg-gray-200"

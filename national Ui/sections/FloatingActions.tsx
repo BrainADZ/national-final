@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { X, Phone, Mail, Building2, Paperclip } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Link from "next/link";
 
 type Props = {
   whatsappNumber?: string;
@@ -14,9 +13,9 @@ type Props = {
 };
 
 export default function FloatingActions({
-  whatsappNumber = "919999999999",
+  whatsappNumber = "919574011132",
   whatsappMessage = "Hi National Engineers, I’d like to enquire about your products/services.",
-  linkedinUrl = "https://www.linkedin.com/company/",
+  linkedinUrl = "https://www.linkedin.com/company/national-engineers-steel-fabricators/",
 }: Props) {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
 
@@ -40,6 +39,15 @@ export default function FloatingActions({
   const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     whatsappMessage
   )}`;
+
+  const normalizeUrl = (url?: string) => {
+    if (!url) return "";
+    const trimmed = url.trim();
+    if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) return trimmed;
+    return `https://${trimmed}`;
+  };
+
+  const linkedinHref = normalizeUrl(linkedinUrl);
 
   // AOS init
   useEffect(() => {
@@ -137,7 +145,6 @@ export default function FloatingActions({
       }
 
       setSuccessMsg("Enquiry submitted successfully.");
-      // close after a short moment (no UI change, just behavior)
       setTimeout(() => {
         setOpen(false);
         resetForm();
@@ -164,10 +171,10 @@ export default function FloatingActions({
       >
         <div className="flex flex-col gap-3 pr-2">
           {/* WhatsApp */}
-          <Link
+          <a
             href={waLink}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="group relative flex items-center"
             aria-label="WhatsApp"
             data-aos="fade-up"
@@ -177,22 +184,26 @@ export default function FloatingActions({
               className={`pointer-events-none absolute right-12 top-0 ${ROW_H} ${STRIP_W}
               translate-x-2 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100`}
             >
-              <span className={`flex ${ROW_H} w-full items-center  border border-gray-200 bg-white px-4 shadow-lg`}>
+              <span
+                className={`flex ${ROW_H} w-full items-center border border-gray-200 bg-white px-4 shadow-lg`}
+              >
                 <span className="text-sm font-semibold text-gray-900">WhatsApp</span>
                 <span className="ml-2 text-xs text-gray-500">Quick chat</span>
               </span>
             </span>
 
-            <span className={`flex ${ROW_H} ${ICON_W} items-center justify-center border border-gray-200 bg-white shadow-lg transition hover:shadow-xl`}>
+            <span
+              className={`flex ${ROW_H} ${ICON_W} items-center justify-center border border-gray-200 bg-white shadow-lg transition hover:shadow-xl`}
+            >
               <img src="/icons/whatsapp.svg" alt="WhatsApp" className="h-7 w-7" />
             </span>
-          </Link>
+          </a>
 
           {/* LinkedIn */}
-          <Link
-            href={linkedinUrl}
+          <a
+            href={linkedinHref}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="group relative flex items-center"
             aria-label="LinkedIn"
             data-aos="fade-up"
@@ -202,16 +213,20 @@ export default function FloatingActions({
               className={`pointer-events-none absolute right-12 top-0 ${ROW_H} ${STRIP_W}
               translate-x-2 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100`}
             >
-              <span className={`flex ${ROW_H} w-full items-center  border border-gray-200 bg-white px-4 shadow-lg`}>
+              <span
+                className={`flex ${ROW_H} w-full items-center border border-gray-200 bg-white px-4 shadow-lg`}
+              >
                 <span className="text-sm font-semibold text-gray-900">LinkedIn</span>
                 <span className="ml-2 text-xs text-gray-500">Follow updates</span>
               </span>
             </span>
 
-            <span className={`flex ${ROW_H} ${ICON_W} items-center justify-center border border-gray-200 bg-white shadow-lg transition hover:shadow-xl`}>
+            <span
+              className={`flex ${ROW_H} ${ICON_W} items-center justify-center border border-gray-200 bg-white shadow-lg transition hover:shadow-xl`}
+            >
               <img src="/icons/linkedin.svg" alt="LinkedIn" className="h-7 w-7" />
             </span>
-          </Link>
+          </a>
 
           {/* Enquiry */}
           <button
@@ -230,13 +245,17 @@ export default function FloatingActions({
               className={`pointer-events-none absolute right-12 top-0 ${ROW_H} ${STRIP_W}
               translate-x-2 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100`}
             >
-              <span className={`flex ${ROW_H} w-full items-center  border border-[#ee9d54]/30 bg-white px-4 shadow-lg`}>
+              <span
+                className={`flex ${ROW_H} w-full items-center border border-[#ee9d54]/30 bg-white px-4 shadow-lg`}
+              >
                 <span className="text-sm font-semibold text-gray-900">Enquiry</span>
                 <span className="ml-2 text-xs text-gray-500">Get a callback</span>
               </span>
             </span>
 
-            <span className={`flex ${ROW_H} ${ICON_W} items-center justify-center bg-[#ee9d54] shadow-lg transition hover:shadow-xl`}>
+            <span
+              className={`flex ${ROW_H} ${ICON_W} items-center justify-center bg-[#ee9d54] shadow-lg transition hover:shadow-xl`}
+            >
               <img src="/icons/sms.svg" alt="Enquiry" className="h-7 w-7" />
             </span>
           </button>
@@ -244,13 +263,17 @@ export default function FloatingActions({
       </div>
 
       {/* MOBILE STICKY BAR (bottom full width) */}
-      <div className="fixed inset-x-0 bottom-0 z-60 md:hidden" data-aos="fade-up" data-aos-delay="120">
+      <div
+        className="fixed inset-x-0 bottom-0 z-60 md:hidden"
+        data-aos="fade-up"
+        data-aos-delay="120"
+      >
         <div className="mx-auto max-w-350 border-t border-gray-200 bg-white/95 backdrop-blur">
           <div className="grid grid-cols-3">
             <a
               href={waLink}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 py-3 text-sm font-semibold text-gray-900"
             >
               <img src="/icons/whatsapp.svg" alt="WhatsApp" className="h-5 w-5" />
@@ -258,9 +281,9 @@ export default function FloatingActions({
             </a>
 
             <a
-              href={linkedinUrl}
+              href={linkedinHref}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 py-3 text-sm font-semibold text-gray-900"
             >
               <img src="/icons/linkedin.svg" alt="LinkedIn" className="h-5 w-5" />
@@ -443,7 +466,7 @@ export default function FloatingActions({
                 />
               </div>
 
-              {/* messages (no design changes: tiny text only) */}
+              {/* messages */}
               {errorMsg ? <p className="mt-3 text-xs text-red-600">{errorMsg}</p> : null}
               {successMsg ? (
                 <p className="mt-3 text-xs text-green-600">{successMsg}</p>

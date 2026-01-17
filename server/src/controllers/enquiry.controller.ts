@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import mongoose from "mongoose";
 import { Enquiry } from "../models/Enquiry.model";
 import { sendEnquiryMail } from "../services/mail.service";
+
 export const createEnquiry = async (req: Request, res: Response) => {
   try {
     const fullName = String(req.body.fullName || "").trim();
@@ -46,8 +47,7 @@ export const createEnquiry = async (req: Request, res: Response) => {
         : null,
     });
 
-    // ✅ Send mail to admin (non-blocking safe approach)
-    // NOTE: If email fails, we still keep enquiry saved
+    // ✅ Send mail to admin (non-blocking)
     sendEnquiryMail({
       fullName,
       company: company || undefined,
@@ -81,6 +81,7 @@ export const createEnquiry = async (req: Request, res: Response) => {
     return res.status(500).json({ success: false, message: msg });
   }
 };
+
 // (Admin) list enquiries
 export const listEnquiries = async (_req: Request, res: Response) => {
   try {
@@ -88,6 +89,43 @@ export const listEnquiries = async (_req: Request, res: Response) => {
     return res.json({ success: true, message: "OK", data: items });
   } catch (err) {
     console.error("listEnquiries error:", err);
+    return res.status(500).json({
+      success: false,
+      message: "Server error. Please try again later.",
+    });
+  }
+};
+
+// ✅ (Admin) delete enquiry
+// ✅ (Admin) delete enquiry
+export const deleteEnquiry = async (req: Request, res: Response) => {
+  try {
+    // ✅ force string (fix TS: string | string[])
+    const id = String(req.params.id || "").trim();
+
+    if (!id || !mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid enquiry id.",
+      });
+    }
+
+    const deleted = await Enquiry.findByIdAndDelete(id);
+
+    if (!deleted) {
+      return res.status(404).json({
+        success: false,
+        message: "Enquiry not found.",
+      });
+    }
+
+    return res.json({
+      success: true,
+      message: "Enquiry deleted successfully.",
+      data: { id: deleted._id },
+    });
+  } catch (err) {
+    console.error("deleteEnquiry error:", err);
     return res.status(500).json({
       success: false,
       message: "Server error. Please try again later.",

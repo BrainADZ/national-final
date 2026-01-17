@@ -50,7 +50,7 @@ export default function CompetitiveAdvantageSection() {
           </h2>
           <p className="mx-auto mt-3 max-w-3xl text-sm text-gray-600 md:text-base">
             A strong foundation of engineering discipline, modern infrastructure,
-            and customer-focused execution that enables National Engineers to deliver
+            and customer-focused execution that enables us to deliver
             dependable solutions for demanding industrial applications.
           </p>
         </div>

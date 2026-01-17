@@ -11,8 +11,8 @@ type StatItem = {
 
 const STATS: StatItem[] = [
   { number: 25, suffix: "+", label: "Years of Experience" },
-  { number: 100, suffix: "+MT", label: "per month manufacturing capacity" },
-  { number: 150, suffix: "+", label: "custom projects" },
+  { number: 100, suffix: "+MT", label: "Per month Manufacturing Capacity" },
+  { number: 150, suffix: "+", label: "Custom Projects" },
   { number: 50, suffix: "+", label: "OEM Partnerships" },
   { number: 150, suffix: "+", label: "Clients Served" },
   { number: 10, suffix: "+", label: "Countries Served" },
