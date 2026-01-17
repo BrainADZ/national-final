@@ -94,7 +94,7 @@ export default function MdDeskSection() {
                   management. 
                   <br/>
                   <br/>
-                  From pressure vessels, heat exchangers, reactors,
+                  From pressure vessels, heat exchangers,
                   multilayer vessels, storage tanks, silos, and structural jobs to
                   complex, custom built equipment, every job is executed with a strong
                   focus on safety, reliability, and adherence to national and

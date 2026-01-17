@@ -49,7 +49,7 @@ export default function AboutSection() {
             <div className="flex flex-wrap gap-0 overflow-x-auto ">
               {(
                 [
-                  ["story", "National Story"],
+                  ["story", "Our Story"],
                   ["mission", "Mission"],
                   ["vision", "Vision"],
                 ] as [TabKey, string][]

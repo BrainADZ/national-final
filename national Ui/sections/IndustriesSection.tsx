@@ -73,7 +73,7 @@ export default function IndustriesSection() {
             Actively Serving Industries
           </h2>
           <p className="mt-3 text-sm text-gray-600 md:text-base">
-            We partners with a wide range of process and
+            We partner with a wide range of process and
             manufacturing industries, delivering application-engineered
             heat-transfer and pressure equipment designed for demanding operating
             conditions.

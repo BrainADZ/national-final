@@ -37,7 +37,7 @@ const PRODUCTS = [
       "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1400&h=1400&fit=crop",
     tag: "Power Backup",
     description:
-      "Vessels with immersion coils or external jackets for efficient heating or cooling during mixing, batching, holding, or process operations. They deliver more consistent product temperatures and can be tailored with the right connections and configurations to match your heating/cooling circuit.",
+      "Vessels with immersion coils or external jackets for efficient heating or cooling during mixing, batching, holding, or process operations. They deliver more consistent product temperatures and can be tailored with the right connections and configurations to match your heating & cooling circuit.",
   },
 ];
 
