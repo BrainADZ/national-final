@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-/* eslint-disable @typescript-eslint/no-unused-vars */
+ 
 
 "use client";
 
@@ -559,17 +559,13 @@ export default function CareersPage() {
               <p className="text-sm font-bold text-gray-900">HR Contact</p>
               <div className="mt-3 space-y-2 text-sm text-gray-600">
                 <Link
-                  href="https://wa.me/919574011132"
+                  href="https://wa.me/919574511152"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-gray-900"
                 >
                   <MessageCircle className="h-4 w-4 text-gray-400" />
-                  WhatsApp: +91 95740 11132
-                </Link>
-                <Link href="tel:919574011132" className="flex items-center gap-2">
-                  <Phone className="h-4 w-4 text-gray-400" />
-                  Tel: +91 95740 11132
+                  WhatsApp: +91 9574511152
                 </Link>
               </div>
               <p className="mt-3 text-xs text-gray-500">Response time may vary depending on openings and profile match.</p>
