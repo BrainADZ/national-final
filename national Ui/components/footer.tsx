@@ -1,3 +1,5 @@
+ import { Linkedin, Instagram, Youtube } from "lucide-react";
+
  export default function Footer() {
   return (
     <footer className="bg-[#0c0c0c] text-gray-300 pt-14 pb-8 border-t border-white/10">
@@ -16,20 +18,41 @@
           </p>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-4 mt-5">
-            <a className="hover:text-[#ee9d54] transition" href="#">
-              <i className="ri-facebook-fill text-2xl"></i>
-            </a>
-            <a className="hover:text-[#ee9d54] transition" href="#">
-              <i className="ri-instagram-line text-2xl"></i>
-            </a>
-            <a className="hover:text-[#ee9d54] transition" href="#">
-              <i className="ri-linkedin-box-fill text-2xl"></i>
-            </a>
-            <a className="hover:text-[#ee9d54] transition" href="#">
-              <i className="ri-youtube-fill text-2xl"></i>
-            </a>
-          </div>
+          {/* Social Icons */}
+{/* Social Media */}
+<div className="flex items-center gap-4 mt-6">
+  {/* YouTube */}
+  <a
+    href="https://youtube.com/@national_engineers?si=AMV0srGlRfVUdmyo"
+    target="_blank"
+    aria-label="YouTube"
+    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition hover:border-[#ee9d54] hover:bg-[#ee9d54]/10 hover:text-[#ee9d54]"
+  >
+    <Youtube className="h-5 w-5" />
+  </a>
+
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/nationalengrs?igsh=dWNscnFxbmNxa2hz&utm_source=qr"
+    target="_blank"
+    aria-label="Instagram"
+    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition hover:border-[#ee9d54] hover:bg-[#ee9d54]/10 hover:text-[#ee9d54]"
+  >
+    <Instagram className="h-5 w-5" />
+  </a>
+
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/company/national-engineers-steel-fabricators/"
+    target="_blank"
+    aria-label="LinkedIn"
+    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition hover:border-[#ee9d54] hover:bg-[#ee9d54]/10 hover:text-[#ee9d54]"
+  >
+    <Linkedin className="h-5 w-5" />
+  </a>
+</div>
+
+
         </div>
 
         {/* Quick Links */}

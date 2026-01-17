@@ -5,6 +5,8 @@ import { Building2, Phone, Mail, Clock, MapPin, Send, FileText } from "lucide-re
 import ContactFormClient from "./ContactFormClient";
 import FaqSection from "@/sections/Accordian";
 import Link from "next/link";
+import { Linkedin, Instagram, Youtube } from "lucide-react";
+
 
 export const metadata: Metadata = {
     title: "Contact National Engineers & Steel Fabricators | Surat, Gujarat",
@@ -239,6 +241,45 @@ export default function ContactPage() {
                                 </p>
                             </div>
                         </div>
+                        {/* Social Media */}
+<div className="mt-8">
+    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">
+        Connect with us
+    </p>
+
+    <div className="mt-3 flex items-center gap-4">
+        {/* YouTube */}
+        <Link
+            href="https://youtube.com/@national_engineers?si=AMV0srGlRfVUdmyo"
+            target="_blank"
+            aria-label="YouTube"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-600 transition hover:border-[#ee9d54] hover:bg-orange-50 hover:text-[#ee9d54]"
+        >
+            <Youtube className="h-5 w-5" />
+        </Link>
+
+        {/* Instagram */}
+        <Link
+            href="https://www.instagram.com/nationalengrs?igsh=dWNscnFxbmNxa2hz&utm_source=qr"
+            target="_blank"
+            aria-label="Instagram"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-600 transition hover:border-[#ee9d54] hover:bg-orange-50 hover:text-[#ee9d54]"
+        >
+            <Instagram className="h-5 w-5" />
+        </Link>
+
+        {/* LinkedIn */}
+        <Link
+            href="https://www.linkedin.com/company/national-engineers-steel-fabricators/"
+            target="_blank"
+            aria-label="LinkedIn"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-600 transition hover:border-[#ee9d54] hover:bg-orange-50 hover:text-[#ee9d54]"
+        >
+            <Linkedin className="h-5 w-5" />
+        </Link>
+    </div>
+</div>
+
                     </div>
 
                     {/* Right form */}
