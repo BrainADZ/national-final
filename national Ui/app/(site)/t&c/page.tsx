@@ -226,7 +226,7 @@ export default function TermsOfServicePage() {
           </p>
 
           <h1 className="mt-2 text-3xl font-bold text-white lg:text-5xl">
-            Term of <span className="text-[#e78f3d]">Service</span>
+            Terms of <span className="text-[#e78f3d]">Service</span>
           </h1>
 
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-gray-200">
