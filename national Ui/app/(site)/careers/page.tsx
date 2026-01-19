@@ -337,7 +337,7 @@ export default function CareersPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { icon: Building2, title: "Professional environment", desc: "Structured work culture with clear reporting." },
-            { icon: GraduationCap, title: "Learning & mentoring", desc: "On-the-job learning with guidance from seniors." },
+            { icon: GraduationCap, title: "Learning and mentoring", desc: "On-the-job learning with guidance from seniors." },
             { icon: Clock, title: "Stable workflow", desc: "Defined processes for sales, service, and operations." },
             { icon: IndianRupee, title: "Performance rewards", desc: "Incentives and growth based on contribution." },
           ].map((item, idx) => (
