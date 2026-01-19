@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "National Engineers",
-  description: "National Engineers and Steel Fabricator",
+  title: "National Engineers & Steel Fabricators",
+  description: "National Engineers & Steel Fabricators",
 };
 
 export default function RootLayout({

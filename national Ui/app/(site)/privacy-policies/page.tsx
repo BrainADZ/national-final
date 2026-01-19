@@ -404,6 +404,12 @@ export default function PrivacyPolicyPage() {
                   >
                     Contact via Email <span aria-hidden="true">→</span>
                   </a>
+                   <a
+                    href={`tel:${POLICY.phone.replace(/\s/g, "")}`}
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm hover:border-slate-400"
+                  >
+                    Call Now <span aria-hidden="true">→</span>
+                  </a>
                 </div>
               </div>
 

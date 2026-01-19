@@ -191,7 +191,7 @@ export default function ContactFormClient() {
           required
           name="message"
           rows={5}
-          placeholder="Tell us what you need: equipment type, MOC, operating conditions, delivery timeline…"
+          placeholder="Please share brief details of your requirement, including equipment type, material of construction, operating conditions, and delivery timeline."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           className="mt-1 w-full resize-none rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none placeholder:text-gray-400 focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"

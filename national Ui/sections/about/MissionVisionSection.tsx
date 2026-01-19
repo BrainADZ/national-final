@@ -30,7 +30,7 @@ export default function MissionVisionSection() {
                         and standards.
                     </p>
                     <p className="mt-4 text-sm leading-relaxed text-gray-700 md:text-base">
-                        We serve clients across oil &amp; gas, chemicals &amp;
+                        We serve clients across oil and gas, chemicals and
                         petrochemicals, fertilizers, effluent treatment, steel, shipbuilding
                         and man-made fibers, bringing practical engineering, transparent
                         communication, and a life-cycle-cost focus so assets run better,
@@ -56,7 +56,7 @@ export default function MissionVisionSection() {
 
                 {/* QUALITY POLICY */}
                 <div
-                    className="mt-12 grid items-center gap-6 md:grid-cols-[160px_1fr] pl-10"
+                    className="mt-12 grid items-center gap-6 md:grid-cols-[160px_1fr]"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >

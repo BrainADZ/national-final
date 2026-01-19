@@ -45,7 +45,7 @@ const INFO = [
     },
     {
         title: "Location",
-        lines: ["Plot No. 1022, Cross Road No.87, Sachin GIDC, Surat - 394230"],
+        lines: ["Plot No. 1022, Cross Road No. 87, Sachin GIDC, Surat - 394230"],
         icon: MapPin,
     },
 ];
@@ -126,7 +126,7 @@ export default function ContactPage() {
                                 Response Time
                             </p>
                             <p className="mt-1 text-sm font-semibold text-white">
-                               Within 24 business hours
+                                Within 24 business hours
                             </p>
                         </div>
                         <div className="rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur">
@@ -223,9 +223,9 @@ export default function ContactPage() {
                                 </div>
                                 <ul className="mt-3 space-y-2 text-sm text-gray-600">
                                     <li>• In MOC (SS, MS, Aluminum, etc.)</li>
-                                    <li>• Equipment Type & Size</li>
-                                    <li>• Pressure & Temperature</li>
-                                    <li>• Delivery Location & Timeline</li>
+                                    <li>• Equipment Type and Size</li>
+                                    <li>• Pressure and Temperature</li>
+                                    <li>• Delivery Location and Timeline</li>
                                 </ul>
                             </div>
 
@@ -242,43 +242,43 @@ export default function ContactPage() {
                             </div>
                         </div>
                         {/* Social Media */}
-<div className="mt-8">
-    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">
-        Connect with us
-    </p>
+                        <div className="mt-8">
+                            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">
+                                Connect with us
+                            </p>
 
-    <div className="mt-3 flex items-center gap-4">
-        {/* YouTube */}
-        <Link
-            href="https://youtube.com/@national_engineers?si=AMV0srGlRfVUdmyo"
-            target="_blank"
-            aria-label="YouTube"
-            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-600 transition hover:border-[#ee9d54] hover:bg-orange-50 hover:text-[#ee9d54]"
-        >
-            <Youtube className="h-5 w-5" />
-        </Link>
+                            <div className="mt-3 flex items-center gap-4">
+                                {/* YouTube */}
+                                <Link
+                                    href="https://youtube.com/@national_engineers?si=AMV0srGlRfVUdmyo"
+                                    target="_blank"
+                                    aria-label="YouTube"
+                                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-600 transition hover:border-[#ee9d54] hover:bg-orange-50 hover:text-[#ee9d54]"
+                                >
+                                    <Youtube className="h-5 w-5" />
+                                </Link>
 
-        {/* Instagram */}
-        <Link
-            href="https://www.instagram.com/nationalengrs?igsh=dWNscnFxbmNxa2hz&utm_source=qr"
-            target="_blank"
-            aria-label="Instagram"
-            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-600 transition hover:border-[#ee9d54] hover:bg-orange-50 hover:text-[#ee9d54]"
-        >
-            <Instagram className="h-5 w-5" />
-        </Link>
+                                {/* Instagram */}
+                                <Link
+                                    href="https://www.instagram.com/nationalengrs?igsh=dWNscnFxbmNxa2hz&utm_source=qr"
+                                    target="_blank"
+                                    aria-label="Instagram"
+                                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-600 transition hover:border-[#ee9d54] hover:bg-orange-50 hover:text-[#ee9d54]"
+                                >
+                                    <Instagram className="h-5 w-5" />
+                                </Link>
 
-        {/* LinkedIn */}
-        <Link
-            href="https://www.linkedin.com/company/national-engineers-steel-fabricators/"
-            target="_blank"
-            aria-label="LinkedIn"
-            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-600 transition hover:border-[#ee9d54] hover:bg-orange-50 hover:text-[#ee9d54]"
-        >
-            <Linkedin className="h-5 w-5" />
-        </Link>
-    </div>
-</div>
+                                {/* LinkedIn */}
+                                <Link
+                                    href="https://www.linkedin.com/company/national-engineers-steel-fabricators/"
+                                    target="_blank"
+                                    aria-label="LinkedIn"
+                                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-600 transition hover:border-[#ee9d54] hover:bg-orange-50 hover:text-[#ee9d54]"
+                                >
+                                    <Linkedin className="h-5 w-5" />
+                                </Link>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -291,7 +291,7 @@ export default function ContactPage() {
                         <div className="p-6 md:p-8">
                             <h3 className="text-xl font-bold text-gray-900">Send us a message</h3>
                             <p className="mt-2 text-sm text-gray-600">
-                                We’ll route your enquiry to the relevant technical team.
+                                We will route your enquiry to the relevant technical team.
                             </p>
                             <ContactFormClient />
                         </div>

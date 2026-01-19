@@ -434,7 +434,7 @@ export default function AdminEnquiriesPage() {
 
       {/* ✅ Responsive Modal */}
       {selected && (
-        <div className="fixed inset-0 z-[100] p-4 sm:p-6">
+        <div className="fixed inset-0 z-100 p-4 sm:p-6">
           <button
             aria-label="Close"
             className="absolute inset-0 bg-black/50"

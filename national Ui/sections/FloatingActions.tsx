@@ -470,7 +470,7 @@ export default function FloatingActions({
                   <textarea
                     required
                     rows={4}
-                    placeholder="Tell us what you need..."
+                    placeholder="Please share brief details of your requirement."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     className="mt-1 w-full resize-none rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none placeholder:text-gray-400 focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"

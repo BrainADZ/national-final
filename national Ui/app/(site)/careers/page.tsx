@@ -248,14 +248,14 @@ export default function CareersPage() {
                   </Link>
                 </li>
                 <li className="text-white/40">/</li>
-                <li className="text-orange-300">Gallery</li>
+                <li className="text-orange-300">Careers</li>
               </ol>
             </nav>
 
             <div className="mt-5 max-w-2xl">
-              <h1 className="text-3xl font-bold text-white md:text-4xl">Gallery</h1>
+              <h1 className="text-3xl font-bold text-white md:text-4xl">Careers</h1>
               <p className="mt-3 text-sm leading-relaxed text-white/85 md:text-base">
-                A quick look at our work, facilities, products, events, and on-ground execution.
+                Get a glimpse into where you’ll work and what you’ll build—our teams, facilities, products, live projects, and on-ground execution that turn ideas into real-world impact.
               </p>
             </div>
           </div>
@@ -280,7 +280,7 @@ export default function CareersPage() {
 
             <div>
               <p className="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-semibold text-[#ee9d54]">
-                Culture & Growth
+                Culture  Growth
               </p>
 
               <h2 className="mt-4 text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">

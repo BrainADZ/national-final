@@ -68,11 +68,11 @@ export default async function GalleryPage() {
                         {/* Title block */}
                         <div className="mt-5 max-w-2xl">
                             <h1 className="text-3xl font-bold text-white md:text-4xl">
-                                Gallery
+                                Engineering in Action
                             </h1>
 
                             <p className="mt-3 text-sm leading-relaxed text-white/85 md:text-base">
-                                A quick look at our work, facilities, products, events, and on-ground execution.
+                               A visual record of our engineering, fabrication, and on-site execution.
                             </p>
 
                         </div>
