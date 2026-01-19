@@ -309,7 +309,7 @@ export default function FloatingActions({
 
       {/* MODAL FORM */}
       {open && (
-        <div className="fixed inset-0 z-[9999] overflow-y-auto">
+        <div className="fixed inset-0 z-9999 overflow-y-auto">
           {/* overlay */}
           <button
             type="button"
