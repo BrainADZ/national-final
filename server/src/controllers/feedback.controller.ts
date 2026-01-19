@@ -6,10 +6,10 @@ export const createFeedback = async (req: Request, res: Response) => {
   try {
     const fullName = String(req.body.fullName || "").trim();
     const email = String(req.body.email || "").toLowerCase().trim();
-    const subject = String(req.body.subject || "").trim();
+    const organization = String(req.body.organization || "").trim();
     const message = String(req.body.message || "").trim();
 
-    if (!fullName || !email || !subject || !message) {
+    if (!fullName || !email || !organization || !message) {
       return res.status(400).json({
         success: false,
         message: "All fields are required.",
@@ -28,7 +28,7 @@ export const createFeedback = async (req: Request, res: Response) => {
     const doc = await Feedback.create({
       fullName,
       email,
-      subject,
+      organization,
       message,
     });
 
@@ -52,7 +52,7 @@ export const createFeedback = async (req: Request, res: Response) => {
       ) {
         msg = "Full Name is too short.";
       } else if (
-        firstError?.path === "subject" &&
+        firstError?.path === "organization" &&
         firstError?.kind === "minlength"
       ) {
         msg = "Feedback / Suggestion is too short.";

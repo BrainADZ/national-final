@@ -15,7 +15,7 @@ type Feedback = {
   _id: string;
   fullName: string;
   email: string;
-  subject: string;
+  organization: string;
   message: string;
   createdAt: string;
 };
@@ -46,7 +46,7 @@ export default function AdminFeedbackPage() {
     if (!query) return items;
 
     return items.filter((f) => {
-      const hay = `${f.fullName} ${f.email} ${f.subject} ${f.message}`.toLowerCase();
+      const hay = `${f.fullName} ${f.email} ${f.organization} ${f.message}`.toLowerCase();
       return hay.includes(query);
     });
   }, [items, q]);
@@ -164,7 +164,7 @@ export default function AdminFeedbackPage() {
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              placeholder="Search by name, email, subject or message..."
+              placeholder="Search by name, email, organization or message..."
               className="w-full text-sm outline-none placeholder:text-gray-400"
             />
           </div>
@@ -209,7 +209,7 @@ export default function AdminFeedbackPage() {
 
                       <div className="mt-2 flex items-center gap-2 text-sm font-semibold text-gray-800">
                         <MessageSquare className="h-4 w-4 text-[#ee9d54]" />
-                        <span className="truncate">{f.subject}</span>
+                        <span className="truncate">{f.organization}</span>
                       </div>
 
                       <p className="mt-2 line-clamp-2 text-sm text-gray-600">
@@ -272,7 +272,7 @@ export default function AdminFeedbackPage() {
                   Feedback Detail
                 </p>
                 <h3 className="mt-2 text-lg font-extrabold text-gray-900">
-                  {selected.subject}
+                  {selected.organization}
                 </h3>
                 <p className="mt-1 text-xs text-gray-500">
                   {formatDate(selected.createdAt)}

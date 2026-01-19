@@ -13,7 +13,7 @@ const TAB_CONTENT: Record<TabKey, string> = {
   mission:
     "Our mission is to deliver high-quality, safe, and reliable engineering and fabrication solutions that meet the evolving needs of our clients and industries. We are committed to manufacturing precision-built pressure vessels, heat exchangers, boilers, structural steelwork, and custom-fabricated components with uncompromising attention to detail and adherence to established standards.",
   vision:
-    "Through innovation, disciplined processes, transparent communication, and a culture of continuous improvement, we strive to complete every project with excellence and on schedule.We aim to foster long-term relationships, empower our workforce, and contribute to India’s industrial growth by consistently providing engineering solutions that clients trust and value.",
+    "Through innovation, disciplined processes, transparent communication, and a culture of continuous improvement, we strive to complete every project with excellence and on schedule. We aim to foster long-term relationships, empower our workforce, and contribute to India’s industrial growth by consistently providing engineering solutions that clients trust and value.",
 };
 
 export default function AboutSection() {

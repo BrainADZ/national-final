@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function AboutHero({
-    title = "NESF History",
+    title = "Engineering Excellence at NESF",
     breadcrumbCurrent = "About NESF",
     imageUrl =
     "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2400&auto=format&fit=crop",
@@ -54,7 +54,7 @@ export default function AboutHero({
                             </h1>
 
                             <p className="mt-3 text-sm leading-relaxed text-white/85 md:text-base">
-                                A quick look at our work, facilities, products, events, and on-ground execution.
+                               A reflection of over 35 years of engineering excellence, guided by leadership philosophy, core values, and disciplined execution.
                             </p>
 
                         </div>

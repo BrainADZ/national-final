@@ -29,7 +29,7 @@ const PRODUCTS = [
       "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1400&h=1400&fit=crop",
     tag: "Railways",
     description:
-      "Silos and storage tanks built for safe, long-term storage of liquids and bulk materials with controlled filling and discharge. Designed for durability and easy integration, they can be customized with access points, venting, and required connections to suit site and process needs.",
+      "Silos and storage are tanks built for safe, long-term storage of liquids and bulk materials with controlled filling and discharge. Designed for durability and easy integration, they can be customized with access points, venting, and required connections to suit site and process needs.",
   },
   {
     title: "Immersion Coil / Jacketed Vessel",
@@ -37,7 +37,7 @@ const PRODUCTS = [
       "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1400&h=1400&fit=crop",
     tag: "Power Backup",
     description:
-      "Vessels with immersion coils or external jackets for efficient heating or cooling during mixing, batching, holding, or process operations. They deliver more consistent product temperatures and can be tailored with the right connections and configurations to match your heating & cooling circuit.",
+      "Vessels with immersion coils or external jackets are designed for efficient heating or cooling during mixing, batching, holding, or process operations. They deliver more consistent product temperatures and can be tailored with the right connections and configurations to match your heating and cooling circuit.",
   },
 ];
 
@@ -142,9 +142,9 @@ export default function ProductsSection() {
                       `}
                     >
                       <div className="bg-[#EE9D54] px-5 py-4">
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90">
+                        {/* <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90">
                           {product.tag}
-                        </p>
+                        </p> */}
                         <h3 className="mt-1 text-white font-bold text-[18px]">
                           {product.title}
                         </h3>

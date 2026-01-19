@@ -3,7 +3,7 @@
 export default function MdDeskSection() {
   return (
     <section className="relative bg-white py-14 lg:py-20">
-      <div className="mx-auto max-w-[1700px] px-4 lg:px-6">
+      <div className="mx-auto max-w-425 px-4 lg:px-6">
         {/* Heading */}
         <div className="mb-10">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ee9d54]">
@@ -25,7 +25,7 @@ export default function MdDeskSection() {
             <aside className="lg:pt-2">
               {/* photo */}
               <div className="overflow-hidden rounded-2xl border border-gray-200 bg-gray-100">
-                <div className="h-[360px] w-full">
+                <div className="h-90 w-full">
                   <img
                     src="/images/md-portrait.jpg"
                     alt="Mustafa Patrawala - Managing Director"
@@ -78,18 +78,18 @@ export default function MdDeskSection() {
                 <p className="font-medium text-gray-900">Dear Friends,</p>
 
                 <p>
-                  At National Engineers &amp; Steel Fabricators, this belief has guided
+                  At <b>National Engineers &amp; Steel Fabricators,</b> this belief has guided
                   us since our inception in{" "}
                   <span className="font-semibold text-gray-900">1990</span> in{" "}
                   <span className="font-semibold text-gray-900">Surat</span>, serving
                   critical sectors such as oil and gas, fertilizers, petrochemicals,
                   chemicals, steel, effluent treatment, shipbuilding, and man-made
                   fibre. Our journey has been shaped by challenging assignments and the
-                  long-term trust of our clients in India and overseas.
+                 <b> long-term trust </b> of our clients in India and overseas.
                 </p>
 
                 <p>
-                  We are committed to delivering engineered steel solutions that combine
+                  We are committed to delivering <b>engineered steel solutions</b> that combine
                   innovative design, robust fabrication, and disciplined project quality
                   management. 
                   <br/>
@@ -97,22 +97,22 @@ export default function MdDeskSection() {
                   From pressure vessels, heat exchangers,
                   multilayer vessels, storage tanks, silos, and structural jobs to
                   complex, custom built equipment, every job is executed with a strong
-                  focus on safety, reliability, and adherence to national and
+                  focus on <b>safety, reliability,</b> and <b>adherence</b> to national and
                   international standards.
                   <br/>
-                  <br/> Our team of technocrats, engineers, and
-                  skilled workers is our greatest strength, and they take personal
-                  ownership of each project we undertake.
+                  <br/> Our team of <b>technocrats, engineers, and
+                  skilled workers</b> is our greatest strength, and they take <b>personal
+                  ownership</b> of each project we undertake.
                 </p>
 
                 <p>
-                  We are deeply grateful for the confidence our customers place in{" "}
+                  We are deeply grateful for the confidence our <b>customers</b> place in{" "}
                   <span className="font-semibold text-gray-900">NESF</span>. Your support
                   encourages us to challenge our capabilities, invest in better
                   technology, and continuously improve our systems so that we can
                   deliver even more value in the years ahead. We look forward to earning
-                  your business every day and becoming your trusted partner for
-                  precision, safety, and quality in engineered steel fabrication.
+                  your business every day and becoming your <b>trusted partner</b> for 
+                  <b> precision, safety,</b> and <b>quality</b> in engineered steel fabrication.
                 </p>
               </div>
 

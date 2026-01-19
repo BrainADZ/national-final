@@ -18,21 +18,21 @@ export default function MissionVisionSection() {
                         National Engineers &amp; Steel Fabricators (NESF), established in
                         1990, delivers end-to-end steel fabrication, from engineering,
                         design, and detailing to manufacturing, erection, and commissioning.
-                        We build pressure vessels and air receivers, heat exchangers, and boilers, process piping skids, storage tanks and silos,
+                        We build pressure vessels, air receivers, heat exchangers, boilers, process piping skids, storage tanks and silos,
                         structural steelwork, and HVAC ducts.
                     </p>
 
                     <p className="mt-4 text-sm leading-relaxed text-gray-700 md:text-base">
-                        Our disciplined Quality Assurance/Quality Control, qualified welding
+                        Our disciplined Quality Assurance and Quality Control, qualified welding
                         procedures, and safety-first culture drive reliability and full
                         traceability, while our planning and execution practices support
                         on-time delivery, all in accordance with applicable industry codes
                         and standards.
                     </p>
                     <p className="mt-4 text-sm leading-relaxed text-gray-700 md:text-base">
-                        We serve clients across Oil &amp; Gas, Chemicals &amp;
-                        Petrochemicals, Fertilizers, Effluent Treatment, Steel, Shipbuilding
-                        and Man-made Fibers, bringing practical engineering, transparent
+                        We serve clients across oil &amp; gas, chemicals &amp;
+                        petrochemicals, fertilizers, effluent treatment, steel, shipbuilding
+                        and man-made fibers, bringing practical engineering, transparent
                         communication, and a life-cycle-cost focus so assets run better,
                         longer, and safer.
                     </p>
@@ -48,7 +48,7 @@ export default function MissionVisionSection() {
                         As Managing Director Mustafa Patrawala notes, “Our promise is simple:
                         do the basics right every time and keep raising the bar.” That
                         philosophy treats clients as partners, backed by clear drawings,
-                        clean fabrication, and safe sites, and creates long-term value
+                        clean fabrication, and safe sites, use to deliver long-term value
                         equipment that is easy to operate, safe to maintain, and built to
                         last.
                     </p>

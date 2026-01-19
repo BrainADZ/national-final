@@ -5,19 +5,21 @@ import { ChevronDown } from "lucide-react";
 
 type FaqItem = {
   question: string;
-  answer: string;
+  answer: string | string[];
 };
 
 const FAQS: FaqItem[] = [
   {
-    question: "What kind of equipment does National Engineers manufacture?",
+    question: "What kind of equipment do you manufacture?",
     answer:
       "We manufacture engineered, custom-fabricated steel process equipment which includes pressure vessels, air receivers, heat exchangers, boilers, process piping skids, storage tanks & silos, along with structural steelwork and HVAC ducting.",
   },
   {
     question: "Do you provide custom-designed solutions?",
-    answer:
-      "Yes. Most of our work is application-specific. We design around your process data, operating conditions, layout constraints, and site requirements, then deliver end-to-end execution from engineering & detailing to fabrication, erection, and commissioning which ensures the final equipment fits your plant and performs reliably.",
+    answer: [
+      "Yes. Most of our work is application-specific.",
+      "We design around your process data, operating conditions, layout constraints, and site requirements, then deliver end-to-end execution from engineering & detailing to fabrication, erection, and commissioning which ensures the final equipment fits your plant and performs reliably.",
+    ],
   },
   {
     question: "Which industries do you actively serve?",
@@ -34,7 +36,7 @@ const FAQS: FaqItem[] = [
     answer:
       "We follow a disciplined QA and QC system, use qualified welding procedures, and maintain full traceability. Our safety-first culture and code-compliant practices help ensure consistent quality, reliable performance, and on-time delivery.",
   },
-    {
+  {
     question: "What materials do you work with?",
     answer:
       "We fabricate in Mild Steel, Stainless Steel, and other speciality or exotic metals as required by the application which is selected to match your process conditions, corrosion requirements, and applicable standards.",
@@ -50,7 +52,7 @@ export default function FaqSection() {
 
   return (
     <section className="bg-[#f4f5f7] py-16 lg:py-20">
-      <div className="mx-auto max-w-[1100px] px-2 lg:px-4">
+      <div className="mx-auto max-w-275 px-2 lg:px-4">
         {/* Heading */}
         <div className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#ee9d54]">
@@ -60,8 +62,7 @@ export default function FaqSection() {
             Frequently Asked Questions
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-600 md:text-base">
-            Answers to some of the common questions about our capabilities,
-            products and way of working with National Engineers.
+           Answers to common questions about capabilities, products, and the engineering approach at National Engineers.
           </p>
         </div>
 
@@ -84,15 +85,22 @@ export default function FaqSection() {
                     {item.question}
                   </span>
                   <ChevronDown
-                    className={`h-5 w-5 text-gray-500 transition-transform ${
-                      isOpen ? "rotate-180 text-[#ee9d54]" : ""
-                    }`}
+                    className={`h-5 w-5 text-gray-500 transition-transform ${isOpen ? "rotate-180 text-[#ee9d54]" : ""
+                      }`}
                   />
                 </button>
 
                 {isOpen && (
                   <div className="border-t border-gray-200 px-5 py-4 text-sm leading-relaxed text-gray-600">
-                    {item.answer}
+                    {Array.isArray(item.answer) ? (
+                      <div className="space-y-2">
+                        {item.answer.map((line, i) => (
+                          <p key={i}>{line}</p>
+                        ))}
+                      </div>
+                    ) : (
+                      <p>{item.answer}</p>
+                    )}
                   </div>
                 )}
               </div>

@@ -210,7 +210,7 @@ export default function ContactPage() {
                         </h2>
                         <p className="mt-3 max-w-xl text-sm text-gray-600 md:text-base">
                             For accurate quoting, share equipment type, material of construction, capacity,
-                            operating conditions and any drawings/specifications available.
+                            operating conditions and any drawings or specifications available.
                         </p>
 
                         <div className="mt-7 grid gap-4 sm:grid-cols-2">
@@ -224,7 +224,7 @@ export default function ContactPage() {
                                 <ul className="mt-3 space-y-2 text-sm text-gray-600">
                                     <li>• In MOC (SS, MS, Aluminum, etc.)</li>
                                     <li>• Equipment Type & Size</li>
-                                    <li>• Pressure/Temperature</li>
+                                    <li>• Pressure & Temperature</li>
                                     <li>• Delivery Location & Timeline</li>
                                 </ul>
                             </div>

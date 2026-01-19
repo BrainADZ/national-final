@@ -31,7 +31,7 @@ export default function HowWeWorkSection() {
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
+  const [organization, setorganization] = useState("");
   const [message, setMessage] = useState("");
 
   const [loading, setLoading] = useState(false);
@@ -45,12 +45,12 @@ export default function HowWeWorkSection() {
     const payload = {
       fullName: fullName.trim(),
       email: email.trim(),
-      subject: subject.trim(),
+      organization: organization.trim(),
       message: message.trim(),
     };
 
     // Basic client validation (backend bhi validate karega)
-    if (!payload.fullName || !payload.email || !payload.subject || !payload.message) {
+    if (!payload.fullName || !payload.email || !payload.organization || !payload.message) {
       setErrorMsg("Please fill all fields.");
       return;
     }
@@ -76,7 +76,7 @@ export default function HowWeWorkSection() {
       // reset fields
       setFullName("");
       setEmail("");
-      setSubject("");
+      setorganization("");
       setMessage("");
     } catch {
       setErrorMsg("Server not reachable. Please try again later.");
@@ -101,7 +101,7 @@ export default function HowWeWorkSection() {
         {/* LEFT SIDE CONTENT */}
         <div className="flex-1 lg:pr-10">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-orange-400">
-             NESF
+             From Concept to Commissioning
           </p>
 
           <h2 className="mt-2 text-3xl font-bold text-white lg:text-5xl">
@@ -127,7 +127,7 @@ export default function HowWeWorkSection() {
         {/* title + description */}
         <div className="min-w-0 flex-1">
           <div className="flex flex-col gap-1 md:flex-row md:items-center md:gap-6">
-            <h3 className="md:w-[260px] md:shrink-0 text-base font-semibold text-white md:text-lg">
+            <h3 className="md:w-65 md:shrink-0 text-base font-semibold text-white md:text-lg">
               {step.title}
             </h3>
 
@@ -178,9 +178,9 @@ export default function HowWeWorkSection() {
 
                 <input
                   type="text"
-                  placeholder="Remark"
-                  value={subject}
-                  onChange={(e) => setSubject(e.target.value)}
+                  placeholder="Company & Organizatoion"
+                  value={organization}
+                  onChange={(e) => setorganization(e.target.value)}
                   className="w-full rounded border border-gray-300 px-4 py-2.5 text-sm placeholder:text-gray-500 outline-none transition focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
                 />
 
