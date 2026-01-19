@@ -146,9 +146,7 @@ export default function ProductsSection() {
                         borderRadius: "12px 12px 0 0"
                       }}
                       >
-                        {/* <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90">
-                          {product.tag}
-                        </p> */}
+                        
                         <h3 className="mt-1 text-white font-bold text-[18px]">
                           {product.title}
                         </h3>
