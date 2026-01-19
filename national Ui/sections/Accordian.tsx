@@ -24,7 +24,7 @@ const FAQS: FaqItem[] = [
   {
     question: "Which industries do you actively serve?",
     answer:
-      "We support a wide range of industries including Oil & Gas, Chemicals & Petrochemicals, Fertilizers, Effluent Treatment, Steel, Shipbuilding, and Man-made Fibers, delivering dependable equipment built for demanding industrial service.",
+      "We support a wide range of industries including oil and gas, chemicals and petrochemicals, fertilizers, effluent treatment, steel, shipbuilding, and man-made Fibers, delivering dependable equipment built for demanding industrial service.",
   },
   {
     question: "What is your typical project turnaround time?",
@@ -39,7 +39,7 @@ const FAQS: FaqItem[] = [
   {
     question: "What materials do you work with?",
     answer:
-      "We fabricate in Mild Steel, Stainless Steel, and other speciality or exotic metals as required by the application which is selected to match your process conditions, corrosion requirements, and applicable standards.",
+      "We fabricate in mild steel, stainless steel, and other speciality or exotic metals as required by the application which is selected to match your process conditions, corrosion requirements, and applicable standards.",
   },
 ];
 
