@@ -63,7 +63,7 @@ import Link from "next/link";
             <li><Link className="hover:text-[#ee9d54] transition" href="/">Home</Link></li>
             <li><Link className="hover:text-[#ee9d54] transition" href="/about">About Us</Link></li>
             <li><Link className="hover:text-[#ee9d54] transition" href="#">Products</Link></li>
-            <li><Link className="hover:text-[#ee9d54] transition" href="/careers">Carrers</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/careers">Careers</Link></li>
             <li><Link className="hover:text-[#ee9d54] transition" href="/Gallery">Gallery</Link></li>
             <li><Link className="hover:text-[#ee9d54] transition" href="/contact">Contact</Link></li>
           </ul>

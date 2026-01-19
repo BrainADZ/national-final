@@ -178,7 +178,7 @@ export default function HowWeWorkSection() {
 
                 <input
                   type="text"
-                  placeholder="Company & Organizatoion"
+                  placeholder="Company or Organization"
                   value={organization}
                   onChange={(e) => setorganization(e.target.value)}
                   className="w-full rounded border border-gray-300 px-4 py-2.5 text-sm placeholder:text-gray-500 outline-none transition focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"

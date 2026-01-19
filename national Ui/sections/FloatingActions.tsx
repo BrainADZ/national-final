@@ -43,7 +43,8 @@ export default function FloatingActions({
   const normalizeUrl = (url?: string) => {
     if (!url) return "";
     const trimmed = url.trim();
-    if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) return trimmed;
+    if (trimmed.startsWith("http://") || trimmed.startsWith("https://"))
+      return trimmed;
     return `https://${trimmed}`;
   };
 
@@ -308,23 +309,28 @@ export default function FloatingActions({
 
       {/* MODAL FORM */}
       {open && (
-        <div className="fixed inset-0 z-80">
+        <div className="fixed inset-0 z-[9999] overflow-y-auto">
           {/* overlay */}
           <button
             type="button"
             aria-label="Close enquiry form"
             onClick={() => setOpen(false)}
-            className="absolute inset-0 bg-black/55"
+            className="fixed inset-0 bg-black/55"
           />
 
           {/* modal */}
           <div
-            className="absolute left-1/2 top-1/2 w-[92vw] max-w-xl -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl bg-white shadow-2xl"
+            className="
+              relative mx-auto my-6 w-[92vw] max-w-xl overflow-hidden rounded-2xl bg-white shadow-2xl
+              md:absolute md:left-1/2 md:top-1/2 md:my-0 md:-translate-x-1/2 md:-translate-y-1/2
+            "
+            style={{ maxHeight: "calc(100vh - 3rem)" }}
             data-aos="zoom-in"
             data-aos-duration="250"
           >
             <div className="h-1.5 w-full bg-[#ee9d54]" />
 
+            {/* Header */}
             <div className="flex items-start justify-between gap-4 px-6 py-5">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ee9d54]">
@@ -347,151 +353,159 @@ export default function FloatingActions({
               </button>
             </div>
 
-            <form onSubmit={handleSubmit} className="px-6 pb-6">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="text-xs font-semibold text-gray-700">
-                    Full Name
-                  </label>
-                  <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
-                    <Building2 className="h-4 w-4 text-gray-400" />
-                    <input
-                      required
-                      type="text"
-                      placeholder="Your name"
-                      value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
-                      className="w-full text-sm outline-none placeholder:text-gray-400"
-                    />
+            {/* Scrollable body (fix for short height screens) */}
+            <div
+              className="px-6 pb-6 overflow-y-auto"
+              style={{ maxHeight: "calc(100vh - 12rem)" }}
+            >
+              <form onSubmit={handleSubmit}>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="text-xs font-semibold text-gray-700">
+                      Full Name
+                    </label>
+                    <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
+                      <Building2 className="h-4 w-4 text-gray-400" />
+                      <input
+                        required
+                        type="text"
+                        placeholder="Your name"
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                        className="w-full text-sm outline-none placeholder:text-gray-400"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-semibold text-gray-700">
+                      Company
+                    </label>
+                    <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
+                      <Building2 className="h-4 w-4 text-gray-400" />
+                      <input
+                        type="text"
+                        placeholder="Company name"
+                        value={company}
+                        onChange={(e) => setCompany(e.target.value)}
+                        className="w-full text-sm outline-none placeholder:text-gray-400"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-semibold text-gray-700">
+                      Phone
+                    </label>
+                    <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
+                      <Phone className="h-4 w-4 text-gray-400" />
+                      <input
+                        required
+                        type="tel"
+                        placeholder="+91 XXXXX XXXXX"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        className="w-full text-sm outline-none placeholder:text-gray-400"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-semibold text-gray-700">
+                      Email
+                    </label>
+                    <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
+                      <Mail className="h-4 w-4 text-gray-400" />
+                      <input
+                        type="email"
+                        placeholder="you@company.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full text-sm outline-none placeholder:text-gray-400"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Attachment */}
+                  <div className="sm:col-span-2">
+                    <label className="text-xs font-semibold text-gray-700">
+                      Attachment (optional)
+                    </label>
+
+                    <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
+                      <Paperclip className="h-4 w-4 text-gray-400" />
+
+                      <input
+                        type="file"
+                        className="w-full text-sm outline-none file:mr-3 file:rounded-md file:border-0 file:bg-gray-100 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-gray-800 hover:file:bg-gray-200"
+                        accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg,.webp"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0] || null;
+
+                          if (file && file.size > 5 * 1024 * 1024) {
+                            alert("File size should be less than 5MB.");
+                            e.currentTarget.value = "";
+                            setAttachment(null);
+                            return;
+                          }
+
+                          setAttachment(file);
+                        }}
+                      />
+                    </div>
+
+                    {attachment && (
+                      <p className="mt-1 text-xs text-gray-600">
+                        Selected:{" "}
+                        <span className="font-semibold">{attachment.name}</span>
+                      </p>
+                    )}
                   </div>
                 </div>
 
-                <div>
+                <div className="mt-4">
                   <label className="text-xs font-semibold text-gray-700">
-                    Company
+                    Requirement / Message
                   </label>
-                  <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
-                    <Building2 className="h-4 w-4 text-gray-400" />
-                    <input
-                      type="text"
-                      placeholder="Company name"
-                      value={company}
-                      onChange={(e) => setCompany(e.target.value)}
-                      className="w-full text-sm outline-none placeholder:text-gray-400"
-                    />
-                  </div>
+                  <textarea
+                    required
+                    rows={4}
+                    placeholder="Tell us what you need..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="mt-1 w-full resize-none rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none placeholder:text-gray-400 focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
+                  />
                 </div>
 
-                <div>
-                  <label className="text-xs font-semibold text-gray-700">
-                    Phone
-                  </label>
-                  <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
-                    <Phone className="h-4 w-4 text-gray-400" />
-                    <input
-                      required
-                      type="tel"
-                      placeholder="+91 XXXXX XXXXX"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="w-full text-sm outline-none placeholder:text-gray-400"
-                    />
-                  </div>
+                {/* messages */}
+                {errorMsg ? (
+                  <p className="mt-3 text-xs text-red-600">{errorMsg}</p>
+                ) : null}
+                {successMsg ? (
+                  <p className="mt-3 text-xs text-green-600">{successMsg}</p>
+                ) : null}
+
+                <div className="mt-5 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-end">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setOpen(false);
+                      resetForm();
+                    }}
+                    className="rounded-lg border border-gray-200 px-4 py-2.5 text-sm font-semibold text-gray-800 hover:bg-gray-50"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="rounded-lg bg-[#ee9d54] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#ee9d54]"
+                  >
+                    {loading ? "Submitting..." : "Submit Enquiry"}
+                  </button>
                 </div>
-
-                <div>
-                  <label className="text-xs font-semibold text-gray-700">
-                    Email
-                  </label>
-                  <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
-                    <Mail className="h-4 w-4 text-gray-400" />
-                    <input
-                      type="email"
-                      placeholder="you@company.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full text-sm outline-none placeholder:text-gray-400"
-                    />
-                  </div>
-                </div>
-
-                {/* Attachment */}
-                <div className="sm:col-span-2">
-                  <label className="text-xs font-semibold text-gray-700">
-                    Attachment (optional)
-                  </label>
-
-                  <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
-                    <Paperclip className="h-4 w-4 text-gray-400" />
-
-                    <input
-                      type="file"
-                      className="w-full text-sm outline-none file:mr-3 file:rounded-md file:border-0 file:bg-gray-100 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-gray-800 hover:file:bg-gray-200"
-                      accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg,.webp"
-                      onChange={(e) => {
-                        const file = e.target.files?.[0] || null;
-
-                        if (file && file.size > 5 * 1024 * 1024) {
-                          alert("File size should be less than 5MB.");
-                          e.currentTarget.value = "";
-                          setAttachment(null);
-                          return;
-                        }
-
-                        setAttachment(file);
-                      }}
-                    />
-                  </div>
-
-                  {attachment && (
-                    <p className="mt-1 text-xs text-gray-600">
-                      Selected:{" "}
-                      <span className="font-semibold">{attachment.name}</span>
-                    </p>
-                  )}
-                </div>
-              </div>
-
-              <div className="mt-4">
-                <label className="text-xs font-semibold text-gray-700">
-                  Requirement / Message
-                </label>
-                <textarea
-                  required
-                  rows={4}
-                  placeholder="Tell us what you need..."
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className="mt-1 w-full resize-none rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none placeholder:text-gray-400 focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
-                />
-              </div>
-
-              {/* messages */}
-              {errorMsg ? <p className="mt-3 text-xs text-red-600">{errorMsg}</p> : null}
-              {successMsg ? (
-                <p className="mt-3 text-xs text-green-600">{successMsg}</p>
-              ) : null}
-
-              <div className="mt-5 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-end">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setOpen(false);
-                    resetForm();
-                  }}
-                  className="rounded-lg border border-gray-200 px-4 py-2.5 text-sm font-semibold text-gray-800 hover:bg-gray-50"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="rounded-lg bg-[#ee9d54] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#ee9d54]"
-                >
-                  {loading ? "Submitting..." : "Submit Enquiry"}
-                </button>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       )}

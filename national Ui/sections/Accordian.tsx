@@ -18,13 +18,13 @@ const FAQS: FaqItem[] = [
     question: "Do you provide custom-designed solutions?",
     answer: [
       "Yes. Most of our work is application-specific.",
-      "We design around your process data, operating conditions, layout constraints, and site requirements, then deliver end-to-end execution from engineering & detailing to fabrication, erection, and commissioning which ensures the final equipment fits your plant and performs reliably.",
+      "We design around your process data, operating conditions, layout constraints, and site requirements, then deliver end-to-end execution from engineering and detailing to fabrication, erection, and commissioning which ensures the final equipment fits your plant and performs reliably.",
     ],
   },
   {
     question: "Which industries do you actively serve?",
     answer:
-      "We support a wide range of industries including oil and gas, chemicals and petrochemicals, fertilizers, effluent treatment, steel, shipbuilding, and man-made Fibers, delivering dependable equipment built for demanding industrial service.",
+      "We support a wide range of industries including oil and gas, chemicals and petrochemicals, fertilizers, effluent treatment, steel, shipbuilding, and man-made fibers, delivering dependable equipment built for demanding industrial service.",
   },
   {
     question: "What is your typical project turnaround time?",
