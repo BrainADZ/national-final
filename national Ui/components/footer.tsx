@@ -10,7 +10,7 @@ import Link from "next/link";
         {/* Company Info */}
         <div>
           <h2 className="text-2xl font-bold text-white tracking-wide">
-            <img src="/logo National.png" alt="" />
+            <img src="/logo National.png" alt="" className="w-10 h-10"/>
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-gray-400 max-w-xs">
             Delivering precision-engineered heat transfer equipment, fabrication
