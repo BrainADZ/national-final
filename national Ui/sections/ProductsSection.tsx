@@ -141,7 +141,11 @@ export default function ProductsSection() {
                         lg:block
                       `}
                     >
-                      <div className="bg-[#EE9D54] px-5 py-4">
+                      <div className="bg-[#EE9D54] px-5 py-4" 
+                      style={{
+                        borderRadius: "12px 12px 0 0"
+                      }}
+                      >
                         {/* <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90">
                           {product.tag}
                         </p> */}
