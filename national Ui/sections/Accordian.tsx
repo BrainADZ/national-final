@@ -12,7 +12,7 @@ const FAQS: FaqItem[] = [
   {
     question: "What kind of equipment do you manufacture?",
     answer:
-      "We manufacture engineered, custom-fabricated steel process equipment which includes pressure vessels, air receivers, heat exchangers, boilers, process piping skids, storage tanks & silos, along with structural steelwork and HVAC ducting.",
+      "We manufacture engineered, custom-fabricated steel process equipment which includes pressure vessels, air receivers, heat exchangers, boilers, process piping skids, storage tanks and silos, along with structural steelwork and HVAC ducting.",
   },
   {
     question: "Do you provide custom-designed solutions?",
