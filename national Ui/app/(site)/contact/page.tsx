@@ -53,7 +53,7 @@ const INFO = [
 const FAQ = [
     {
         q: "What information should I share for an accurate quotation?",
-        a: "Share equipment type, size/capacity, material of construction, operating pressure & temperature, applicable code/standard, and preferred delivery timeline. Drawings/specifications help speed up the process.",
+        a: "Share equipment type, size/capacity, material of construction, operating pressure and temperature, applicable code/standard, and preferred delivery timeline. Drawings/specifications help speed up the process.",
     },
     {
         q: "Do you support custom fabrication and complex engineered equipment?",
