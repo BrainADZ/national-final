@@ -397,14 +397,15 @@ export default function PrivacyPolicyPage() {
                 </p>
 
                 {/* optional CTA pill (same vibe as "VIEW ALL") */}
-                <div className="mt-4">
+                <div className="mt-4 flex flex-wrap gap-2">
                   <a
                     href={`mailto:${POLICY.email}`}
                     className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm hover:border-slate-400"
                   >
                     Contact via Email <span aria-hidden="true">→</span>
                   </a>
-                   <a
+
+                  <a
                     href={`tel:${POLICY.phone.replace(/\s/g, "")}`}
                     className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm hover:border-slate-400"
                   >

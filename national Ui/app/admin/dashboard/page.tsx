@@ -168,7 +168,7 @@ export default function AdminDashboardPage() {
         <QuickCard
           title="Applications"
           desc="View job applicants and download attachments."
-          href="/admin/applications"
+          href="/admin/application"
           icon={<FileText className="h-5 w-5 text-[#ee9d54]" />}
         />
         <QuickCard
