@@ -301,7 +301,7 @@ export default function AdminFeedbackPage() {
                 </p>
               </div>
 
-              <div className="mt-5 flex justify-end gap-2">
+              <div className="mt-5 flex justify-end gap-2 pb-5">
                 {/* Optional: Delete inside modal (same UI style) */}
                 <button
                   type="button"

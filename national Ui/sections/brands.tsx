@@ -14,8 +14,17 @@ const BRAND_LOGOS: BrandLogo[] = [
   { name: "Brand 2", src: "/brands/brand2.png" },
   { name: "Brand 3", src: "/brands/brand3.png" },
   { name: "Brand 4", src: "/brands/brand4.jpeg" },
-  { name: "Brand 5", src: "/images/brands/brand-5.png" },
-  { name: "Brand 6", src: "/images/brands/brand-6.png" },
+  { name: "Brand 5", src: "/brands/brand5.jpeg" },
+  { name: "Brand 6", src: "/brands/brand6.jpeg" },
+  { name: "Brand 6", src: "/brands/brand7.jpeg" },
+  { name: "Brand 6", src: "/brands/brand8.jpeg" },
+  { name: "Brand 6", src: "/brands/brand9.jpeg" },
+  { name: "Brand 6", src: "/brands/brand10.jpeg" },
+  { name: "Brand 6", src: "/brands/brand11.jpeg" },
+  { name: "Brand 6", src: "/brands/brand12.jpeg" },
+  { name: "Brand 6", src: "/brands/brand13.jpeg" },
+  { name: "Brand 6", src: "/brands/brand14.jpeg" },
+  { name: "Brand 6", src: "/brands/brand15.jpeg" },
 ];
 
 export default function BrandLogosCarousel() {

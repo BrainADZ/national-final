@@ -287,13 +287,13 @@ export default function CareersPage() {
                 Be part of a workplace that values growth, discipline, and delivery.
               </h2>
 
-              <p className="mt-4 text-sm leading-relaxed text-gray-600">
+              <p className="mt-4 text-sm leading-relaxed text-gray-600 pr-20">
                 At National Engineers, we focus on practical execution, quality standards, and responsibility. You will work
                 on real customer requirements, learn directly from the field, and grow in a structured environment where
                 timelines and professionalism matter.
               </p>
 
-              <p className="mt-3 text-sm leading-relaxed text-gray-600">
+              <p className="mt-3 text-sm leading-relaxed text-gray-600 pr-10">
                 If you enjoy ownership-driven work, clear communication, and continuous improvement, you will fit in well with our team.
               </p>
 
@@ -560,6 +560,17 @@ export default function CareersPage() {
                 >
                   <MessageCircle className="h-4 w-4 text-gray-400" />
                   WhatsApp: +91 9574511152
+                </Link>
+              </div>
+              <div className="mt-3 space-y-2 text-sm text-gray-600">
+                <Link
+                  href="mailto:hr@nationalengrs.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-gray-900"
+                >
+                  <Mail className="h-4 w-4 text-gray-400" />
+                  Email: hr@nationalengrs.com
                 </Link>
               </div>
               <p className="mt-3 text-xs text-gray-500">Response time may vary depending on openings and profile match.</p>

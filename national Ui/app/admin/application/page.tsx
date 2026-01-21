@@ -10,6 +10,7 @@ import {
   ExternalLink,
   ChevronLeft,
   ChevronRight,
+  Trash2,
 } from "lucide-react";
 
 type ApiApplication = {
@@ -26,7 +27,7 @@ type ApiApplication = {
   noticePeriod?: string;
   message?: string;
 
-  resumeUrl: string;   // e.g. "/uploads/file.pdf"
+  resumeUrl: string; // e.g. "/uploads/file.pdf"
   resumeName: string;
   resumeMime: string;
   resumeSize: number;
@@ -115,7 +116,13 @@ export default function AdminApplicationsPage() {
   const [limit] = useState(20);
   const [total, setTotal] = useState(0);
 
-  const totalPages = useMemo(() => Math.max(1, Math.ceil(total / limit)), [total, limit]);
+  // delete state
+  const [deletingId, setDeletingId] = useState<string | null>(null);
+
+  const totalPages = useMemo(
+    () => Math.max(1, Math.ceil(total / limit)),
+    [total, limit]
+  );
 
   const fetchList = async (p = page) => {
     setLoading(true);
@@ -136,7 +143,10 @@ export default function AdminApplicationsPage() {
       if (to) params.set("to", to);
       if (jobId.trim()) params.set("jobId", jobId.trim());
 
-      const res = await fetch(`${API}/careers/admin?${params.toString()}`, { cache: "no-store" });
+      // NOTE: This is your existing endpoint
+      const res = await fetch(`${API}/careers/admin?${params.toString()}`, {
+        cache: "no-store",
+      });
       const data: ApiListResponse | null = await res.json().catch(() => null);
 
       if (!res.ok) {
@@ -184,7 +194,10 @@ export default function AdminApplicationsPage() {
     if (to) params.set("to", to);
     if (jobId.trim()) params.set("jobId", jobId.trim());
 
-    const res = await fetch(`${API}/applications/admin?${params.toString()}`, { cache: "no-store" });
+    // NOTE: Your original export endpoint (kept as-is)
+    const res = await fetch(`${API}/applications/admin?${params.toString()}`, {
+      cache: "no-store",
+    });
     const data: ApiListResponse | null = await res.json().catch(() => null);
 
     if (!res.ok) return alert((data as any)?.message || "Export failed.");
@@ -205,6 +218,53 @@ export default function AdminApplicationsPage() {
 
     const stamp = new Date().toISOString().slice(0, 10);
     downloadCSV(`applications_${stamp}.csv`, rows);
+  };
+
+  const deleteApplication = async (id: string) => {
+    if (!API) return alert("NEXT_PUBLIC_API_BASE_URL missing.");
+
+    const ok = window.confirm(
+      "Delete this application? This action cannot be undone."
+    );
+    if (!ok) return;
+
+    setDeletingId(id);
+    setErr(null);
+
+    try {
+      // ✅ Backend implement this:
+      // DELETE /api/careers/admin/:id
+      // (If you prefer /applications/admin/:id then change the path below.)
+      const res = await fetch(`${API}/careers/admin/${id}`, {
+        method: "DELETE",
+        cache: "no-store",
+      });
+
+      const data = await res.json().catch(() => null);
+
+      if (!res.ok) {
+        setErr((data as any)?.message || "Failed to delete application.");
+        return;
+      }
+
+      // Optimistic UI update
+      setItems((prev) => prev.filter((x) => x._id !== id));
+      setTotal((t) => Math.max(0, t - 1));
+
+      // If the current page becomes empty after deletion, go back one page and refetch
+      setTimeout(() => {
+        setItems((prev) => {
+          if (prev.length === 0 && page > 1) {
+            setPage((p) => Math.max(1, p - 1));
+          }
+          return prev;
+        });
+      }, 0);
+    } catch {
+      setErr("Server not reachable.");
+    } finally {
+      setDeletingId(null);
+    }
   };
 
   return (
@@ -254,7 +314,9 @@ export default function AdminApplicationsPage() {
             </div>
 
             <div>
-              <label className="text-xs font-semibold text-gray-700">From date</label>
+              <label className="text-xs font-semibold text-gray-700">
+                From date
+              </label>
               <div className="mt-1 flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-3 py-3 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
                 <Calendar className="h-4 w-4 text-gray-400" />
                 <input
@@ -280,7 +342,9 @@ export default function AdminApplicationsPage() {
             </div>
 
             <div className="lg:col-span-2">
-              <label className="text-xs font-semibold text-gray-700">JobId (optional)</label>
+              <label className="text-xs font-semibold text-gray-700">
+                JobId (optional)
+              </label>
               <input
                 value={jobId}
                 onChange={(e) => setJobId(e.target.value)}
@@ -329,7 +393,9 @@ export default function AdminApplicationsPage() {
             ) : (
               <div className="space-y-4">
                 {items.map((a) => {
-                  const resumeLink = a.resumeUrl ? `${UPLOADS_BASE}${a.resumeUrl}` : "#";
+                  const resumeLink = a.resumeUrl
+                    ? `${UPLOADS_BASE}${a.resumeUrl}`
+                    : "#";
 
                   return (
                     <div
@@ -338,16 +404,38 @@ export default function AdminApplicationsPage() {
                     >
                       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                         <div>
-                          <p className="text-sm font-extrabold text-gray-900">{a.fullName}</p>
-                          <p className="mt-1 text-xs font-semibold text-gray-500">{a.jobTitle}</p>
+                          <p className="text-sm font-extrabold text-gray-900">
+                            {a.fullName}
+                          </p>
+                          <p className="mt-1 text-xs font-semibold text-gray-500">
+                            {a.jobTitle}
+                          </p>
 
                           <div className="mt-3 grid gap-2 text-sm text-gray-700 sm:grid-cols-2">
-                            <div><span className="font-semibold">Email:</span> {a.email}</div>
-                            <div><span className="font-semibold">Phone:</span> {a.phone}</div>
-                            <div><span className="font-semibold">Experience:</span> {a.experience || "-"}</div>
-                            <div><span className="font-semibold">Location:</span> {a.location || "-"}</div>
-                            <div><span className="font-semibold">Notice:</span> {a.noticePeriod || "-"}</div>
-                            <div><span className="font-semibold">Date:</span> {formatDateTime(a.createdAt)}</div>
+                            <div>
+                              <span className="font-semibold">Email:</span>{" "}
+                              {a.email}
+                            </div>
+                            <div>
+                              <span className="font-semibold">Phone:</span>{" "}
+                              {a.phone}
+                            </div>
+                            <div>
+                              <span className="font-semibold">Experience:</span>{" "}
+                              {a.experience || "-"}
+                            </div>
+                            <div>
+                              <span className="font-semibold">Location:</span>{" "}
+                              {a.location || "-"}
+                            </div>
+                            <div>
+                              <span className="font-semibold">Notice:</span>{" "}
+                              {a.noticePeriod || "-"}
+                            </div>
+                            <div>
+                              <span className="font-semibold">Date:</span>{" "}
+                              {formatDateTime(a.createdAt)}
+                            </div>
                           </div>
 
                           {a.message && (
@@ -381,6 +469,16 @@ export default function AdminApplicationsPage() {
                             <Download className="mr-2 h-4 w-4 text-[#ee9d54]" />
                             Download
                           </a>
+
+                          {/* ✅ Delete button */}
+                          <button
+                            onClick={() => deleteApplication(a._id)}
+                            disabled={deletingId === a._id}
+                            className="inline-flex items-center justify-center rounded-xl border border-red-200 bg-white px-4 py-2.5 text-sm font-semibold text-red-700 hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-60"
+                          >
+                            <Trash2 className="mr-2 h-4 w-4" />
+                            {deletingId === a._id ? "Deleting..." : "Delete"}
+                          </button>
 
                           <p className="text-xs text-gray-500">
                             {a.resumeName} • {formatBytes(a.resumeSize)}
@@ -421,8 +519,6 @@ export default function AdminApplicationsPage() {
             </div>
           </div>
         </div>
-
-        
       </div>
     </div>
   );

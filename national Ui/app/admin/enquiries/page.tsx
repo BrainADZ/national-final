@@ -534,7 +534,7 @@ export default function AdminEnquiriesPage() {
                 </p>
               </div>
 
-              <div className="mt-5 flex justify-end gap-2">
+              <div className="mt-5 flex justify-end gap-2 pb-5">
                 {/* Optional: Delete inside modal (minimal) */}
                 <button
                   type="button"
