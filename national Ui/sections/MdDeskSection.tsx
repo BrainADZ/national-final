@@ -27,7 +27,7 @@ export default function MdDeskSection() {
               <div className="overflow-hidden rounded-2xl border border-gray-200 bg-gray-100">
                 <div className="h-90 w-full">
                   <img
-                    src="/images/md-portrait.jpg"
+                    src="/MD.jpg"
                     alt="Mustafa Patrawala - Managing Director"
                     className="h-full w-full object-cover"
                   />
