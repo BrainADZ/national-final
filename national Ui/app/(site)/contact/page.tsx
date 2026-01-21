@@ -69,7 +69,7 @@ export default function ContactPage() {
     return (
         <main className="bg-white  overflow-hidden">
             {/* HERO */}
-            <section className="relative px-2 md"
+            <section className="relative px-4 md"
                 data-aos="fade-left"
                 data-aos-delay="100"
             >
@@ -146,7 +146,7 @@ export default function ContactPage() {
             </section>
 
             {/* INFO GRID */}
-            <section className="bg-white px-2 md:px-6 py-14 lg:py-16"
+            <section className="bg-white px-4 md:px-6 py-14 lg:py-16"
                 data-aos="fade-right"
                 data-aos-delay="100"
             >
@@ -193,7 +193,7 @@ export default function ContactPage() {
             </section>
 
             {/* FORM + SIDE HELP */}
-            <section id="enquiry" className="bg-[#f7f8fa] px-2 md:px-6 py-16 lg:py-20"
+            <section id="enquiry" className="bg-[#f7f8fa] px-4 md:px-6 py-16 lg:py-20"
 
             >
                 <div className="mx-auto grid max-w-425 gap-10  lg:grid-cols-2 lg:gap-12 lg:px-0">
@@ -301,7 +301,7 @@ export default function ContactPage() {
 
             {/* MAP */}
             <section id="location" className="bg-white py-16 lg:py-20">
-                <div className="mx-auto max-w-425 px-6 lg:px-2">
+                <div className="mx-auto max-w-425 px-6 lg:px-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#ee9d54]">
                         Location
                     </p>

@@ -5,7 +5,7 @@ export default function MissionVisionSection() {
         <section className="bg-white py-6 lg:py-8">
             <div className="mx-auto max-w-425 pl-6 lg:pl-4 pr-5 md:pr-15">
                 {/* TOP CONTENT */}
-                <div data-aos="fade-up">
+                <div data-aos="fade-up" className="text-justify">
                     <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#ee9d54]">
                         Company Profile
                     </p>
@@ -56,7 +56,7 @@ export default function MissionVisionSection() {
 
                 {/* QUALITY POLICY */}
                 <div
-                    className="mt-12 grid items-center gap-6 md:grid-cols-[160px_1fr]"
+                    className="mt-12 grid items-center gap-6 md:grid-cols-[160px_1fr] text-justify"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >
@@ -91,7 +91,7 @@ export default function MissionVisionSection() {
 
                 {/* MISSION */}
                 <div
-                    className="mt-12 grid items-center gap-6 md:grid-cols-[160px_1fr]"
+                    className="mt-12 grid items-center gap-6 md:grid-cols-[160px_1fr] text-justify"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >

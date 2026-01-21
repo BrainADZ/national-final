@@ -14,7 +14,7 @@ type Props = {
 
 export default function FloatingActions({
   whatsappNumber = "919574011132",
-  whatsappMessage = "Hi National Engineers, I’d like to enquire about your products/services.",
+  whatsappMessage = "Hi National Engineers and Steel Fabricators, I am interested in your services. Please share more details.",
   linkedinUrl = "https://www.linkedin.com/company/national-engineers-steel-fabricators/",
 }: Props) {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;

@@ -74,7 +74,7 @@ export default function MdDeskSection() {
               </div>
 
               {/* body */}
-              <div className="space-y-5 text-[15px] leading-relaxed text-gray-700">
+              <div className="space-y-5 text-[15px] leading-relaxed text-gray-700 text-justify">
                 <p className="font-medium text-gray-900">Dear Friends,</p>
 
                 <p>

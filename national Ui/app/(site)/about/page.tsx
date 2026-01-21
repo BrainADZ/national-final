@@ -13,7 +13,7 @@ export default function AboutHero({
     title = "Engineering Excellence at NESF",
     breadcrumbCurrent = "About NESF",
     imageUrl =
-    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2400&auto=format&fit=crop",
+    "/about hero.jpg",
 }: Props) {
     return (
         <>
@@ -23,8 +23,9 @@ export default function AboutHero({
                     <img
                         src={imageUrl}
                         alt="Gallery"
-                        className="h-full w-full object-cover"
+                        className="h-full w-full object-cover object-bottom"
                     />
+
                     {/* Dark overlay for readability */}
                     <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/45 to-black/15" />
                     {/* Subtle orange accent overlay */}
@@ -54,7 +55,7 @@ export default function AboutHero({
                             </h1>
 
                             <p className="mt-3 text-sm leading-relaxed text-white/85 md:text-base">
-                               A reflection of over 35 years of engineering excellence, guided by leadership philosophy, core values, and disciplined execution.
+                                A reflection of over 35 years of engineering excellence, guided by leadership philosophy, core values, and disciplined execution.
                             </p>
 
                         </div>
