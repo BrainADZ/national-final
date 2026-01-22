@@ -160,13 +160,11 @@ export default function ProductsPage() {
                         {/* Title block */}
                         <div className="mt-5 max-w-2xl">
                             <h1 className="text-3xl font-bold text-white md:text-4xl">
-                                Industrial Fabrication & Heat Transfer Products
+                                Engineered Industrial Solutions
                             </h1>
 
                             <p className="mt-3 text-sm leading-relaxed text-white/85 md:text-base">
-                                National Engineers & Steel Fabricators delivers application-driven
-                                manufacturing for OEMs and industrial projects—built for safety,
-                                reliability, and long service life.
+                                Application-driven fabrication and heat transfer products, backed by over 35 years of manufacturing excellence.
                             </p>
 
                         </div>
@@ -181,12 +179,10 @@ export default function ProductsPage() {
             <section className="mx-auto max-w-300 px-4 py-10 md:py-12">
                 <div className="rounded-2xl border border-gray-100 bg-gray-50 p-6 md:p-8">
                     <h2 className="text-xl font-extrabold text-gray-900 md:text-2xl">
-                        Built for demanding industrial applications
+                        Built to Endure.
                     </h2>
                     <p className="mt-2 text-sm leading-6 text-gray-600 md:text-base">
-                        From heat exchangers and pressure vessels to structural steelwork and
-                        custom fabrication—our team supports end-to-end manufacturing with
-                        strong quality control and project-specific execution.
+                        From pressure vessels and heat exchangers to structural steelwork and custom fabrication, our products are executed with discipline and continuously improved to deliver consistent quality and long-term performance.
                     </p>
                 </div>
             </section>
@@ -206,29 +202,27 @@ export default function ProductsPage() {
                     {/* Right Content */}
                     <div>
                         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ee9d54]">
-                            About Our Products
+                            Consistent Output
                         </p>
-                        <h3 className="mt-2 text-2xl font-extrabold text-gray-900 md:text-3xl">
-                            Precision Engineering, Consistent Output
+                        <h3 className="mt-2 text-2xl font-extrabold text-gray-900 md:text-3xl pr-20">
+                            Precision Engineering. Consistent Output.
                         </h3>
-                        <p className="mt-3 text-sm leading-6 text-gray-600 md:text-base">
-                            Every product is fabricated with attention to dimensional accuracy,
-                            weld quality, and long-term performance. We support custom sizes,
-                            drawings, and industry-specific requirements based on application.
+                        <p className="mt-3 text-sm leading-6 text-gray-600 md:text-base pr-10">
+                            Every product is executed through disciplined processes, attention to detail, and a focus on long-term performance. Our fabrication supports custom designs, application-specific requirements, and applicable industry standards to ensure consistent quality from manufacture through service life.
                         </p>
 
-                        <ul className="mt-6 grid gap-3 text-sm text-gray-700 sm:grid-cols-2">
+                        <ul className="mt-6 grid gap-3 text-sm text-gray-700 sm:grid-cols-2 pr-10">
                             <li className="rounded-xl border border-gray-100 bg-white px-4 py-3">
-                                <span className="font-semibold">Quality-first</span> processes
+                                <span className="font-semibold">Disciplined quality</span> processes
                             </li>
                             <li className="rounded-xl border border-gray-100 bg-white px-4 py-3">
-                                <span className="font-semibold">Custom</span> fabrication support
+                                <span className="font-semibold">Application-specific</span> fabrication
                             </li>
                             <li className="rounded-xl border border-gray-100 bg-white px-4 py-3">
-                                <span className="font-semibold">Industrial-grade</span> materials
+                                <span className="font-semibold">Certified industrial</span> materials
                             </li>
                             <li className="rounded-xl border border-gray-100 bg-white px-4 py-3">
-                                <span className="font-semibold">Timely</span> project delivery
+                                <span className="font-semibold">Schedule-driven</span> project delivery
                             </li>
                         </ul>
 
@@ -237,7 +231,7 @@ export default function ProductsPage() {
                                 href="/contact"
                                 className="inline-flex items-center justify-center rounded-xl bg-[#ee9d54] px-6 py-3 text-sm font-semibold text-white hover:opacity-95"
                             >
-                                Share Requirement
+                                Discuss Your Requirement
                             </a>
                         </div>
                     </div>
@@ -280,7 +274,7 @@ export default function ProductsPage() {
                                 <h3 className="text-base font-extrabold text-gray-900">
                                     {p.title}
                                 </h3>
-                                <p className="mt-2 text-sm leading-6 text-gray-600">
+                                <p className="mt-2 text-sm leading-6 text-gray-600 pr-2.5">
                                     {p.oneLine}
                                 </p>
 
@@ -304,17 +298,17 @@ export default function ProductsPage() {
                     <div className="flex flex-col gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm md:flex-row md:items-center md:justify-between">
                         <div>
                             <h3 className="text-lg font-extrabold text-gray-900">
-                                Need a custom fabrication or specification?
+                                Custom fabrication support required?
                             </h3>
                             <p className="mt-1 text-sm text-gray-600">
-                                Share your drawing / requirement—our team will get back with the best solution.
+                                Share your drawings or specifications to initiate a technical review with our engineering team.
                             </p>
                         </div>
                         <a
                             href="tel:919574011132"
                             className="inline-flex items-center justify-center rounded-xl bg-[#ee9d54] px-6 py-3 text-sm font-semibold text-white hover:opacity-95"
                         >
-                            Call Now
+                            Share Your Specifications
                         </a>
                     </div>
                 </div>

@@ -23,7 +23,7 @@ export default function MissionVisionSection() {
                     </p>
 
                     <p className="mt-4 text-sm leading-relaxed text-gray-700 md:text-base">
-                        Our disciplined Quality Assurance and Quality Control, qualified welding
+                        Our disciplined Quality Assurance System and Quality Control, qualified welding
                         procedures, and safety-first culture drive reliability and full
                         traceability, while our planning and execution practices support
                         on-time delivery, all in accordance with applicable industry codes

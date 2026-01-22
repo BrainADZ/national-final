@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
- 
+
 
 "use client";
 
@@ -253,9 +253,9 @@ export default function CareersPage() {
             </nav>
 
             <div className="mt-5 max-w-2xl">
-              <h1 className="text-3xl font-bold text-white md:text-4xl">Careers</h1>
+              <h1 className="text-3xl font-bold text-white md:text-4xl">Careers Built to Endure</h1>
               <p className="mt-3 text-sm leading-relaxed text-white/85 md:text-base">
-                Get a glimpse into where you’ll work and what you’ll build—our teams, facilities, products, live projects, and on-ground execution that turn ideas into real-world impact.
+                Purpose-driven roles shaped by disciplined execution, real-world engineering, and long-term growth.
               </p>
             </div>
           </div>
@@ -284,17 +284,17 @@ export default function CareersPage() {
               </p>
 
               <h2 className="mt-4 text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
-                Be part of a workplace that values growth, discipline, and delivery.
+                Build your career through discipline and execution
               </h2>
 
               <p className="mt-4 text-sm leading-relaxed text-gray-600 pr-20">
-                At National Engineers, we focus on practical execution, quality standards, and responsibility. You will work
-                on real customer requirements, learn directly from the field, and grow in a structured environment where
-                timelines and professionalism matter.
+                At National Engineers, careers are built through practical execution, clear accountability, and consistent performance. You will work on real industrial projects, learn directly from the field, and grow in a structured environment where quality, safety, and timelines matter.
+
+
               </p>
 
               <p className="mt-3 text-sm leading-relaxed text-gray-600 pr-10">
-                If you enjoy ownership-driven work, clear communication, and continuous improvement, you will fit in well with our team.
+                If you value ownership, clear communication, and continuous improvement, you will find long-term growth with our teams.
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -309,16 +309,18 @@ export default function CareersPage() {
 
               <div className="mt-8 grid gap-3 sm:grid-cols-3">
                 <div className="rounded-2xl border border-gray-100 bg-white p-4">
-                  <p className="text-xs font-semibold text-gray-500">Environment</p>
-                  <p className="mt-1 text-sm font-bold text-gray-900">Professional</p>
+                  <p className="text-xs font-semibold text-gray-500">
+                    Work Environment
+                  </p>
+                  <p className="mt-1 text-sm font-bold text-gray-900">Structured and Professional</p>
                 </div>
                 <div className="rounded-2xl border border-gray-100 bg-white p-4">
-                  <p className="text-xs font-semibold text-gray-500">Learning</p>
-                  <p className="mt-1 text-sm font-bold text-gray-900">Hands-on</p>
+                  <p className="text-xs font-semibold text-gray-500">Learning Approach</p>
+                  <p className="mt-1 text-sm font-bold text-gray-900">Hands-on and Field-Based</p>
                 </div>
                 <div className="rounded-2xl border border-gray-100 bg-white p-4">
-                  <p className="text-xs font-semibold text-gray-500">Growth</p>
-                  <p className="mt-1 text-sm font-bold text-gray-900">Performance-based</p>
+                  <p className="text-xs font-semibold text-gray-500">Career Growth</p>
+                  <p className="mt-1 text-sm font-bold text-gray-900">Performance-Driven</p>
                 </div>
               </div>
             </div>
@@ -328,18 +330,17 @@ export default function CareersPage() {
 
       {/* WHY WORK WITH US */}
       <section className="mx-auto max-w-425 px-4 py-12">
-        <h2 className="text-2xl font-extrabold text-gray-900">Why work with NESF</h2>
+        <h2 className="text-2xl font-extrabold text-gray-900">Why Build Your Career at NESF</h2>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-600">
-          We operate with a practical, delivery-driven approach. You will work on real requirements, improve professional
-          skills, and grow in a team that values timelines, accuracy, and accountability.
+          We operate with a practical, execution-driven approach. You will work on real industrial requirements, develop hands-on skills, and grow in a team that values discipline, accuracy, accountability, and on-time delivery.
         </p>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { icon: Building2, title: "Professional environment", desc: "Structured work culture with clear reporting." },
-            { icon: GraduationCap, title: "Learning and mentoring", desc: "On-the-job learning with guidance from seniors." },
+            { icon: Building2, title: "Structured Work Environment", desc: "Clear roles, defined responsibilities, and professional reporting systems." },
+            { icon: GraduationCap, title: "Hands-on Learning", desc: "Practical, on-the-job learning with direct guidance from experienced professionals." },
             { icon: Clock, title: "Stable workflow", desc: "Defined processes for sales, service, and operations." },
-            { icon: IndianRupee, title: "Performance rewards", desc: "Incentives and growth based on contribution." },
+            { icon: IndianRupee, title: "Defined Processes", desc: "Structured workflows across engineering, fabrication, and project execution." },
           ].map((item, idx) => (
             <div key={idx} className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
               <item.icon className="h-6 w-6 text-[#ee9d54]" />
@@ -357,7 +358,7 @@ export default function CareersPage() {
             <div>
               <h2 className="text-2xl font-extrabold text-gray-900">Current Openings</h2>
               <p className="mt-2 text-sm text-gray-600">
-                Browse roles and apply. If you don’t find a match, you can still submit your profile.
+              Explore current openings and apply. If no suitable role is available, you may submit a general profile.
               </p>
 
               {jobsError && <p className="mt-2 text-sm font-semibold text-red-600">{jobsError}</p>}
@@ -366,16 +367,16 @@ export default function CareersPage() {
                 <p className="mt-2 text-sm text-gray-600">No openings available right now.</p>
               )}
             </div>
-                    <a
-                      href="#apply"
-                      onClick={() => {
-                        setJobAppliedFor("General Application");
-                        setJobAppliedForId(null);
-                      }}
-                      className="inline-flex w-full items-center justify-center rounded-xl border border-gray-200 bg-white px-5 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50 sm:w-auto"
-                    >
-                      Submit general profile
-                    </a>
+            <a
+              href="#apply"
+              onClick={() => {
+                setJobAppliedFor("General Application");
+                setJobAppliedForId(null);
+              }}
+              className="inline-flex w-full items-center justify-center rounded-xl border border-gray-200 bg-white px-5 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50 sm:w-auto"
+            >
+              Submit General Profile
+            </a>
           </div>
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
@@ -485,7 +486,7 @@ export default function CareersPage() {
 
                       {selectedJob.skillsGoodToHave?.length > 0 && (
                         <>
-                          <p className="mt-6 text-sm font-bold text-gray-900">Good to have</p>
+                          <p className="mt-6 text-sm font-bold text-gray-900">Preferred Qualifications</p>
                           <ul className="mt-3 space-y-2 text-sm text-gray-600">
                             {selectedJob.skillsGoodToHave.map((r, i) => (
                               <li key={i} className="flex gap-2">
@@ -508,7 +509,7 @@ export default function CareersPage() {
                       }}
                       className="inline-flex w-full items-center justify-center rounded-xl bg-[#ee9d54] px-5 py-3 text-sm font-semibold text-white hover:opacity-95 sm:w-auto"
                     >
-                      Apply for this role
+                     Submit Application
                     </a>
 
                   </div>
@@ -527,8 +528,7 @@ export default function CareersPage() {
           <div>
             <h2 className="text-2xl font-extrabold text-gray-900">Apply Now</h2>
             <p className="mt-2 text-sm leading-relaxed text-gray-600">
-              Fill the form and upload your resume. Our HR team will review and contact you if your profile matches our
-              current requirements.
+              Submit your application by completing the form below. Our HR team will review your profile and contact you if it aligns with current openings.
             </p>
 
             <div className="mt-6 rounded-3xl border border-gray-100 bg-white p-6 shadow-sm">
@@ -536,7 +536,7 @@ export default function CareersPage() {
               <ul className="mt-3 space-y-2 text-sm text-gray-600">
                 <li className="flex gap-2">
                   <CheckCircle2 className={bulletIconClass} strokeWidth={2} />
-                  Upload resume in PDF/DOC/DOCX (max 5MB).
+                  Upload your resume in PDF, DOC, or DOCX format (maximum 5 MB).
                 </li>
                 <li className="flex gap-2">
                   <CheckCircle2 className={bulletIconClass} strokeWidth={2} />
@@ -544,13 +544,13 @@ export default function CareersPage() {
                 </li>
                 <li className="flex gap-2">
                   <CheckCircle2 className={bulletIconClass} strokeWidth={2} />
-                  Add a short message about your experience and role interest.
+                  Include a brief note outlining your experience and interest in the role.
                 </li>
               </ul>
             </div>
 
             <div className="mt-6 rounded-3xl border border-gray-100 bg-gray-50 p-6">
-              <p className="text-sm font-bold text-gray-900">HR Contact</p>
+              <p className="text-sm font-bold text-gray-900">HR  Contact Details</p>
               <div className="mt-3 space-y-2 text-sm text-gray-600">
                 <Link
                   href="https://wa.me/919574511152"
@@ -573,7 +573,7 @@ export default function CareersPage() {
                   Email: hr@nationalengrs.com
                 </Link>
               </div>
-              <p className="mt-3 text-xs text-gray-500">Response time may vary depending on openings and profile match.</p>
+              <p className="mt-3 text-xs text-gray-500">Response time may vary based on role availability and profile alignment.</p>
             </div>
           </div>
 
@@ -686,7 +686,7 @@ export default function CareersPage() {
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
                         type="text"
-                        placeholder="e.g., Delhi NCR"
+                        placeholder="e.g.. Delhi NCR"
                         className="w-full text-sm outline-none placeholder:text-gray-400"
                       />
                     </div>
@@ -700,7 +700,7 @@ export default function CareersPage() {
                         value={experience}
                         onChange={(e) => setExperience(e.target.value)}
                         type="text"
-                        placeholder="e.g., 2 years"
+                        placeholder="e.g.. 2 years"
                         className="w-full text-sm outline-none placeholder:text-gray-400"
                       />
                     </div>
@@ -714,7 +714,7 @@ export default function CareersPage() {
                         value={noticePeriod}
                         onChange={(e) => setNoticePeriod(e.target.value)}
                         type="text"
-                        placeholder="e.g., Immediate / 15 days"
+                        placeholder="e.g.. Immediate or 15 days"
                         className="w-full text-sm outline-none placeholder:text-gray-400"
                       />
                     </div>
@@ -722,7 +722,7 @@ export default function CareersPage() {
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-gray-700">Resume (required)</label>
+                  <label className="text-xs font-semibold text-gray-700">Resume (required) Accepted formats: PDF, DOC, DOCX (Max 5 MB)</label>
                   <div className="mt-1 flex items-center gap-3 rounded-xl border border-gray-300 bg-white px-3 py-3 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
                     <Upload className="h-4 w-4 text-gray-400" />
                     <input
@@ -742,6 +742,7 @@ export default function CareersPage() {
                         setResume(file);
                       }}
                     />
+                
                   </div>
                   {resume && (
                     <p className="mt-1 text-xs text-gray-600">
@@ -758,7 +759,7 @@ export default function CareersPage() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       rows={5}
-                      placeholder="Write a short note about your experience and role interest..."
+                      placeholder="Write a short note about your experience and role interest."
                       className="w-full resize-none text-sm outline-none placeholder:text-gray-400"
                     />
                   </div>
