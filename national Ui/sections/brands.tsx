@@ -7,7 +7,7 @@ type BrandLogo = {
   name: string;
   src: string;
   href?: string; // optional: click to open brand page
-};
+}; 
 
 const BRAND_LOGOS: BrandLogo[] = [
   { name: "Brand 1", src: "/brands/brand1.png" },

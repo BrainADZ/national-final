@@ -339,7 +339,7 @@ export default function CareersPage() {
           {[
             { icon: Building2, title: "Structured Work Environment", desc: "Clear roles, defined responsibilities, and professional reporting systems." },
             { icon: GraduationCap, title: "Hands-on Learning", desc: "Practical, on-the-job learning with direct guidance from experienced professionals." },
-            { icon: Clock, title: "Stable workflow", desc: "Defined processes for sales, service, and operations." },
+            { icon: Clock, title: "Stable Workflow", desc: "Defined processes for sales, service, and operations." },
             { icon: IndianRupee, title: "Defined Processes", desc: "Structured workflows across engineering, fabrication, and project execution." },
           ].map((item, idx) => (
             <div key={idx} className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
@@ -686,21 +686,21 @@ export default function CareersPage() {
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
                         type="text"
-                        placeholder="e.g.. Delhi NCR"
+                        placeholder="e.g. Delhi NCR"
                         className="w-full text-sm outline-none placeholder:text-gray-400"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="text-xs font-semibold text-gray-700">Experience</label>
+                    <label className="text-xs font-semibold text-gray-700">Total Experience</label>
                     <div className="mt-1 flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-3 py-3 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
                       <Briefcase className="h-4 w-4 text-gray-400" />
                       <input
                         value={experience}
                         onChange={(e) => setExperience(e.target.value)}
                         type="text"
-                        placeholder="e.g.. 2 years"
+                        placeholder="e.g. 2 years"
                         className="w-full text-sm outline-none placeholder:text-gray-400"
                       />
                     </div>
@@ -714,7 +714,7 @@ export default function CareersPage() {
                         value={noticePeriod}
                         onChange={(e) => setNoticePeriod(e.target.value)}
                         type="text"
-                        placeholder="e.g.. Immediate or 15 days"
+                        placeholder="e.g. Immediate or 15 days"
                         className="w-full text-sm outline-none placeholder:text-gray-400"
                       />
                     </div>
@@ -722,13 +722,14 @@ export default function CareersPage() {
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-gray-700">Resume (required) Accepted formats: PDF, DOC, DOCX (Max 5 MB)</label>
+                  <label className="text-xs font-semibold text-gray-700">Resume (required) <br /> Accepted formats: PDF, DOC, DOCX (Max 5 MB)</label>
                   <div className="mt-1 flex items-center gap-3 rounded-xl border border-gray-300 bg-white px-3 py-3 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
                     <Upload className="h-4 w-4 text-gray-400" />
                     <input
                       required
                       ref={resumeInputRef}
                       type="file"
+                      
                       accept=".pdf,.doc,.docx"
                       className="w-full text-sm outline-none file:mr-3 file:rounded-md file:border-0 file:bg-gray-100 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-gray-800 hover:file:bg-gray-200"
                       onChange={(e) => {

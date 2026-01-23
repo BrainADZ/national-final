@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const INFO = [
     {
         title: "Head Office",
-        lines: ["National Engineers & Steel Fabricators (NESF)", "Surat, Gujarat, India"],
+        lines: ["National Engineers & Steel Fabricators (NESF)"," Surat, Gujarat, India"],
         icon: Building2,
     },
     {
@@ -45,7 +45,7 @@ const INFO = [
     },
     {
         title: "Location",
-        lines: ["Plot No. 1022, Cross Road No. 87, Sachin GIDC, Surat - 394230"],
+        lines: ["Plot No. 1022, Cross Road No. 87, Sachin G.I.D.C., Surat - 394230"],
         icon: MapPin,
     },
 ];
@@ -180,7 +180,7 @@ export default function ContactPage() {
                                         <h3 className="text-sm font-bold text-gray-900">{item.title}</h3>
                                     </div>
 
-                                    <div className="mt-3 space-y-1 text-sm text-gray-600">
+                                    <div className="mt-3 space-y-1 text-sm text-gray-600 pr-10">
                                         {item.lines.map((l) => (
                                             <p key={l}>{l}</p>
                                         ))}

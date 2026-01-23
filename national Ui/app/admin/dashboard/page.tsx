@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import Link from "next/link";
@@ -168,7 +169,7 @@ export default function AdminDashboardPage() {
         <QuickCard
           title="Applications"
           desc="View job applicants and download attachments."
-          href="/admin/application"
+          href="/admin/application" 
           icon={<FileText className="h-5 w-5 text-[#ee9d54]" />}
         />
         <QuickCard
