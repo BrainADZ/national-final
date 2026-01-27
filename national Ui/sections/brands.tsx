@@ -1,13 +1,13 @@
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type BrandLogo = {
   name: string;
   src: string;
   href?: string; // optional: click to open brand page
-}; 
+};
 
 const BRAND_LOGOS: BrandLogo[] = [
   { name: "Brand 1", src: "/brands/brand1.png" },
@@ -27,12 +27,95 @@ const BRAND_LOGOS: BrandLogo[] = [
   { name: "Brand 15", src: "/brands/brand15.jpeg" },
 ];
 
+/**
+ * Reads a public manifest and converts it into BrandLogo[]
+ *
+ * Supported manifest formats:
+ * 1) ["logo1.png", "logo2.jpg"]
+ * 2) [{ "name": "MOSIL", "src": "mosil.png", "href": "https://..." }]
+ *
+ * Place it at: /public/brands/manifest.json
+ */
+async function loadBrandsFromPublicManifest(
+  manifestUrl = "/brands/manifest.json"
+): Promise<BrandLogo[] | null> {
+  try {
+    const res = await fetch(`${manifestUrl}?v=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) return null;
+
+    const data = await res.json();
+
+    // Format 1: array of strings (filenames)
+    if (Array.isArray(data) && data.length > 0 && typeof data[0] === "string") {
+      const files = data as string[];
+
+      const cleaned = files
+        .filter(Boolean)
+        .filter((f) => /\.(png|jpe?g|webp|svg)$/i.test(f));
+
+      return cleaned.map((file) => {
+        const base = file.split("/").pop() || file;
+        const name = base.replace(/\.[^/.]+$/, "").replace(/[-_]+/g, " ").trim();
+        return {
+          name: name || base,
+          src: file.startsWith("/") ? file : `/brands/${file}`,
+        };
+      });
+    }
+
+    // Format 2: array of objects
+    if (Array.isArray(data) && data.length > 0 && typeof data[0] === "object") {
+      const list = data as Array<Partial<BrandLogo> & { src?: string }>;
+      const normalized: BrandLogo[] = list
+        .filter((x) => !!x?.src)
+        .map((x) => {
+          const rawSrc = String(x.src);
+          const src = rawSrc.startsWith("/") ? rawSrc : `/brands/${rawSrc}`;
+          const name =
+            (x.name && String(x.name).trim()) ||
+            (rawSrc.split("/").pop() || rawSrc).replace(/\.[^/.]+$/, "").replace(/[-_]+/g, " ").trim() ||
+            "Brand";
+
+          return {
+            name,
+            src,
+            href: x.href ? String(x.href) : undefined,
+          };
+        });
+
+      return normalized.length ? normalized : null;
+    }
+
+    return null;
+  } catch {
+    return null;
+  }
+}
+
 export default function BrandLogosCarousel() {
+  const [logos, setLogos] = useState<BrandLogo[]>(BRAND_LOGOS);
+
+  // Auto-load from /public/brands/manifest.json (if present)
+  useEffect(() => {
+    let alive = true;
+
+    (async () => {
+      const fromManifest = await loadBrandsFromPublicManifest("/brands/manifest.json");
+      if (alive && fromManifest && fromManifest.length) {
+        setLogos(fromManifest);
+      }
+    })();
+
+    return () => {
+      alive = false;
+    };
+  }, []);
+
   // Duplicate array for seamless loop
-  const track = useMemo(() => [...BRAND_LOGOS, ...BRAND_LOGOS], []);
+  const track = useMemo(() => [...logos, ...logos], [logos]);
 
   // If you have very few logos, this prevents weird spacing
-  const hasEnough = BRAND_LOGOS.length >= 6;
+  const hasEnough = logos.length >= 6;
 
   return (
     <section className="bg-white py-14">
@@ -50,8 +133,6 @@ export default function BrandLogosCarousel() {
               A snapshot of brands and partners associated with NESF across projects and sectors.
             </p>
           </div>
-
-          
         </div>
 
         {/* Carousel */}
@@ -84,6 +165,10 @@ export default function BrandLogosCarousel() {
                         alt={logo.name}
                         className="max-h-16 w-auto max-w-35 object-contain opacity-90 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
                         loading="lazy"
+                        onError={(e) => {
+                          // if any image missing/broken, hide it gracefully
+                          (e.currentTarget as HTMLImageElement).style.display = "none";
+                        }}
                       />
                     </div>
                   );
@@ -107,11 +192,6 @@ export default function BrandLogosCarousel() {
                 })}
               </div>
             </div>
-
-            {/* small note */}
-            {/* <p className="mt-5 text-center text-xs text-gray-500">
-              Hover to pause. Logos are shown for representation purposes.
-            </p> */}
           </div>
         </div>
       </div>

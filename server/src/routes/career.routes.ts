@@ -14,3 +14,4 @@ router.get("/admin", /* requireAdmin, */ listApplicationsAdmin);
 router.delete("/admin/:id", deleteApplicationAdmin);
 
 export default router;
+
