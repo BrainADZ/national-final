@@ -25,6 +25,7 @@ const BRAND_LOGOS: BrandLogo[] = [
   { name: "Brand 13", src: "/brands/brand13.jpeg" },
   { name: "Brand 14", src: "/brands/brand14.jpeg" },
   { name: "Brand 15", src: "/brands/brand15.jpeg" },
+  { name: "Brand 15", src: "/brands/brand16.png" },
 ];
 
 /**

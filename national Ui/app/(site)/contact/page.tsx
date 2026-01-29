@@ -222,7 +222,7 @@ export default function ContactPage() {
                                     <p className="text-sm font-bold text-gray-900">What to include</p>
                                 </div>
                                 <ul className="mt-3 space-y-2 text-sm text-gray-600">
-                                    <li>• In MOC (SS, MS, Aluminum, etc.)</li>
+                                    <li>• MOC (SS, MS, Aluminum, etc.)</li>
                                     <li>• Equipment Type and Size</li>
                                     <li>• Pressure and Temperature</li>
                                     <li>• Delivery Location and Timeline</li>
