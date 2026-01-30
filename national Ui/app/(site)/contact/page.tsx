@@ -180,7 +180,7 @@ export default function ContactPage() {
                                         <h3 className="text-sm font-bold text-gray-900">{item.title}</h3>
                                     </div>
 
-                                    <div className="mt-3 space-y-1 text-sm text-gray-600 pr-10">
+                                    <div className="mt-3 space-y-1 text-sm text-gray-600 pr-4">
                                         {item.lines.map((l) => (
                                             <p key={l}>{l}</p>
                                         ))}

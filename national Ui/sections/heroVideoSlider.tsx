@@ -24,7 +24,7 @@ export default function HeroVideoSection() {
       >
         {/* If you have webm, keep it first */}
         {/* <source src="/videos/hero.webm" type="video/webm" /> */}
-        <source src="/National Engineers Reel.mp4" type="video/mp4" />
+        <source src="/National Engineers Reel.webm" type="video/webm" />
       </video>
 
       {/* OVERLAYS */}

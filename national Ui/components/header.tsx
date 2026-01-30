@@ -64,19 +64,17 @@ export default function Navbar() {
 
   const logo = useMemo(
     () => (
-      <Link href="/" className="flex items-center gap-3 min-w-0">
-        {/* FIX: prevent shrinking + responsive width */}
-        <div className="relative h-12 w-46 xs:w-[155px] sm:h-14 sm:w-59 shrink-0">
-          <Image
-            src="/logo National.png"
-            alt="National Engineers Logo"
-            fill
-            priority
-            className="object-contain"
-            sizes="180px"
-          />
-        </div>
-      </Link>
+<Link href="/" className="flex items-center gap-3 min-w-0">
+  {/* FIX: prevent shrinking + responsive width */}
+  <div className="relative h-12 w-46 xs:w-[155px] sm:h-14 sm:w-59 shrink-0 bg-white">
+    <img
+      src="/logo National.png"
+      alt="National Engineers Logo"
+      className="object-contain w-full h-full px-3"
+    />
+  </div>
+</Link>
+
     ),
     []
   );

@@ -211,6 +211,21 @@ const PRODUCTS: Product[] = [
     ],
     image: "product/19.jpeg",
   },
+  {
+    title: " Water condensor",
+    oneLine: [
+      "N/A",
+    ],
+    image: "product/25.jpeg",
+  },
+  {
+    title: "Process Equipments",
+    oneLine: [
+      "MOC: SA 516",
+      "Industry: Steel Plant",
+    ],
+    image: "product/23.jpeg",
+  },
 ];
 
 
@@ -282,7 +297,7 @@ export default function ProductsPage() {
           {/* Left Image */}
           <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
             <img
-              src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=70"
+              src="/Pho 0042.jpg"
               alt="Industrial fabrication"
               className="h-65 w-full object-cover md:h-90"
             />
@@ -291,10 +306,10 @@ export default function ProductsPage() {
           {/* Right Content */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ee9d54]">
-              Consistent Output
+              Proven Processes
             </p>
             <h3 className="mt-2 pr-20 text-2xl font-extrabold text-gray-900 md:text-3xl">
-              Precision Engineering. Consistent Output.
+              Precision Engineering. <span className="text-[#ee9d54]">Consistent Output.</span> 
             </h3>
             <p className="mt-3 pr-10 text-sm leading-6 text-gray-600 md:text-base">
               Every product is executed through disciplined processes, attention to detail, and a
@@ -377,7 +392,7 @@ export default function ProductsPage() {
                 <div className="mt-4">
                   <a
                     href="/contact"
-                    className="inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50"
+                    className="inline-flex items-center justify-center rounded-xl border border-[#F98636] bg-[#F98636] px-4 py-2 text-sm font-semibold text-white/90 hover:bg-gray-50 hover:text-[#F98636]"
                   >
                     Enquire Now
                   </a>
