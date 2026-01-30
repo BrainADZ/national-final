@@ -1,17 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
- import { Linkedin, Instagram, Youtube } from "lucide-react";
+import { Linkedin, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
 
- export default function Footer() {
+export default function Footer() {
   return (
     <footer className="bg-[#0c0c0c] text-gray-300 pt-14 pb-8 border-t border-white/10">
-      
+
       <div className="max-w-425 mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
         {/* Company Info */}
         <div>
           <h2 className="text-2xl font-bold text-white tracking-wide">
-            <img src="/logo white.jpg" alt="" className="w-60 h-12"/>
+            <img src="/logo white.jpg" alt="" className="w-60 h-12" />
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-gray-400 max-w-xs">
             Delivering precision-engineered heat transfer equipment, fabrication
@@ -21,38 +21,38 @@ import Link from "next/link";
 
           {/* Social Icons */}
           {/* Social Icons */}
-{/* Social Media */}
-<div className="flex items-center gap-4 mt-6">
-  {/* YouTube */}
-  <Link
-    href="https://youtube.com/@national_engineers?si=AMV0srGlRfVUdmyo"
-    target="_blank"
-    aria-label="YouTube"
-    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition hover:border-[#ee9d54] hover:bg-[#ee9d54]/10 hover:text-[#ee9d54]"
-  >
-    <Youtube className="h-5 w-5" />
-  </Link>
+          {/* Social Media */}
+          <div className="flex items-center gap-4 mt-6">
+            {/* YouTube */}
+            <Link
+              href="https://youtube.com/@national_engineers?si=AMV0srGlRfVUdmyo"
+              target="_blank"
+              aria-label="YouTube"
+              className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition hover:border-[#ee9d54] hover:bg-[#ee9d54]/10 hover:text-[#ee9d54]"
+            >
+              <Youtube className="h-5 w-5" />
+            </Link>
 
-  {/* Instagram */}
-  <Link
-    href="https://www.instagram.com/nationalengrs?igsh=dWNscnFxbmNxa2hz&utm_source=qr"
-    target="_blank"
-    aria-label="Instagram"
-    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition hover:border-[#ee9d54] hover:bg-[#ee9d54]/10 hover:text-[#ee9d54]"
-  >
-    <Instagram className="h-5 w-5" />
-  </Link>
+            {/* Instagram */}
+            <Link
+              href="https://www.instagram.com/nationalengrs?igsh=dWNscnFxbmNxa2hz&utm_source=qr"
+              target="_blank"
+              aria-label="Instagram"
+              className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition hover:border-[#ee9d54] hover:bg-[#ee9d54]/10 hover:text-[#ee9d54]"
+            >
+              <Instagram className="h-5 w-5" />
+            </Link>
 
-  {/* LinkedIn */}
-  <Link
-    href="https://www.linkedin.com/company/national-engineers-steel-fabricators/"
-    target="_blank"
-    aria-label="LinkedIn"
-    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition hover:border-[#ee9d54] hover:bg-[#ee9d54]/10 hover:text-[#ee9d54]"
-  >
-    <Linkedin className="h-5 w-5" />
-  </Link>
-</div>
+            {/* LinkedIn */}
+            <Link
+              href="https://www.linkedin.com/company/national-engineers-steel-fabricators/"
+              target="_blank"
+              aria-label="LinkedIn"
+              className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition hover:border-[#ee9d54] hover:bg-[#ee9d54]/10 hover:text-[#ee9d54]"
+            >
+              <Linkedin className="h-5 w-5" />
+            </Link>
+          </div>
 
 
         </div>
@@ -74,11 +74,11 @@ import Link from "next/link";
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Products</h3>
           <ul className="space-y-3 text-sm">
-            <li><Link className="hover:text-[#ee9d54] transition" href="#">Heat Exchangers</Link></li>
-            <li><Link className="hover:text-[#ee9d54] transition" href="#">Pressure Vessels</Link></li>
-            <li><Link className="hover:text-[#ee9d54] transition" href="#">Reactors</Link></li>
-            <li><Link className="hover:text-[#ee9d54] transition" href="#">Columns & Towers</Link></li>
-            <li><Link className="hover:text-[#ee9d54] transition" href="#">Fabrication Services</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/Products">Flakes Hopper</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/Products">Stand Tube</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/Products">Dow Storage Tank</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/Products">Venturi & Scrubber</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/Products">Nitrogen Buffer Tank (50 m³)</Link></li>
           </ul>
         </div>
 
@@ -88,8 +88,8 @@ import Link from "next/link";
 
           <p className="text-sm text-gray-400 leading-relaxed">
             <span className="font-medium text-gray-200">Address:</span><br />
-Plot No. 1022, Cross Road No.87,<br/>
- Sachin GIDC, Surat - 394230
+            Plot No. 1022, Cross Road No.87,<br />
+            Sachin GIDC, Surat - 394230
           </p>
 
           <p className="mt-3 text-sm text-gray-400">

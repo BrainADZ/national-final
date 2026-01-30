@@ -236,7 +236,7 @@ export default function ProductsPage() {
       <section className="relative">
         {/* Background image */}
         <div className="absolute inset-0">
-          <img src="/3.webp" alt="Gallery" className="h-full w-full object-cover" />
+          <img src="/DSCN2685.jpg" alt="Gallery" className="h-full w-full object-cover" />
           {/* Dark overlay for readability */}
           <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/45 to-black/15" />
           {/* Subtle orange accent overlay */}
