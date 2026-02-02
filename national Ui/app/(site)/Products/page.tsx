@@ -214,7 +214,10 @@ const PRODUCTS: Product[] = [
   {
     title: " Water condensor",
     oneLine: [
-      "N/A",
+      "MOC: SS 304L",
+      "Thickness: 8 mm",
+      "Dimension: Ø 700 x 3200",
+      "Weight: 1.5 MT",
     ],
     image: "product/25.jpeg",
   },
@@ -309,7 +312,7 @@ export default function ProductsPage() {
               Proven Processes
             </p>
             <h3 className="mt-2 pr-20 text-2xl font-extrabold text-gray-900 md:text-3xl">
-              Precision Engineering. <span className="text-[#ee9d54]">Consistent Output.</span> 
+              Precision Engineering. <span className="text-[#ee9d54]">Consistent Output.</span>
             </h3>
             <p className="mt-3 pr-10 text-sm leading-6 text-gray-600 md:text-base">
               Every product is executed through disciplined processes, attention to detail, and a
