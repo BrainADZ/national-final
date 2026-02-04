@@ -233,7 +233,7 @@ export default function CareersPage() {
       {/* HERO */}
       <section className="relative">
         <div className="absolute inset-0">
-          <img src="/3.webp" alt="Gallery" className="h-full w-full object-cover" />
+          <img src="/careerBanner.jpg" alt="Gallery" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/45 to-black/15" />
           <div className="absolute inset-0 bg-orange-500/10 mix-blend-multiply" />
         </div>
