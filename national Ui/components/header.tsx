@@ -68,7 +68,7 @@ export default function Navbar() {
   {/* FIX: prevent shrinking + responsive width */}
   <div className="relative h-12 w-46 xs:w-[155px] sm:h-14 sm:w-59 shrink-0 bg-white">
     <img
-      src="/logo National.png"
+      src="/logo222.png"
       alt="National Engineers Logo"
       className="object-contain w-full h-full px-3"
     />

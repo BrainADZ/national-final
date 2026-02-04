@@ -219,7 +219,7 @@ const PRODUCTS: Product[] = [
       "Dimension: Ø 700 x 3200",
       "Weight: 1.5 MT",
     ],
-    image: "product/25.jpeg",
+    image: "product/25.png",
   },
   {
     title: "Process Equipments",
@@ -228,6 +228,16 @@ const PRODUCTS: Product[] = [
       "Industry: Steel Plant",
     ],
     image: "product/23.jpeg",
+  },
+  {
+    title: "Pig Launcher",
+    oneLine: [
+      "MOC: ASTM A-105 & SA-106",
+      "Diameter: 200NB, 160 SCH",
+      "Length: 6700 mm",
+      "Pressure: 160 kg / cm ^ 2 g",
+    ],
+    image: "product/26.jpeg",
   },
 ];
 

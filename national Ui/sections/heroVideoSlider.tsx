@@ -20,7 +20,7 @@ export default function HeroVideoSection() {
         loop
         playsInline
         preload="metadata"
-        poster="/images/hero-poster.jpg"
+
       >
         {/* If you have webm, keep it first */}
         {/* <source src="/videos/hero.webm" type="video/webm" /> */}

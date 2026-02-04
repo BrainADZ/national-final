@@ -39,7 +39,7 @@ export default async function GalleryPage() {
                 {/* Background image */}
                 <div className="absolute inset-0">
                     <img
-                        src="/3.webp"
+                        src="/gallery hero.jpeg"
                         alt="Gallery"
                         className="h-full w-full object-cover"
                     />
