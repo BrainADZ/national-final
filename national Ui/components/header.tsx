@@ -4,7 +4,6 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -100,7 +99,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between border-b border-gray-200 px-4 py-4">
           <div className="relative h-16 w-37.5 shrink-0">
             <img
-              src="/logo National.png"
+              src="/logo222.png"
               alt="National Engineers Logo"
             
               className="object-contain"

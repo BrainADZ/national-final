@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Company Info */}
         <div>
           <h2 className="text-2xl font-bold text-white tracking-wide">
-            <img src="/logo white.jpg" alt="" className="w-60 h-12" />
+            <img src="/logo white.png" alt="" className="w-60 h-12" />
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-gray-400 max-w-xs">
             Delivering precision-engineered heat transfer equipment, fabrication
