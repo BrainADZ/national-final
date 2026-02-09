@@ -299,7 +299,7 @@ export default function AdminJobsPage() {
             </p>
             <h2 className="mt-2 text-2xl font-extrabold text-gray-900">Jobs</h2>
             <p className="mt-1 text-sm text-gray-600">
-              Create, edit, enable/disable and publish job listings.
+             Create, Edit, Enable or Disable, and Publish Job Listings. 
             </p>
           </div>
 
@@ -329,7 +329,7 @@ export default function AdminJobsPage() {
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              placeholder="Search by title, location, salary..."
+              placeholder="Search by Title, Location, or Salary."
               className="w-full text-sm outline-none placeholder:text-gray-400"
             />
           </div>
@@ -506,10 +506,10 @@ export default function AdminJobsPage() {
                   {mode === "create" ? "Create Job" : "Edit Job"}
                 </p>
                 <h3 className="mt-2 text-lg font-extrabold text-gray-900">
-                  {mode === "create" ? "Add a new role" : "Update role details"}
+                  {mode === "create" ? "Add a new role" : "Update Role Details"}
                 </h3>
                 <p className="mt-1 text-xs text-gray-500">
-                  Use new lines for bullet points in responsibilities/requirements.
+                 Use new lines for each bullet point in Key Responsibilities, Qualifications & Experience, Requirements, and Good to Have.
                 </p>
               </div>
 
@@ -540,7 +540,7 @@ export default function AdminJobsPage() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="text-xs font-semibold text-gray-700">Short Description *</label>
+                  <label className="text-xs font-semibold text-gray-700">Role Overview *</label>
                   <textarea
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
@@ -576,7 +576,7 @@ export default function AdminJobsPage() {
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-gray-700">Experience Min *</label>
+                  <label className="text-xs font-semibold text-gray-700">Minimum Experience *</label>
                   <input
                     type="number"
                     value={experienceMin}
@@ -588,7 +588,7 @@ export default function AdminJobsPage() {
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-gray-700">Experience Max *</label>
+                  <label className="text-xs font-semibold text-gray-700">Maximum Experience *</label>
                   <input
                     type="number"
                     value={experienceMax}
@@ -611,7 +611,7 @@ export default function AdminJobsPage() {
 
                 <div className="sm:col-span-2">
                   <label className="text-xs font-semibold text-gray-700">
-                    Responsibilities (one per line)
+                   Key Responsibilities
                   </label>
                   <textarea
                     value={responsibilitiesText}
@@ -624,7 +624,7 @@ export default function AdminJobsPage() {
 
                 <div className="sm:col-span-2">
                   <label className="text-xs font-semibold text-gray-700">
-                    Requirements (one per line)
+                    Requirements
                   </label>
                   <textarea
                     value={requirementsText}
@@ -637,7 +637,7 @@ export default function AdminJobsPage() {
 
                 <div className="sm:col-span-2">
                   <label className="text-xs font-semibold text-gray-700">
-                    Good to have (one per line)
+           Good to Have
                   </label>
                   <textarea
                     value={goodToHaveText}
