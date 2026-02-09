@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 
-
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -20,6 +19,7 @@ import {
   ChevronDown,
   ArrowRight,
   MessageCircle,
+  GraduationCap as QualIcon, // ✅ (optional alias if you want different icon usage)
 } from "lucide-react";
 import Link from "next/link";
 
@@ -29,6 +29,9 @@ type ApiJob = {
   description: string;
   type: "full-time" | "part-time" | "internship";
   location: string;
+
+  qualificationAndExperience: string; // ✅ added
+
   experienceMin: number;
   experienceMax: number;
   salaryLabel: string;
@@ -48,6 +51,9 @@ type Job = {
   experience: string;
   salary: string;
   summary: string;
+
+  qualificationAndExperience: string; // ✅ added
+
   responsibilities: string[];
   requirements: string[];
   skillsGoodToHave: string[];
@@ -150,6 +156,9 @@ export default function CareersPage() {
         experience: formatExp(j.experienceMin, j.experienceMax),
         salary: j.salaryLabel || "Not disclosed",
         summary: j.description,
+
+        qualificationAndExperience: j.qualificationAndExperience || "", // ✅ added
+
         responsibilities: j.responsibilities || [],
         requirements: j.requirements || [],
         skillsGoodToHave: j.goodToHave || [],
@@ -182,8 +191,10 @@ export default function CareersPage() {
 
     if (!API) return setFormError("NEXT_PUBLIC_API_BASE_URL is missing.");
     if (!fullName.trim()) return setFormError("Please enter your full name.");
-    if (!phone.trim() || !validatePhone(phone)) return setFormError("Please enter a valid phone number.");
-    if (!email.trim() || !/^\S+@\S+\.\S+$/.test(email)) return setFormError("Please enter a valid email.");
+    if (!phone.trim() || !validatePhone(phone))
+      return setFormError("Please enter a valid phone number.");
+    if (!email.trim() || !/^\S+@\S+\.\S+$/.test(email))
+      return setFormError("Please enter a valid email.");
     if (!resume) return setFormError("Please upload your resume.");
     if (resume.size > 5 * 1024 * 1024) return setFormError("Resume file must be under 5MB.");
 
@@ -255,7 +266,8 @@ export default function CareersPage() {
             <div className="mt-5 max-w-2xl">
               <h1 className="text-3xl font-bold text-white md:text-4xl">Careers Built to Endure</h1>
               <p className="mt-3 text-sm leading-relaxed text-white/85 md:text-base">
-                Purpose-driven roles shaped by disciplined execution, real-world engineering, and long-term growth.
+                Purpose-driven roles shaped by disciplined execution, real-world engineering, and
+                long-term growth.
               </p>
             </div>
           </div>
@@ -358,7 +370,8 @@ export default function CareersPage() {
             <div>
               <h2 className="text-2xl font-extrabold text-gray-900">Current Openings</h2>
               <p className="mt-2 text-sm text-gray-600">
-              Explore current openings and apply. If no suitable role is available, you may submit a general profile.
+                Explore current openings and apply. If no suitable role is available, you may submit
+                a general profile.
               </p>
 
               {jobsError && <p className="mt-2 text-sm font-semibold text-red-600">{jobsError}</p>}
@@ -393,15 +406,19 @@ export default function CareersPage() {
                       setJobAppliedFor(job.title);
                       setJobAppliedForId(job.id);
                     }}
-                    className={`w-full rounded-2xl border p-5 text-left shadow-sm transition ${active ? "border-orange-200 bg-white" : "border-gray-100 bg-white hover:border-gray-200"
-                      }`}
+                    className={`w-full rounded-2xl border p-5 text-left shadow-sm transition ${
+                      active
+                        ? "border-orange-200 bg-white"
+                        : "border-gray-100 bg-white hover:border-gray-200"
+                    }`}
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <p className="text-sm font-extrabold text-gray-900">{job.title}</p>
-                        {/* <p className="mt-1 text-xs font-semibold text-gray-500">{job.department}</p> */}
                       </div>
-                      <ChevronDown className={`h-5 w-5 text-gray-400 transition ${active ? "rotate-180" : ""}`} />
+                      <ChevronDown
+                        className={`h-5 w-5 text-gray-400 transition ${active ? "rotate-180" : ""}`}
+                      />
                     </div>
 
                     <div className="mt-4 grid grid-cols-2 gap-3 text-xs text-gray-600 sm:grid-cols-4">
@@ -422,6 +439,16 @@ export default function CareersPage() {
                         {job.salary}
                       </span>
                     </div>
+
+                    {/* ✅ SHOW QUALIFICATION & EXPERIENCE in list (only when expanded) */}
+                    {active && job.qualificationAndExperience?.trim() ? (
+                      <div className="mt-3 rounded-xl border border-orange-100 bg-orange-50/40 p-4">
+                        <p className="text-xs font-bold text-gray-900">Qualification & Experience</p>
+                        <p className="mt-2 text-sm text-gray-700 whitespace-pre-line">
+                          {job.qualificationAndExperience}
+                        </p>
+                      </div>
+                    ) : null}
 
                     {active && (
                       <div className="mt-4 rounded-xl bg-gray-50 p-4">
@@ -460,6 +487,19 @@ export default function CareersPage() {
                     </div>
                   </div>
 
+                  {/* ✅ SHOW QUALIFICATION & EXPERIENCE in detail */}
+                  {selectedJob.qualificationAndExperience?.trim() ? (
+                    <div className="mt-5 rounded-2xl border border-orange-100 bg-orange-50/40 p-4">
+                      <p className="flex items-center gap-2 text-sm font-bold text-gray-900">
+                        <GraduationCap className="h-4 w-4 text-[#ee9d54]" />
+                        Qualification & Experience
+                      </p>
+                      <p className="mt-2 text-sm text-gray-700 whitespace-pre-line">
+                        {selectedJob.qualificationAndExperience}
+                      </p>
+                    </div>
+                  ) : null}
+
                   <div className="mt-6 grid gap-6 sm:grid-cols-2">
                     <div>
                       <p className="text-sm font-bold text-gray-900">Responsibilities</p>
@@ -486,7 +526,9 @@ export default function CareersPage() {
 
                       {selectedJob.skillsGoodToHave?.length > 0 && (
                         <>
-                          <p className="mt-6 text-sm font-bold text-gray-900">Preferred Qualifications</p>
+                          <p className="mt-6 text-sm font-bold text-gray-900">
+                            Preferred Qualifications
+                          </p>
                           <ul className="mt-3 space-y-2 text-sm text-gray-600">
                             {selectedJob.skillsGoodToHave.map((r, i) => (
                               <li key={i} className="flex gap-2">
@@ -509,9 +551,8 @@ export default function CareersPage() {
                       }}
                       className="inline-flex w-full items-center justify-center rounded-xl bg-[#ee9d54] px-5 py-3 text-sm font-semibold text-white hover:opacity-95 sm:w-auto"
                     >
-                     Submit Application
+                      Submit Application
                     </a>
-
                   </div>
                 </>
               ) : (
@@ -521,6 +562,7 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
+
 
       {/* APPLY FORM */}
       <section id="apply" className="mx-auto max-w-425 px-4 py-12">

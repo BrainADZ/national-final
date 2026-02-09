@@ -7,10 +7,11 @@ export interface IJob extends Document {
   description: string;
   type: JobType;
   location: string;
-  experienceMin: number; // 0
-  experienceMax: number; // N
-  salaryLabel: string; // "As per industry standards" OR "Not disclosed" OR "₹ 3,00,000 - 5,00,000"
+  experienceMin: number;
+  experienceMax: number; 
+  salaryLabel: string; 
   responsibilities: string[];
+  qualificationAndExperience: string;
   requirements: string[];
   goodToHave: string[];
 
@@ -47,6 +48,14 @@ const JobSchema = new Schema<IJob>(
         message: "Responsibilities items must be valid strings.",
       },
     },
+    qualificationAndExperience: {
+  type: String,
+  required: true,
+  trim: true,
+  minlength: 5,
+  maxlength: 200,
+},
+
 
     requirements: {
       type: [String],

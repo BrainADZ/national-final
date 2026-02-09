@@ -12,7 +12,12 @@ export async function listJobs(req: Request, res: Response) {
 
   if (q) {
     const rx = new RegExp(String(q), "i");
-    filter.$or = [{ title: rx }, { description: rx }, { location: rx }];
+    filter.$or = [
+      { title: rx },
+      { description: rx },
+      { location: rx },
+      { qualificationAndExperience: rx }, // ✅ added
+    ];
   }
 
   const jobs = await Job.find(filter).sort({ createdAt: -1 });
@@ -45,6 +50,8 @@ export async function createJob(req: Request, res: Response) {
     type: payload.type,
     location: payload.location,
 
+    qualificationAndExperience: payload.qualificationAndExperience, // ✅ added
+
     experienceMin: Number(payload.experienceMin ?? 0),
     experienceMax: Number(payload.experienceMax ?? 0),
 
@@ -72,6 +79,9 @@ export async function updateJob(req: Request, res: Response) {
   if (payload.description !== undefined) job.description = payload.description;
   if (payload.type !== undefined) job.type = payload.type;
   if (payload.location !== undefined) job.location = payload.location;
+
+  if (payload.qualificationAndExperience !== undefined)
+    job.qualificationAndExperience = payload.qualificationAndExperience; // ✅ added
 
   if (payload.experienceMin !== undefined) job.experienceMin = Number(payload.experienceMin);
   if (payload.experienceMax !== undefined) job.experienceMax = Number(payload.experienceMax);

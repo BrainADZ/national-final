@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
@@ -14,86 +13,58 @@ type Testimonial = {
   image: string;
 };
 
+// ✅ Single placeholder image for all (you will replace with Google icon svg later)
+const DEFAULT_TESTIMONIAL_IMAGE = "/icons/google.svg";
+
+
 const TESTIMONIALS: Testimonial[] = [
   {
-    name: "Rahul Mehta",
-    role: "Head – Projects",
-    company: "Mehta Chemicals Pvt. Ltd.",
+    name: "Bhilosa Industries Pvt. Ltd.",
+    role: "Client Testimonial",
+    company: "Bhilosa Industries Pvt. Ltd.",
     quote:
-      "NESF has been consistently dependable for our capacity expansions. Their team understands process constraints and delivers equipment that performs reliably on site.",
-    image: "/images/testimonials/rahul.jpg",
+      "National Engineers and Steel Fabricators (NESF) has consistently delivered high-quality fabrication solutions in line with our technical specifications and project timelines. Their engineering expertise, attention to detail, and commitment to quality standards make them a reliable partner for industrial fabrication requirements.",
+    image: DEFAULT_TESTIMONIAL_IMAGE,
   },
   {
-    name: "Anita Shah",
-    role: "Sr. Manager – Maintenance",
-    company: "Global Transport Corporation",
+    name: "Beekaylon Synthetics Pvt. Ltd.",
+    role: "Client Testimonial",
+    company: "Beekaylon Synthetics Pvt. Ltd.",
     quote:
-      "The supplied heat exchangers have run reliably through demanding cycles. Their shutdown responsiveness and after-sales support is a strong differentiator.",
-    image: "/images/testimonials/anita.jpg",
+      "We appreciate NESF’s structured approach to project execution and their ability to meet committed delivery schedules. Their coordination, workmanship, and adherence to safety and quality norms have supported the successful completion of our projects.",
+    image: DEFAULT_TESTIMONIAL_IMAGE,
   },
   {
-    name: "Vivek Kumar",
-    role: "Plant Head – Utilities & ETP",
-    company: "GreenFlow Industries",
+    name: "AB Engineering and Systems Pvt. Ltd.",
+    role: "Client Testimonial",
+    company: "AB Engineering and Systems Pvt. Ltd.",
     quote:
-      "Strong engineering clarity, disciplined execution and transparent communication. They are a long-term partner for critical equipment and upgrades.",
-    image: "/images/testimonials/vivek.jpg",
+      "NESF demonstrates strong compliance with quality standards and maintains consistency across fabrication and installation works. Their focus on precision, inspection, and documentation reflects a professional and process-driven organization.",
+    image: DEFAULT_TESTIMONIAL_IMAGE,
   },
   {
-    name: "Sameer Patel",
-    role: "GM – Operations",
-    company: "Industrial Process Solutions",
+    name: "Todi Rayons Pvt. Ltd.",
+    role: "Client Testimonial",
+    company: "Todi Rayons Pvt. Ltd.",
     quote:
-      "Professional execution from design review to commissioning. Quality documentation, safety focus and predictable timelines made delivery smooth.",
-    image: "/images/testimonials/sameer.jpg",
+      "Our association with NESF has been marked by professionalism, technical competence, and dependable service. Their team has shown flexibility in accommodating project requirements while maintaining quality and operational efficiency.",
+    image: DEFAULT_TESTIMONIAL_IMAGE,
   },
   {
-    name: "Neha Joshi",
-    role: "Deputy Manager – Engineering",
-    company: "EcoChem Industries",
+    name: "NEW AGE FAB TECHNOLOGIES Pvt. Ltd.",
+    role: "Client Testimonial",
+    company: "NEW AGE FAB TECHNOLOGIES Pvt. Ltd.",
     quote:
-      "Customisation support was excellent. Their team adapts designs to site constraints without compromising on standards or deliverables.",
-    image: "/images/testimonials/neha.jpg",
+      "NESF has proven to be a dependable fabrication partner with sound engineering practices and experienced manpower. Their ability to execute complex steel fabrication works with accuracy and discipline is commendable.",
+    image: DEFAULT_TESTIMONIAL_IMAGE,
   },
   {
-    name: "Amit Verma",
-    role: "Maintenance Lead",
-    company: "SteelCore Ltd.",
+    name: "ArcelorMittal Nippon Steel India",
+    role: "Client Testimonial",
+    company: "ArcelorMittal Nippon Steel India",
     quote:
-      "Reliable equipment and quick service support helped reduce downtime. Their team takes ownership and closes issues with clarity.",
-    image: "/images/testimonials/amit.jpg",
-  },
-  {
-    name: "Sanjay Desai",
-    role: "Project Engineer",
-    company: "PetroWorks India",
-    quote:
-      "NESF delivered within tight schedules with disciplined QA/QC. The final fit-up and inspections were handled with maturity and care.",
-    image: "/images/testimonials/sanjay.jpg",
-  },
-  {
-    name: "Priya Nair",
-    role: "Process Engineering Manager",
-    company: "ChemNova Solutions",
-    quote:
-      "Good technical discussions, practical design choices and a dependable fabrication team. We appreciate the structured approach to execution.",
-    image: "/images/testimonials/priya.jpg",
-  },
-  {
-    name: "Karan Singh",
-    role: "Plant Manager",
-    company: "FertiMax Industries",
-    quote:
-      "Their fabrication quality and adherence to standards has been consistent. The team’s coordination during installation was also strong.",
-    image: "/images/testimonials/karan.jpg",
-  },
-  {
-    name: "Rohit Jain",
-    role: "Operations – Utilities",
-    company: "MarineBuild Systems",
-    quote:
-      "Marine-grade execution and detail orientation is excellent. Reliable partner for equipment that must operate in harsh environments.",
-    image: "/images/testimonials/rohit.jpg",
+      "The NESF team maintains clear communication throughout the project lifecycle, ensuring alignment on scope, timelines, and technical requirements. Their responsiveness and structured workflow contribute to smooth project execution.",
+    image: DEFAULT_TESTIMONIAL_IMAGE,
   },
 ];
 
@@ -102,7 +73,7 @@ export default function TestimonialsSection() {
    * Responsive visible cards:
    * - mobile: 1
    * - md: 2
-   * - lg: 4  
+   * - lg: 4
    */
   const [perView, setPerView] = useState(4);
 
@@ -206,10 +177,6 @@ export default function TestimonialsSection() {
   const itemW = 100 / perView;
   const translateX = -(index * itemW);
 
-  const realIndex =
-    ((index - perView) % TESTIMONIALS.length + TESTIMONIALS.length) %
-    TESTIMONIALS.length;
-
   return (
     <section className="bg-white py-6 lg:py-8">
       <div className="mx-auto max-w-425  lg:px-4">
@@ -222,16 +189,13 @@ export default function TestimonialsSection() {
             What Our Customers Say
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-600 md:text-base">
-            Trusted by engineering, operations and maintenance leaders across
-            multiple industries.
+            Trusted by engineering, operations and maintenance leaders across multiple industries.
           </p>
         </div>
 
         {/* Carousel wrapper */}
         <div className="relative mt-12">
           <div className="relative rounded-2xl bg-white">
-       
-
             <div className="relative px-5 py-5 sm:px-5">
               {/* Track viewport */}
               <div className="overflow-hidden">
@@ -239,36 +203,25 @@ export default function TestimonialsSection() {
                   onTransitionEnd={handleTransitionEnd}
                   className={[
                     "flex will-change-transform",
-                    animating
-                      ? "transition-transform duration-500 ease-in-out"
-                      : "transition-none",
+                    animating ? "transition-transform duration-500 ease-in-out" : "transition-none",
                   ].join(" ")}
                   style={{ transform: `translateX(${translateX}%)` }}
                 >
                   {clones.map((t, i) => (
                     <div
-                      key={`${t.name}-${i}`}
+                      key={`${t.company}-${i}`}
                       className="shrink-0 px-3"
                       style={{ width: `${itemW}%` }}
                     >
                       <article className="h-full rounded-xl border border-gray-200 bg-white p-6 ">
                         <div className="flex items-center gap-4">
-                          <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-orange-100">
-                            <Image
-                              src={t.image}
-                              alt={t.name}
-                              fill
-                              className="object-cover"
-                            />
+                          <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-orange-100 bg-white">
+                            <Image src={t.image} alt={t.company} fill className="object-contain p-2" />
                           </div>
 
                           <div className="min-w-0">
-                            <p className="truncate text-sm font-semibold text-gray-900">
-                              {t.name}
-                            </p>
-                            <p className="truncate text-xs text-gray-500">
-                              {t.role}
-                            </p>
+                            <p className="truncate text-sm font-semibold text-gray-900">{t.company}</p>
+                            <p className="truncate text-xs text-gray-500">{t.role}</p>
                           </div>
 
                           <div className="ml-auto hidden text-[#ee9d54] sm:block">
@@ -276,12 +229,10 @@ export default function TestimonialsSection() {
                           </div>
                         </div>
 
-                        <p className="mt-4 text-sm leading-relaxed text-gray-700">
-                          “{t.quote}”
-                        </p>
+                        <p className="mt-4 text-sm leading-relaxed text-gray-700">“{t.quote}”</p>
 
                         <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#ee9d54]">
-                          {t.company}
+                          {t.name}
                         </p>
                       </article>
                     </div>
@@ -307,8 +258,6 @@ export default function TestimonialsSection() {
               >
                 <ChevronRight className="h-5 w-5 text-gray-800" />
               </button>
-
-
             </div>
           </div>
         </div>

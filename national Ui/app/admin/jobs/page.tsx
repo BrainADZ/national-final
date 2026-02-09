@@ -23,6 +23,9 @@ type Job = {
   description: string;
   type: JobType;
   location: string;
+
+  qualificationAndExperience: string; // ✅ added
+
   experienceMin: number;
   experienceMax: number;
   salaryLabel: string;
@@ -78,6 +81,9 @@ export default function AdminJobsPage() {
   const [description, setDescription] = useState("");
   const [type, setType] = useState<JobType>("full-time");
   const [location, setLocation] = useState("");
+
+  const [qualificationAndExperience, setQualificationAndExperience] = useState(""); // ✅ added
+
   const [experienceMin, setExperienceMin] = useState<number>(0);
   const [experienceMax, setExperienceMax] = useState<number>(0);
   const [salaryLabel, setSalaryLabel] = useState("Not disclosed");
@@ -94,6 +100,9 @@ export default function AdminJobsPage() {
     setDescription("");
     setType("full-time");
     setLocation("");
+
+    setQualificationAndExperience(""); // ✅ added
+
     setExperienceMin(0);
     setExperienceMax(0);
     setSalaryLabel("Not disclosed");
@@ -118,6 +127,9 @@ export default function AdminJobsPage() {
     setDescription(job.description);
     setType(job.type);
     setLocation(job.location);
+
+    setQualificationAndExperience(job.qualificationAndExperience || ""); // ✅ added
+
     setExperienceMin(job.experienceMin);
     setExperienceMax(job.experienceMax);
     setSalaryLabel(job.salaryLabel);
@@ -176,7 +188,9 @@ export default function AdminJobsPage() {
       if (activeFilter === "inactive" && j.isActive) return false;
 
       if (query) {
-        const hay = `${j.title} ${j.description} ${j.location} ${j.salaryLabel}`.toLowerCase();
+        const hay = `${j.title} ${j.description} ${j.location} ${j.salaryLabel} ${
+          j.qualificationAndExperience || ""
+        }`.toLowerCase(); // ✅ added
         if (!hay.includes(query)) return false;
       }
 
@@ -233,6 +247,10 @@ export default function AdminJobsPage() {
     if (description.trim().length < 10)
       return setFormError("Description must be at least 10 characters.");
     if (!location.trim()) return setFormError("Location is required.");
+
+    if (!qualificationAndExperience.trim())
+      return setFormError("Qualification & Experience is required."); // ✅ added
+
     if (experienceMax < experienceMin)
       return setFormError("Experience max cannot be less than experience min.");
     if (!salaryLabel.trim()) return setFormError("Salary is required.");
@@ -242,6 +260,9 @@ export default function AdminJobsPage() {
       description: description.trim(),
       type,
       location: location.trim(),
+
+      qualificationAndExperience: qualificationAndExperience.trim(), // ✅ added
+
       experienceMin: Number(experienceMin),
       experienceMax: Number(experienceMax),
       salaryLabel: salaryLabel.trim(),
@@ -256,9 +277,7 @@ export default function AdminJobsPage() {
       if (!token) return setFormError("Not logged in.");
 
       const url =
-        mode === "create"
-          ? `${API}/admin/jobs`
-          : `${API}/admin/jobs/${editing?._id}`;
+        mode === "create" ? `${API}/admin/jobs` : `${API}/admin/jobs/${editing?._id}`;
 
       const method = mode === "create" ? "POST" : "PATCH";
 
@@ -299,7 +318,7 @@ export default function AdminJobsPage() {
             </p>
             <h2 className="mt-2 text-2xl font-extrabold text-gray-900">Jobs</h2>
             <p className="mt-1 text-sm text-gray-600">
-             Create, Edit, Enable or Disable, and Publish Job Listings. 
+              Create, Edit, Enable or Disable, and Publish Job Listings.
             </p>
           </div>
 
@@ -329,7 +348,7 @@ export default function AdminJobsPage() {
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              placeholder="Search by Title, Location, or Salary."
+              placeholder="Search by Title, Location, Salary, Qualification."
               className="w-full text-sm outline-none placeholder:text-gray-400"
             />
           </div>
@@ -417,6 +436,16 @@ export default function AdminJobsPage() {
 
                     <p className="mt-2 text-sm text-gray-700">{j.description}</p>
 
+                    {/* ✅ show qualification & experience */}
+                    {j.qualificationAndExperience ? (
+                      <p className="mt-2 text-sm font-semibold text-gray-800">
+                        Qualification & Experience:{" "}
+                        <span className="font-normal text-gray-700">
+                          {j.qualificationAndExperience}
+                        </span>
+                      </p>
+                    ) : null}
+
                     <div className="mt-3 flex flex-wrap gap-3 text-xs font-semibold text-gray-600">
                       <span className="inline-flex items-center gap-2">
                         <MapPin className="h-4 w-4 text-gray-400" />
@@ -490,7 +519,7 @@ export default function AdminJobsPage() {
 
       {/* Modal: Create/Edit */}
       {open && (
-        <div className="fixed inset-0 z-[100]">
+        <div className="fixed inset-0 z-100">
           <button
             aria-label="Close"
             className="absolute inset-0 bg-black/50"
@@ -509,7 +538,8 @@ export default function AdminJobsPage() {
                   {mode === "create" ? "Add a new role" : "Update Role Details"}
                 </h3>
                 <p className="mt-1 text-xs text-gray-500">
-                 Use new lines for each bullet point in Key Responsibilities, Qualifications & Experience, Requirements, and Good to Have.
+                  Use new lines for each bullet point in Key Responsibilities, Requirements, and Good to
+                  Have.
                 </p>
               </div>
 
@@ -575,6 +605,20 @@ export default function AdminJobsPage() {
                   />
                 </div>
 
+                {/* ✅ NEW FIELD */}
+                <div className="sm:col-span-2">
+                  <label className="text-xs font-semibold text-gray-700">
+                    Qualification & Experience *
+                  </label>
+                  <textarea
+                    value={qualificationAndExperience}
+                    onChange={(e) => setQualificationAndExperience(e.target.value)}
+                    rows={3}
+                    placeholder={`Graduate (Any) / B.Tech / MBA\n1–3 years in B2B sales / telecalling / CRM`}
+                    className="mt-1 w-full resize-none rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
+                  />
+                </div>
+
                 <div>
                   <label className="text-xs font-semibold text-gray-700">Minimum Experience *</label>
                   <input
@@ -610,9 +654,7 @@ export default function AdminJobsPage() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="text-xs font-semibold text-gray-700">
-                   Key Responsibilities
-                  </label>
+                  <label className="text-xs font-semibold text-gray-700">Key Responsibilities</label>
                   <textarea
                     value={responsibilitiesText}
                     onChange={(e) => setResponsibilitiesText(e.target.value)}
@@ -623,9 +665,7 @@ export default function AdminJobsPage() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="text-xs font-semibold text-gray-700">
-                    Requirements
-                  </label>
+                  <label className="text-xs font-semibold text-gray-700">Requirements</label>
                   <textarea
                     value={requirementsText}
                     onChange={(e) => setRequirementsText(e.target.value)}
@@ -636,9 +676,7 @@ export default function AdminJobsPage() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="text-xs font-semibold text-gray-700">
-           Good to Have
-                  </label>
+                  <label className="text-xs font-semibold text-gray-700">Good to Have</label>
                   <textarea
                     value={goodToHaveText}
                     onChange={(e) => setGoodToHaveText(e.target.value)}
