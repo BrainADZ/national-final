@@ -2,13 +2,29 @@
 import MissionVisionSection from "@/sections/about/MissionVisionSection";
 import MdDeskSection from "@/sections/MdDeskSection";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 type Props = {
     title?: string;
     breadcrumbCurrent?: string;
     imageUrl?: string; // right side image
 };
-
+export const metadata: Metadata = {
+  title: "About National Engineers | Fabrication Experts Surat",
+  description:
+    "National Engineers is a Surat based industrial fabrication company offering heavy steel fabrication, custom process equipment and engineered manufacturing solutions.",
+  keywords: [
+    "industrial fabrication company in surat",
+    "engineering fabrication experts",
+    "custom fabrication manufacturer gujarat",
+    "steel fabrication specialists india",
+    "process equipment fabrication company",
+    "heavy engineering fabrication",
+  ],
+  alternates: {
+    canonical: "https://nationalengrs.com/about",
+  },
+};
 export default function AboutHero({
     title = "Engineering Excellence at NESF",
     breadcrumbCurrent = "About NESF",

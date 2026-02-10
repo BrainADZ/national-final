@@ -44,9 +44,9 @@ export default function Home() {
   return (
     <main>
       <HeroVideoSection />
-      <BrandLogosCarousel />
       <AboutSection />
       <StatsSection />
+      <BrandLogosCarousel />
       <ProductsSection />
       <IndustriesSection />
       <MdDeskSection />
