@@ -3,9 +3,24 @@ import path from "path";
 import fs from "fs/promises";
 import GalleryClient from "@/components/gallery/GalleryClient";
 import Link from "next/link";
+import { Metadata } from "next";
 
 const ALLOWED = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
-
+export const metadata: Metadata = {
+  title: "Steel Fabrication Projects Gallery | National Engineers",
+  description:
+    "View real industrial fabrication projects, heavy engineering works and manufacturing setups by National Engineers across Gujarat and India.",
+  keywords: [
+    "industrial fabrication projects",
+    "steel fabrication work india",
+    "process equipment fabrication gallery",
+    "heavy fabrication project images",
+    "manufacturing plant gallery",
+  ],
+  alternates: {
+    canonical: "https://nationalengrs.com/gallery",
+  },
+};
 async function getGalleryImages() {
     const dir = path.join(process.cwd(), "public", "gallery");
 
