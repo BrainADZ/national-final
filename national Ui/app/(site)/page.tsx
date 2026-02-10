@@ -13,24 +13,28 @@ import ProductsSection from "@/sections/ProductsSection";
 import TestimonialsSection from "@/sections/Testimonial";
 
 export const metadata: Metadata = {
-  title: "National Engineering | Industrial Solutions & Manufacturing",
+  title: "Best Steel Fabrication Company in India | National Engineers",
   description:
-    "National Engineering provides high-quality industrial engineering solutions, manufacturing services, and customized products for multiple industries across India.",
+    "NESF provides industrial steel fabrication, pressure vessels, storage tanks and process equipment manufacturing services across Gujarat and PAN India.",
   keywords: [
-    "National Engineering",
-    "industrial engineering company",
-    "manufacturing company india",
-    "engineering solutions",
-    "industrial products supplier",
+    "industrial steel fabrication company in india",
+    "process equipment manufacturer in india",
+    "custom steel fabrication services",
+    "pressure vessel manufacturer",
+    "industrial storage tank manufacturer",
+    "heavy fabrication company india",
+    "engineering fabrication solutions",
+    "industrial equipment manufacturer india",
+    "heavy fabrication company gujarat",
   ],
   alternates: {
-    canonical: "https://www.nationalengrs.com/",
+    canonical: "https://nationalengrs.com",
   },
   openGraph: {
-    title: "National Engineering | Industrial Solutions",
+    title: "Best Steel Fabrication Company in India | National Engineers",
     description:
-      "Trusted industrial engineering & manufacturing partner for quality-driven solutions.",
-    url: "https://www.nationalengrs.com/",
+      "NESF provides industrial steel fabrication, pressure vessels, storage tanks and process equipment manufacturing services across Gujarat and PAN India.",
+    url: "https://nationalengrs.com",
     siteName: "National Engineering",
     type: "website",
   },
