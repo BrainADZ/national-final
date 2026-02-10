@@ -8,8 +8,8 @@ export interface IJob extends Document {
   type: JobType;
   location: string;
   experienceMin: number;
-  experienceMax: number; 
-  salaryLabel: string; 
+  experienceMax: number;
+  salaryLabel: string;
   responsibilities: string[];
   qualificationAndExperience: string;
   requirements: string[];
@@ -49,12 +49,12 @@ const JobSchema = new Schema<IJob>(
       },
     },
     qualificationAndExperience: {
-  type: String,
-  required: true,
-  trim: true,
-  minlength: 5,
-  maxlength: 200,
-},
+      type: String,
+      required: true,
+      trim: true,
+      minlength: 5,
+      maxlength: 200,
+    },
 
 
     requirements: {
