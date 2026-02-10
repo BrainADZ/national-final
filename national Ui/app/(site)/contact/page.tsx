@@ -9,17 +9,19 @@ import { Linkedin, Instagram, Youtube } from "lucide-react";
 
 
 export const metadata: Metadata = {
-    title: "Contact National Engineers & Steel Fabricators | Surat, Gujarat",
-    description:
-        "Contact National Engineers & Steel Fabricators (NESF) in Surat for pressure vessels, heat exchangers, reactors, storage tanks, silos and engineered steel fabrication. Request a quote or technical discussion.",
-    alternates: { canonical: "/contact" },
-    openGraph: {
-        title: "Contact National Engineers & Steel Fabricators (NESF)",
-        description:
-            "Get in touch for engineered steel fabrication and process equipment. Request a quote, share drawings, and speak to our technical team.",
-        url: "/contact",
-        type: "website",
-    },
+  title: "Contact National Engineers | Fabrication Enquiry",
+  description:
+    "Get in touch with National Engineers for steel fabrication, process equipment manufacturing and custom industrial solutions in Surat, Gujarat and PAN India.",
+  keywords: [
+    "steel fabrication company surat",
+    "industrial fabrication enquiry",
+    "process equipment supplier india",
+    "custom fabrication quote",
+    "heavy fabrication gujarat",
+  ],
+  alternates: {
+    canonical: "https://nationalengrs.com/contact",
+  },
 };
 
 const INFO = [

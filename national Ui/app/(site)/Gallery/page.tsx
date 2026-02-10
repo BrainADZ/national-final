@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "manufacturing plant gallery",
   ],
   alternates: {
-    canonical: "https://nationalengrs.com/gallery",
+    canonical: "https://nationalengrs.com/Gallery",
   },
 };
 async function getGalleryImages() {
