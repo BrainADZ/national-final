@@ -564,7 +564,7 @@ export default function AdminJobsPage() {
                   <input
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    placeholder="Sales Executive (B2B)"
+                    placeholder=" Sales Executive / QA-QC Engineer / Office Administrator"
                     className="mt-1 w-full rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
                   />
                 </div>
@@ -575,7 +575,7 @@ export default function AdminJobsPage() {
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     rows={3}
-                    placeholder="Own lead generation, client meetings, quotations, and closures..."
+                    placeholder="Write a summary of the role, and the outcome expected."
                     className="mt-1 w-full resize-none rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
                   />
                 </div>
@@ -614,7 +614,7 @@ export default function AdminJobsPage() {
                     value={qualificationAndExperience}
                     onChange={(e) => setQualificationAndExperience(e.target.value)}
                     rows={3}
-                    placeholder={`Graduate (Any) / B.Tech / MBA\n1–3 years in B2B sales / telecalling / CRM`}
+                    placeholder={`Mention required education, and years of experience.`}
                     className="mt-1 w-full resize-none rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
                   />
                 </div>
@@ -659,7 +659,7 @@ export default function AdminJobsPage() {
                     value={responsibilitiesText}
                     onChange={(e) => setResponsibilitiesText(e.target.value)}
                     rows={5}
-                    placeholder={`Generate and qualify leads...\nUnderstand customer requirements...\nPrepare quotations...`}
+                    placeholder={`Core duties.`}
                     className="mt-1 w-full resize-none rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
                   />
                 </div>
@@ -670,7 +670,7 @@ export default function AdminJobsPage() {
                     value={requirementsText}
                     onChange={(e) => setRequirementsText(e.target.value)}
                     rows={5}
-                    placeholder={`Strong communication and negotiation skills\nComfortable with field visits...`}
+                    placeholder={`Must-have skills and criteria.`}
                     className="mt-1 w-full resize-none rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
                   />
                 </div>
@@ -681,7 +681,7 @@ export default function AdminJobsPage() {
                     value={goodToHaveText}
                     onChange={(e) => setGoodToHaveText(e.target.value)}
                     rows={4}
-                    placeholder={`Experience with CRM tools\nKnowledge of tendering...`}
+                    placeholder={`Preferred skills or experience.`}
                     className="mt-1 w-full resize-none rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
                   />
                 </div>

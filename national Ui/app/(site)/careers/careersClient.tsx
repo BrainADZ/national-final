@@ -527,7 +527,7 @@ export default function CareersPage() {
                       {selectedJob.skillsGoodToHave?.length > 0 && (
                         <>
                           <p className="mt-6 text-sm font-bold text-gray-900">
-                            Preferred Qualifications
+                            Preferred Skills
                           </p>
                           <ul className="mt-3 space-y-2 text-sm text-gray-600">
                             {selectedJob.skillsGoodToHave.map((r, i) => (
