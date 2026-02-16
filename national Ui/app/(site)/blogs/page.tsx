@@ -65,7 +65,7 @@ export default async function BlogPage() {
             return (
               <Link
                 key={p.id}
-                href={`/blog/${p.slug}`}
+                href={`/blogs/${p.slug}`}
                 className="group block"
               >
                 {/* ✅ Card wrapper (no border, no rounded) */}
