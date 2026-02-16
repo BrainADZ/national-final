@@ -77,7 +77,7 @@ export default function ProductsSection() {
           </div>
 
           <Link
-            href="/Products"
+            href="/products"
             className="inline-flex items-center gap-2 rounded-full border border-black/20 px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-black transition hover:bg-black hover:text-white"
           >
             View All

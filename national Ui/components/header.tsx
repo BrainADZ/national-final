@@ -14,8 +14,8 @@ type NavItem = { label: string; href?: string; children?: NavChild[] };
 const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Products", href: "/Products" },
-  { label: "Gallery", href: "/Gallery" },
+  { label: "Products", href: "/products" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Careers", href: "/careers" },
   { label: "Blogs", href: "/blogs" },
   { label: "Contact", href: "/contact" },

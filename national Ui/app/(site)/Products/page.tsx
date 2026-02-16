@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "industrial tank manufacturer india",
   ],
   alternates: {
-    canonical: "https://nationalengrs.com/Products",
+    canonical: "https://nationalengrs.com/products",
   },
 };
 

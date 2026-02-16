@@ -65,7 +65,7 @@ export default function Footer() {
             <li><Link className="hover:text-[#ee9d54] transition" href="/about">About Us</Link></li>
             <li><Link className="hover:text-[#ee9d54] transition" href="#">Products</Link></li>
             <li><Link className="hover:text-[#ee9d54] transition" href="/careers">Careers</Link></li>
-            <li><Link className="hover:text-[#ee9d54] transition" href="/Gallery">Gallery</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/gallery">Gallery</Link></li>
             <li><Link className="hover:text-[#ee9d54] transition" href="/blogs">Blogs</Link></li>
             <li><Link className="hover:text-[#ee9d54] transition" href="/contact">Contact</Link></li>
           </ul>
@@ -75,11 +75,11 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Products</h3>
           <ul className="space-y-3 text-sm">
-            <li><Link className="hover:text-[#ee9d54] transition" href="/Products">Flakes Hopper</Link></li>
-            <li><Link className="hover:text-[#ee9d54] transition" href="/Products">Stand Tube</Link></li>
-            <li><Link className="hover:text-[#ee9d54] transition" href="/Products">Dow Storage Tank</Link></li>
-            <li><Link className="hover:text-[#ee9d54] transition" href="/Products">Venturi & Scrubber</Link></li>
-            <li><Link className="hover:text-[#ee9d54] transition" href="/Products">Nitrogen Buffer Tank (50 m³)</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/products">Flakes Hopper</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/products">Stand Tube</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/products">Dow Storage Tank</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/products">Venturi & Scrubber</Link></li>
+            <li><Link className="hover:text-[#ee9d54] transition" href="/products">Nitrogen Buffer Tank (50 m³)</Link></li>
           </ul>
         </div>
 
