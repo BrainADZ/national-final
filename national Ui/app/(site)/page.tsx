@@ -9,7 +9,7 @@ import HeroVideoSection from "@/sections/heroVideoSlider";
 import HowWeWorkSection from "@/sections/HowWeWorkSection";
 import IndustriesSection from "@/sections/IndustriesSection";
 import MdDeskSection from "@/sections/MdDeskSection";
-import ProductsSection from "@/sections/productsSection";
+import ProductsSection from "@/sections/ProductsSection";
 import TestimonialsSection from "@/sections/Testimonial";
 
 export const metadata: Metadata = {
