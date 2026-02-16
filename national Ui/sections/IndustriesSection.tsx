@@ -7,57 +7,58 @@ type Industry = {
   details: string;
   iconSrc: string; // <-- you will add your svg/png here
 };
-
 const INDUSTRIES: Industry[] = [
   {
-    name: "Man-Made Fiber",
+    name: "Chemical & Process Industries",
     description:
-      "Process equipment for synthetic fiber manufacturing plants.",
+      "Engineered process equipment for chemical and process manufacturing plants.",
     details:
-      "Fabrication of pressure vessels, heat exchangers, and tanks tailored for polymerization and fiber production processes operating under controlled temperature and pressure conditions.",
+      "Design and fabrication of pressure vessels, reactors, heat exchangers, and storage tanks suitable for high-temperature, high-pressure, and corrosive operating conditions.",
     iconSrc: "/icons/flask.svg",
   },
   {
-    name: "Steel Plants",
+    name: "Manufacturing & Engineering Plants",
     description:
-      "Heavy-duty fabrication for steel processing plants.",
+      "Industrial fabrication solutions for manufacturing facilities.",
     details:
-      "Manufacture of process equipment, ducting, and structural components engineered to withstand extreme thermal loads, abrasive environments, and continuous plant operations.",
+      "Supply of structural assemblies, process equipment, ducting systems, and heavy fabrication components engineered for continuous plant operations.",
     iconSrc: "/icons/i-beam.svg",
   },
   {
-    name: "Chemicals & Petrochemicals",
+    name: "Oil & Gas Projects",
     description:
-      "Equipment for aggressive chemical and petrochemical environments.",
+      "High-performance equipment for upstream and downstream applications.",
     details:
-      "Design and fabrication of pressure vessels and heat exchangers suitable for high-pressure, high-temperature, and corrosive service conditions.",
+      "Fabrication of pressure vessels, separators, heat exchangers, and storage systems designed in compliance with stringent oil and gas industry codes.",
     iconSrc: "/icons/oil-refinery.svg",
   },
   {
-    name: "Fertilizers",
+    name: "Water & Effluent Treatment Facilities",
     description:
-      "Engineered equipment for fertilizer plants.",
+      "Solutions for water and wastewater management systems.",
     details:
-      "Fabrication of process equipment for urea and ammonia plants, manufactured in compliance with stringent safety norms and international engineering standards.",
-    iconSrc: "/icons/agriculture.svg",
+      "Manufacture of tanks, clarifiers, and process equipment engineered to handle corrosive effluents and varying operational conditions.",
+    iconSrc: "/icons/water.svg",
   },
   {
-    name: "Ship Building",
+    name: "Power & Utility Infrastructure",
     description:
-      "Marine-grade fabrication solutions.",
+      "Fabrication solutions for power generation and utility systems.",
     details:
-      "Manufacture of tanks, pressure vessels, and structural assemblies designed for corrosive marine environments, ensuring durability and compliance with marine regulations.",
+      "Design and manufacture of heat exchangers, ducting systems, pressure vessels, and structural components built to withstand thermal loads and continuous operations.",
     iconSrc: "/icons/anchor.svg",
   },
   {
     name: "Effluent Treatment",
     description:
-      "Solutions for wastewater and effluent treatment systems.",
+      "Specialized fabrication for effluent treatment plants.",
     details:
-      "Fabrication of tanks and process equipment for effluent treatment plants handling corrosive effluents and variable operating conditions.",
+      "Fabrication of process tanks, pressure vessels, and treatment units designed for safe handling of industrial wastewater in compliance with environmental standards.",
     iconSrc: "/icons/water.svg",
   },
 ];
+
+
 
 
 export default function IndustriesSection() {
@@ -70,13 +71,13 @@ export default function IndustriesSection() {
             Industries
           </p>
           <h2 className="mt-2 text-2xl font-bold text-gray-900 md:text-3xl">
-            Actively Serving Industries
+           Industries We Serve
           </h2>
           <p className="mt-3 text-sm text-gray-600 md:text-base">
             We partner with a wide range of process and
             manufacturing industries, delivering application-engineered
             heat-transfer and pressure equipment designed for demanding operating
-            conditions.
+            conditions. We support a wide range of industrial sectors including:
           </p>
         </div>
 
@@ -118,6 +119,9 @@ export default function IndustriesSection() {
             </div>
           ))}
         </div>
+                  <p className="mt-3 text-sm text-gray-600 md:text-base">
+Our fabrication expertise allows us to adapt to diverse industrial requirements while maintaining consistent quality standards.
+          </p>
       </div>
     </section>
   );

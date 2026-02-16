@@ -10,31 +10,33 @@ type Advantage = {
 
 const ADVANTAGES: Advantage[] = [
   {
-    title: "Cost-Effective Solutions",
+    title: "Experienced Industrial Fabrication Team",
     description:
-      "Optimised engineering and in-house fabrication enable us to deliver cost-effective solutions without compromising on quality, safety standards, or long-term operational reliability.",
-    iconSrc: "/icons/1.png",
+      "Backed by a highly experienced industrial fabrication team, we execute complex engineering projects with precision. Our skilled engineers, supervisors, and technicians ensure high-quality workmanship, strict safety compliance, and reliable performance across industries.",
+
+        iconSrc: "/icons/2.svg",
   },
   {
-    title: "Engineering Excellence",
+    title: "Advanced Manufacturing Infrastructure",
     description:
-      "A disciplined, process-driven approach supported by qualified engineers, rigorous quality assurance systems, and adherence to national and international codes ensures consistent excellence across all projects.",
-    iconSrc: "/icons/2.svg",
+      "Our advanced manufacturing infrastructure, equipped with modern machinery and in-house fabrication capabilities, enables us to deliver cost-effective and custom-built engineering solutions while maintaining superior quality standards.",
+    iconSrc: "/icons/1.png",
     highlight: true,
   },
   {
-    title: "Assured Performance",
+    title: "Strong Focus on Quality & Safety",
     description:
-      "Thermal, mechanical, and structural performance is validated through proven design practices, detailed calculations, inspections, and successful field performance across multiple industries.",
+      "We follow a disciplined, process-driven approach with rigorous quality assurance systems and strict adherence to safety standards. Every project undergoes detailed inspections, testing, and validation to ensure assured performance and long-term reliability.",
     iconSrc: "/icons/3.svg",
   },
   {
-    title: "Skilled & Experienced Team",
+    title: "Timely Execution with PAN India Reach",
     description:
-      "Our strength lies in a dedicated team of experienced engineers, supervisors, and technicians capable of executing critical, custom-built, and high-pressure equipment with precision and accountability.",
+      "With efficient project management systems and a strong logistics network, we ensure timely project execution across India. Our PAN India service capability allows us to support clients seamlessly, regardless of project location.",
     iconSrc: "/icons/4.svg",
   },
 ];
+
 
 export default function CompetitiveAdvantageSection() {
   return (
@@ -46,12 +48,10 @@ export default function CompetitiveAdvantageSection() {
             Why Choose Us
           </p>
           <h2 className="mt-3 text-2xl font-bold text-gray-900 md:text-3xl">
-            Our Competitive Advantage
+           Why Choose National Engineers?
           </h2>
           <p className="mx-auto mt-3 max-w-3xl text-sm text-gray-600 md:text-base">
-            A strong foundation of engineering discipline, modern infrastructure,
-            and customer-focused execution that enables us to deliver
-            dependable solutions for demanding industrial applications.
+           From pressure vessels to custom fabricated equipment, we deliver solutions designed for performance and longevity.
           </p>
         </div>
 

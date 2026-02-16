@@ -128,10 +128,12 @@ export default function BrandLogosCarousel() {
               OUR ASSOCIATED BRANDS
             </p>
             <h2 className="mt-2 text-2xl font-bold text-gray-900 md:text-3xl">
-              Trusted by Brands & Partners
+            Your Reliable Partner for Heavy Fabrication & Process Equipment
             </h2>
-            <p className="mt-2 max-w-2xl text-sm text-gray-600">
-              A snapshot of brands and partners associated with NESF across projects and sectors.
+            <p className="mt-2 max-w-5xl text-sm text-gray-600">
+              As an experienced process equipment manufacturer in India, we provide end-to-end fabrication solutions — from concept and design to manufacturing and installation. Our facility is equipped to handle heavy fabrication projects with strict quality control and industry standards.
+              <br/>
+              We work closely with clients to deliver customized engineering solutions that meet operational requirements, timelines, and budget expectations.
             </p>
           </div>
         </div>

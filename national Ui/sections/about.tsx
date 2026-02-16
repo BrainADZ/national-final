@@ -29,19 +29,17 @@ export default function AboutSection() {
             About NESF
           </p>
 
-          <h2 className="mt-4 text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
-            Precision Engineering for Industrial Applications
+          <h1 className="mt-4 text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
+            Industrial Steel Fabrication & Process Equipment
 
             <br />
-            <span className="text-[#ee9d54]">Industrial Expertise</span>
-          </h2>
+            <span className="text-[#ee9d54]"> Manufacturer in India</span>
+          </h1>
 
           <p className="mt-5 max-w-3xl text-sm leading-relaxed text-gray-600 md:text-base">
-            Welcome to National Engineers where advanced manufacturing meets
-            application-driven engineering. With decades of experience in
-            radiators and heat-transfer products, we partner with OEMs and
-            end-users to deliver tailored solutions, reliable performance, and
-            continuous innovation.
+          National Engineers & Steel Fabricators (NESF) a trusted industrial steel fabrication company in India, specializing in custom metal fabrication, heavy engineering works, and industrial process equipment manufacturing. Based in Gujarat, we deliver precision-built solutions for chemical plants, manufacturing units, and infrastructure projects across PAN India.
+          <br/>
+          With strong fabrication capabilities and experienced engineering teams, we support industries with reliable pressure vessels, storage tanks, air receivers, and turnkey fabrication services.
           </p>
 
           {/* TABS */}
