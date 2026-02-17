@@ -42,7 +42,7 @@ const PRODUCTS = [
 ];
 
 export default function ProductsSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); 
   const visibleProducts = useMemo(() => PRODUCTS, []);
 
   // ✅ mobile tap flip state

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 export const revalidate = 60;
 
@@ -35,6 +36,47 @@ async function getCategories() {
   if (!res.ok) return [];
   return res.json();
 }
+async function getRankMathCanonical(fullUrl: string) {
+  if (!process.env.WORDPRESS_URL) return null;
+
+  const res = await fetch(
+    `${process.env.WORDPRESS_URL}/wp-json/rankmath/v1/getHead?url=${encodeURIComponent(fullUrl)}`,
+    { next: { revalidate: 60 } }
+  );
+  if (!res.ok) return null;
+
+  const data = await res.json();
+  const head: string = data?.head || "";
+
+  const match = head.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i);
+  return match?.[1] || null;
+}
+
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPost(slug);
+  if (!post) return {};
+
+  const seoTitle = post?.meta?.rank_math_title?.toString().trim();
+  const seoDesc  = post?.meta?.rank_math_description?.toString().trim();
+
+  // ✅ base canonical from WP
+  let canonical = post?.link || undefined;
+
+  // ✅ override canonical from Rank Math (if enabled)
+  const rmCanonical = post?.link ? await getRankMathCanonical(post.link) : null;
+  if (rmCanonical) canonical = rmCanonical;
+
+  return {
+    title: seoTitle || stripHtml(post?.title?.rendered || ""),
+    description: seoDesc || stripHtml(post?.excerpt?.rendered || "").slice(0, 160),
+    alternates: { canonical },
+  };
+}
+
 
 export default async function BlogPost({
   params,
