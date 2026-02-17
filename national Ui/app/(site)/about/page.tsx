@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import MissionVisionSection from "@/sections/about/MissionVisionSection";
 import MdDeskSection from "@/sections/MdDeskSection";
+import AboutPageMdDeskSection from "@/sections/about/AboutPageMdDesk";
 
 export const metadata: Metadata = {
   title: "About National Engineers | Fabrication Experts Surat",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const title = "Engineering Excellence at NESF";
+  const title = " Industrial Fabrication Company in Surat | National Engineers & Steel Fabricators";
   const breadcrumbCurrent = "About NESF";
   const imageUrl = "/about hero.jpg";
 
@@ -79,7 +80,7 @@ export default function AboutPage() {
       </section>
 
       <MissionVisionSection />
-      <MdDeskSection />
+      <AboutPageMdDeskSection />
     </>
   );
 }
