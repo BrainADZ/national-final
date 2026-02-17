@@ -57,23 +57,24 @@ export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }
 ): Promise<Metadata> {
   const { slug } = await params;
+
   const post = await getPost(slug);
   if (!post) return {};
 
   const seoTitle = post?.meta?.rank_math_title?.toString().trim();
   const seoDesc  = post?.meta?.rank_math_description?.toString().trim();
 
-  // ✅ base canonical from WP
-  let canonical = post?.link || undefined;
-
-  // ✅ override canonical from Rank Math (if enabled)
-  const rmCanonical = post?.link ? await getRankMathCanonical(post.link) : null;
-  if (rmCanonical) canonical = rmCanonical;
+  // ✅ FORCE canonical based on your Next.js route (/blogs/[slug])
+  const siteUrl = (process.env.SITE_URL || "").replace(/\/$/, "");
+  const canonical = siteUrl ? `${siteUrl}/blogs/${slug}` : `/blogs/${slug}`;
 
   return {
     title: seoTitle || stripHtml(post?.title?.rendered || ""),
-    description: seoDesc || stripHtml(post?.excerpt?.rendered || "").slice(0, 160),
-    alternates: { canonical },
+    description:
+      seoDesc || stripHtml(post?.excerpt?.rendered || "").slice(0, 160),
+    alternates: {
+      canonical,
+    },
   };
 }
 
