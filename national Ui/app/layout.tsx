@@ -19,6 +19,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "National Engineers & Steel Fabricators",
   description: "National Engineers & Steel Fabricators",
+  verification: {
+    google: "loI6ULKy_ozsBbHmXjqp9qg5dELTF5YIUiZ0LmQoUjc",
+  },
 };
 
 export default function RootLayout({
