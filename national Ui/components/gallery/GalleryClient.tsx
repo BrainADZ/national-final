@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import Image from "next/image";
@@ -62,10 +63,9 @@ export default function GalleryClient({ images }: { images: GalleryImage[] }) {
               >
                 {/* Equal height tiles */}
                 <div className="relative h-[170px] w-a sm:h-[190px] lg:h-[210px]">
-                  <Image
+                  <img
                     src={img.src}
                     alt={img.alt}
-                    fill
                     className="object-cover transition duration-300 group-hover:scale-[1.03]"
                     // sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
                   />
