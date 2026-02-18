@@ -24,13 +24,14 @@ export default async function BlogPage() {
   // ✅ Static author (same for all)
   const authorName = "Deepak Awasthi";
   const authorAvatar = "/deepak.png"; // ✅ put this in /public
+  const authorHref = "/author/deepak-awasthi"; // ✅ change as needed
 
   return (
     <div className="min-h-screen bg-white">
       {/* HERO */}
       <section className="relative">
         <div
-          className="h-[320px] sm:h-[380px] w-full bg-cover bg-center"
+          className="h-[320px] w-full bg-cover bg-center sm:h-[380px]"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         <div className="absolute inset-0 bg-black/60" />
@@ -58,69 +59,77 @@ export default async function BlogPage() {
       <section className="mx-auto max-w-[1400px] px-6 py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((p: any) => {
+            const postHref = `/blogs/${p.slug}`;
             const featured =
               p?._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "";
             const date = p?.date ? new Date(p.date) : null;
 
             return (
-              <Link
-                key={p.id}
-                href={`/blogs/${p.slug}`}
-                className="group block"
-              >
-                {/* ✅ Card wrapper (no border, no rounded) */}
-                <div className="flex h-full flex-col">
-                  {/* IMAGE */}
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100">
-                    {featured ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={featured}
-                        alt={stripHtml(p?.title?.rendered)}
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center text-xs text-gray-500">
-                        No image
-                      </div>
-                    )}
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition" />
+              <div key={p.id} className="group flex h-full flex-col">
+                {/* IMAGE (blog link) */}
+                <Link
+                  href={postHref}
+                  className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100 no-underline hover:no-underline"
+                  aria-label={stripHtml(p?.title?.rendered)}
+                >
+                  {featured ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={featured}
+                      alt={stripHtml(p?.title?.rendered)}
+                      className="h-full w-full transition duration-500 group-hover:scale-[1.04]"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center text-xs text-gray-500">
+                      No image
+                    </div>
+                  )}
+
+                  <div className="absolute inset-0 bg-black/10 transition group-hover:bg-black/0" />
+                </Link>
+
+                {/* CONTENT */}
+                <div className="mt-5 flex flex-1 flex-col">
+                  {/* Date */}
+                  <div className="text-xs text-gray-500">
+                    {date ? (
+                      <time dateTime={p.date}>
+                        {date.toLocaleDateString("en-IN", {
+                          day: "2-digit",
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </time>
+                    ) : null}
                   </div>
 
-                  {/* CONTENT (flex so Read more stays aligned at bottom) */}
-                  <div className="mt-5 flex flex-1 flex-col">
-                    {/* Date */}
-                    <div className="text-xs text-gray-500">
-                      {date ? (
-                        <time dateTime={p.date}>
-                          {date.toLocaleDateString("en-IN", {
-                            day: "2-digit",
-                            month: "short",
-                            year: "numeric",
-                          })}
-                        </time>
-                      ) : null}
-                    </div>
-
-                    {/* Title */}
-                    <h3
-                      className="mt-3 text-[20px] font-bold leading-snug text-gray-900 group-hover:text-orange-700 transition"
+                  {/* Title (blog link) */}
+                  <h3 className="mt-3 text-[20px] font-bold leading-snug text-gray-900 transition group-hover:text-orange-700">
+                    <Link
+                      href={postHref}
+                      className="no-underline hover:no-underline"
                       dangerouslySetInnerHTML={{ __html: p.title?.rendered }}
                     />
+                  </h3>
 
-                    {/* Excerpt */}
-                    <p className="mt-3 text-sm leading-relaxed text-gray-600 line-clamp-3">
-                      {stripHtml(p?.excerpt?.rendered)}
-                    </p>
+                  {/* Excerpt (not a link) */}
+                  <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-gray-600">
+                    {stripHtml(p?.excerpt?.rendered)}
+                  </p>
 
-                    {/* ✅ Author (static, inside link) */}
-                    <div className="mt-5 flex items-center gap-3">
+                  {/* ✅ Author (separate link) */}
+                  <div className="mt-5 flex items-center gap-3">
+                    <Link
+                      href={authorHref}
+                      className="flex items-center gap-3 no-underline hover:no-underline"
+                      aria-label={`Author: ${authorName}`}
+                    >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={authorAvatar}
                         alt={authorName}
-                        className="h-9 w-9 object-cover rounded-full"
+                        className="h-9 w-9 rounded-full object-cover"
                         loading="lazy"
                       />
                       <div className="leading-tight">
@@ -129,20 +138,23 @@ export default async function BlogPage() {
                           {authorName}
                         </div>
                       </div>
-                    </div>
+                    </Link>
+                  </div>
 
-                    {/* ✅ Read more fixed at bottom (same alignment in all cards) */}
-                    <div className="mt-6 pt-4">
-                      <div className="inline-flex items-center gap-2 text-sm font-bold text-orange-700">
-                        Read more
-                        <span className="transition group-hover:translate-x-1">
-                          →
-                        </span>
-                      </div>
-                    </div>
+                  {/* ✅ Read more (blog link) */}
+                  <div className="mt-6 pt-4">
+                    <Link
+                      href={postHref}
+                      className="inline-flex items-center gap-2 text-sm font-bold text-orange-700 no-underline hover:no-underline"
+                    >
+                      Read more
+                      <span className="transition group-hover:translate-x-1">
+                        →
+                      </span>
+                    </Link>
                   </div>
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>

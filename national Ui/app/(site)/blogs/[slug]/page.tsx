@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import EasyAccordionEnhancer from "@/components/EasyAccordionEnhancer";
+import EasyTocEnhancer from "@/components/EasyTocEnhancer";
 
 export const revalidate = 60;
 
@@ -210,55 +212,99 @@ export default async function BlogPost({
 
             {/* ARTICLE (FORCED SPACING + FAQ SUPPORT) */}
             <article
-              className="
-                max-w-none text-gray-800
+  className="
+    max-w-none text-gray-800
 
-                /* universal spacing for WP content */
-                [&_p]:my-5 [&_p]:leading-8
-                [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-[26px] [&_h2]:font-extrabold [&_h2]:text-gray-900
-                [&_h3]:mt-8  [&_h3]:mb-3 [&_h3]:text-[20px] [&_h3]:font-bold [&_h3]:text-gray-900
-                [&_h4]:mt-6  [&_h4]:mb-2 [&_h4]:text-[16px] [&_h4]:font-bold [&_h4]:text-gray-900
+    /* universal spacing for WP content */
+    [&_p]:my-5 [&_p]:leading-8
+    [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-[26px] [&_h2]:font-extrabold [&_h2]:text-gray-900
+    [&_h3]:mt-8  [&_h3]:mb-3 [&_h3]:text-[20px] [&_h3]:font-bold [&_h3]:text-gray-900
+    [&_h4]:mt-6  [&_h4]:mb-2 [&_h4]:text-[16px] [&_h4]:font-bold [&_h4]:text-gray-900
 
-                [&_ul]:my-5 [&_ul]:pl-6 [&_ul]:list-disc
-                [&_ol]:my-5 [&_ol]:pl-6 [&_ol]:list-decimal
-                [&_li]:my-2
+    [&_ul]:my-5 [&_ul]:pl-6 [&_ul]:list-disc
+    [&_ol]:my-5 [&_ol]:pl-6 [&_ol]:list-decimal
+    [&_li]:my-2
 
-                [&_strong]:text-gray-900
-                [&_a]:text-orange-700 [&_a]:font-semibold hover:[&_a]:underline
+    [&_strong]:text-gray-900
+    [&_a]:text-orange-700 [&_a]:font-semibold hover:[&_a]:underline
+/* ✅ Easy TOC toggle visibility */
+[&_.ez-toc-icon-toggle-span]:inline-flex
+[&_.ez-toc-icon-toggle-span]:items-center
+[&_.ez-toc-icon-toggle-span]:gap-2
+[&_.ez-toc-icon-toggle-span]:rounded-md
+[&_.ez-toc-icon-toggle-span]:bg-gray-100
+[&_.ez-toc-icon-toggle-span]:px-3
+[&_.ez-toc-icon-toggle-span]:py-2
+[&_.ez-toc-icon-toggle-span]:cursor-pointer
+[&_.ez-toc-icon-toggle-span]:hover:bg-gray-200
+[&_.ea-header]:px-2
+[&_.ea-body]:px-2
 
-                /* images / tables */
-                [&_img]:my-8 [&_img]:max-w-full
-                [&_table]:my-8 [&_table]:w-full [&_table]:text-sm
-                [&_th]:bg-gray-50 [&_th]:text-left [&_th]:p-3
-                [&_td]:p-3
-                [&_tr]:border-b [&_tr]:border-gray-100
 
-                /* blockquote */
-                [&_blockquote]:my-8
-                [&_blockquote]:border-l-4 [&_blockquote]:border-orange-600
-                [&_blockquote]:bg-orange-50
-                [&_blockquote]:px-5 [&_blockquote]:py-4
+/* icons bigger + darker */
+[&_.ez-toc-icon-toggle-span_svg]:w-5
+[&_.ez-toc-icon-toggle-span_svg]:h-5
+[&_.ez-toc-icon-toggle-span_svg]:text-gray-700
+[&_.ez-toc-icon-toggle-span_svg]:fill-current
 
-                /* HR */
-                [&_hr]:my-12 [&_hr]:border-gray-200
+/* on hover */
+hover:[&_.ez-toc-icon-toggle-span_svg]:text-orange-700
 
-                /* FAQ / accordion support (details/summary) */
-                [&_details]:my-4
-                [&_details]:bg-gray-50
-                [&_details]:px-5 [&_details]:py-4
-                [&_summary]:cursor-pointer
-                [&_summary]:font-bold
-                [&_summary]:text-gray-900
-                [&_summary]:list-none
+    /* images / tables */
+    [&_img]:my-8 [&_img]:max-w-full
+    [&_table]:my-8 [&_table]:w-full [&_table]:text-sm
+    [&_th]:bg-gray-50 [&_th]:text-left [&_th]:p-3
+    [&_td]:p-3
+    [&_tr]:border-b [&_tr]:border-gray-100
 
-                /* RankMath FAQ (if present) */
-                [&_.rank-math-faq-item]:my-4
-                [&_.rank-math-question]:font-bold
-                [&_.rank-math-answer]:mt-3
-              "
-              dangerouslySetInnerHTML={{ __html: post.content?.rendered }}
-            />
+    /* blockquote */
+    [&_blockquote]:my-8
+    [&_blockquote]:border-l-4 [&_blockquote]:border-orange-600
+    [&_blockquote]:bg-orange-50
+    [&_blockquote]:px-5 [&_blockquote]:py-4
 
+    /* HR */
+    [&_hr]:my-12 [&_hr]:border-gray-200
+
+    /* FAQ / accordion support (details/summary) */
+    [&_details]:my-4
+    [&_details]:bg-gray-50
+    [&_details]:px-5 [&_details]:py-4
+    [&_summary]:cursor-pointer
+    [&_summary]:font-bold
+    [&_summary]:text-gray-900
+    [&_summary]:list-none
+
+    /* RankMath FAQ (if present) */
+    [&_.rank-math-faq-item]:my-4
+    [&_.rank-math-question]:font-bold
+    [&_.rank-math-answer]:mt-3
+
+    /* ✅ FAQ icon + clickable UX */
+    [&_.rank-math-question]:relative
+    [&_.rank-math-question]:pr-12
+    [&_.rank-math-question]:cursor-pointer
+    [&_.rank-math-question]:select-none
+    [&_.rank-math-question]:hover:text-orange-700
+
+    [&_.rank-math-question::after]:content-['+']
+    [&_.rank-math-question::after]:absolute
+    [&_.rank-math-question::after]:right-4
+    [&_.rank-math-question::after]:top-1/2
+    [&_.rank-math-question::after]:-translate-y-1/2
+    [&_.rank-math-question::after]:text-xl
+    [&_.rank-math-question::after]:font-bold
+    [&_.rank-math-question::after]:text-gray-500
+
+    [&_.rank-math-question[aria-expanded='true']::after]:content-['–']
+    [&_.rank-math-question[aria-expanded='true']::after]:text-orange-700
+  "
+  dangerouslySetInnerHTML={{ __html: post.content?.rendered }}
+/>
+
+
+<EasyAccordionEnhancer />
+<EasyTocEnhancer />
             {/* CTA (RECTANGLE, NO ROUNDED, NO BORDERS) */}
             <div className="mt-12 bg-gray-50 px-6 py-6 sm:px-8">
               <div className="text-xs font-bold tracking-widest text-gray-600">
