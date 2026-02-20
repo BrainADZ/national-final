@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   verification: {
     google: "loI6ULKy_ozsBbHmXjqp9qg5dELTF5YIUiZ0LmQoUjc",
   },
+  other: {
+    "p:domain_verify": "ea3affcc4a45f28d12a969547e95cef3",
+  },
 };
 
 export default function RootLayout({
@@ -36,7 +39,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${fontBody.variable} ${fontHeading.variable} antialiased`}
       >
         {/* <Navbar/> */}
-         <AOSProvider />
+        <AOSProvider />
         {/* <FloatingActions
           whatsappNumber="919999999999"
           linkedinUrl="https://www.linkedin.com/company/national-engineers/"
@@ -45,18 +48,18 @@ export default function RootLayout({
         {children}
         {/* <Footer/> */}
         <Script
-  src="https://www.googletagmanager.com/gtag/js?id=G-6N4VK6BJE3"
-  strategy="afterInteractive"
-/>
+          src="https://www.googletagmanager.com/gtag/js?id=G-6N4VK6BJE3"
+          strategy="afterInteractive"
+        />
 
-<Script id="google-analytics" strategy="afterInteractive">
-  {`
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-6N4VK6BJE3');
   `}
-</Script>
+        </Script>
 
       </body>
     </html>
