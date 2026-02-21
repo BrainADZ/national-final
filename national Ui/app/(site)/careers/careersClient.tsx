@@ -19,7 +19,9 @@ import {
   ChevronDown,
   ArrowRight,
   MessageCircle,
-  GraduationCap as QualIcon, // ✅ (optional alias if you want different icon usage)
+  GraduationCap as QualIcon,
+  ShieldCheck,
+  Factory, // ✅ (optional alias if you want different icon usage)
 } from "lucide-react";
 import Link from "next/link";
 
@@ -263,11 +265,12 @@ export default function CareersPage() {
               </ol>
             </nav>
 
-            <div className="mt-5 max-w-2xl">
-              <h1 className="text-3xl font-bold text-white md:text-4xl">Careers Built to Endure</h1>
+            <div className="mt-5 max-w-4xl">
+              <h1 className="text-3xl font-bold text-white md:text-4xl">Engineering Jobs in Fabrication Industry</h1>
               <p className="mt-3 text-sm leading-relaxed text-white/85 md:text-base">
-                Purpose-driven roles shaped by disciplined execution, real-world engineering, and
-                long-term growth.
+                Build your career with National Engineers & Steel Fabricators — offering long-term growth opportunities in industrial manufacturing, fabrication, and engineering excellence across India.
+                National Engineers & Steel Fabricators invites skilled professionals to join our growing team. We offer rewarding industrial fabrication careers across design, production, quality, and site execution. As a trusted manufacturing organization, we provide stable manufacturing company jobs in India for candidates passionate about engineering and fabrication.
+
               </p>
             </div>
           </div>
@@ -296,17 +299,15 @@ export default function CareersPage() {
               </p>
 
               <h2 className="mt-4 text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
-                Build your career through discipline and execution
+                Build Your Career in Industrial Fabrication
               </h2>
 
               <p className="mt-4 text-sm leading-relaxed text-gray-600 pr-20">
-                At National Engineers, careers are built through practical execution, clear accountability, and consistent performance. You will work on real industrial projects, learn directly from the field, and grow in a structured environment where quality, safety, and timelines matter.
-
-
+                At NESF, we believe people are the foundation of engineering excellence. Our workplace supports continuous learning, hands-on exposure, and real-world project experience across pressure vessels, storage tanks, ducting systems, and custom fabricated equipment. We regularly hire for Engineering roles, Production & fabrication teams, Welding & shop-floor technicians, Quality inspection staff, and Project coordination.
               </p>
 
               <p className="mt-3 text-sm leading-relaxed text-gray-600 pr-10">
-                If you value ownership, clear communication, and continuous improvement, you will find long-term growth with our teams.
+                If you’re exploring engineering vacancies India wide, NESF offers structured career paths with technical growth.
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -342,17 +343,28 @@ export default function CareersPage() {
 
       {/* WHY WORK WITH US */}
       <section className="mx-auto max-w-425 px-4 py-12">
-        <h2 className="text-2xl font-extrabold text-gray-900">Why Build Your Career at NESF</h2>
+        <h2 className="text-2xl font-extrabold text-gray-900">
+          Why Work With National Engineers & Steel Fabricators?
+        </h2>
+
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-600">
           We operate with a practical, execution-driven approach. You will work on real industrial requirements, develop hands-on skills, and grow in a team that values discipline, accuracy, accountability, and on-time delivery.
+          We welcome motivated individuals looking to build meaningful careers in fabrication and engineering.
         </p>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { icon: Building2, title: "Structured Work Environment", desc: "Clear roles, defined responsibilities, and professional reporting systems." },
-            { icon: GraduationCap, title: "Hands-on Learning", desc: "Practical, on-the-job learning with direct guidance from experienced professionals." },
-            { icon: Clock, title: "Stable Workflow", desc: "Defined processes for sales, service, and operations." },
-            { icon: IndianRupee, title: "Defined Processes", desc: "Structured workflows across engineering, fabrication, and project execution." },
+
+            { icon: GraduationCap, title: "Hands-on Learning & Skill Development", desc: "Practical, on-the-job learning with direct guidance from experienced professionals and continuous mentoring." },
+
+            { icon: Clock, title: "Live Exposure to Engineering Projects", desc: "Work on real industrial fabrication projects with structured processes and certified manufacturing standards." },
+
+            { icon: IndianRupee, title: "Performance-Based Growth Opportunities", desc: "Long-term industrial fabrication careers with growth aligned to performance and contribution." },
+
+            { icon: ShieldCheck, title: "Safe Working Environment", desc: "Commitment to safety standards across fabrication, welding, and manufacturing operations." },
+
+            { icon: Factory, title: "Stable Manufacturing Company Jobs India", desc: "Consistent workflow and stable opportunities within a structured industrial setup." },
           ].map((item, idx) => (
             <div key={idx} className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
               <item.icon className="h-6 w-6 text-[#ee9d54]" />
@@ -368,10 +380,15 @@ export default function CareersPage() {
         <div className="mx-auto max-w-425 px-4 py-12">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <h2 className="text-2xl font-extrabold text-gray-900">Current Openings</h2>
+              <h2 className="text-2xl font-extrabold text-gray-900">Current Engineering Vacancies</h2>
               <p className="mt-2 text-sm text-gray-600">
-                Explore current openings and apply. If no suitable role is available, you may submit
-                a general profile.
+                Explore open positions in:<br />
+                Mechanical Engineering<br />
+                Fabrication & Welding<br />
+                Quality Control<br />
+                Production Supervision<br />
+                Project Coordination<br />
+                If you’re searching for reliable engineering jobs in fabrication industry, NESF provides opportunities aligned with your technical skills and career goals.
               </p>
 
               {jobsError && <p className="mt-2 text-sm font-semibold text-red-600">{jobsError}</p>}
@@ -406,11 +423,10 @@ export default function CareersPage() {
                       setJobAppliedFor(job.title);
                       setJobAppliedForId(job.id);
                     }}
-                    className={`w-full rounded-2xl border p-5 text-left shadow-sm transition ${
-                      active
+                    className={`w-full rounded-2xl border p-5 text-left shadow-sm transition ${active
                         ? "border-orange-200 bg-white"
                         : "border-gray-100 bg-white hover:border-gray-200"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>
@@ -568,11 +584,16 @@ export default function CareersPage() {
       <section id="apply" className="mx-auto max-w-425 px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
           <div>
-            <h2 className="text-2xl font-extrabold text-gray-900">Apply Now</h2>
+            <h2 className="text-2xl font-extrabold text-gray-900">Apply for Engineering & Fabrication Roles
+            </h2>
             <p className="mt-2 text-sm leading-relaxed text-gray-600">
-              Submit your application by completing the form below. Our HR team will review your profile and contact you if it aligns with current openings.
+              Share your resume and job preferences with our HR team to begin your career journey with National Engineers & Steel Fabricators.
             </p>
+            <p className="mt-2 text-sm leading-relaxed text-gray-600">
+              Whether you’re seeking <b className="text-black">engineering vacancies India </b> or hands-on fabrication roles, we look forward to hearing from you.
+              <br /><span className="font-extrabold text-black"> Build your future with NESF — where engineering meets execution.</span>
 
+            </p>
             <div className="mt-6 rounded-3xl border border-gray-100 bg-white p-6 shadow-sm">
               <p className="text-sm font-bold text-gray-900">Application Guidelines</p>
               <ul className="mt-3 space-y-2 text-sm text-gray-600">
@@ -617,6 +638,17 @@ export default function CareersPage() {
               </div>
               <p className="mt-3 text-xs text-gray-500">Response time may vary based on role availability and profile alignment.</p>
             </div>
+            {/* WELDING & FABRICATION OPPORTUNITIES */}
+<section className="mx-auto max-w-425 px-4 py-10">
+  <h3 className="text-xl font-bold text-gray-900">
+    Welding, Fabrication & Manufacturing Opportunities
+  </h3>
+
+  <p className="mt-3 max-w-3xl text-sm leading-relaxed text-gray-600">
+    We actively recruit for welding fabrication jobs and shop-floor positions supporting our industrial fabrication operations.
+    Whether you are an experienced technician or an aspiring engineer, our teams work on large-scale industrial projects involving pressure vessels, tanks, pipelines, and HVAC fabrication — providing valuable exposure in real manufacturing environments.
+  </p>
+</section>
           </div>
 
           <div className="rounded-3xl border border-gray-100 bg-white p-6 shadow-sm">
@@ -771,7 +803,7 @@ export default function CareersPage() {
                       required
                       ref={resumeInputRef}
                       type="file"
-                      
+
                       accept=".pdf,.doc,.docx"
                       className="w-full text-sm outline-none file:mr-3 file:rounded-md file:border-0 file:bg-gray-100 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-gray-800 hover:file:bg-gray-200"
                       onChange={(e) => {
@@ -785,7 +817,7 @@ export default function CareersPage() {
                         setResume(file);
                       }}
                     />
-                
+
                   </div>
                   {resume && (
                     <p className="mt-1 text-xs text-gray-600">
