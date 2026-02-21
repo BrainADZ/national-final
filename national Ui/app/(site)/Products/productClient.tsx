@@ -275,12 +275,12 @@ export default function ProductsPage() {
             {/* Title block */}
             <div className="mt-5 max-w-2xl">
               <h1 className="text-3xl font-bold text-white md:text-4xl">
-                Engineered Industrial Solutions
+                Industrial Process Equipment Manufacturer in India
               </h1>
 
               <p className="mt-3 text-sm leading-relaxed text-white/85 md:text-base">
-                Application-driven fabrication and heat transfer products, backed by over 35
-                years of manufacturing excellence.
+                Application-driven fabrication and engineered process equipment, backed by over 35 years of manufacturing excellence across pressure vessels, tanks, ducting systems, and custom industrial fabrication.
+
               </p>
             </div>
           </div>
@@ -294,12 +294,10 @@ export default function ProductsPage() {
       <section className="mx-auto max-w-300 px-4 py-10 md:py-12">
         <div className="rounded-2xl border border-gray-100 bg-gray-50 p-6 md:p-8">
           <h2 className="text-xl font-extrabold text-gray-900 md:text-2xl">
-            Built to Endure.
+            Built to Endure – Precision Fabrication & Engineered Performance.
           </h2>
           <p className="mt-2 text-sm leading-6 text-gray-600 md:text-base">
-            From pressure vessels and heat exchangers to structural steelwork and custom
-            fabrication, our products are executed with discipline and continuously improved to
-            deliver consistent quality and long-term performance.
+            From pressure vessels and storage tanks to pig launchers, AHU ducting, and custom fabricated equipment, every product is manufactured through disciplined quality processes to deliver consistent performance and long service life in demanding industrial environments.
           </p>
         </div>
       </section>
@@ -325,10 +323,7 @@ export default function ProductsPage() {
               Precision Engineering. <span className="text-[#ee9d54]">Consistent Output.</span>
             </h3>
             <p className="mt-3 pr-10 text-sm leading-6 text-gray-600 md:text-base">
-              Every product is executed through disciplined processes, attention to detail, and a
-              focus on long-term performance. Our fabrication supports custom designs,
-              application-specific requirements, and applicable industry standards to ensure
-              consistent quality from manufacture through service life.
+             Every product is executed through application-specific engineering, certified materials, and strict quality control. As an industrial process equipment manufacturer, we support custom designs and industry standards to ensure reliable performance from fabrication through operational life.
             </p>
 
             <ul className="mt-6 grid gap-3 pr-10 text-sm text-gray-700 sm:grid-cols-2">
@@ -415,6 +410,123 @@ export default function ProductsPage() {
           ))}
         </div>
       </section>
+      {/* TECHNICAL CONTENT SECTION */}
+<section className="mx-auto max-w-425 px-4 pb-16">
+
+  {/* H2 */}
+  <h2 className="text-2xl font-extrabold text-gray-900 md:text-3xl mt-12">
+    Pressure Vessels, Storage Tanks & Process Equipment
+  </h2>
+
+  <p className="mt-3 text-sm leading-6 text-gray-600 md:text-base">
+    National Engineers & Steel Fabricators is a trusted pressure vessel manufacturer in India delivering engineered vessels and tanks for high-pressure and industrial applications.
+  </p>
+
+  <p className="mt-2 text-sm leading-6 text-gray-600 md:text-base">
+    We also operate as a reliable storage tank manufacturer in India, supplying tanks for water, chemicals, and process fluids — built for durability and operational safety.
+  </p>
+
+  <p className="mt-3 font-semibold text-gray-800">Our manufacturing range includes:</p>
+
+  <ul className="mt-3 list-disc list-inside space-y-1 text-sm text-gray-600">
+    <li>Air Receiver Tanks</li>
+    <li>Nitrogen Buffer Tanks</li>
+    <li>Blowdown Tanks</li>
+    <li>Activated Carbon Filter Tanks</li>
+    <li>Process Equipment Assemblies</li>
+  </ul>
+
+  <p className="mt-3 text-sm text-gray-600">
+    Each unit is fabricated using certified materials and inspected for dimensional accuracy and performance compliance.
+  </p>
+
+  {/* H3 */}
+  <h3 className="mt-8 text-xl font-extrabold text-gray-900">
+    Industrial Tank Manufacturing Capabilities
+  </h3>
+
+  <p className="mt-2 text-sm text-gray-600">
+    As an experienced air receiver tank manufacturer and nitrogen buffer tank manufacturer, we design tanks that support compressed air and gas management systems across multiple industries.
+  </p>
+
+  <p className="mt-3 font-semibold text-gray-800">We also fabricate:</p>
+
+  <ul className="mt-3 list-disc list-inside space-y-1 text-sm text-gray-600">
+    <li>Activated carbon filter tank for filtration applications</li>
+    <li>Blowdown tank manufacturer solutions for pressure relief systems</li>
+  </ul>
+
+  <p className="mt-3 text-sm text-gray-600">
+    All tanks are custom-built based on operational requirements.
+  </p>
+
+  {/* H2 */}
+  <h2 className="mt-10 text-2xl font-extrabold text-gray-900 md:text-3xl">
+    Pipeline Equipment & HVAC Fabrication
+  </h2>
+
+  <p className="mt-2 text-sm text-gray-600">
+    We provide specialized fabrication services for pipeline and HVAC infrastructure.
+  </p>
+
+  {/* H3 */}
+  <h3 className="mt-6 text-xl font-extrabold text-gray-900">
+    Pig Launcher & Pipeline Accessories
+  </h3>
+
+  <p className="mt-2 text-sm text-gray-600">
+    NESF is a dependable pig launcher manufacturer India, supplying pig launching and receiving systems for pipeline cleaning, inspection, and maintenance operations.
+  </p>
+
+  {/* H3 */}
+  <h3 className="mt-6 text-xl font-extrabold text-gray-900">
+    AHU Duct Manufacturing
+  </h3>
+
+  <p className="mt-2 text-sm text-gray-600">
+    As an established AHU duct manufacturer, we deliver precision-fabricated ducting systems for industrial ventilation and airflow management — engineered for performance and long service life.
+  </p>
+
+  {/* H2 */}
+  <h2 className="mt-10 text-2xl font-extrabold text-gray-900 md:text-3xl">
+    Custom Fabricated Equipment for Industrial Applications
+  </h2>
+
+  <p className="mt-2 text-sm text-gray-600">
+    Every project has unique requirements — that’s why we specialize in custom fabricated equipment tailored to client drawings and application-specific needs.
+  </p>
+
+  <p className="mt-3 font-semibold text-gray-800">Our fabrication capabilities cover:</p>
+
+  <ul className="mt-3 list-disc list-inside space-y-1 text-sm text-gray-600">
+    <li>Pressure vessels</li>
+    <li>Storage tanks</li>
+    <li>Filter tanks</li>
+    <li>Pig launchers</li>
+    <li>AHU ducting</li>
+    <li>Structural assemblies</li>
+  </ul>
+
+  <p className="mt-3 text-sm text-gray-600">
+    From concept to commissioning, our engineering team ensures accuracy, quality, and timely delivery.
+  </p>
+
+  {/* H2 */}
+  <h2 className="mt-10 text-2xl font-extrabold text-gray-900 md:text-3xl">
+    Why Choose NESF as Your Industrial Fabrication Partner?
+  </h2>
+
+  <ul className="mt-4 list-disc list-inside space-y-1 text-sm text-gray-600">
+    <li>Proven industrial process equipment manufacturer</li>
+    <li>Complete in-house fabrication facility</li>
+    <li>Certified raw materials</li>
+    <li>Application-specific engineering</li>
+    <li>Schedule-driven project execution</li>
+    <li>Pan-India delivery support</li>
+    <li>Focus on long-term performance</li>
+  </ul>
+
+</section>
 
       {/* BOTTOM CTA */}
       <section className="border-t border-gray-100 bg-gray-50">
@@ -422,11 +534,10 @@ export default function ProductsPage() {
           <div className="flex flex-col gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm md:flex-row md:items-center md:justify-between">
             <div>
               <h3 className="text-lg font-extrabold text-gray-900">
-                Custom fabrication support required?
+                 Need Custom Fabrication Support?
               </h3>
               <p className="mt-1 text-sm text-gray-600">
-                Share your drawings or specifications to initiate a technical review with our
-                engineering team.
+                Let’s build your industrial solution — engineered for reliability and precision.
               </p>
             </div>
             <a
