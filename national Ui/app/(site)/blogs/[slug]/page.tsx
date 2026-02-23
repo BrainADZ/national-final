@@ -134,7 +134,7 @@ export default async function BlogPost({
                 Home
               </Link>
               <span className="text-white/30">/</span>
-              <Link href="/blog" className="hover:text-white">
+              <Link href="/blogs" className="hover:text-white">
                 Blog
               </Link>
               <span className="text-white/30">/</span>
@@ -168,7 +168,7 @@ export default async function BlogPost({
                 {postCats.map((c: any) => (
                   <Link
                     key={c.id}
-                    href={`/blog?category=${c.id}`}
+                    href={`/blogs?category=${c.id}`}
                     className="text-orange-200 hover:text-white hover:underline"
                   >
                     {c.name}
@@ -188,7 +188,7 @@ export default async function BlogPost({
             {/* Top actions */}
             <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
               <Link
-                href="/blog"
+                href="/blogs"
                 className="text-sm font-semibold text-gray-900 hover:underline"
               >
                 ← Back to Blog
@@ -351,7 +351,7 @@ hover:[&_.ez-toc-icon-toggle-span_svg]:text-orange-700
                   categories.slice(0, 12).map((c: any) => (
                     <Link
                       key={c.id}
-                      href={`/blog?category=${c.id}`}
+                      href={`/blogs?category=${c.id}`}
                       className="flex items-center justify-between bg-white px-4 py-3 text-sm hover:bg-gray-100"
                     >
                       <span className="font-semibold text-gray-900">
@@ -373,7 +373,7 @@ hover:[&_.ez-toc-icon-toggle-span_svg]:text-orange-700
               </div>
               <div className="mt-4 space-y-2 text-sm">
                 <Link
-                  href="/blog"
+                  href="/blogs"
                   className="block bg-white px-4 py-3 font-semibold text-gray-900 hover:bg-gray-100"
                 >
                   ← Back to Blog
