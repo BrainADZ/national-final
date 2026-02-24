@@ -119,12 +119,12 @@ export default async function BlogPost({
         <img
           src={bannerSrc}
           alt="Blog banner"
-          className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px]"
+          className="h-60 w-full object-cover sm:h-80 md:h-95"
           loading="eager"
         />
 
         {/* overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/15" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/15" />
 
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-432 px-4 pb-8 sm:px-6 sm:pb-10">
