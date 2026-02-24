@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Metadata } from "next";
 import Link from "next/link";
 
 export const revalidate = 60;
@@ -15,7 +16,14 @@ async function getPosts() {
   if (!res.ok) throw new Error("Failed to fetch posts");
   return res.json();
 }
-
+export const metadata: Metadata = {
+  title: "Industrial Fabrication Blogs | NESF Surat",
+  description:
+    "Read expert blogs on steel fabrication, skid systems, piping, HVAC ducting, and industrial equipment manufacturing by NESF Surat.",
+  alternates: {
+    canonical: "https://nationalengrs.com/blogs",
+  },
+};
 export default async function BlogPage() {
   const posts = await getPosts();
 
@@ -31,13 +39,13 @@ export default async function BlogPage() {
       {/* HERO */}
       <section className="relative">
         <div
-          className="h-[320px] w-full bg-cover bg-center sm:h-[380px]"
+          className="h-80 w-full bg-cover bg-center sm:h-95"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="absolute inset-0">
-          <div className="mx-auto flex h-full max-w-[1400px] flex-col justify-end px-6 pb-12">
+          <div className="mx-auto flex h-full max-w-350 flex-col justify-end px-6 pb-12">
             <div className="flex items-center gap-2 text-xs font-semibold tracking-wide text-white/70">
               <span>HOME</span>
               <span className="text-white/40">/</span>
@@ -45,18 +53,18 @@ export default async function BlogPage() {
             </div>
 
             <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-              Insights & Updates
+              Industrial Fabrication & Engineering Blogs
             </h1>
 
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
-              Industry notes, product updates, and practical engineering guidance.
+             Explore expert insights on steel fabrication, industrial equipment manufacturing, skid systems, piping, and process engineering from National Engineers & Steel Fabricators.
             </p>
           </div>
         </div>
       </section>
 
       {/* POSTS GRID */}
-      <section className="mx-auto max-w-[1400px] px-6 py-16">
+      <section className="mx-auto max-w-350 px-6 py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((p: any) => {
             const postHref = `/blogs/${p.slug}`;
@@ -69,7 +77,7 @@ export default async function BlogPage() {
                 {/* IMAGE (blog link) */}
                 <Link
                   href={postHref}
-                  className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100 no-underline hover:no-underline"
+                  className="relative aspect-16/10 w-full overflow-hidden bg-gray-100 no-underline hover:no-underline"
                   aria-label={stripHtml(p?.title?.rendered)}
                 >
                   {featured ? (

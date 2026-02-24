@@ -55,14 +55,14 @@ export default function GalleryClient({ images }: { images: GalleryImage[] }) {
                 type="button"
                 onClick={() => setIndex(idx)}
                 className="
-                  group relative overflow-hidden  border border-gray-200 bg-white
-                  shadow-sm transition hover:-translate-y-0.5 hover:shadow-xl
+                  group relative overflow-hidden  
+                  transition hover:-translate-y-0.5 hover:shadow-xl
                   focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ee9d54] focus-visible:ring-offset-2
                 "
                 aria-label={`Open image ${idx + 1}`}
               >
                 {/* Equal height tiles */}
-                <div className="relative h-[170px] w-a sm:h-[190px] lg:h-[210px]">
+                <div className="relative h-[170px] w-a sm:h-[180px]">
                   <img
                     src={img.src}
                     alt={img.alt}
