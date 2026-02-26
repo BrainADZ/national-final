@@ -50,7 +50,7 @@ export default async function AuthorPage() {
               {/* Social */}
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href="#"
+                  href="https://in.linkedin.com/in/deepakawasthiseo"
                   className="inline-flex items-center gap-2 border border-white/20 px-3 py-2 text-sm text-white/90 hover:bg-white/10 transition"
                 >
                   <Linkedin className="h-4 w-4" />
@@ -58,7 +58,7 @@ export default async function AuthorPage() {
                 </a>
 
                 <a
-                  href="mailto:info@nationalengineers.in"
+                  href="mailto:seo@brainadz.marketing"
                   className="inline-flex items-center gap-2 border border-white/20 px-3 py-2 text-sm text-white/90 hover:bg-white/10 transition"
                 >
                   <Mail className="h-4 w-4" />

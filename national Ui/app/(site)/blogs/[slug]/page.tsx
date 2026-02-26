@@ -168,7 +168,7 @@ export default async function BlogPost({
                 {postCats.map((c: any) => (
                   <Link
                     key={c.id}
-                    href={`/blogs?category=${c.id}`}
+                  href={`/blogs/category/${c.slug}`}
                     className="text-orange-200 hover:text-white hover:underline"
                   >
                     {c.name}
@@ -181,7 +181,7 @@ export default async function BlogPost({
       </section>
 
       {/* BODY */}
-      <section className="mx-auto max-w-[1400px] px-4 py-10 sm:px-6">
+      <section className="mx-auto max-w-350 px-4 py-10 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-[1fr_340px]">
           {/* LEFT */}
           <div>
@@ -351,7 +351,7 @@ hover:[&_.ez-toc-icon-toggle-span_svg]:text-orange-700
                   categories.slice(0, 12).map((c: any) => (
                     <Link
                       key={c.id}
-                      href={`/blogs?category=${c.id}`}
+                      href={`/blogs/category/${c.slug}`}
                       className="flex items-center justify-between bg-white px-4 py-3 text-sm hover:bg-gray-100"
                     >
                       <span className="font-semibold text-gray-900">
