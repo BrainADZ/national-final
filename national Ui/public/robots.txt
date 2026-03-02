@@ -1,169 +1,212 @@
 # robots.txt for https://nationalengrs.com/
 
 # =========================
+# Global Rules (Apply to All Bots)
+# =========================
+User-agent: *
+Disallow: /blogs/category/
+Allow: /
+
+# =========================
 # Google
 # =========================
 User-agent: Googlebot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: Googlebot-Image
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: Googlebot-Mobile
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: Googlebot-News
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: Google-Extended
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 # =========================
 # Microsoft / Bing
 # =========================
 User-agent: Bingbot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: BingPreview
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: MSNBot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 # =========================
 # Yahoo
 # =========================
 User-agent: Slurp
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: yahoo-mmcrawler
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: yahoo-blogs/v3.9
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 # =========================
 # Yandex
 # =========================
 User-agent: Yandex
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: YandexBot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 # =========================
 # Baidu
 # =========================
 User-agent: Baiduspider
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 # =========================
 # DuckDuckGo
 # =========================
 User-agent: DuckDuckBot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 # =========================
 # OpenAI
 # =========================
 User-agent: ChatGPT-User
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: GPTBot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: OAI-SearchBot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 # =========================
 # Anthropic (Claude)
 # =========================
 User-agent: ClaudeBot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: Claude-Web
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: anthropic-ai
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 # =========================
 # Perplexity
 # =========================
 User-agent: PerplexityBot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 # =========================
 # Apple
 # =========================
 User-agent: Applebot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: Applebot-Extended
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 # =========================
 # Social Media Crawlers
 # =========================
 User-agent: facebookexternalhit
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: Facebot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: Twitterbot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: LinkedInBot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 # =========================
 # SEO Tools
 # =========================
 User-agent: AhrefsBot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: SemrushBot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: MJ12bot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: DotBot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: ScreamingFrog
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 # =========================
 # Other Crawlers
 # =========================
 User-agent: Teoma
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: Gigabot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: Robozilla
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: Nutch
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: ia_archiver
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: naverbot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 User-agent: psbot
-Disallow:
+Allow: /
+Disallow: /blogs/category/
 
 # =========================
-# Allow All Remaining Bots
-# =========================
-User-agent: *
-Disallow:
-
 # Sitemap
+# =========================
 Sitemap: https://nationalengrs.com/sitemap.xml
