@@ -62,7 +62,7 @@ export default function GalleryClient({ images }: { images: GalleryImage[] }) {
                 aria-label={`Open image ${idx + 1}`}
               >
                 {/* Equal height tiles */}
-                <div className="relative h-[170px] w-a sm:h-[180px]">
+                <div className="relative h-42.5 w-a sm:h-45">
                   <img
                     src={img.src}
                     alt={img.alt}
