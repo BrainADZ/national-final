@@ -1,7 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
 
+
+import { Metadata } from "next";
 import React from "react";
+export const metadata: Metadata = {
+  title: "Terms and Conditions | National Engineers & Steel Fabricator",
+  description:
+    "Read the Terms and Conditions of National Engineers & Steel Fabricators to understand the rules, policies, website usage guidelines, and user responsibilities.",
+  alternates: {
+    canonical: "https://nationalengrs.com/terms-and-condition",
+  },
+};
 
 const TOS = {
   effectiveDate: "01 January 2026",
@@ -226,7 +235,7 @@ export default function TermsOfServicePage() {
           </p>
 
           <h1 className="mt-2 text-3xl font-bold text-white lg:text-5xl">
-            Terms of <span className="text-[#e78f3d]">Service</span>
+            Terms & <span className="text-[#e78f3d]">Condition</span>
           </h1>
 
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-gray-200">
@@ -235,7 +244,7 @@ export default function TermsOfServicePage() {
 
           <div className="mt-5 max-w-3xl space-y-3 text-gray-200">
             <p className="leading-relaxed">
-              These Terms of Service govern your access to and use of the website of{" "}
+              These Terms & Condition govern your access to and use of the website of{" "}
               <span className="font-semibold text-white">{TOS.effectiveDate}</span>{" "}
               , including any
               pages, forms, and services provided through the website.
