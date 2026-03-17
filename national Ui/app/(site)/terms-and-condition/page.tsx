@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const TOS = {
-  effectiveDate: "01 January 2026",
+  effectiveDate: "16th March 2026",
   company: "National Engineers & Steel Fabricators (NESF)",
   email: "admin@nationalengrs.com",
   phone: "+91 95740 11132",
@@ -24,166 +24,197 @@ const SECTIONS: Array<{
   title: string;
   content: React.ReactNode;
 }> = [
-    {
-      id: "about",
-      title: "1) About NESF",
-      content: (
-        <p className="leading-relaxed text-slate-700">
-          National Engineers & Steel Fabricators (NESF) provides engineering and steel fabrication
-          related services, which may include design support, detailing, manufacturing, supply,
-          erection support, commissioning support, and maintenance services, subject to project scope
-          and written agreement.
-        </p>
-      ),
-    },
-    {
-      id: "eligibility",
-      title: "2) Eligibility and permitted use",
-      content: (
-        <p className="leading-relaxed text-slate-700">
-          You may use this website only for lawful purposes and for business or informational
-          purposes. You agree not to misuse the website, interfere with its operation, attempt
-          unauthorized access, or use the website to transmit harmful or illegal material.
-        </p>
-      ),
-    },
-    {
-      id: "content-accuracy",
-      title: "3) Website content and accuracy",
-      content: (
-        <p className="leading-relaxed text-slate-700">
-          The content on this website is provided for general information and business communication.
-          While we try to keep information accurate and updated, we do not guarantee that the website
-          content is complete, error free, or always current. Product images, drawings,
-          specifications, capacities, and timelines shown on the website are indicative and may vary
-          based on project requirements and revisions.
-        </p>
-      ),
-    },
-    {
-      id: "quotes",
-      title: "4) Quotes, orders, and contracts",
-      content: (
-        <p className="leading-relaxed text-slate-700">
-          Any request for quotation submitted through the website does not create a contract. Prices,
-          timelines, technical scope, and delivery terms become binding only when confirmed in writing
-          by NESF through an official quotation and accepted purchase order or work order, or another
-          written agreement signed by authorized representatives.
-        </p>
-      ),
-    },
-    {
-      id: "engineering",
-      title: "5) Engineering and technical responsibility",
-      content: (
-        <p className="leading-relaxed text-slate-700">
-          You are responsible for confirming that any product or service is suitable for your
-          application, site conditions, and applicable standards and safety requirements. Nothing on
-          the website should be treated as certified engineering advice for a specific project. Final
-          designs and deliverables will be governed by the approved drawings, specifications, and
-          project documents.
-        </p>
-      ),
-    },
-    {
-      id: "ip",
-      title: "6) Intellectual property",
-      content: (
-        <p className="leading-relaxed text-slate-700">
-          All content on this website, including text, graphics, logos, photographs, brochures, and
-          documents, is owned by or licensed to NESF and is protected by applicable laws. You may
-          view and download content only for internal business evaluation. You may not copy, modify,
-          republish, distribute, or commercially use any website content without prior written
-          permission from NESF.
-        </p>
-      ),
-    },
-    {
-      id: "third-party-links",
-      title: "7) Third party links",
-      content: (
-        <p className="leading-relaxed text-slate-700">
-          This website may contain links to third party websites for convenience. NESF does not
-          control or endorse these websites and is not responsible for their content, security, or
-          practices. Accessing third party sites is at your own risk.
-        </p>
-      ),
-    },
-    {
-      id: "disclaimers",
-      title: "8) Disclaimers",
-      content: (
-        <p className="leading-relaxed text-slate-700">
-          This website is provided on an “as is” and “as available” basis. To the maximum extent
-          permitted by law, NESF disclaims all warranties, whether express or implied, including
-          implied warranties of merchantability, fitness for a particular purpose, non infringement,
-          and availability.
-        </p>
-      ),
-    },
-    {
-      id: "liability",
-      title: "9) Limitation of liability",
-      content: (
-        <p className="leading-relaxed text-slate-700">
-          To the maximum extent permitted by applicable law, NESF will not be liable for any direct
-          or indirect losses arising from your use of, or inability to use, this website or reliance
-          on its content. This includes any loss of profits, business interruption, loss of data,
-          loss of goodwill, or consequential damages, even if NESF has been advised of the
-          possibility of such damages.
-        </p>
-      ),
-    },
-    {
-      id: "indemnity",
-      title: "10) Indemnity",
-      content: (
-        <p className="leading-relaxed text-slate-700">
-          You agree to indemnify and hold harmless NESF from any claims, damages, liabilities, costs,
-          and expenses, including reasonable legal fees, arising from your use of the website, your
-          violation of these Terms, or your infringement of any rights of any third party.
-        </p>
-      ),
-    },
-    {
-      id: "privacy",
-      title: "11) Privacy",
-      content: (
-        <p className="leading-relaxed text-slate-700">
-          Your use of this website is also subject to our Privacy Policy. Please review it to
-          understand how we collect and use information.
-        </p>
-      ),
-    },
-    {
-      id: "changes",
-      title: "12) Changes to these Terms",
-      content: (
-        <p className="leading-relaxed text-slate-700">
-          We may update these Terms from time to time. The updated version will be posted on this
-          page with a revised Effective Date. Continued use of the website after the update means
-          you accept the revised Terms.
-        </p>
-      ),
-    },
-    {
-      id: "law",
-      title: "13) Governing law and jurisdiction",
-      content: (
-        <p className="leading-relaxed text-slate-700">
-          These Terms will be governed by applicable laws. Any disputes will be subject to the
-          jurisdiction of competent courts where NESF has its registered office or conducts business,
-          unless otherwise required by law.
-        </p>
-      ),
-    },
+  {
+    id: "introduction",
+    title: "1) Introduction",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        Welcome to the official website of National Engineers and Steel Fabricators.
+        These Terms and Conditions govern your access to and use of our website,
+        products, and services. By accessing or using this website, you agree to
+        comply with and be bound by these terms. If you do not agree with any part
+        of these terms, please discontinue the use of this website immediately.
+      </p>
+    ),
+  },
+  {
+    id: "about-company",
+    title: "2) About the Company",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        National Engineers and Steel Fabricators is a professional engineering and
+        fabrication company specializing in the design and manufacturing of industrial
+        equipment such as air receiver tanks, pressure vessels, steel fabrication
+        structures, and related engineering solutions. Our website provides information
+        about our products, services, and capabilities for business clients, partners,
+        and potential customers.
+      </p>
+    ),
+  },
+  {
+    id: "website-use",
+    title: "3) Website Use",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        The content on this website is provided for general information and business
+        purposes only. You may browse the website, view product information, and
+        contact us for inquiries. However, you may not reproduce, distribute, modify,
+        or republish any part of the website without written permission from
+        National Engineers and Steel Fabricators.
+      </p>
+    ),
+  },
+  {
+    id: "eligibility",
+    title: "4) Eligibility",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        By using this website, you confirm that you are at least 18 years old or
+        accessing the website under the supervision of a legal guardian or authorized
+        organization representative. Businesses, contractors, engineers, and
+        procurement professionals may use the website to explore our fabrication
+        capabilities and request quotations.
+      </p>
+    ),
+  },
+  {
+    id: "product-information",
+    title: "5) Product Information and Accuracy",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        We strive to ensure that all information provided on this website is accurate
+        and up to date. However, specifications, product descriptions, images, and
+        technical details are subject to change without notice. The information
+        provided on the website should not be considered as a legally binding
+        engineering specification unless confirmed through official quotations
+        or documentation provided by our company.
+      </p>
+    ),
+  },
+  {
+    id: "quotations-orders",
+    title: "6) Quotations and Orders",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        Any quotation provided by National Engineers and Steel Fabricators through
+        the website, email, or other communication channels is subject to confirmation
+        and acceptance by the company. Orders are considered valid only after
+        formal approval, technical confirmation, and agreement on project scope,
+        pricing, and delivery timelines.
+      </p>
+    ),
+  },
+  {
+    id: "engineering-responsibility",
+    title: "7) Engineering Responsibility",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        All engineering products and fabricated equipment must be used in accordance
+        with recommended industry standards and safety guidelines. Customers and
+        contractors are responsible for ensuring that products are installed,
+        maintained, and operated by qualified professionals. The company shall not
+        be liable for damages resulting from improper installation, misuse, or
+        unauthorized modification of equipment.
+      </p>
+    ),
+  },
+  {
+    id: "intellectual-property",
+    title: "8) Intellectual Property Rights",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        All content on this website, including text, graphics, logos, product designs,
+        technical information, and images, is the intellectual property of
+        National Engineers and Steel Fabricators unless otherwise stated.
+        Unauthorized use, duplication, or reproduction of this content is strictly
+        prohibited without prior written consent from the company.
+      </p>
+    ),
+  },
+  {
+    id: "third-party-links",
+    title: "9) Third-Party Links",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        Our website may contain links to third-party websites for informational
+        purposes. These external websites are not controlled by National Engineers
+        and Steel Fabricators, and we are not responsible for their content,
+        privacy practices, or services. Accessing third-party websites is at
+        your own risk.
+      </p>
+    ),
+  },
+  {
+    id: "limitation-liability",
+    title: "10) Limitation of Liability",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        National Engineers and Steel Fabricators shall not be liable for any direct,
+        indirect, incidental, or consequential damages arising from the use or
+        inability to use this website or its content. This includes but is not
+        limited to business losses, data loss, or operational interruptions.
+      </p>
+    ),
+  },
+  {
+    id: "indemnification",
+    title: "11) Indemnification",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        By using this website, you agree to indemnify and hold harmless
+        National Engineers and Steel Fabricators, its employees, partners,
+        and affiliates from any claims, liabilities, damages, or expenses
+        arising from your misuse of the website or violation of these terms.
+      </p>
+    ),
+  },
+  {
+    id: "privacy",
+    title: "12) Privacy",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        Your use of this website is also subject to our Privacy Policy,
+        which explains how we collect, use, and protect your information.
+        By using this website, you consent to the practices described
+        in the Privacy Policy.
+      </p>
+    ),
+  },
+  {
+    id: "changes-to-terms",
+    title: "13) Changes to Terms",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        National Engineers and Steel Fabricators reserves the right to
+        modify or update these Terms and Conditions at any time without
+        prior notice. Any changes will be posted on this page, and
+        continued use of the website will constitute acceptance
+        of the updated terms.
+      </p>
+    ),
+  },
+  {
+    id: "governing-law",
+    title: "14) Governing Law",
+    content: (
+      <p className="leading-relaxed text-slate-700">
+        These Terms and Conditions shall be governed by and interpreted
+        in accordance with the laws of India. Any disputes arising from
+        the use of this website shall be subject to the jurisdiction
+        of the competent courts where the company operates.
+      </p>
+    ),
+  },
     {
       id: "contact",
-      title: "14) Contact",
+      title: "15) Contact",
       content: (
         <div className="space-y-2 text-slate-700">
-          <p className="leading-relaxed">For any questions about these Terms, please contact:</p>
-
+          <p className="leading-relaxed">If you have any questions regarding these Terms and Conditions,
+          please contact us using the following details:</p>
+        <p className="text-sm font-medium text-slate-900">
+          National Engineers and Steel Fabricators
+        </p>
           <p className="text-sm">
             <span className="font-semibold text-slate-900">Email:</span>{" "}
             <a
@@ -203,6 +234,21 @@ const SECTIONS: Array<{
               {TOS.phone}
             </a>
           </p>
+          <p className="text-sm">
+          <span className="font-semibold text-slate-900">Website:</span>{" "}
+          <a
+            className="text-[#e78f3d] underline underline-offset-4 hover:text-[#d97927]"
+            href="https://nationalengrs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://nationalengrs.com
+          </a>
+        </p>
+                <p className="leading-relaxed">
+          We will make reasonable efforts to respond to your inquiries
+          as quickly as possible.
+        </p>
         </div>
       ),
     },
@@ -235,11 +281,11 @@ export default function TermsOfServicePage() {
           </p>
 
           <h1 className="mt-2 text-3xl font-bold text-white lg:text-5xl">
-            Terms & <span className="text-[#e78f3d]">Condition</span>
+            Terms and <span className="text-[#e78f3d]">Conditions</span>
           </h1>
 
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-gray-200">
-            Effective Date: <span className="font-semibold text-white">{TOS.effectiveDate}</span>
+            Last Updated:  <span className="font-semibold text-white">{TOS.effectiveDate}</span>
           </p>
 
           <div className="mt-5 max-w-3xl space-y-3 text-gray-200">
