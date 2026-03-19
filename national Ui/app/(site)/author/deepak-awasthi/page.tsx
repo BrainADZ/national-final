@@ -81,28 +81,22 @@ export default async function AuthorPage() {
       {/* ABOUT (NO ROUNDED / NO SHADOW) */}
       <section className="mx-auto max-w-6xl px-4 py-12">
         <div className="border border-gray-200 p-8">
-          <h2 className="text-2xl font-bold text-gray-900">About the Author</h2>
+          <h2 className="text-2xl font-bold text-gray-900">About the Author – Deepak Awasthi</h2>
 
           <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-gray-700">
             <p>
-              Deepak Awasthi is a fabrication and process engineering professional associated with
-              National Engineers & Steel Fabricators (NESF). His work spans heavy fabrication and
-              process equipment manufacturing, supporting industrial projects where quality,
-              documentation, and execution discipline matter.
+             Deepak Awasthi is an SEO and digital marketing professional with over 6 years of experience in search engine optimisation, content strategy, and organic growth. He specialises in creating high-quality, search-focused content that helps businesses improve visibility and attract relevant audiences.
             </p>
 
             <p>
-              With practical exposure to pressure vessels, storage tanks, pipelines, ducting systems,
-              and structural fabrication, his writing focuses on real-world selection guidance,
-              manufacturing best practices, and quality control practices used on the shop floor and
-              at project sites.
+              At National Engineers, Deepak is responsible for researching, writing, and optimising all blog content related to engineering, steel fabrication, industrial processes, and manufacturing insights. His work focuses on simplifying complex technical topics into clear, informative articles that provide value to engineers, industry professionals, and decision-makers.
             </p>
 
             <p>
-              Through technical, field-oriented articles, he aims to help engineers, procurement teams,
-              EPC stakeholders, and plant managers make informed decisions on industrial equipment,
-              vendors, and project execution planning.
+           Over the years, he has worked on more than 50 SEO projects across different industries, helping brands improve search rankings, increase organic traffic, and build long-term digital authority.
+
             </p>
+            <p>Deepak actively follows the latest search engine updates, AI-driven search trends, and modern SEO strategies to ensure content remains accurate, relevant, and aligned with evolving search standards.</p>
           </div>
 
           {/* Quick Expertise Blocks */}
