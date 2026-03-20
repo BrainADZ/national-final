@@ -44,7 +44,7 @@ export default async function AuthorPage() {
                 Deepak Awasthi
               </h1>
               <p className="mt-3 text-base md:text-lg text-white/75">
-                Author | Industrial Fabrication & Process Equipment Specialist
+                Best Seo Expert in India
               </p>
 
               {/* Social */}
