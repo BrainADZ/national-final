@@ -64,7 +64,7 @@ export async function generateMetadata(
   if (!post) return {};
 
   const seoTitle = post?.meta?.rank_math_title?.toString().trim();
-  const seoDesc  = post?.meta?.rank_math_description?.toString().trim();
+  const seoDesc = post?.meta?.rank_math_description?.toString().trim();
 
   // ✅ FORCE canonical based on your Next.js route (/blogs/[slug])
   const siteUrl = (process.env.SITE_URL || "").replace(/\/$/, "");
@@ -168,7 +168,7 @@ export default async function BlogPost({
                 {postCats.map((c: any) => (
                   <Link
                     key={c.id}
-                  href={`/blogs/category/${c.slug}`}
+                    href={`/blogs/category/${c.slug}`}
                     className="text-orange-200 hover:text-white hover:underline"
                   >
                     {c.name}
@@ -194,7 +194,7 @@ export default async function BlogPost({
                 ← Back to Blog
               </Link>
 
-              
+
             </div>
 
             {/* FEATURED IMAGE (ABOVE CONTENT, NOT IN HERO) */}
@@ -212,7 +212,7 @@ export default async function BlogPost({
 
             {/* ARTICLE (FORCED SPACING + FAQ SUPPORT) */}
             <article
-  className="
+              className="
     max-w-none text-gray-800
 
     /* universal spacing for WP content */
@@ -299,12 +299,12 @@ hover:[&_.ez-toc-icon-toggle-span_svg]:text-orange-700
     [&_.rank-math-question[aria-expanded='true']::after]:content-['–']
     [&_.rank-math-question[aria-expanded='true']::after]:text-orange-700
   "
-  dangerouslySetInnerHTML={{ __html: post.content?.rendered }}
-/>
+              dangerouslySetInnerHTML={{ __html: post.content?.rendered }}
+            />
 
 
-<EasyAccordionEnhancer />
-<EasyTocEnhancer />
+            <EasyAccordionEnhancer />
+            <EasyTocEnhancer />
             {/* CTA (RECTANGLE, NO ROUNDED, NO BORDERS) */}
             <div className="mt-12 bg-gray-50 px-6 py-6 sm:px-8">
               <div className="text-xs font-bold tracking-widest text-gray-600">
