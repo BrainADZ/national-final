@@ -24,6 +24,46 @@ export const metadata: Metadata = {
     canonical: "https://nationalengrs.com/blogs",
   },
 };
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://nationalengrs.com/blogs#blog",
+  "url": "https://nationalengrs.com/blogs",
+  "name": "Industrial Fabrication & Engineering Blogs | NESF Surat",
+  "headline": "Industrial Fabrication & Engineering Blogs",
+  "description":
+    "Explore expert insights on steel fabrication, industrial equipment manufacturing, skid systems, piping, and process engineering from National Engineers & Steel Fabricators.",
+  "publisher": {
+    "@id": "https://nationalengrs.com/#organization",
+  },
+  "isPartOf": {
+    "@id": "https://nationalengrs.com/#website",
+  },
+  "about": {
+    "@id": "https://nationalengrs.com/#organization",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://nationalengrs.com/blogs#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://nationalengrs.com/",
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://nationalengrs.com/blogs",
+    },
+  ],
+};
+
 export default async function BlogPage() {
   const posts = await getPosts();
 
@@ -33,8 +73,12 @@ export default async function BlogPage() {
   const authorName = "Deepak Awasthi";
   const authorAvatar = "/deepak.png"; // ✅ put this in /public
   const authorHref = "/author/deepak-awasthi"; // ✅ change as needed
-
-  return (
+  const schemas = [blogSchema, breadcrumbSchema];
+  return (<>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+    />
     <div className="min-h-screen bg-white">
       {/* HERO */}
       <section className="relative">
@@ -57,7 +101,7 @@ export default async function BlogPage() {
             </h1>
 
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
-             Explore expert insights on steel fabrication, industrial equipment manufacturing, skid systems, piping, and process engineering from National Engineers & Steel Fabricators.
+              Explore expert insights on steel fabrication, industrial equipment manufacturing, skid systems, piping, and process engineering from National Engineers & Steel Fabricators.
             </p>
           </div>
         </div>
@@ -168,5 +212,6 @@ export default async function BlogPage() {
         </div>
       </section>
     </div>
+  </>
   );
 }
