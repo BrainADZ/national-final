@@ -40,20 +40,61 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  "@id": "https://nationalengrs.com/#organization",
+  "name": "National Engineers & Steel Fabricators",
+  "alternateName": "NESF",
+  "url": "https://nationalengrs.com/",
+  "logo": "https://nationalengrs.com/logo222.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+919574611152",
+    "contactType": "sales",
+    "areaServed": "IN",
+    "availableLanguage": ["English", "Hindi"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Surat",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://x.com/engineers44891",
+    "https://www.instagram.com/nationalengrs",
+    "https://www.youtube.com/@National_Engineers",
+    "https://www.linkedin.com/company/national-engineers-steel-fabricators/",
+    "https://in.pinterest.com/nationalengineers/",
+    "https://www.tumblr.com/nationalengineersandsteelfabrica"
+  ]
+};
+
 export default function Home() {
   return (
-    <main>
-      <HeroVideoSection />
-      <AboutSection />
-      <StatsSection />
-      <BrandLogosCarousel />
-      <ProductsSection />
-      <IndustriesSection />
-      <MdDeskSection />
-      <CompetitiveAdvantageSection />
-      <HowWeWorkSection />
-      <TestimonialsSection />
-      <FaqSection />
-    </main>
+    <>
+      {/* ✅ JSON-LD Schema (Homepage Only) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
+
+      <main>
+        <HeroVideoSection />
+        <AboutSection />
+        <StatsSection />
+        <BrandLogosCarousel />
+        <ProductsSection />
+        <IndustriesSection />
+        <MdDeskSection />
+        <CompetitiveAdvantageSection />
+        <HowWeWorkSection />
+        <TestimonialsSection />
+        <FaqSection />
+      </main>
+    </>
   );
 }
