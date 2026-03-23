@@ -19,7 +19,182 @@ export const metadata: Metadata = {
     canonical: "https://nationalengrs.com/products",
   },
 };
+const collectionPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://nationalengrs.com/products#collectionpage",
+  url: "https://nationalengrs.com/products",
+  name: "Industrial Process Equipment Manufacturer in India | National Engineers",
+  headline: "Industrial Process Equipment Manufacturer in India",
+  description:
+    "Explore industrial process equipment manufactured by National Engineers & Steel Fabricators including air receivers, nitrogen buffer tanks, blowdown tanks, AHU ducts, pig launchers, storage tanks, and custom fabricated equipment.",
+  isPartOf: {
+    "@id": "https://nationalengrs.com/#website",
+  },
+  about: {
+    "@id": "https://nationalengrs.com/#organization",
+  },
+  publisher: {
+    "@id": "https://nationalengrs.com/#organization",
+  },
+};
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://nationalengrs.com/products#itemlist",
+  url: "https://nationalengrs.com/products",
+  name: "Industrial Products by National Engineers & Steel Fabricators",
+  numberOfItems: 19,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Flakes Hopper",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Stand Tube",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Dow Storage Tank",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      name: "Air Receiver",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 5,
+      name: "Nitrogen Buffer Tank",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 6,
+      name: "Pig Launcher",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 7,
+      name: "Blowdown Tank",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 8,
+      name: "AHU Duct",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 9,
+      name: "Storage Tank",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 10,
+      name: "Pressure Vessel",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 11,
+      name: "Process Skid System",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 12,
+      name: "Industrial Piping Assembly",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 13,
+      name: "Custom Fabricated Equipment",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 14,
+      name: "Structural Fabrication",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 15,
+      name: "MS Fabricated Tank",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 16,
+      name: "SS Fabricated Tank",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 17,
+      name: "Industrial Hopper",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 18,
+      name: "Heavy Fabrication Assembly",
+      url: "https://nationalengrs.com/products",
+    },
+    {
+      "@type": "ListItem",
+      position: 19,
+      name: "Pipeline Pigging Equipment",
+      url: "https://nationalengrs.com/products",
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://nationalengrs.com/products#breadcrumb",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://nationalengrs.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Products",
+      item: "https://nationalengrs.com/products",
+    },
+  ],
+};
+const schemas = [collectionPageSchema, itemListSchema, breadcrumbSchema];
 export default function ProductsPage() {
-  return <ProductsClient />;
+
+  return(
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemas),
+        }}
+      />
+<ProductsClient />;
+</>
+  ) 
 }

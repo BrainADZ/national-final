@@ -22,7 +22,48 @@ export const metadata: Metadata = {
     canonical: "https://nationalengrs.com/about",
   },
 };
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": "https://nationalengrs.com/about#aboutpage",
+  url: "https://nationalengrs.com/about",
+  name: "About National Engineers & Steel Fabricators",
+  headline:
+    "Industrial Fabrication Company in Surat | National Engineers & Steel Fabricators",
+  description:
+    "National Engineers & Steel Fabricators (NESF) is an industrial fabrication company in Surat, Gujarat, established in 1990, delivering pressure vessels, air receivers, heat exchangers, boilers, process piping skids, storage tanks, silos, structural steelwork, and HVAC ducts.",
+  isPartOf: {
+    "@id": "https://nationalengrs.com/#website",
+  },
+  about: {
+    "@id": "https://nationalengrs.com/#organization",
+  },
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: "https://nationalengrs.com/logo222.png",
+  },
+};
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://nationalengrs.com/about#breadcrumb",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://nationalengrs.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "About",
+      item: "https://nationalengrs.com/about",
+    },
+  ],
+};
+const schemas = [aboutPageSchema, breadcrumbSchema];
 export default function AboutPage() {
   const title = " Industrial Fabrication Company in Surat | National Engineers & Steel Fabricators";
   const breadcrumbCurrent = "About NESF";
@@ -30,6 +71,13 @@ export default function AboutPage() {
 
   return (
     <>
+     {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemas),
+        }}
+      />
       <section className="relative">
         {/* Background image */}
         <div className="absolute inset-0">

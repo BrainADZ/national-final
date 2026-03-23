@@ -21,6 +21,45 @@ export const metadata: Metadata = {
         canonical: "https://nationalengrs.com/gallery",
     },
 };
+const collectionPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://nationalengrs.com/gallery#collectionpage",
+  url: "https://nationalengrs.com/gallery",
+  name: "Industrial Fabrication Projects Gallery – Real Manufacturing Work by NESF",
+  headline: "Industrial Fabrication Projects Gallery – Real Manufacturing Work by NESF",
+  description:
+    "Explore the industrial fabrication projects gallery of National Engineers & Steel Fabricators featuring structural steel fabrication, process equipment manufacturing, skid systems, industrial piping, HVAC ducting, storage tanks, pressure equipment, and custom industrial assemblies.",
+  isPartOf: {
+    "@id": "https://nationalengrs.com/#website",
+  },
+  about: {
+    "@id": "https://nationalengrs.com/#organization",
+  },
+  publisher: {
+    "@id": "https://nationalengrs.com/#organization",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://nationalengrs.com/gallery#breadcrumb",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://nationalengrs.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Gallery",
+      item: "https://nationalengrs.com/gallery",
+    },
+  ],
+};
 async function getGalleryImages() {
     const dir = path.join(process.cwd(), "public", "gallery");
 
@@ -47,6 +86,19 @@ export default async function GalleryPage() {
     const images = await getGalleryImages();
 
     return (
+        <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(collectionPageSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
         <main className="bg-white">
             {/* Hero */}
             {/* HERO (image + overlay) */}
@@ -193,5 +245,6 @@ export default async function GalleryPage() {
         </div>
       </section>
         </main>
+        </>
     );
 }

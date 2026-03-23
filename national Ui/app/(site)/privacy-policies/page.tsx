@@ -1,7 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { Metadata } from "next";
 import React from "react";
+export const metadata: Metadata = {
+  title: "Privacy Policy | National Engineers & Steel Fabricators",
+  description:
+    "Privacy Policy of National Engineers & Steel Fabricators explaining how personal information is collected, used, shared, protected, and retained.",
+};
 
 const POLICY = {
   effectiveDate: "01 January 2026",
@@ -9,7 +15,52 @@ const POLICY = {
   email: "admin@nationalengrs.com",
   phone: "+91 95740 11132",
 };
+const privacyPolicySchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://nationalengrs.com/privacy-policies#webpage",
+  "url": "https://nationalengrs.com/privacy-policies",
+  "name": "Privacy Policy | National Engineers & Steel Fabricators",
+  "headline": "Privacy Policy",
+  "description":
+    "Privacy Policy of National Engineers & Steel Fabricators explaining how personal information is collected, used, shared, protected, and retained.",
+  "datePublished": "2026-01-01",
+  "dateModified": "2026-01-01",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@id": "https://nationalengrs.com/#website"
+  },
+  "about": {
+    "@type": "Organization",
+    "@id": "https://nationalengrs.com/#organization",
+    "name": "National Engineers & Steel Fabricators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://nationalengrs.com/#organization",
+    "name": "National Engineers & Steel Fabricators"
+  }
+};
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://nationalengrs.com/privacy-policies#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://nationalengrs.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Privacy Policy",
+      "item": "https://nationalengrs.com/privacy-policies"
+    }
+  ]
+};
 const SECTIONS: Array<{
   id: string;
   title: string;
@@ -249,6 +300,19 @@ const SECTIONS: Array<{
 
 export default function PrivacyPolicyPage() {
   return (
+    <>
+    <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(privacyPolicySchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
     <main className="relative overflow-hidden bg-white">
       {/* Subtle grid background like your site */}
       <div
@@ -439,5 +503,6 @@ export default function PrivacyPolicyPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

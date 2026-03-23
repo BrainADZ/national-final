@@ -19,7 +19,6 @@ import {
   ChevronDown,
   ArrowRight,
   MessageCircle,
-  GraduationCap as QualIcon,
   ShieldCheck,
   Factory, // ✅ (optional alias if you want different icon usage)
 } from "lucide-react";
