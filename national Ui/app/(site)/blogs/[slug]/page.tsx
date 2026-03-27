@@ -119,7 +119,7 @@ export default async function BlogPost({
         <img
           src={bannerSrc}
           alt="Blog banner"
-          className="h-60 w-full object-cover sm:h-80 md:h-95"
+          className="h-80  w-full object-cover sm:h-80 md:h-95"
           loading="eager"
         />
 
