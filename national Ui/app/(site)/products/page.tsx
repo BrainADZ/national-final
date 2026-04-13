@@ -186,7 +186,7 @@ const breadcrumbSchema = {
 const schemas = [collectionPageSchema, itemListSchema, breadcrumbSchema];
 export default function ProductsPage() {
 
-  return(
+  return (
     <>
       <script
         type="application/ld+json"
@@ -194,7 +194,7 @@ export default function ProductsPage() {
           __html: JSON.stringify(schemas),
         }}
       />
-<ProductsClient />;
-</>
-  ) 
+      <ProductsClient />;
+    </>
+  )
 }

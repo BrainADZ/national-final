@@ -71,7 +71,7 @@ export default function AboutPage() {
 
   return (
     <>
-     {/* JSON-LD Schema */}
+      {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
