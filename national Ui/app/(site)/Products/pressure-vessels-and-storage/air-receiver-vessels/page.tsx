@@ -81,7 +81,7 @@ export default function AirReceiverVesselsPage() {
           <aside className="self-start lg:sticky lg:top-28">
             <div className="rounded-xl border border-gray-200 bg-[#ececec] p-6 shadow-sm">
               <h2 className="mb-5 text-xl font-bold text-[#0f223d]">
-                Our Products
+                NESF Products
               </h2>
 
               <div className="space-y-2">
