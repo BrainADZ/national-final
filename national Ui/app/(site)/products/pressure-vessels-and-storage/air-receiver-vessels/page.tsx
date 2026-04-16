@@ -7,35 +7,35 @@ const categoryName = "Pressure Vessels & Storage";
 const sidebarProducts = [
   {
     label: "Air Receiver Vessels",
-    href: "#",
+    href: "/products/air-receiver-vessels",
   },
   {
     label: "Nitrogen Buffer / Gas Storage Tanks",
-    href: "#",
+    href: "/products/nitrogen-buffer-gas-storage-tanks",
   },
   {
     label: "Horizontal Storage Tanks",
-    href: "#",
+    href: "/products/horizontal-storage-tanks",
   },
   {
     label: "Vertical Storage Tanks",
-    href: "#",
+    href: "/products/vertical-storage-tanks",
   },
   {
     label: "Blowdown / Flash Tanks",
-    href: "#",
+    href: "/products/blowdown-flash-tanks",
   },
   {
     label: "Water Holding / Utility Vessels",
-    href: "#",
+    href: "/products/water-holding-utility-vessels",
   },
   {
     label: "Filter Vessels (Activated Carbon / Softener)",
-    href: "#",
+    href: "/products/filter-vessels",
   },
   {
     label: "Custom Pressure Vessels (As per drawing/spec)",
-    href: "#",
+    href: "/products/custom-pressure-vessels",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function AirReceiverVesselsPage() {
 
               <div className="space-y-2">
                 {sidebarProducts.map((item) => {
-                  const isActive = item.label === "Air Receiver Vessels";
+                  const isActive = item.href === "/products/air-receiver-vessels";
 
                   return (
                     <Link
