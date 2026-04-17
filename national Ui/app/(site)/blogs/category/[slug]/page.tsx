@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -39,20 +40,37 @@ export async function generateMetadata(
   const category = await getCategoryBySlug(slug);
   if (!category) return {};
 
-  const siteUrl = (process.env.SITE_URL || "").replace(/\/$/, "");
-  const canonical = siteUrl
-    ? `${siteUrl}/blogs/category/${category.slug}`
-    : `/blogs/category/${category.slug}`;
+  const canonical = `${SITE_URL}/blogs/category/${category.slug}`;
 
   const title = `${stripHtml(category.name)} Blogs | NESF Surat`;
   const description =
     stripHtml(category.description || "") ||
     `Read latest blogs in ${stripHtml(category.name)} category by National Engineers & Steel Fabricators (NESF) Surat.`;
+  const shortDescription = description.slice(0, 160);
 
   return {
     title,
-    description: description.slice(0, 160),
+    description: shortDescription,
     alternates: { canonical },
+    openGraph: {
+      title,
+      description: shortDescription,
+      url: canonical,
+      type: "website",
+      siteName: SITE_NAME,
+      images: [
+        {
+          url: absoluteUrl("/blogpage.png"),
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: shortDescription,
+      images: [absoluteUrl("/blogpage.png")],
+    },
   };
 }
 

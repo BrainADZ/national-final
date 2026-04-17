@@ -11,11 +11,14 @@ import IndustriesSection from "@/sections/IndustriesSection";
 import MdDeskSection from "@/sections/MdDeskSection";
 import ProductsSection from "@/sections/ProductsSection";
 import TestimonialsSection from "@/sections/Testimonial";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Best Steel Fabrication Company in India | National Engineers",
   description:
     "NESF provides industrial steel fabrication, pressure vessels, storage tanks and process equipment manufacturing services across Gujarat and PAN India.",
+  path: "/",
+  image: "/logo222.png",
   keywords: [
     "industrial steel fabrication company in india",
     "process equipment manufacturer in india",
@@ -27,18 +30,7 @@ export const metadata: Metadata = {
     "industrial equipment manufacturer india",
     "heavy fabrication company gujarat",
   ],
-  alternates: {
-    canonical: "https://nationalengrs.com",
-  },
-  openGraph: {
-    title: "Best Steel Fabrication Company in India | National Engineers",
-    description:
-      "NESF provides industrial steel fabrication, pressure vessels, storage tanks and process equipment manufacturing services across Gujarat and PAN India.",
-    url: "https://nationalengrs.com",
-    siteName: "National Engineering",
-    type: "website",
-  },
-};
+});
 
 const organizationSchema = {
   "@context": "https://schema.org",

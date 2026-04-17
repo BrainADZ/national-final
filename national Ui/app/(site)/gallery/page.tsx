@@ -4,12 +4,15 @@ import fs from "fs/promises";
 import GalleryClient from "@/components/gallery/GalleryClient";
 import Link from "next/link";
 import { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 
 const ALLOWED = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
     title: "Steel Fabrication Projects Gallery | National Engineers",
     description:
         "View real industrial fabrication projects, heavy engineering works and manufacturing setups by National Engineers across Gujarat and India.",
+    path: "/gallery",
+    image: "/gallery hero.jpeg",
     keywords: [
         "industrial fabrication projects",
         "steel fabrication work india",
@@ -17,10 +20,7 @@ export const metadata: Metadata = {
         "heavy fabrication project images",
         "manufacturing plant gallery",
     ],
-    alternates: {
-        canonical: "https://nationalengrs.com/gallery",
-    },
-};
+});
 const collectionPageSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",

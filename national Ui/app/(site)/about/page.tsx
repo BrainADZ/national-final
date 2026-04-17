@@ -5,11 +5,14 @@ import Link from "next/link";
 import MissionVisionSection from "@/sections/about/MissionVisionSection";
 import MdDeskSection from "@/sections/MdDeskSection";
 import AboutPageMdDeskSection from "@/sections/about/AboutPageMdDesk";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "About National Engineers | Fabrication Experts Surat",
   description:
     "National Engineers is a Surat based industrial fabrication company offering heavy steel fabrication, custom process equipment and engineered manufacturing solutions.",
+  path: "/about",
+  image: "/about hero.jpg",
   keywords: [
     "industrial fabrication company in surat",
     "engineering fabrication experts",
@@ -18,10 +21,7 @@ export const metadata: Metadata = {
     "process equipment fabrication company",
     "heavy engineering fabrication",
   ],
-  alternates: {
-    canonical: "https://nationalengrs.com/about",
-  },
-};
+});
 const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",

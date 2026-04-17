@@ -1,10 +1,12 @@
 import { Metadata } from "next";
 import React from "react";
-export const metadata: Metadata = {
+import { buildMetadata } from "@/lib/seo";
+export const metadata: Metadata = buildMetadata({
   title: "Privacy Policy | National Engineers & Steel Fabricators",
   description:
     "Privacy Policy of National Engineers & Steel Fabricators explaining how personal information is collected, used, shared, protected, and retained.",
-};
+  path: "/privacy-policies",
+});
 
 const POLICY = {
   effectiveDate: "01 January 2026",

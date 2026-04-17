@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import CareersClient from "./careersClient";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Careers at National Engineers | Fabrication Jobs",
   description:
     "Join National Engineers for careers in industrial fabrication, welding, engineering and manufacturing with opportunities in Surat and Gujarat.",
+  path: "/careers",
+  image: "/careerBanner.jpg",
   keywords: [
     "engineering jobs in fabrication industry",
     "industrial fabrication careers",
@@ -12,10 +15,7 @@ export const metadata: Metadata = {
     "welding fabrication jobs",
     "mechanical engineering vacancies",
   ],
-  alternates: {
-    canonical: "https://nationalengrs.com/careers",
-  },
-};
+});
 const careersPageSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",

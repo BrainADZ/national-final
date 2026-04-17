@@ -28,6 +28,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: "About", href: "/about" },
   {
     label: "Products",
+    href: "/products",
     children: [
       {
         label: "Pressure Vessels & Storage",
@@ -276,13 +277,14 @@ export default function Navbar() {
                 return (
                   <div key={item.label} className="group relative">
                     {/* Nav trigger */}
-                    <button
-                      type="button"
+                    <div
                       className={`flex items-center gap-1 text-sm font-semibold transition-colors hover:text-[#ee9d54] ${active ? "text-[#ee9d54]" : "text-gray-900"}`}
                     >
-                      {item.label}
+                      <Link href={item.href ?? "#"} className="outline-none">
+                        {item.label}
+                      </Link>
                       <ChevronDown className="h-3.5 w-3.5 transition-transform duration-150 group-hover:rotate-180" />
-                    </button>
+                    </div>
 
                     {/* Level-1 dropdown */}
                     <div className="invisible absolute left-0 top-full z-50 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">

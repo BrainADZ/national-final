@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import ProductsClient from "./productClient";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Process Equipment Manufacturer India | National Engineers",
   description:
     "Explore pressure vessels, storage tanks, air receivers and custom fabricated industrial process equipment by National Engineers serving chemical and industrial sectors.",
+  path: "/products",
+  image: "/product/7.jpg",
   keywords: [
     "industrial process equipment manufacturer",
     "pressure vessel fabrication gujarat",
@@ -15,10 +18,7 @@ export const metadata: Metadata = {
     "custom fabricated equipment",
     "industrial tank manufacturer india",
   ],
-  alternates: {
-    canonical: "https://nationalengrs.com/products",
-  },
-};
+});
 const collectionPageSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",

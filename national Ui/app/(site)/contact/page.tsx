@@ -6,11 +6,14 @@ import ContactFormClient from "./ContactFormClient";
 import FaqSection from "@/sections/Accordian";
 import Link from "next/link";
 import { Linkedin, Instagram, Youtube } from "lucide-react";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
     title: "Contact National Engineers | Fabrication Enquiry",
     description:
         "Get in touch with National Engineers for steel fabrication, process equipment manufacturing and custom industrial solutions in Surat, Gujarat and PAN India.",
+    path: "/contact",
+    image: "/logo222.png",
     keywords: [
         "steel fabrication company surat",
         "industrial fabrication enquiry",
@@ -18,10 +21,7 @@ export const metadata: Metadata = {
         "custom fabrication quote",
         "heavy fabrication gujarat",
     ],
-    alternates: {
-        canonical: "https://nationalengrs.com/contact",
-    },
-};
+});
 const contactPageSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",

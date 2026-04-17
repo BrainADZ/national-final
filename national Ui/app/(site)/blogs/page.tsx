@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Metadata } from "next";
 import Link from "next/link";
+import { buildMetadata } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -16,14 +17,13 @@ async function getPosts() {
   if (!res.ok) throw new Error("Failed to fetch posts");
   return res.json();
 }
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Industrial Fabrication Blogs | NESF Surat",
   description:
     "Read expert blogs on steel fabrication, skid systems, piping, HVAC ducting, and industrial equipment manufacturing by NESF Surat.",
-  alternates: {
-    canonical: "https://nationalengrs.com/blogs",
-  },
-};
+  path: "/blogs",
+  image: "/blogpage.png",
+});
 const blogSchema = {
   "@context": "https://schema.org",
   "@type": "Blog",

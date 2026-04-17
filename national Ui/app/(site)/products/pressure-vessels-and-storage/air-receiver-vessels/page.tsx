@@ -1,8 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
+import type { Metadata } from "next";
 import Link from "next/link";
 import ProductEnquiryForm from "@/components/ProductEnquiryForm";
+import { buildMetadata } from "@/lib/seo";
 
 const categoryName = "Pressure Vessels & Storage";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Air Receiver Vessels | National Engineers",
+  description:
+    "Explore industrial air receiver vessels by National Engineers for compressed air storage, pressure stabilization, and reliable plant performance.",
+  path: "/products/pressure-vessels-and-storage/air-receiver-vessels",
+  image:
+    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop",
+});
 
 const sidebarProducts = [
   {

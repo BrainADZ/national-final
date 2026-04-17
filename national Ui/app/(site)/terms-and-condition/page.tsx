@@ -3,14 +3,13 @@
 
 import { Metadata } from "next";
 import React from "react";
-export const metadata: Metadata = {
+import { buildMetadata } from "@/lib/seo";
+export const metadata: Metadata = buildMetadata({
   title: "Terms and Conditions | National Engineers & Steel Fabricator",
   description:
     "Read the Terms and Conditions of National Engineers & Steel Fabricators to understand the rules, policies, website usage guidelines, and user responsibilities.",
-  alternates: {
-    canonical: "https://nationalengrs.com/terms-and-condition",
-  },
-};
+  path: "/terms-and-condition",
+});
 const termsSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",

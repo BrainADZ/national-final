@@ -7,6 +7,7 @@ import "./globals.css";
 import { fontBody, fontHeading } from "./fonts";
 // import FloatingActions from "@/sections/FloatingActions";
 import AOSProvider from "@/components/AOSProvider";
+import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/seo";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -18,10 +19,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "National Engineers & Steel Fabricators",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
+  },
   description: "National Engineers & Steel Fabricators",
   verification: {
     google: "loI6ULKy_ozsBbHmXjqp9qg5dELTF5YIUiZ0LmQoUjc",
+  },
+  openGraph: {
+    siteName: SITE_NAME,
+    type: "website",
+    url: SITE_URL,
+    images: [
+      {
+        url: absoluteUrl(DEFAULT_OG_IMAGE),
+        alt: SITE_NAME,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
   other: {
     "p:domain_verify": "ea3affcc4a45f28d12a969547e95cef3",
