@@ -37,7 +37,8 @@ async function getCategories() {
     { next: { revalidate: 300 } }
   );
   if (!res.ok) return [];
-  return res.json();
+  const data = await res.json();
+  return Array.isArray(data) ? data : [];
 }
 
 export async function generateMetadata(

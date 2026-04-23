@@ -15,7 +15,8 @@ async function getPosts() {
     { next: { revalidate: 60 } }
   );
   if (!res.ok) throw new Error("Failed to fetch posts");
-  return res.json();
+  const data = await res.json();
+  return Array.isArray(data) ? data : [];
 }
 export const metadata: Metadata = buildMetadata({
   title: "Industrial Fabrication Blogs | NESF Surat",
