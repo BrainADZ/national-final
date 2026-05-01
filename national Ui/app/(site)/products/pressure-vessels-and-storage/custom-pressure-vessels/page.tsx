@@ -6,21 +6,27 @@ import { buildMetadata } from "@/lib/seo";
 
 const categoryName = "Pressure Vessels & Storage";
 const pagePath =
-  "/products/pressure-vessels-and-storage/air-receiver-vessels";
+  "/products/pressure-vessels-and-storage/custom-pressure-vessels";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Air Receiver Vessels | National Engineers",
+  title: "Custom Pressure Vessels | National Engineers",
   description:
-    "Explore industrial air receiver vessels by National Engineers for compressed air storage, pressure stabilization, and reliable plant performance.",
+    "NESF manufactures custom-engineered pressure vessels as per client drawings, datasheets, and project specifications for industrial applications.",
   path: pagePath,
-  image:
-    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop",
+  image: "/product/23.jpeg",
+  keywords: [
+    "custom pressure vessel manufacturer",
+    "pressure vessel fabrication as per drawing",
+    "process vessel manufacturer",
+    "custom engineered pressure vessels",
+    "industrial pressure vessel fabrication",
+  ],
 });
 
 const sidebarProducts = [
   {
     label: "Air Receiver Vessels",
-    href: pagePath,
+    href: "/products/pressure-vessels-and-storage/air-receiver-vessels",
   },
   {
     label: "Nitrogen Buffer / Gas Storage Tanks",
@@ -48,11 +54,11 @@ const sidebarProducts = [
   },
   {
     label: "Custom Pressure Vessels (As per drawing/spec)",
-    href: "/products/pressure-vessels-and-storage/custom-pressure-vessels",
+    href: pagePath,
   },
 ];
 
-export default function AirReceiverVesselsPage() {
+export default function CustomPressureVesselsPage() {
   return (
     <main className="bg-[#f5f6f8]">
       {/* Hero Section */}
@@ -68,21 +74,23 @@ export default function AirReceiverVesselsPage() {
 
         <div className="relative mx-auto flex min-h-60 max-w-450 flex-col items-center justify-center px-4 py-14 text-center sm:px-6 lg:min-h-75 lg:px-8">
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Air Receiver Vessels
+            Custom Pressure Vessels
           </h1>
 
           <div className="mt-5 inline-flex flex-wrap items-center justify-center gap-2 rounded-md bg-white/90 px-5 py-3 text-sm font-medium text-black shadow-lg">
             <Link href="/" className="transition hover:text-[#f0a14a]">
               Home
             </Link>
-            <span>➜</span>
+            <span>&gt;</span>
             <Link href="/products" className="transition hover:text-[#f0a14a]">
               Products
             </Link>
-            <span>➜</span>
+            <span>&gt;</span>
             <span>{categoryName}</span>
-            <span>➜</span>
-            <span className="text-[#f0a14a]">Air Receiver Vessels</span>
+            <span>&gt;</span>
+            <span className="text-[#f0a14a]">
+              Custom Pressure Vessels
+            </span>
           </div>
         </div>
       </section>
@@ -124,8 +132,8 @@ export default function AirReceiverVesselsPage() {
             {/* Product Image */}
             <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
               <img
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop"
-                alt="Air Receiver Vessels"
+                src="/product/23.jpeg"
+                alt="Custom Pressure Vessels"
                 className="h-65 w-full object-cover sm:h-90 lg:h-107.5"
               />
             </div>
@@ -133,62 +141,48 @@ export default function AirReceiverVesselsPage() {
             {/* Content */}
             <div className="mt-8 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
               <h2 className="text-3xl font-bold leading-tight text-[#0f223d] sm:text-4xl">
-                Air Receiver Vessels – Industrial Compressed Air Storage Solutions
+                Custom Pressure Vessels (As per drawing/spec)
               </h2>
 
               <h3 className="mt-8 text-2xl font-bold text-[#0f223d]">
                 Overview
               </h3>
-              <p className="mt-4 text-[15px] leading-8 text-[#5b6472]">
-                NESF manufactures air receiver vessels for compressed air systems
-                to stabilize pressure, reduce compressor cycling, and improve
-                plant air quality and reliability. Built for industrial duty with
-                robust welding, traceable materials, and disciplined QA/QC
-                practices.
-              </p>
+              <div className="mt-4 space-y-4 text-[15px] leading-8 text-[#5b6472]">
+                <p>
+                  NESF specializes in custom-engineered pressure vessels
+                  manufactured strictly as per client drawings, datasheets, and
+                  project specifications, covering vessels, reactors, air
+                  receivers, and process equipment.
+                </p>
+                <p>
+                  If code compliance is required, pressure vessel construction
+                  rules commonly reference recognized standards such as ASME BPVC
+                  Section VIII, as applicable.
+                </p>
+              </div>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
-                What it’s used for
+                What we build (examples)
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Buffer storage to handle peak air demand</li>
+                <li>Process vessels, separators, and buffer vessels</li>
+                <li>Specialized nozzle-heavy vessels for skids</li>
                 <li>
-                  • Pressure stabilization to protect downstream tools and
-                  equipment
+                  High-temperature or corrosive-service vessels, MOC dependent
                 </li>
-                <li>• Moisture separation (with drain and accessories)</li>
-                <li>• Supporting compressor efficiency and lifecycle</li>
+                <li>Package units for oil &amp; gas, chemicals, and utilities</li>
               </ul>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
-                Typical Construction & Options
+                What you can specify (and we will build to)
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Vertical or horizontal orientation</li>
+                <li>Client drawings, datasheets, and BOM</li>
+                <li>MOC, corrosion allowance, PWHT, and NDT requirements</li>
+                <li>Code / inspection requirements and documentation format</li>
                 <li>
-                  • Inlet/outlet nozzles, drain, vent, manhole / handhole
-                </li>
-                <li>• Supports: saddles / legs / skirt as required</li>
-                <li>
-                  • Accessories: safety valve, pressure gauge, moisture drain,
-                  NRV, isolation valves
-                </li>
-                <li>
-                  • Optional internal lining / coating based on service
-                  conditions
-                </li>
-              </ul>
-
-              <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
-                Materials of Construction
-              </h3>
-              <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>
-                  • Carbon Steel / Stainless Steel (as per service requirement)
-                </li>
-                <li>
-                  • Internals and nozzles designed for corrosion and temperature
-                  conditions
+                  Painting / coating, insulation supports, and instrumentation
+                  nozzles
                 </li>
               </ul>
 
@@ -196,26 +190,27 @@ export default function AirReceiverVesselsPage() {
                 Fabrication & Quality Controls
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Qualified welding procedures and controlled fit-up</li>
-                <li>• Stage-wise inspection and quality monitoring</li>
                 <li>
-                  • NDT as specified (DPT / MPT / UT / RT where required)
+                  Engineering-to-commissioning capability and disciplined QA/QC
                 </li>
-                <li>• Hydro / pneumatic testing as applicable</li>
-                <li>• Dimensional checks and final documentation package</li>
+                <li>
+                  Weld traceability, inspection hold points, and stage-wise
+                  checks
+                </li>
+                <li>Hydro / pneumatic testing as applicable</li>
+                <li>
+                  Complete MDR (Manufacturing Data Record) compilation as agreed
+                </li>
               </ul>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
                 Scope of Supply
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Complete vessel with nozzles and supports</li>
+                <li>Fabrication, testing, and surface protection</li>
+                <li>Optional accessories and project-specific fittings</li>
                 <li>
-                  • Surface preparation with primer / paint or coating system
-                </li>
-                <li>
-                  • Documentation: QAP / ITP, test certificates, inspection
-                  reports (as agreed)
+                  Documentation pack aligned to your project requirement
                 </li>
               </ul>
 
@@ -223,24 +218,25 @@ export default function AirReceiverVesselsPage() {
                 What we need from you (for quotation)
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>
-                  • Design pressure and temperature, operating conditions
-                </li>
-                <li>• Required capacity / volume or airflow demand</li>
-                <li>
-                  • Material preference, corrosion allowance, painting system
-                </li>
-                <li>
-                  • Code / inspection requirements and accessories list
-                </li>
+                <li>Drawings / datasheets and design conditions</li>
+                <li>NDT / PWHT requirements and acceptance criteria</li>
+                <li>Third-party inspection requirement, if any</li>
+                <li>Delivery location, timeline, and packaging expectations</li>
               </ul>
+
+              <div className="mt-10 rounded-2xl border border-[#f0a14a]/30 bg-[#fff7ef] p-6">
+                <p className="text-base font-bold text-[#0f223d]">
+                  Upload your drawing or specification, and NESF will respond
+                  with a technical and commercial proposal.
+                </p>
+              </div>
 
               {/* Product Enquiry Form */}
               <div className="mt-12">
                 <ProductEnquiryForm
-                  title="Request a quote for an Air Receiver Vessel"
-                  subtitle="Custom sizes and configurations available based on your plant requirements."
-                  productName="Air Receiver Vessel"
+                  title="Request a quote for a Custom Pressure Vessel"
+                  subtitle="Upload drawings, datasheets, design conditions, NDT/PWHT requirements, and inspection expectations."
+                  productName="Custom Pressure Vessel"
                   buttonText="Request Quote"
                 />
               </div>

@@ -34,13 +34,34 @@ const NAV_ITEMS: NavItem[] = [
         label: "Pressure Vessels & Storage",
         children: [
           { label: "Air Receiver Vessels", href: "/products/pressure-vessels-and-storage/air-receiver-vessels" },
-          { label: "Nitrogen Buffer / Gas Storage Tanks", href: "#" },
-          { label: "Horizontal Storage Tanks", href: "#" },
-          { label: "Vertical Storage Tanks", href: "#" },
-          { label: "Blowdown / Flash Tanks", href: "#" },
-          { label: "Water Holding / Utility Vessels", href: "#" },
-          { label: "Filter Vessels (Activated Carbon / Softener)", href: "#" },
-          { label: "Custom Pressure Vessels (As per drawing/spec)", href: "#" },
+          {
+            label: "Nitrogen Buffer / Gas Storage Tanks",
+            href: "/products/pressure-vessels-and-storage/nitrogen-buffer-gas-storage-tanks",
+          },
+          {
+            label: "Horizontal Storage Tanks",
+            href: "/products/pressure-vessels-and-storage/horizontal-storage-tanks",
+          },
+          {
+            label: "Vertical Storage Tanks",
+            href: "/products/pressure-vessels-and-storage/vertical-storage-tanks",
+          },
+          {
+            label: "Blowdown / Flash Tanks",
+            href: "/products/pressure-vessels-and-storage/blowdown-flash-tanks",
+          },
+          {
+            label: "Water Holding / Utility Vessels",
+            href: "/products/pressure-vessels-and-storage/water-holding-utility-vessels",
+          },
+          {
+            label: "Filter Vessels (Activated Carbon / Softener)",
+            href: "/products/pressure-vessels-and-storage/filter-vessels",
+          },
+          {
+            label: "Custom Pressure Vessels (As per drawing/spec)",
+            href: "/products/pressure-vessels-and-storage/custom-pressure-vessels",
+          },
         ],
       },
       {

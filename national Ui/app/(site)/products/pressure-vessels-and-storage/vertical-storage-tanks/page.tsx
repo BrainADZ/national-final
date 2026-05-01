@@ -6,21 +6,27 @@ import { buildMetadata } from "@/lib/seo";
 
 const categoryName = "Pressure Vessels & Storage";
 const pagePath =
-  "/products/pressure-vessels-and-storage/air-receiver-vessels";
+  "/products/pressure-vessels-and-storage/vertical-storage-tanks";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Air Receiver Vessels | National Engineers",
+  title: "Vertical Storage Tanks | National Engineers",
   description:
-    "Explore industrial air receiver vessels by National Engineers for compressed air storage, pressure stabilization, and reliable plant performance.",
+    "NESF fabricates vertical storage tanks for bulk and utility storage with optimized footprint, safe access, and configurable nozzle and instrument arrangements.",
   path: pagePath,
-  image:
-    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop",
+  image: "/product/2.jpg",
+  keywords: [
+    "vertical storage tank manufacturer",
+    "bulk storage tank fabrication",
+    "industrial vertical tanks",
+    "chemical storage tank manufacturer",
+    "utility storage tank fabrication",
+  ],
 });
 
 const sidebarProducts = [
   {
     label: "Air Receiver Vessels",
-    href: pagePath,
+    href: "/products/pressure-vessels-and-storage/air-receiver-vessels",
   },
   {
     label: "Nitrogen Buffer / Gas Storage Tanks",
@@ -32,7 +38,7 @@ const sidebarProducts = [
   },
   {
     label: "Vertical Storage Tanks",
-    href: "/products/pressure-vessels-and-storage/vertical-storage-tanks",
+    href: pagePath,
   },
   {
     label: "Blowdown / Flash Tanks",
@@ -52,7 +58,7 @@ const sidebarProducts = [
   },
 ];
 
-export default function AirReceiverVesselsPage() {
+export default function VerticalStorageTanksPage() {
   return (
     <main className="bg-[#f5f6f8]">
       {/* Hero Section */}
@@ -68,21 +74,21 @@ export default function AirReceiverVesselsPage() {
 
         <div className="relative mx-auto flex min-h-60 max-w-450 flex-col items-center justify-center px-4 py-14 text-center sm:px-6 lg:min-h-75 lg:px-8">
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Air Receiver Vessels
+            Vertical Storage Tanks
           </h1>
 
           <div className="mt-5 inline-flex flex-wrap items-center justify-center gap-2 rounded-md bg-white/90 px-5 py-3 text-sm font-medium text-black shadow-lg">
             <Link href="/" className="transition hover:text-[#f0a14a]">
               Home
             </Link>
-            <span>➜</span>
+            <span>&gt;</span>
             <Link href="/products" className="transition hover:text-[#f0a14a]">
               Products
             </Link>
-            <span>➜</span>
+            <span>&gt;</span>
             <span>{categoryName}</span>
-            <span>➜</span>
-            <span className="text-[#f0a14a]">Air Receiver Vessels</span>
+            <span>&gt;</span>
+            <span className="text-[#f0a14a]">Vertical Storage Tanks</span>
           </div>
         </div>
       </section>
@@ -124,8 +130,8 @@ export default function AirReceiverVesselsPage() {
             {/* Product Image */}
             <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
               <img
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop"
-                alt="Air Receiver Vessels"
+                src="/product/2.jpg"
+                alt="Vertical Storage Tanks"
                 className="h-65 w-full object-cover sm:h-90 lg:h-107.5"
               />
             </div>
@@ -133,114 +139,95 @@ export default function AirReceiverVesselsPage() {
             {/* Content */}
             <div className="mt-8 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
               <h2 className="text-3xl font-bold leading-tight text-[#0f223d] sm:text-4xl">
-                Air Receiver Vessels – Industrial Compressed Air Storage Solutions
+                Vertical Storage Tanks
               </h2>
 
               <h3 className="mt-8 text-2xl font-bold text-[#0f223d]">
                 Overview
               </h3>
               <p className="mt-4 text-[15px] leading-8 text-[#5b6472]">
-                NESF manufactures air receiver vessels for compressed air systems
-                to stabilize pressure, reduce compressor cycling, and improve
-                plant air quality and reliability. Built for industrial duty with
-                robust welding, traceable materials, and disciplined QA/QC
-                practices.
+                NESF fabricates vertical storage tanks for bulk and utility
+                storage with optimized footprint, safe access, and configurable
+                nozzle and instrument arrangements.
               </p>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
-                What it’s used for
+                What it&apos;s used for
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Buffer storage to handle peak air demand</li>
+                <li>Bulk storage where floor space is limited</li>
                 <li>
-                  • Pressure stabilization to protect downstream tools and
-                  equipment
+                  Water / utility tanks, process tanks, and chemical storage as
+                  per service compatibility
                 </li>
-                <li>• Moisture separation (with drain and accessories)</li>
-                <li>• Supporting compressor efficiency and lifecycle</li>
+                <li>Gravity feed applications and stable head requirements</li>
               </ul>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
                 Typical Construction & Options
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Vertical or horizontal orientation</li>
-                <li>
-                  • Inlet/outlet nozzles, drain, vent, manhole / handhole
-                </li>
-                <li>• Supports: saddles / legs / skirt as required</li>
-                <li>
-                  • Accessories: safety valve, pressure gauge, moisture drain,
-                  NRV, isolation valves
-                </li>
-                <li>
-                  • Optional internal lining / coating based on service
-                  conditions
-                </li>
+                <li>Cone roof, dome roof, or open-top design as required</li>
+                <li>Inlet, outlet, vent, overflow, drain, and manhole nozzles</li>
+                <li>Ladder, platform, handrail, and level indication</li>
+                <li>Mixing or recirculation nozzles as optional provisions</li>
+                <li>Internal lining or coating for corrosion service</li>
               </ul>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
                 Materials of Construction
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>
-                  • Carbon Steel / Stainless Steel (as per service requirement)
-                </li>
-                <li>
-                  • Internals and nozzles designed for corrosion and temperature
-                  conditions
-                </li>
+                <li>Carbon steel or stainless steel</li>
+                <li>Internals and fittings as per media compatibility</li>
               </ul>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
                 Fabrication & Quality Controls
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Qualified welding procedures and controlled fit-up</li>
-                <li>• Stage-wise inspection and quality monitoring</li>
                 <li>
-                  • NDT as specified (DPT / MPT / UT / RT where required)
+                  Controlled fabrication with QA/QC and safety-first execution
                 </li>
-                <li>• Hydro / pneumatic testing as applicable</li>
-                <li>• Dimensional checks and final documentation package</li>
+                <li>Weld inspection stages and testing as specified</li>
+                <li>
+                  Dimensional checks for roundness, verticality, and nozzle
+                  orientation
+                </li>
               </ul>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
                 Scope of Supply
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Complete vessel with nozzles and supports</li>
-                <li>
-                  • Surface preparation with primer / paint or coating system
-                </li>
-                <li>
-                  • Documentation: QAP / ITP, test certificates, inspection
-                  reports (as agreed)
-                </li>
+                <li>Tank shell, roof, and supports</li>
+                <li>Platforms and ladders if required</li>
+                <li>Painting / coating and documentation as agreed</li>
               </ul>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
                 What we need from you (for quotation)
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>
-                  • Design pressure and temperature, operating conditions
-                </li>
-                <li>• Required capacity / volume or airflow demand</li>
-                <li>
-                  • Material preference, corrosion allowance, painting system
-                </li>
-                <li>
-                  • Code / inspection requirements and accessories list
-                </li>
+                <li>Capacity, diameter / height constraints, and media details</li>
+                <li>Roof type preference and access requirements</li>
+                <li>Instrumentation / nozzle list and P&amp;ID</li>
+                <li>Coating / lining and corrosion allowance requirement</li>
               </ul>
+
+              <div className="mt-10 rounded-2xl border border-[#f0a14a]/30 bg-[#fff7ef] p-6">
+                <p className="text-base font-bold text-[#0f223d]">
+                  Send your layout and nozzle list, and NESF will engineer the
+                  right build.
+                </p>
+              </div>
 
               {/* Product Enquiry Form */}
               <div className="mt-12">
                 <ProductEnquiryForm
-                  title="Request a quote for an Air Receiver Vessel"
-                  subtitle="Custom sizes and configurations available based on your plant requirements."
-                  productName="Air Receiver Vessel"
+                  title="Request a quote for a Vertical Storage Tank"
+                  subtitle="Share your layout, capacity, roof type, nozzle list, and corrosion requirements for the right build."
+                  productName="Vertical Storage Tank"
                   buttonText="Request Quote"
                 />
               </div>

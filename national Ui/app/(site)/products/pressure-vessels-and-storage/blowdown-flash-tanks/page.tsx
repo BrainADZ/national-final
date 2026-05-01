@@ -5,22 +5,27 @@ import ProductEnquiryForm from "@/components/ProductEnquiryForm";
 import { buildMetadata } from "@/lib/seo";
 
 const categoryName = "Pressure Vessels & Storage";
-const pagePath =
-  "/products/pressure-vessels-and-storage/air-receiver-vessels";
+const pagePath = "/products/pressure-vessels-and-storage/blowdown-flash-tanks";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Air Receiver Vessels | National Engineers",
+  title: "Blowdown & Flash Tanks | National Engineers",
   description:
-    "Explore industrial air receiver vessels by National Engineers for compressed air storage, pressure stabilization, and reliable plant performance.",
+    "NESF manufactures blowdown and flash tanks to handle sudden pressure release, separate flash steam, and protect drainage and recovery systems.",
   path: pagePath,
-  image:
-    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop",
+  image: "/product/11.jpg",
+  keywords: [
+    "blowdown tank manufacturer",
+    "flash tank manufacturer",
+    "boiler blowdown tank",
+    "flash steam separation tank",
+    "industrial pressure vessel fabrication",
+  ],
 });
 
 const sidebarProducts = [
   {
     label: "Air Receiver Vessels",
-    href: pagePath,
+    href: "/products/pressure-vessels-and-storage/air-receiver-vessels",
   },
   {
     label: "Nitrogen Buffer / Gas Storage Tanks",
@@ -36,7 +41,7 @@ const sidebarProducts = [
   },
   {
     label: "Blowdown / Flash Tanks",
-    href: "/products/pressure-vessels-and-storage/blowdown-flash-tanks",
+    href: pagePath,
   },
   {
     label: "Water Holding / Utility Vessels",
@@ -52,7 +57,7 @@ const sidebarProducts = [
   },
 ];
 
-export default function AirReceiverVesselsPage() {
+export default function BlowdownFlashTanksPage() {
   return (
     <main className="bg-[#f5f6f8]">
       {/* Hero Section */}
@@ -68,21 +73,21 @@ export default function AirReceiverVesselsPage() {
 
         <div className="relative mx-auto flex min-h-60 max-w-450 flex-col items-center justify-center px-4 py-14 text-center sm:px-6 lg:min-h-75 lg:px-8">
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Air Receiver Vessels
+            Blowdown / Flash Tanks
           </h1>
 
           <div className="mt-5 inline-flex flex-wrap items-center justify-center gap-2 rounded-md bg-white/90 px-5 py-3 text-sm font-medium text-black shadow-lg">
             <Link href="/" className="transition hover:text-[#f0a14a]">
               Home
             </Link>
-            <span>➜</span>
+            <span>&gt;</span>
             <Link href="/products" className="transition hover:text-[#f0a14a]">
               Products
             </Link>
-            <span>➜</span>
+            <span>&gt;</span>
             <span>{categoryName}</span>
-            <span>➜</span>
-            <span className="text-[#f0a14a]">Air Receiver Vessels</span>
+            <span>&gt;</span>
+            <span className="text-[#f0a14a]">Blowdown / Flash Tanks</span>
           </div>
         </div>
       </section>
@@ -124,8 +129,8 @@ export default function AirReceiverVesselsPage() {
             {/* Product Image */}
             <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
               <img
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop"
-                alt="Air Receiver Vessels"
+                src="/product/11.jpg"
+                alt="Blowdown / Flash Tanks"
                 className="h-65 w-full object-cover sm:h-90 lg:h-107.5"
               />
             </div>
@@ -133,49 +138,42 @@ export default function AirReceiverVesselsPage() {
             {/* Content */}
             <div className="mt-8 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
               <h2 className="text-3xl font-bold leading-tight text-[#0f223d] sm:text-4xl">
-                Air Receiver Vessels – Industrial Compressed Air Storage Solutions
+                Blowdown / Flash Tanks
               </h2>
 
               <h3 className="mt-8 text-2xl font-bold text-[#0f223d]">
                 Overview
               </h3>
               <p className="mt-4 text-[15px] leading-8 text-[#5b6472]">
-                NESF manufactures air receiver vessels for compressed air systems
-                to stabilize pressure, reduce compressor cycling, and improve
-                plant air quality and reliability. Built for industrial duty with
-                robust welding, traceable materials, and disciplined QA/QC
-                practices.
+                NESF manufactures blowdown and flash tanks to safely handle
+                sudden pressure release, separate flash steam, and protect
+                downstream drainage and recovery systems.
               </p>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
-                What it’s used for
+                What it&apos;s used for
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Buffer storage to handle peak air demand</li>
+                <li>Boiler blowdown handling and energy recovery systems</li>
+                <li>Flash steam separation and condensate management</li>
                 <li>
-                  • Pressure stabilization to protect downstream tools and
-                  equipment
+                  Reducing thermal shock and controlling discharge safely
                 </li>
-                <li>• Moisture separation (with drain and accessories)</li>
-                <li>• Supporting compressor efficiency and lifecycle</li>
               </ul>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
                 Typical Construction & Options
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Vertical or horizontal orientation</li>
+                <li>Inlet diffuser or baffle arrangements</li>
+                <li>Vent / steam outlet, condensate outlet, drain, and manhole</li>
                 <li>
-                  • Inlet/outlet nozzles, drain, vent, manhole / handhole
+                  Level control, pressure gauge, and temperature point
+                  instrumentation
                 </li>
-                <li>• Supports: saddles / legs / skirt as required</li>
+                <li>Safety valves and steam piping interface provisions</li>
                 <li>
-                  • Accessories: safety valve, pressure gauge, moisture drain,
-                  NRV, isolation valves
-                </li>
-                <li>
-                  • Optional internal lining / coating based on service
-                  conditions
+                  Optional skid integration with valves and control stations
                 </li>
               </ul>
 
@@ -184,11 +182,8 @@ export default function AirReceiverVesselsPage() {
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
                 <li>
-                  • Carbon Steel / Stainless Steel (as per service requirement)
-                </li>
-                <li>
-                  • Internals and nozzles designed for corrosion and temperature
-                  conditions
+                  Carbon steel or stainless steel, selected based on water
+                  chemistry, temperature, and corrosion conditions
                 </li>
               </ul>
 
@@ -196,27 +191,22 @@ export default function AirReceiverVesselsPage() {
                 Fabrication & Quality Controls
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Qualified welding procedures and controlled fit-up</li>
-                <li>• Stage-wise inspection and quality monitoring</li>
                 <li>
-                  • NDT as specified (DPT / MPT / UT / RT where required)
+                  Welding procedures and inspection traceability per NESF systems
                 </li>
-                <li>• Hydro / pneumatic testing as applicable</li>
-                <li>• Dimensional checks and final documentation package</li>
+                <li>Pressure testing as applicable</li>
+                <li>
+                  Dimensional and nozzle alignment checks to match site piping
+                </li>
               </ul>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
                 Scope of Supply
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Complete vessel with nozzles and supports</li>
-                <li>
-                  • Surface preparation with primer / paint or coating system
-                </li>
-                <li>
-                  • Documentation: QAP / ITP, test certificates, inspection
-                  reports (as agreed)
-                </li>
+                <li>Flash tank vessel with internals if required</li>
+                <li>Supports, nozzles, and painting system</li>
+                <li>Documentation pack and inspection records</li>
               </ul>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
@@ -224,23 +214,27 @@ export default function AirReceiverVesselsPage() {
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
                 <li>
-                  • Design pressure and temperature, operating conditions
+                  Flow rate, inlet pressure / temperature, and discharge
+                  requirements
                 </li>
-                <li>• Required capacity / volume or airflow demand</li>
-                <li>
-                  • Material preference, corrosion allowance, painting system
-                </li>
-                <li>
-                  • Code / inspection requirements and accessories list
-                </li>
+                <li>P&amp;ID and desired separation / vent arrangement</li>
+                <li>Space constraints and interface nozzle details</li>
+                <li>Inspection and testing requirements</li>
               </ul>
+
+              <div className="mt-10 rounded-2xl border border-[#f0a14a]/30 bg-[#fff7ef] p-6">
+                <p className="text-base font-bold text-[#0f223d]">
+                  Share your blowdown conditions, and we&apos;ll size and
+                  fabricate accordingly.
+                </p>
+              </div>
 
               {/* Product Enquiry Form */}
               <div className="mt-12">
                 <ProductEnquiryForm
-                  title="Request a quote for an Air Receiver Vessel"
-                  subtitle="Custom sizes and configurations available based on your plant requirements."
-                  productName="Air Receiver Vessel"
+                  title="Request a quote for a Blowdown / Flash Tank"
+                  subtitle="Share flow rate, pressure, temperature, P&ID, vent arrangement, and inspection requirements."
+                  productName="Blowdown / Flash Tank"
                   buttonText="Request Quote"
                 />
               </div>

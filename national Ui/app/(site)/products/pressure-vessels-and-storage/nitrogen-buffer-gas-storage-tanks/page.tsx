@@ -6,25 +6,31 @@ import { buildMetadata } from "@/lib/seo";
 
 const categoryName = "Pressure Vessels & Storage";
 const pagePath =
-  "/products/pressure-vessels-and-storage/air-receiver-vessels";
+  "/products/pressure-vessels-and-storage/nitrogen-buffer-gas-storage-tanks";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Air Receiver Vessels | National Engineers",
+  title: "Nitrogen Buffer & Gas Storage Tanks | National Engineers",
   description:
-    "Explore industrial air receiver vessels by National Engineers for compressed air storage, pressure stabilization, and reliable plant performance.",
+    "NESF fabricates nitrogen buffer and gas storage tanks for stable gas availability, demand fluctuation control, and uninterrupted plant operations.",
   path: pagePath,
-  image:
-    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop",
+  image: "/product/6.jpg",
+  keywords: [
+    "nitrogen buffer tank manufacturer",
+    "gas storage tank manufacturer",
+    "nitrogen storage tank fabrication",
+    "industrial gas buffer vessel",
+    "pressure vessel fabrication india",
+  ],
 });
 
 const sidebarProducts = [
   {
     label: "Air Receiver Vessels",
-    href: pagePath,
+    href: "/products/pressure-vessels-and-storage/air-receiver-vessels",
   },
   {
     label: "Nitrogen Buffer / Gas Storage Tanks",
-    href: "/products/pressure-vessels-and-storage/nitrogen-buffer-gas-storage-tanks",
+    href: pagePath,
   },
   {
     label: "Horizontal Storage Tanks",
@@ -52,7 +58,7 @@ const sidebarProducts = [
   },
 ];
 
-export default function AirReceiverVesselsPage() {
+export default function NitrogenBufferGasStorageTanksPage() {
   return (
     <main className="bg-[#f5f6f8]">
       {/* Hero Section */}
@@ -68,21 +74,23 @@ export default function AirReceiverVesselsPage() {
 
         <div className="relative mx-auto flex min-h-60 max-w-450 flex-col items-center justify-center px-4 py-14 text-center sm:px-6 lg:min-h-75 lg:px-8">
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Air Receiver Vessels
+            Nitrogen Buffer / Gas Storage Tanks
           </h1>
 
           <div className="mt-5 inline-flex flex-wrap items-center justify-center gap-2 rounded-md bg-white/90 px-5 py-3 text-sm font-medium text-black shadow-lg">
             <Link href="/" className="transition hover:text-[#f0a14a]">
               Home
             </Link>
-            <span>➜</span>
+            <span>&gt;</span>
             <Link href="/products" className="transition hover:text-[#f0a14a]">
               Products
             </Link>
-            <span>➜</span>
+            <span>&gt;</span>
             <span>{categoryName}</span>
-            <span>➜</span>
-            <span className="text-[#f0a14a]">Air Receiver Vessels</span>
+            <span>&gt;</span>
+            <span className="text-[#f0a14a]">
+              Nitrogen Buffer / Gas Storage Tanks
+            </span>
           </div>
         </div>
       </section>
@@ -124,8 +132,8 @@ export default function AirReceiverVesselsPage() {
             {/* Product Image */}
             <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
               <img
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop"
-                alt="Air Receiver Vessels"
+                src="/product/6.jpg"
+                alt="Nitrogen Buffer / Gas Storage Tanks"
                 className="h-65 w-full object-cover sm:h-90 lg:h-107.5"
               />
             </div>
@@ -133,49 +141,45 @@ export default function AirReceiverVesselsPage() {
             {/* Content */}
             <div className="mt-8 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
               <h2 className="text-3xl font-bold leading-tight text-[#0f223d] sm:text-4xl">
-                Air Receiver Vessels – Industrial Compressed Air Storage Solutions
+                Nitrogen Buffer / Gas Storage Tanks
               </h2>
 
               <h3 className="mt-8 text-2xl font-bold text-[#0f223d]">
                 Overview
               </h3>
               <p className="mt-4 text-[15px] leading-8 text-[#5b6472]">
-                NESF manufactures air receiver vessels for compressed air systems
-                to stabilize pressure, reduce compressor cycling, and improve
-                plant air quality and reliability. Built for industrial duty with
-                robust welding, traceable materials, and disciplined QA/QC
-                practices.
+                NESF fabricates nitrogen buffer and gas storage tanks to ensure
+                stable gas availability, manage demand fluctuations, and support
+                uninterrupted plant operations.
               </p>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
-                What it’s used for
+                What it&apos;s used for
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Buffer storage to handle peak air demand</li>
+                <li>Buffering N2 supply for purging, blanketing, and inerting</li>
+                <li>Managing demand spikes in process lines</li>
                 <li>
-                  • Pressure stabilization to protect downstream tools and
-                  equipment
+                  Improving regulator and line stability while reducing pressure
+                  drop issues
                 </li>
-                <li>• Moisture separation (with drain and accessories)</li>
-                <li>• Supporting compressor efficiency and lifecycle</li>
               </ul>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
                 Typical Construction & Options
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Vertical or horizontal orientation</li>
+                <li>Vertical or horizontal storage configuration</li>
+                <li>Nozzle arrangements as per P&amp;ID</li>
                 <li>
-                  • Inlet/outlet nozzles, drain, vent, manhole / handhole
-                </li>
-                <li>• Supports: saddles / legs / skirt as required</li>
-                <li>
-                  • Accessories: safety valve, pressure gauge, moisture drain,
-                  NRV, isolation valves
+                  PSV, PRV, pressure gauges, and rupture disc if required
                 </li>
                 <li>
-                  • Optional internal lining / coating based on service
-                  conditions
+                  Earthing lug, lifting lugs, nameplate, and inspection openings
+                </li>
+                <li>
+                  Compatibility for cylinder banks, PSA systems, or liquid N2
+                  vaporizer outlets
                 </li>
               </ul>
 
@@ -184,11 +188,8 @@ export default function AirReceiverVesselsPage() {
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
                 <li>
-                  • Carbon Steel / Stainless Steel (as per service requirement)
-                </li>
-                <li>
-                  • Internals and nozzles designed for corrosion and temperature
-                  conditions
+                  Carbon steel or stainless steel, selected as per gas purity,
+                  environment, and corrosion conditions
                 </li>
               </ul>
 
@@ -196,51 +197,52 @@ export default function AirReceiverVesselsPage() {
                 Fabrication & Quality Controls
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Qualified welding procedures and controlled fit-up</li>
-                <li>• Stage-wise inspection and quality monitoring</li>
                 <li>
-                  • NDT as specified (DPT / MPT / UT / RT where required)
+                  Controlled welding and full traceability aligned with NESF
+                  QA/QC systems
                 </li>
-                <li>• Hydro / pneumatic testing as applicable</li>
-                <li>• Dimensional checks and final documentation package</li>
+                <li>Pressure testing and leakage checks as applicable</li>
+                <li>Documentation pack for audits and maintenance</li>
               </ul>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
                 Scope of Supply
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
-                <li>• Complete vessel with nozzles and supports</li>
                 <li>
-                  • Surface preparation with primer / paint or coating system
+                  Tank with supports, standard fittings, and paint or coating
+                  system
                 </li>
-                <li>
-                  • Documentation: QAP / ITP, test certificates, inspection
-                  reports (as agreed)
-                </li>
+                <li>Testing, marking, and documentation as agreed</li>
+                <li>Skid mounting option with buffer vessel and valve station</li>
               </ul>
 
               <h3 className="mt-10 text-2xl font-bold text-[#0f223d]">
                 What we need from you (for quotation)
               </h3>
               <ul className="mt-4 space-y-3 text-[15px] text-[#5b6472]">
+                <li>Gas type and purity</li>
+                <li>Design and operating pressure / temperature</li>
+                <li>Required storage capacity in Nm3 and duty cycle</li>
                 <li>
-                  • Design pressure and temperature, operating conditions
-                </li>
-                <li>• Required capacity / volume or airflow demand</li>
-                <li>
-                  • Material preference, corrosion allowance, painting system
-                </li>
-                <li>
-                  • Code / inspection requirements and accessories list
+                  Accessories, instrumentation, line requirements, and site
+                  conditions
                 </li>
               </ul>
+
+              <div className="mt-10 rounded-2xl border border-[#f0a14a]/30 bg-[#fff7ef] p-6">
+                <p className="text-base font-bold text-[#0f223d]">
+                  Share your P&amp;ID or specification to get a compliant
+                  nitrogen buffer tank.
+                </p>
+              </div>
 
               {/* Product Enquiry Form */}
               <div className="mt-12">
                 <ProductEnquiryForm
-                  title="Request a quote for an Air Receiver Vessel"
-                  subtitle="Custom sizes and configurations available based on your plant requirements."
-                  productName="Air Receiver Vessel"
+                  title="Request a quote for a Nitrogen Buffer Tank"
+                  subtitle="Share your P&ID, gas data, storage capacity, and site requirements for a compliant solution."
+                  productName="Nitrogen Buffer / Gas Storage Tank"
                   buttonText="Request Quote"
                 />
               </div>
