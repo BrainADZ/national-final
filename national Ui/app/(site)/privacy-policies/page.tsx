@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Metadata } from "next";
 import React from "react";
 import { buildMetadata } from "@/lib/seo";

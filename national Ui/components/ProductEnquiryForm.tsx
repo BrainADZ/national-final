@@ -106,7 +106,7 @@ export default function ProductEnquiryForm({
 
   return (
     <div
-      className={`rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8 ${className}`}
+      className={`rounded-lg border border-gray-200 bg-white p-6 shadow-sm sm:p-8 ${className}`}
     >
       <div className="mb-6">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#f0a14a]">
@@ -122,7 +122,7 @@ export default function ProductEnquiryForm({
             <label className="text-xs font-semibold text-[#0f223d]">
               Full Name
             </label>
-            <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#f0a14a] focus-within:ring-1 focus-within:ring-[#f0a14a]">
+            <div className="mt-1 flex items-center gap-2 rounded-md border border-gray-300 px-3 py-2.5 focus-within:border-[#f0a14a] focus-within:ring-1 focus-within:ring-[#f0a14a]">
               <Building2 className="h-4 w-4 text-gray-400" />
               <input
                 required
@@ -139,7 +139,7 @@ export default function ProductEnquiryForm({
             <label className="text-xs font-semibold text-[#0f223d]">
               Company
             </label>
-            <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#f0a14a] focus-within:ring-1 focus-within:ring-[#f0a14a]">
+            <div className="mt-1 flex items-center gap-2 rounded-md border border-gray-300 px-3 py-2.5 focus-within:border-[#f0a14a] focus-within:ring-1 focus-within:ring-[#f0a14a]">
               <Building2 className="h-4 w-4 text-gray-400" />
               <input
                 type="text"
@@ -155,7 +155,7 @@ export default function ProductEnquiryForm({
             <label className="text-xs font-semibold text-[#0f223d]">
               Phone
             </label>
-            <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#f0a14a] focus-within:ring-1 focus-within:ring-[#f0a14a]">
+            <div className="mt-1 flex items-center gap-2 rounded-md border border-gray-300 px-3 py-2.5 focus-within:border-[#f0a14a] focus-within:ring-1 focus-within:ring-[#f0a14a]">
               <Phone className="h-4 w-4 text-gray-400" />
               <input
                 required
@@ -172,7 +172,7 @@ export default function ProductEnquiryForm({
             <label className="text-xs font-semibold text-[#0f223d]">
               Email
             </label>
-            <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#f0a14a] focus-within:ring-1 focus-within:ring-[#f0a14a]">
+            <div className="mt-1 flex items-center gap-2 rounded-md border border-gray-300 px-3 py-2.5 focus-within:border-[#f0a14a] focus-within:ring-1 focus-within:ring-[#f0a14a]">
               <Mail className="h-4 w-4 text-gray-400" />
               <input
                 type="email"
@@ -189,7 +189,7 @@ export default function ProductEnquiryForm({
               Attachment (optional)
             </label>
 
-            <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#f0a14a] focus-within:ring-1 focus-within:ring-[#f0a14a]">
+            <div className="mt-1 flex items-center gap-2 rounded-md border border-gray-300 px-3 py-2.5 focus-within:border-[#f0a14a] focus-within:ring-1 focus-within:ring-[#f0a14a]">
               <Paperclip className="h-4 w-4 text-gray-400" />
               <input
                 type="file"
@@ -229,7 +229,7 @@ export default function ProductEnquiryForm({
             placeholder="Please share brief details of your requirement."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="mt-1 w-full resize-none rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none placeholder:text-gray-400 focus:border-[#f0a14a] focus:ring-1 focus:ring-[#f0a14a]"
+            className="mt-1 w-full resize-none rounded-md border border-gray-300 px-3 py-2.5 text-sm outline-none placeholder:text-gray-400 focus:border-[#f0a14a] focus:ring-1 focus:ring-[#f0a14a]"
           />
         </div>
 
