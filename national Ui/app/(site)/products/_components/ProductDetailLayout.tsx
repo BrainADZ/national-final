@@ -4,12 +4,8 @@ import {
   ArrowRight,
   CheckCircle2,
   ChevronRight,
-  ClipboardCheck,
-  Factory,
   FileText,
-  Gauge,
   PhoneCall,
-  ShieldCheck,
 } from "lucide-react";
 import ProductEnquiryForm from "@/components/ProductEnquiryForm";
 import { absoluteUrl, SITE_NAME, SITE_URL } from "@/lib/seo";
@@ -22,8 +18,6 @@ import {
 type ProductDetailLayoutProps = {
   product: ProductDetail;
 };
-
-const factIcons = [Gauge, Factory, ShieldCheck, ClipboardCheck];
 
 export default function ProductDetailLayout({ product }: ProductDetailLayoutProps) {
   const schemas = [
@@ -93,10 +87,10 @@ export default function ProductDetailLayout({ product }: ProductDetailLayoutProp
           <div className="absolute inset-0 bg-[#ee9d54]/10 mix-blend-overlay" />
           <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-white to-transparent" />
 
-          <div className="relative mx-auto flex min-h-[500px] max-w-[1700px] flex-col justify-end px-4 pb-16 pt-20 sm:px-6 lg:min-h-[560px] lg:px-8 lg:pb-20">
+          <div className="relative mx-auto flex min-h-125 max-w-425 flex-col justify-end px-4 pb-16 pt-20 sm:px-6 lg:min-h-140 lg:px-8 lg:pb-20">
             <nav
               aria-label="Breadcrumb"
-              className="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-white/75"
+              className="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-white/75" 
             >
               <ol className="flex flex-wrap items-center gap-2">
                 <li>
@@ -149,32 +143,7 @@ export default function ProductDetailLayout({ product }: ProductDetailLayoutProp
           </div>
         </section>
 
-        <section className="relative z-10 mx-auto -mt-8 max-w-425 px-4 sm:px-6 lg:px-8">
-          <div className="grid overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg shadow-black/5 sm:grid-cols-2 lg:grid-cols-4">
-            {product.quickFacts.map((fact, index) => {
-              const Icon = factIcons[index % factIcons.length];
-
-              return (
-                <div
-                  key={fact.label}
-                  className="border-b border-gray-200 p-5 last:border-b-0 sm:odd:border-r lg:border-b-0 lg:border-r lg:last:border-r-0"
-                >
-                  <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#ee9d54]/15 text-[#d88942]">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
-                    {fact.label}
-                  </p>
-                  <p className="mt-2 text-sm font-semibold leading-6 text-gray-950">
-                    {fact.value}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-[1700px] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <section className="mx-auto max-w-425 px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <div className="grid gap-10 lg:grid-cols-[300px_minmax(0,1fr)]">
             <aside className="self-start lg:sticky lg:top-22">
               <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
@@ -236,7 +205,7 @@ export default function ProductDetailLayout({ product }: ProductDetailLayoutProp
                   <img
                     src={product.image}
                     alt={product.imageAlt}
-                    className="aspect-[4/3] w-full object-cover"
+                    className="aspect-4/3 w-full object-cover"
                     style={{ objectPosition: product.imagePosition ?? "center" }}
                   />
                 </div>
