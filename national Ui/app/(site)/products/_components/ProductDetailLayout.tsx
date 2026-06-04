@@ -10,16 +10,29 @@ import {
 import ProductEnquiryForm from "@/components/ProductEnquiryForm";
 import { absoluteUrl, SITE_NAME, SITE_URL } from "@/lib/seo";
 import {
-  CATEGORY_NAME,
+  CATEGORY_NAME as DEFAULT_CATEGORY_NAME,
   pressureVesselNav,
   type ProductDetail,
 } from "../pressure-vessels-and-storage/productDetails";
 
-type ProductDetailLayoutProps = {
-  product: ProductDetail;
+type ProductNavItem = {
+  label: string;
+  href: string;
 };
 
-export default function ProductDetailLayout({ product }: ProductDetailLayoutProps) {
+type ProductDetailLayoutProps = {
+  product: ProductDetail;
+  categoryName?: string;
+  navItems?: ProductNavItem[];
+};
+
+export default function ProductDetailLayout({
+  product,
+  categoryName = DEFAULT_CATEGORY_NAME,
+  navItems = pressureVesselNav,
+}: ProductDetailLayoutProps) {
+  const categoryPath = product.pagePath.split("/").slice(0, -1).join("/") || "/products";
+
   const schemas = [
     {
       "@context": "https://schema.org",
@@ -28,7 +41,7 @@ export default function ProductDetailLayout({ product }: ProductDetailLayoutProp
       name: product.title,
       description: product.description,
       image: absoluteUrl(product.image),
-      category: CATEGORY_NAME,
+      category: categoryName,
       url: absoluteUrl(product.pagePath),
       brand: {
         "@type": "Brand",
@@ -60,6 +73,12 @@ export default function ProductDetailLayout({ product }: ProductDetailLayoutProp
         {
           "@type": "ListItem",
           position: 3,
+          name: categoryName,
+          item: absoluteUrl(categoryPath),
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
           name: product.title,
           item: absoluteUrl(product.pagePath),
         },
@@ -109,13 +128,21 @@ export default function ProductDetailLayout({ product }: ProductDetailLayoutProp
                 <li aria-hidden="true" className="text-white/35">
                   /
                 </li>
+                <li>
+                  <Link href={categoryPath} className="transition hover:text-white">
+                    {categoryName}
+                  </Link>
+                </li>
+                <li aria-hidden="true" className="text-white/35">
+                  /
+                </li>
                 <li className="text-[#ee9d54]">{product.title}</li>
               </ol>
             </nav>
 
             <div className="max-w-4xl">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ee9d54]">
-                {CATEGORY_NAME}
+                {categoryName}
               </p>
               <h1 className="mt-4 max-w-3xl text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
                 {product.title}
@@ -151,11 +178,11 @@ export default function ProductDetailLayout({ product }: ProductDetailLayoutProp
                   Product Range
                 </p>
                 <h2 className="px-2 pt-2 text-xl font-bold text-gray-950">
-                  {CATEGORY_NAME}
+                  {categoryName}
                 </h2>
 
                 <div className="mt-5 space-y-1">
-                  {pressureVesselNav.map((item) => {
+                  {navItems.map((item) => {
                     const isActive = item.href === product.pagePath;
 
                     return (

@@ -67,68 +67,110 @@ const NAV_ITEMS: NavItem[] = [
       {
         label: "Process Equipment & Heat Transfer",
         children: [
-          { label: "Condensers & Water Condensers", href: "#" },
-          { label: "Heat Exchanger Shells / Columns", href: "#" },
-          { label: "Process Skids & Packages", href: "#" },
-          { label: "Special Purpose Process Vessels", href: "#" },
-          { label: "Chemical Process Equipment (Custom)", href: "#" },
+          {
+            label: "Condensers & Water Condensers",
+            href: "/products/process-equipment-and-heat-transfer/condensers-water-condensers",
+          },
+          {
+            label: "Heat Exchanger Shells / Columns",
+            href: "/products/process-equipment-and-heat-transfer/heat-exchanger-shells-columns",
+          },
+          {
+            label: "Process Skids & Packages",
+            href: "/products/process-equipment-and-heat-transfer/process-skids-packages",
+          },
+          {
+            label: "Special Purpose Process Vessels",
+            href: "/products/process-equipment-and-heat-transfer/special-purpose-process-vessels",
+          },
+          {
+            label: "Chemical Process Equipment (Custom)",
+            href: "/products/process-equipment-and-heat-transfer/custom-chemical-process-equipment",
+          },
         ],
       },
       {
         label: "Piping & Pipeline Systems",
         children: [
-          { label: "Pig Launcher / Pig Receiver Systems", href: "#" },
-          { label: "Pipeline Spools & Fabrication", href: "#" },
-          { label: "Headers, Manifolds & Special Piping", href: "#" },
-          { label: "Compressor Suction / Discharge Ducting", href: "#" },
-          { label: "Piping Supports", href: "#" },
+          {
+            label: "Pig Launcher / Pig Receiver Systems",
+            href: "/products/piping-and-pipeline-systems/pig-launcher-pig-receiver-systems",
+          },
+          {
+            label: "Pipeline Spools & Fabrication",
+            href: "/products/piping-and-pipeline-systems/pipeline-spools-fabrication",
+          },
+          {
+            label: "Headers, Manifolds & Special Piping",
+            href: "/products/piping-and-pipeline-systems/headers-manifolds-special-piping",
+          },
+          {
+            label: "Compressor Suction / Discharge Ducting",
+            href: "/products/piping-and-pipeline-systems/compressor-suction-discharge-ducting",
+          },
+          {
+            label: "Piping Supports",
+            href: "/products/piping-and-pipeline-systems/piping-supports",
+          },
         ],
       },
       {
         label: "Pollution Control & Gas Handling",
         children: [
-          { label: "Venturi Scrubbers", href: "#" },
-          { label: "Wet Scrubber Systems", href: "#" },
-          { label: "Ducting & Flue Gas Lines", href: "#" },
-          { label: "Scrubber Internals & Liners", href: "#" },
+          {
+            label: "Venturi Scrubbers",
+            href: "/products/pollution-control-and-gas-handling/venturi-scrubbers",
+          },
+          {
+            label: "Wet Scrubber Systems",
+            href: "/products/pollution-control-and-gas-handling/wet-scrubber-systems",
+          },
+          {
+            label: "Ducting & Flue Gas Lines",
+            href: "/products/pollution-control-and-gas-handling/ducting-flue-gas-lines",
+          },
+          {
+            label: "Scrubber Internals & Liners",
+            href: "/products/pollution-control-and-gas-handling/scrubber-internals-liners",
+          },
         ],
       },
       {
         label: "Material Handling & Storage (Bulk / Solid)",
         children: [
-          { label: "Hoppers & Flakes Hoppers", href: "#" },
-          { label: "Silos & Storage Bins", href: "#" },
-          { label: "Chutes & Transitions", href: "#" },
-          { label: "Tow Bin / Tow Can", href: "#" },
-          { label: "Bulk Handling Fabrication (Custom)", href: "#" },
+          { label: "Hoppers & Flakes Hoppers", href: "/products/material-handling-and-storage/hoppers-flakes-hoppers" },
+          { label: "Silos & Storage Bins", href: "/products/material-handling-and-storage/silos-storage-bins" },
+          { label: "Chutes & Transitions", href: "/products/material-handling-and-storage/chutes-transitions" },
+          { label: "Tow Bin / Tow Can", href: "/products/material-handling-and-storage/tow-bin-tow-can" },
+          { label: "Bulk Handling Fabrication (Custom)", href: "/products/material-handling-and-storage/custom-bulk-handling-fabrication" },
         ],
       },
       {
         label: "HVAC & Industrial Ducting",
         children: [
-          { label: "AHU Ducts (GI / SS)", href: "#" },
-          { label: "Industrial Ducting Systems", href: "#" },
-          { label: "Transitions / Reducers / Elbows", href: "#" },
-          { label: "Insulated Duct Casing", href: "#" },
+          { label: "AHU Ducts (GI / SS)", href: "/products/hvac-and-industrial-ducting/ahu-ducts-gi-ss" },
+          { label: "Industrial Ducting Systems", href: "/products/hvac-and-industrial-ducting/industrial-ducting-systems" },
+          { label: "Transitions / Reducers / Elbows", href: "/products/hvac-and-industrial-ducting/transitions-reducers-elbows" },
+          { label: "Insulated Duct Casing", href: "/products/hvac-and-industrial-ducting/insulated-duct-casing" },
         ],
       },
       {
         label: "Fabrication Components & Structural",
         children: [
-          { label: "Base Plates", href: "#" },
-          { label: "Pipe Saddles & Supports", href: "#" },
-          { label: "Jack Stools / Temporary Supports", href: "#" },
-          { label: "Liners (Hard Plate / Wear Plate)", href: "#" },
-          { label: "Heavy Structural Fabrication (Custom)", href: "#" },
+          { label: "Base Plates", href: "/products/fabrication-components-and-structural/base-plates" },
+          { label: "Pipe Saddles & Supports", href: "/products/fabrication-components-and-structural/pipe-saddles-supports" },
+          { label: "Jack Stools / Temporary Supports", href: "/products/fabrication-components-and-structural/jack-stools-temporary-supports" },
+          { label: "Liners (Hard Plate / Wear Plate)", href: "/products/fabrication-components-and-structural/liners-hard-wear-plate" },
+          { label: "Heavy Structural Fabrication (Custom)", href: "/products/fabrication-components-and-structural/custom-heavy-structural-fabrication" },
         ],
       },
       {
         label: "Custom Manufacturing (As per Client Drawing)",
         children: [
-          { label: "Heavy Plate Fabrication", href: "#" },
-          { label: "SS / CS / Alloy Steel Fabrication", href: "#" },
-          { label: "On-site Erection Support", href: "#" },
-          { label: "Repair / Modification Jobs", href: "#" },
+          { label: "Heavy Plate Fabrication", href: "/products/custom-manufacturing/heavy-plate-fabrication" },
+          { label: "SS / CS / Alloy Steel Fabrication", href: "/products/custom-manufacturing/ss-cs-alloy-steel-fabrication" },
+          { label: "On-site Erection Support", href: "/products/custom-manufacturing/on-site-erection-support" },
+          { label: "Repair / Modification Jobs", href: "/products/custom-manufacturing/repair-modification-jobs" },
         ],
       },
     ],
