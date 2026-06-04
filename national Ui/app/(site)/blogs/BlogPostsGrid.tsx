@@ -30,14 +30,14 @@ export default function BlogPostsGrid({ posts }: { posts: any[] }) {
             <article key={post.id} className="group flex h-full flex-col">
               <Link
                 href={postHref}
-                className="relative aspect-16/10 w-full overflow-hidden bg-gray-100 no-underline hover:no-underline"
+                className="relative aspect-16/10 w-full overflow-hidden bg-white no-underline hover:no-underline"
                 aria-label={stripHtml(post?.title?.rendered)}
               >
                 {featured ? (
                   <img
                     src={featured}
                     alt={stripHtml(post?.title?.rendered)}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                    className="h-full w-full object-contain"
                     loading="lazy"
                   />
                 ) : (
@@ -45,7 +45,6 @@ export default function BlogPostsGrid({ posts }: { posts: any[] }) {
                     No image
                   </div>
                 )}
-                <div className="absolute inset-0 bg-black/10 transition group-hover:bg-black/0" />
               </Link>
 
               <div className="mt-5 flex flex-1 flex-col">

@@ -162,7 +162,7 @@ export default async function CategoryPage({
                   {/* IMAGE (blog link) */}
                   <Link
                     href={postHref}
-                    className="relative aspect-16/10 w-full overflow-hidden bg-gray-100 no-underline hover:no-underline"
+                    className="relative aspect-16/10 w-full overflow-hidden bg-white no-underline hover:no-underline"
                     aria-label={stripHtml(p?.title?.rendered)}
                   >
                     {featured ? (
@@ -170,7 +170,7 @@ export default async function CategoryPage({
                       <img
                         src={featured}
                         alt={stripHtml(p?.title?.rendered)}
-                        className="h-full w-full transition duration-500 group-hover:scale-[1.04]"
+                        className="h-full w-full object-contain"
                         loading="lazy"
                       />
                     ) : (
@@ -178,8 +178,6 @@ export default async function CategoryPage({
                         No image
                       </div>
                     )}
-
-                    <div className="absolute inset-0 bg-black/10 transition group-hover:bg-black/0" />
                   </Link>
 
                   {/* CONTENT */}

@@ -138,13 +138,13 @@ export default async function AuthorPage() {
               <article key={p.id} className="border border-gray-200">
                 {/* IMAGE */}
                 <Link href={postHref} className="block">
-                  <div className="aspect-[16/10] w-full bg-gray-100 overflow-hidden">
+                  <div className="aspect-[16/10] w-full overflow-hidden bg-white">
                     {featured ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={featured}
                         alt={stripHtml(p?.title?.rendered)}
-                        className="h-full w-full object-cover"
+                        className="h-full w-full object-contain"
                         loading="lazy"
                       />
                     ) : (
