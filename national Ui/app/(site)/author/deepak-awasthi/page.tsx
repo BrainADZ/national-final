@@ -1,8 +1,7 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import Link from "next/link";
-import { Linkedin, Mail, Globe } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 
 export const revalidate = 60;
 
@@ -138,7 +137,7 @@ export default async function AuthorPage() {
               <article key={p.id} className="border border-gray-200">
                 {/* IMAGE */}
                 <Link href={postHref} className="block">
-                  <div className="aspect-[16/10] w-full overflow-hidden bg-white">
+                  <div className="aspect-16/10 w-full overflow-hidden bg-white">
                     {featured ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
