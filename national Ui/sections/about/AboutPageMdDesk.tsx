@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-export default function AboutPageMdDeskSection() {
+export default function MdDeskSection() {
   return (
     <section className="relative bg-white py-14 lg:py-20">
       <div className="mx-auto max-w-425 px-4 lg:px-6">
@@ -12,13 +12,14 @@ export default function AboutPageMdDeskSection() {
 
           <div className="mt-3 flex items-center justify-between gap-6">
             <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
-              Message from the Managing Director
+              Words from the Managing Director
             </h2>
           </div>
         </div>
 
         {/* Premium unified panel */}
         <div className="rounded-3xl border border-gray-200 bg-white shadow-[0_18px_50px_rgba(17,24,39,0.08)]">
+
           <div className="grid gap-10 p-6 md:p-10 lg:grid-cols-[360px_1fr] lg:gap-12">
             {/* LEFT: Compact profile block */}
             <aside className="lg:pt-2">
@@ -35,9 +36,9 @@ export default function AboutPageMdDeskSection() {
 
               {/* identity */}
               <div className="mt-5">
-                <h3 className="text-lg font-semibold text-gray-900">
+                <p className="text-lg font-semibold text-gray-900">
                   Mustafa Patrawala
-                </h3>
+                </p>
                 <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#ee9d54]">
                   Managing Director
                 </p>
@@ -60,7 +61,7 @@ export default function AboutPageMdDeskSection() {
               </div>
             </aside>
 
-            {/* RIGHT: Message */}
+            {/* RIGHT: Message (classic reading layout) */}
             <article className="lg:pr-2">
               {/* elegant quote strip */}
               <div className="relative mb-7 rounded-2xl border border-orange-100 bg-orange-50/60 px-6 py-5">
@@ -74,28 +75,44 @@ export default function AboutPageMdDeskSection() {
 
               {/* body */}
               <div className="space-y-5 text-[15px] leading-relaxed text-gray-700 text-justify">
-                <p className="text-sm font-semibold text-gray-900 md:text-base">
-                  Mustafa Patrawala – Managing Director
+                <p className="font-medium text-gray-900">Dear Friends,</p>
+
+                <p>
+                  At <b>National Engineers &amp; Steel Fabricators,</b> this belief has guided
+                  us since our inception in{" "}
+                  <span className="font-semibold text-gray-900">1990</span> in{" "}
+                  <span className="font-semibold text-gray-900">Surat</span>, serving
+                  critical sectors such as oil and gas, fertilizers, petrochemicals,
+                  chemicals, steel, effluent treatment, shipbuilding, and man-made
+                  fibre. Our journey has been shaped by challenging assignments and the
+                 <b> long-term trust </b> of our clients in India and overseas.
                 </p>
 
                 <p>
-                  Since our establishment in Surat in{" "}
-                  <span className="font-semibold text-gray-900">1990</span>, we
-                  have focused on delivering engineered steel solutions that
-                  combine innovation, disciplined fabrication practices, and
-                  strong project management.
+                  We are committed to delivering <b>engineered steel solutions</b> that combine
+                  innovative design, robust fabrication, and disciplined project quality
+                  management. 
+                  <br/>
+                  <br/>
+                  From pressure vessels, heat exchangers,
+                  multilayer vessels, storage tanks, silos, and structural jobs to
+                  complex, custom built equipment, every job is executed with a strong
+                  focus on <b>safety, reliability,</b> and <b>adherence</b> to national and
+                  international standards.
+                  <br/>
+                  <br/> Our team of <b>technocrats, engineers, and
+                  skilled workers</b> is our greatest strength, and they take <b>personal
+                  ownership</b> of each project we undertake.
                 </p>
 
                 <p>
-                  From pressure vessels and heat exchangers to complex
-                  custom-built heavy equipment, every project reflects our
-                  commitment to safety, compliance, and reliability.
-                </p>
-
-                <p>
-                  We value the long-term trust of our clients and continuously
-                  invest in technology, systems, and people to raise our
-                  standards further.
+                  We are deeply grateful for the confidence our <b>customers</b> place in{" "}
+                  <span className="font-semibold text-gray-900">NESF</span>. Your support
+                  encourages us to challenge our capabilities, invest in better
+                  technology, and continuously improve our systems so that we can
+                  deliver even more value in the years ahead. We look forward to earning
+                  your business every day and becoming your <b>trusted partner</b> for 
+                  <b> precision, safety,</b> and <b>quality</b> in engineered steel fabrication.
                 </p>
               </div>
 
@@ -115,8 +132,8 @@ export default function AboutPageMdDeskSection() {
             </article>
           </div>
         </div>
+
       </div>
     </section>
   );
 }
-
