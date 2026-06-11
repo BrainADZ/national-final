@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Building2, Mail, Paperclip, Phone } from "lucide-react";
+import { getThankYouUrl } from "@/lib/thankYou";
 
 type ProductEnquiryFormProps = {
   title?: string;
@@ -19,6 +21,7 @@ export default function ProductEnquiryForm({
   buttonText = "Submit Enquiry",
 }: ProductEnquiryFormProps) {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const router = useRouter();
 
   const [fullName, setFullName] = useState("");
   const [company, setCompany] = useState("");
@@ -95,8 +98,8 @@ export default function ProductEnquiryForm({
         return;
       }
 
-      setSuccessMsg("Enquiry submitted successfully.");
       resetForm();
+      router.push(getThankYouUrl("enquiry"));
     } catch {
       setErrorMsg("Server not reachable. Please try again later.");
     } finally {

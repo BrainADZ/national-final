@@ -2,9 +2,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { X, Phone, Mail, Building2, Paperclip } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { getThankYouUrl } from "@/lib/thankYou";
 
 type Props = {
   whatsappNumber?: string;
@@ -18,6 +20,7 @@ export default function FloatingActions({
   linkedinUrl = "https://www.linkedin.com/company/national-engineers-steel-fabricators/",
 }: Props) {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const router = useRouter();
 
   const [open, setOpen] = useState(false);
 
@@ -145,11 +148,9 @@ export default function FloatingActions({
         return;
       }
 
-      setSuccessMsg("Enquiry submitted successfully.");
-      setTimeout(() => {
-        setOpen(false);
-        resetForm();
-      }, 700);
+      setOpen(false);
+      resetForm();
+      router.push(getThankYouUrl("enquiry"));
     } catch {
       setErrorMsg("Server not reachable. Please try again later.");
     } finally {

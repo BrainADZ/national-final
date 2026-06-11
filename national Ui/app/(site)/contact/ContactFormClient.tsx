@@ -1,10 +1,13 @@
 
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Paperclip, Send } from "lucide-react";
+import { getThankYouUrl } from "@/lib/thankYou";
 
 export default function ContactFormClient() {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const router = useRouter();
 
   // form states
   const [fullName, setFullName] = useState("");
@@ -79,9 +82,8 @@ export default function ContactFormClient() {
         return;
       }
 
-     setSuccessMsg("Thanks! Your enquiry has been submitted.");
-
       resetForm();
+      router.push(getThankYouUrl("enquiry"));
     } catch {
       setErrorMsg("Server not reachable. Please try again later.");
     } finally {

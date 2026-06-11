@@ -23,6 +23,8 @@ import {
   Factory, // ✅ (optional alias if you want different icon usage)
 } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { getThankYouUrl } from "@/lib/thankYou";
 
 type ApiJob = {
   _id: string;
@@ -73,6 +75,7 @@ function formatExp(min: number, max: number) {
 
 export default function CareersPage() {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const router = useRouter();
 
   // ✅ consistent tick icon sizing everywhere
   const bulletIconClass = "h-3.5 w-3.5 shrink-0 text-[#ee9d54] mt-0.5";
@@ -229,10 +232,8 @@ export default function CareersPage() {
         return;
       }
 
-      setSuccess(true);
       resetForm();
-
-      document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
+      router.push(getThankYouUrl("career"));
     } catch {
       setFormError("Something went wrong. Please try again.");
     } finally {

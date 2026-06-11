@@ -2,6 +2,8 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { getThankYouUrl } from "@/lib/thankYou";
 
 const STEPS = [
   {
@@ -28,6 +30,7 @@ const STEPS = [
 
 export default function HowWeWorkSection() {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const router = useRouter();
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -71,13 +74,11 @@ export default function HowWeWorkSection() {
         return;
       }
 
-      setSuccessMsg("Thank you! Your feedback has been submitted.");
-
-      // reset fields
       setFullName("");
       setEmail("");
       setorganization("");
       setMessage("");
+      router.push(getThankYouUrl("feedback"));
     } catch {
       setErrorMsg("Server not reachable. Please try again later.");
     } finally {
