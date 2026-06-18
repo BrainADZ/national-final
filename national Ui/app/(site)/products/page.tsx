@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ProductsClient from "./productClient";
 import { buildMetadata } from "@/lib/seo";
+import FaqSection from "@/sections/Accordian";
 
 const productCategoryItems = [
   {
@@ -110,7 +111,73 @@ const breadcrumbSchema = {
   ],
 };
 
-const schemas = [collectionPageSchema, itemListSchema, breadcrumbSchema];
+const productFaqs = [
+  {
+    question: "What products does National Engineers manufacture?",
+    answer:
+      "National Engineers manufactures pressure vessels, storage tanks, air receiver tanks, nitrogen buffer tanks, blowdown tanks, filter vessels, pig launchers, AHU ducts, ducting systems, process equipment, and custom fabricated equipment.",
+  },
+  {
+    question: "Are your products custom-made as per client requirements?",
+    answer:
+      "Yes, most industrial products are custom-made as per client drawings, specifications, MOC, thickness, pressure rating, dimensions, and application requirements.",
+  },
+  {
+    question: "Do you manufacture pressure vessels and storage tanks?",
+    answer:
+      "Yes, National Engineers & Steel Fabricators manufactures pressure vessels, storage tanks, air receiver tanks, nitrogen buffer tanks, water holding vessels, and other industrial tanks for different applications.",
+  },
+  {
+    question: "What materials are used in your products?",
+    answer:
+      "We work with stainless steel, mild steel, carbon steel, alloy steel, SA 516, IS 2062, SS 304, SS 304L, and other industrial-grade materials based on project requirements.",
+  },
+  {
+    question: "Do you provide industrial process equipment in India?",
+    answer:
+      "Yes, National Engineers works as an industrial process equipment manufacturer in India, offering fabricated equipment for pressure, storage, pipeline, HVAC, material handling, and process applications.",
+  },
+  {
+    question: "Can you manufacture products from technical drawings?",
+    answer:
+      "Yes, we manufacture custom fabricated equipment as per client drawings, approved specifications, site requirements, capacity, pressure rating, and operational use.",
+  },
+  {
+    question: "Do you manufacture pipeline and piping equipment?",
+    answer:
+      "Yes, we manufacture pig launchers, pig receivers, pipeline spools, headers, manifolds, compressor suction pipes, discharge ducting, and piping supports.",
+  },
+  {
+    question: "Do you provide HVAC and industrial ducting products?",
+    answer:
+      "Yes, we provide AHU ducts, industrial ducting systems, transitions, reducers, elbows, insulated duct casing, and custom duct fabrication for ventilation and industrial airflow systems.",
+  },
+  {
+    question: "Which industries use your fabricated products?",
+    answer:
+      "Our products are used in chemical plants, steel plants, manufacturing units, power plants, processing industries, HVAC systems, pipeline projects, and industrial infrastructure.",
+  },
+  {
+    question: "How can I enquire about a product?",
+    answer:
+      "You can share your product requirement, drawing, dimensions, material grade, pressure rating, quantity, and application details. Our team will review the requirement and guide you with the suitable fabrication solution.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: productFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
+const schemas = [collectionPageSchema, itemListSchema, breadcrumbSchema, faqSchema];
 
 export default function ProductsPage() {
   return (
@@ -122,6 +189,7 @@ export default function ProductsPage() {
         }}
       />
       <ProductsClient />
+      <FaqSection faqs={productFaqs} />
     </>
   );
 }

@@ -8,6 +8,10 @@ type FaqItem = {
   answer: string | string[];
 };
 
+type FaqSectionProps = {
+  faqs?: FaqItem[];
+};
+
 const FAQS: FaqItem[] = [
   {
     question: "What kind of equipment do you manufacture?",
@@ -43,7 +47,7 @@ const FAQS: FaqItem[] = [
   },
 ];
 
-export default function FaqSection() {
+export default function FaqSection({ faqs = FAQS }: FaqSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = (index: number) => {
@@ -68,12 +72,12 @@ export default function FaqSection() {
 
         {/* Accordion */}
         <div className="mt-10 space-y-3">
-          {FAQS.map((item, index) => {
+          {faqs.map((item, index) => {
             const isOpen = index === openIndex;
 
             return (
               <div
-                key={index}
+                key={item.question}
                 className="rounded-lg bg-white shadow-sm border border-gray-200 overflow-hidden"
               >
                 <button

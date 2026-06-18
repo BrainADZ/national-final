@@ -7,19 +7,19 @@ export const CATEGORY_NAME = "Custom Manufacturing (As per Client Drawing)";
 export const customManufacturingNav = [
   {
     label: "Heavy Plate Fabrication",
-    href: "/products/custom-manufacturing/heavy-plate-fabrication",
+    href: "/products/heavy-plate-fabrication",
   },
   {
     label: "SS / CS / Alloy Steel Fabrication",
-    href: "/products/custom-manufacturing/ss-cs-alloy-steel-fabrication",
+    href: "/products/ss-cs-alloy-steel-fabrication",
   },
   {
     label: "On-site Erection Support",
-    href: "/products/custom-manufacturing/on-site-erection-support",
+    href: "/products/on-site-erection-support",
   },
   {
     label: "Repair / Modification Jobs",
-    href: "/products/custom-manufacturing/repair-modification-jobs",
+    href: "/products/repair-modification-jobs",
   },
 ];
 
@@ -29,7 +29,7 @@ export const productDetails = {
     headline: "Heavy Plate Fabrication as per Client Drawing",
     description:
       "Heavy plate shells, formed sections, and large welded assemblies fabricated for strength, alignment, weld integrity, and demanding industrial service.",
-    pagePath: "/products/custom-manufacturing/heavy-plate-fabrication",
+    pagePath: "/products/heavy-plate-fabrication",
     image: "/product/16.jpg",
     imageAlt: "Heavy plate fabrication by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -116,7 +116,7 @@ export const productDetails = {
     headline: "Stainless Steel, Carbon Steel & Alloy Steel Fabrication",
     description:
       "Equipment and assemblies fabricated in stainless, carbon, and alloy steels with controlled welding, material traceability, and precise fit-up.",
-    pagePath: "/products/custom-manufacturing/ss-cs-alloy-steel-fabrication",
+    pagePath: "/products/ss-cs-alloy-steel-fabrication",
     image: "/product/24.jpeg",
     imageAlt: "Stainless steel carbon steel and alloy steel fabrication by National Engineers",
     imagePosition: "center",
@@ -203,7 +203,7 @@ export const productDetails = {
     headline: "On-site Erection Support & Installation Assistance",
     description:
       "On-site erection and installation assistance for safe positioning, alignment, fit-up, interface checks, and efficient integration of fabricated equipment.",
-    pagePath: "/products/custom-manufacturing/on-site-erection-support",
+    pagePath: "/products/on-site-erection-support",
     image: "/gallery/Work in progress (46).JPG",
     imageAlt: "Industrial fabrication and erection support by National Engineers",
     imagePosition: "center",
@@ -281,7 +281,7 @@ export const productDetails = {
     headline: "Repair & Modification Jobs for Plant Shutdowns and Maintenance",
     description:
       "Repair, reinforcement, retrofit, and modification work executed to restore integrity, extend equipment life, and adapt plant systems to new requirements.",
-    pagePath: "/products/custom-manufacturing/repair-modification-jobs",
+    pagePath: "/products/repair-modification-jobs",
     image: "/gallery/Work in progress (38).jpg",
     imageAlt: "Industrial repair and modification fabrication work by National Engineers",
     imagePosition: "center",
@@ -364,5 +364,6 @@ export function buildProductMetadata(product: ProductDetail): Metadata {
     path: product.pagePath,
     image: product.image,
     keywords: product.seo.keywords,
+    robots: { index: false, follow: false },
   });
 }

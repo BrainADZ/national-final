@@ -7,23 +7,23 @@ export const CATEGORY_NAME = "Material Handling & Storage (Bulk / Solid)";
 export const materialHandlingNav = [
   {
     label: "Hoppers & Flakes Hoppers",
-    href: "/products/material-handling-and-storage/hoppers-flakes-hoppers",
+    href: "/products/hoppers-flakes-hoppers",
   },
   {
     label: "Silos & Storage Bins",
-    href: "/products/material-handling-and-storage/silos-storage-bins",
+    href: "/products/silos-storage-bins",
   },
   {
     label: "Chutes & Transitions",
-    href: "/products/material-handling-and-storage/chutes-transitions",
+    href: "/products/chutes-transitions",
   },
   {
     label: "Tow Bin / Tow Can",
-    href: "/products/material-handling-and-storage/tow-bin-tow-can",
+    href: "/products/tow-bin-tow-can",
   },
   {
     label: "Bulk Handling Fabrication (Custom)",
-    href: "/products/material-handling-and-storage/custom-bulk-handling-fabrication",
+    href: "/products/custom-bulk-handling-fabrication",
   },
 ];
 
@@ -33,7 +33,7 @@ export const productDetails = {
     headline: "Reliable Bulk-Solid Hoppers for Controlled Material Flow",
     description:
       "Custom bulk-solid and flakes hoppers fabricated for reliable gravity discharge, controlled feeding, and smooth handling of powders, granules, flakes, and chips.",
-    pagePath: "/products/material-handling-and-storage/hoppers-flakes-hoppers",
+    pagePath: "/products/hoppers-flakes-hoppers",
     image: "/product/00.jpg",
     imageAlt: "Industrial flakes hopper fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -120,7 +120,7 @@ export const productDetails = {
     headline: "Space-Efficient Bulk Storage with Reliable Discharge",
     description:
       "Storage silos and bulk bins fabricated for safe dry-material storage, consistent discharge, maintenance access, and reliable plant integration.",
-    pagePath: "/products/material-handling-and-storage/silos-storage-bins",
+    pagePath: "/products/silos-storage-bins",
     image: "/product/soilTank.jpeg",
     imageAlt: "Industrial storage silos fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -207,7 +207,7 @@ export const productDetails = {
     headline: "Wear-Resistant Transfer Chutes for Reliable Material Movement",
     description:
       "Bulk-material chutes, spouts, and transitions fabricated to connect equipment while reducing spillage, dust escape, blockages, and wear.",
-    pagePath: "/products/material-handling-and-storage/chutes-transitions",
+    pagePath: "/products/chutes-transitions",
     image: "/product/13.jpg",
     imageAlt: "Industrial chutes and transitions fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -294,7 +294,7 @@ export const productDetails = {
     headline: "Heavy-Duty Towable Bins for Safe Internal Material Logistics",
     description:
       "Tow bins and tow cans fabricated for safe, efficient movement of bulk solids, scrap, chips, flakes, and production waste between plant stations.",
-    pagePath: "/products/material-handling-and-storage/tow-bin-tow-can",
+    pagePath: "/products/tow-bin-tow-can",
     image: "/product/4.jpg",
     imageAlt: "Industrial tow bin and tow can fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -381,7 +381,7 @@ export const productDetails = {
     headline: "Custom Fabrication for Unique Bulk-Solid Handling Challenges",
     description:
       "Custom bulk-handling equipment fabricated around your process, from one-off prototypes to repeat builds for multiple production lines.",
-    pagePath: "/products/material-handling-and-storage/custom-bulk-handling-fabrication",
+    pagePath: "/products/custom-bulk-handling-fabrication",
     image: "/product/23.jpeg",
     imageAlt: "Custom bulk handling equipment fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -472,5 +472,6 @@ export function buildProductMetadata(product: ProductDetail): Metadata {
     path: product.pagePath,
     image: product.image,
     keywords: product.seo.keywords,
+    robots: { index: false, follow: false },
   });
 }

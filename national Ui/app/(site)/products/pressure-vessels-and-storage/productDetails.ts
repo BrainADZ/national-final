@@ -37,35 +37,35 @@ export type ProductDetail = {
 export const pressureVesselNav = [
   {
     label: "Air Receiver Vessels",
-    href: "/products/pressure-vessels-and-storage/air-receiver-vessels",
+    href: "/products/air-receiver-vessels",
   },
   {
     label: "Nitrogen Buffer / Gas Storage Tanks",
-    href: "/products/pressure-vessels-and-storage/nitrogen-buffer-gas-storage-tanks",
+    href: "/products/nitrogen-buffer-gas-storage-tanks",
   },
   {
     label: "Horizontal Storage Tanks",
-    href: "/products/pressure-vessels-and-storage/horizontal-storage-tanks",
+    href: "/products/horizontal-storage-tanks",
   },
   {
     label: "Vertical Storage Tanks",
-    href: "/products/pressure-vessels-and-storage/vertical-storage-tanks",
+    href: "/products/vertical-storage-tanks",
   },
   {
     label: "Blowdown / Flash Tanks",
-    href: "/products/pressure-vessels-and-storage/blowdown-flash-tanks",
+    href: "/products/blowdown-flash-tanks",
   },
   {
     label: "Water Holding / Utility Vessels",
-    href: "/products/pressure-vessels-and-storage/water-holding-utility-vessels",
+    href: "/products/water-holding-utility-vessels",
   },
   {
     label: "Filter Vessels (Activated Carbon / Softener)",
-    href: "/products/pressure-vessels-and-storage/filter-vessels",
+    href: "/products/filter-vessels",
   },
   {
     label: "Custom Pressure Vessels (As per drawing/spec)",
-    href: "/products/pressure-vessels-and-storage/custom-pressure-vessels",
+    href: "/products/custom-pressure-vessels",
   },
 ];
 
@@ -75,7 +75,7 @@ export const productDetails = {
     headline: "Industrial Compressed Air Storage Solutions",
     description:
       "Air receiver vessels built to stabilize pressure, reduce compressor cycling, and support reliable plant air systems.",
-    pagePath: "/products/pressure-vessels-and-storage/air-receiver-vessels",
+    pagePath: "/products/air-receiver-vessels",
     image: "/product/7.jpg",
     imageAlt: "Air receiver vessel fabricated by National Engineers",
     imagePosition: "center",
@@ -171,7 +171,7 @@ export const productDetails = {
     description:
       "Nitrogen buffer and gas storage tanks fabricated for demand fluctuation control, line stability, and uninterrupted operations.",
     pagePath:
-      "/products/pressure-vessels-and-storage/nitrogen-buffer-gas-storage-tanks",
+      "/products/nitrogen-buffer-gas-storage-tanks",
     image: "/product/6.jpg",
     imageAlt: "Nitrogen buffer gas storage tank fabricated by National Engineers",
     imagePosition: "center",
@@ -263,7 +263,7 @@ export const productDetails = {
     headline: "Low-Height Storage Tanks for Process and Utility Duties",
     description:
       "Horizontal tanks engineered for process liquids, utility fluids, chemical storage, safe handling, and long service life.",
-    pagePath: "/products/pressure-vessels-and-storage/horizontal-storage-tanks",
+    pagePath: "/products/horizontal-storage-tanks",
     image: "/product/14.jpg",
     imageAlt: "Horizontal storage tank fabricated by National Engineers",
     imagePosition: "center",
@@ -357,7 +357,7 @@ export const productDetails = {
     headline: "Bulk Storage Tanks with Optimized Plant Footprint",
     description:
       "Vertical storage tanks fabricated for bulk and utility storage with safe access, maintainable nozzles, and configurable roof designs.",
-    pagePath: "/products/pressure-vessels-and-storage/vertical-storage-tanks",
+    pagePath: "/products/vertical-storage-tanks",
     image: "/product/2.jpg",
     imageAlt: "Vertical storage tank fabricated by National Engineers",
     imagePosition: "center",
@@ -450,7 +450,7 @@ export const productDetails = {
     headline: "Safe Pressure Release and Flash Steam Separation",
     description:
       "Blowdown and flash tanks manufactured to handle sudden pressure release, flash steam separation, and downstream protection.",
-    pagePath: "/products/pressure-vessels-and-storage/blowdown-flash-tanks",
+    pagePath: "/products/blowdown-flash-tanks",
     image: "/product/11.jpg",
     imageAlt: "Blowdown flash tank fabricated by National Engineers",
     imagePosition: "center",
@@ -543,7 +543,7 @@ export const productDetails = {
     description:
       "Water holding and utility vessels built for durability, maintainability, and dependable plant utility distribution.",
     pagePath:
-      "/products/pressure-vessels-and-storage/water-holding-utility-vessels",
+      "/products/water-holding-utility-vessels",
     image: "/product/9.jpg",
     imageAlt: "Water holding utility vessel fabricated by National Engineers",
     imagePosition: "center",
@@ -631,7 +631,7 @@ export const productDetails = {
     headline: "Filtration Vessels for Water Treatment and Process Skids",
     description:
       "Filter vessels built for activated carbon, softener, and media filtration duties with reliable backwash cycles.",
-    pagePath: "/products/pressure-vessels-and-storage/filter-vessels",
+    pagePath: "/products/filter-vessels",
     image: "/product/12.jpg",
     imageAlt: "Filter vessel and softener tank fabricated by National Engineers",
     imagePosition: "center",
@@ -724,7 +724,7 @@ export const productDetails = {
     headline: "Custom-Engineered Vessels Built to Client Drawings",
     description:
       "Custom pressure vessels manufactured as per client drawings, datasheets, and project specifications for industrial applications.",
-    pagePath: "/products/pressure-vessels-and-storage/custom-pressure-vessels",
+    pagePath: "/products/custom-pressure-vessels",
     image: "/product/23.jpeg",
     imageAlt: "Custom pressure vessel fabricated by National Engineers",
     imagePosition: "center",
@@ -815,5 +815,6 @@ export function buildProductMetadata(product: ProductDetail): Metadata {
     path: product.pagePath,
     image: product.image,
     keywords: product.seo.keywords,
+    robots: { index: false, follow: false },
   });
 }

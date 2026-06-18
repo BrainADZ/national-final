@@ -10,6 +10,7 @@ type BuildMetadataInput = {
   path?: string;
   image?: string;
   keywords?: string[];
+  robots?: Metadata["robots"];
 };
 
 export function absoluteUrl(path = "/") {
@@ -24,6 +25,7 @@ export function buildMetadata({
   path = "/",
   image = DEFAULT_OG_IMAGE,
   keywords,
+  robots,
 }: BuildMetadataInput): Metadata {
   const url = absoluteUrl(path);
   const imageUrl = absoluteUrl(image);
@@ -54,5 +56,6 @@ export function buildMetadata({
       description,
       images: [imageUrl],
     },
+    robots,
   };
 }

@@ -7,19 +7,19 @@ export const CATEGORY_NAME = "Pollution Control & Gas Handling";
 export const pollutionControlNav = [
   {
     label: "Venturi Scrubbers",
-    href: "/products/pollution-control-and-gas-handling/venturi-scrubbers",
+    href: "/products/venturi-scrubbers",
   },
   {
     label: "Wet Scrubber Systems",
-    href: "/products/pollution-control-and-gas-handling/wet-scrubber-systems",
+    href: "/products/wet-scrubber-systems",
   },
   {
     label: "Ducting & Flue Gas Lines",
-    href: "/products/pollution-control-and-gas-handling/ducting-flue-gas-lines",
+    href: "/products/ducting-flue-gas-lines",
   },
   {
     label: "Scrubber Internals & Liners",
-    href: "/products/pollution-control-and-gas-handling/scrubber-internals-liners",
+    href: "/products/scrubber-internals-liners",
   },
 ];
 
@@ -29,7 +29,7 @@ export const productDetails = {
     headline: "High-Energy Wet Scrubbers for Fine Particulate Control",
     description:
       "Venturi scrubber assemblies fabricated for efficient capture of fine dust, fumes, mists, and reactive gases in demanding industrial exhaust services.",
-    pagePath: "/products/pollution-control-and-gas-handling/venturi-scrubbers",
+    pagePath: "/products/venturi-scrubbers",
     image: "/product/3.jpg",
     imageAlt:
       "Industrial venturi scrubber assembly fabricated by National Engineers and Steel Fabricators",
@@ -127,7 +127,7 @@ export const productDetails = {
     headline: "Industrial Wet Scrubbing Systems for Dust and Gas Control",
     description:
       "Wet scrubber systems fabricated to remove particulate, acid gases, odors, and soluble vapors through reliable gas-liquid contact and mist control.",
-    pagePath: "/products/pollution-control-and-gas-handling/wet-scrubber-systems",
+    pagePath: "/products/wet-scrubber-systems",
     image: "/product/24.jpeg",
     imageAlt:
       "Industrial wet scrubber system fabricated by National Engineers and Steel Fabricators",
@@ -225,7 +225,7 @@ export const productDetails = {
     headline: "Leak-Tight Exhaust Ducting for Pollution Control Systems",
     description:
       "Process ducting and flue gas lines fabricated for safe exhaust movement, corrosion resistance, thermal movement, and maintainable plant integration.",
-    pagePath: "/products/pollution-control-and-gas-handling/ducting-flue-gas-lines",
+    pagePath: "/products/ducting-flue-gas-lines",
     image: "/product/13.jpg",
     imageAlt:
       "Industrial ducting and flue gas lines fabricated by National Engineers and Steel Fabricators",
@@ -323,7 +323,7 @@ export const productDetails = {
     headline: "Service-Friendly Internals and Liners for Scrubber Reliability",
     description:
       "Scrubber internals and protective liners fabricated to improve gas-liquid contact, separation efficiency, corrosion life, and maintenance access.",
-    pagePath: "/products/pollution-control-and-gas-handling/scrubber-internals-liners",
+    pagePath: "/products/scrubber-internals-liners",
     image: "/product/21.jpeg",
     imageAlt:
       "Scrubber internals and protective liner components fabricated by National Engineers and Steel Fabricators",
@@ -425,5 +425,6 @@ export function buildProductMetadata(product: ProductDetail): Metadata {
     path: product.pagePath,
     image: product.image,
     keywords: product.seo.keywords,
+    robots: { index: false, follow: false },
   });
 }

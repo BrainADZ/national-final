@@ -23,15 +23,18 @@ type ProductNavItem = {
 type ProductDetailLayoutProps = {
   product: ProductDetail;
   categoryName?: string;
+  categoryPath?: string;
   navItems?: ProductNavItem[];
 };
 
 export default function ProductDetailLayout({
   product,
   categoryName = DEFAULT_CATEGORY_NAME,
+  categoryPath,
   navItems = pressureVesselNav,
 }: ProductDetailLayoutProps) {
-  const categoryPath = product.pagePath.split("/").slice(0, -1).join("/") || "/products";
+  const resolvedCategoryPath =
+    categoryPath || product.pagePath.split("/").slice(0, -1).join("/") || "/products";
 
   const schemas = [
     {
@@ -74,7 +77,7 @@ export default function ProductDetailLayout({
           "@type": "ListItem",
           position: 3,
           name: categoryName,
-          item: absoluteUrl(categoryPath),
+          item: absoluteUrl(resolvedCategoryPath),
         },
         {
           "@type": "ListItem",
@@ -129,7 +132,7 @@ export default function ProductDetailLayout({
                   /
                 </li>
                 <li>
-                  <Link href={categoryPath} className="transition hover:text-white">
+                  <Link href={resolvedCategoryPath} className="transition hover:text-white">
                     {categoryName}
                   </Link>
                 </li>

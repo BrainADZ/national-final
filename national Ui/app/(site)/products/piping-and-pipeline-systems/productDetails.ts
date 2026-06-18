@@ -7,23 +7,23 @@ export const CATEGORY_NAME = "Piping & Pipeline Systems";
 export const pipingPipelineNav = [
   {
     label: "Pig Launcher / Pig Receiver Systems",
-    href: "/products/piping-and-pipeline-systems/pig-launcher-pig-receiver-systems",
+    href: "/products/pig-launcher-pig-receiver-systems",
   },
   {
     label: "Pipeline Spools & Fabrication",
-    href: "/products/piping-and-pipeline-systems/pipeline-spools-fabrication",
+    href: "/products/pipeline-spools-fabrication",
   },
   {
     label: "Headers, Manifolds & Special Piping",
-    href: "/products/piping-and-pipeline-systems/headers-manifolds-special-piping",
+    href: "/products/headers-manifolds-special-piping",
   },
   {
     label: "Compressor Suction / Discharge Ducting",
-    href: "/products/piping-and-pipeline-systems/compressor-suction-discharge-ducting",
+    href: "/products/compressor-suction-discharge-ducting",
   },
   {
     label: "Piping Supports",
-    href: "/products/piping-and-pipeline-systems/piping-supports",
+    href: "/products/piping-supports",
   },
 ];
 
@@ -34,7 +34,7 @@ export const productDetails = {
     description:
       "Pressure-containing pig launcher and receiver systems engineered for pipeline cleaning, batching, dewatering, and inline inspection activities.",
     pagePath:
-      "/products/piping-and-pipeline-systems/pig-launcher-pig-receiver-systems",
+      "/products/pig-launcher-pig-receiver-systems",
     image: "/product/26.jpeg",
     imageAlt:
       "Pig launcher and pig receiver system fabricated by National Engineers and Steel Fabricators",
@@ -137,7 +137,7 @@ export const productDetails = {
     description:
       "Pipeline spools fabricated under controlled shop conditions to improve fit-up accuracy, reduce site welding, and support reliable project execution.",
     pagePath:
-      "/products/piping-and-pipeline-systems/pipeline-spools-fabrication",
+      "/products/pipeline-spools-fabrication",
     image: "/product/8.jpg",
     imageAlt:
       "Fabricated industrial pipeline section by National Engineers and Steel Fabricators",
@@ -237,7 +237,7 @@ export const productDetails = {
     description:
       "Custom headers, manifolds, and special piping assemblies fabricated for controlled flow distribution, pressure integrity, and reliable plant integration.",
     pagePath:
-      "/products/piping-and-pipeline-systems/headers-manifolds-special-piping",
+      "/products/headers-manifolds-special-piping",
     image: "/product/26.jpeg",
     imageAlt:
       "Custom header manifold and special piping assembly fabricated by National Engineers and Steel Fabricators",
@@ -343,7 +343,7 @@ export const productDetails = {
     description:
       "Compressor suction and discharge ducting fabricated for accurate equipment tie-ins, robust airflow handling, dimensional stability, and safe plant integration.",
     pagePath:
-      "/products/piping-and-pipeline-systems/compressor-suction-discharge-ducting",
+      "/products/compressor-suction-discharge-ducting",
     image: "/product/13.jpg",
     imageAlt:
       "Industrial compressor suction and discharge ducting fabricated by National Engineers and Steel Fabricators",
@@ -440,7 +440,7 @@ export const productDetails = {
     headline: "Reliable Piping Support Assemblies for Long-Term Plant Integrity",
     description:
       "Custom piping supports and structural support assemblies fabricated to maintain alignment, transfer loads, manage movement, and support reliable plant operation.",
-    pagePath: "/products/piping-and-pipeline-systems/piping-supports",
+    pagePath: "/products/piping-supports",
     image: "/product/17.jpg",
     imageAlt:
       "Industrial piping support assembly fabricated by National Engineers and Steel Fabricators",
@@ -545,5 +545,6 @@ export function buildProductMetadata(product: ProductDetail): Metadata {
     path: product.pagePath,
     image: product.image,
     keywords: product.seo.keywords,
+    robots: { index: false, follow: false },
   });
 }

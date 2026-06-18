@@ -2,8 +2,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import FaqSection from "@/sections/Accordian";
 import MissionVisionSection from "@/sections/about/MissionVisionSection";
-import MdDeskSection from "@/sections/MdDeskSection";
 import AboutPageMdDeskSection from "@/sections/about/AboutPageMdDesk";
 import { buildMetadata } from "@/lib/seo";
 
@@ -63,7 +63,74 @@ const breadcrumbSchema = {
     },
   ],
 };
-const schemas = [aboutPageSchema, breadcrumbSchema];
+
+const aboutFaqs = [
+  {
+    question: "Who is National Engineers & Steel Fabricators?",
+    answer:
+      "National Engineers & Steel Fabricators is an industrial fabrication and equipment manufacturing company offering custom engineering solutions for different industrial requirements.",
+  },
+  {
+    question: "What does National Engineers manufacture?",
+    answer:
+      "We manufacture industrial equipment, pressure vessels, storage tanks, ducting systems, structural steel components, heavy fabrication parts, and custom-fabricated equipment.",
+  },
+  {
+    question: "Are you an industrial equipment manufacturer in India?",
+    answer:
+      "Yes, National Engineers & Steel Fabricators works as an industrial equipment manufacturer in India, providing fabricated products and custom-built industrial solutions.",
+  },
+  {
+    question: "Do you provide custom fabrication solutions?",
+    answer:
+      "Yes, we provide custom fabrication solutions based on client drawings, technical specifications, material requirements, site conditions, and industry applications.",
+  },
+  {
+    question: "Which industries does National Engineers serve?",
+    answer:
+      "We serve chemical, pharmaceutical, food processing, textile, power, infrastructure, engineering, manufacturing, and other industries that need reliable fabrication work.",
+  },
+  {
+    question: "What makes National Engineers different?",
+    answer:
+      "Our focus on quality fabrication, practical engineering, material selection, project understanding, and custom manufacturing makes us a reliable choice for industrial clients.",
+  },
+  {
+    question: "Do you handle heavy fabrication work?",
+    answer:
+      "Yes, we handle heavy fabrication work for industrial structures, tanks, machinery components, platforms, ducting, pressure vessels, and other fabricated equipment.",
+  },
+  {
+    question: "What materials do you work with?",
+    answer:
+      "We work with mild steel, stainless steel, carbon steel, structural steel, and other industrial-grade materials depending on the project requirement and application.",
+  },
+  {
+    question: "Can you manufacture equipment as per client drawings?",
+    answer:
+      "Yes, we manufacture industrial equipment and fabricated components as per client drawings, approved designs, technical details, and project-specific requirements.",
+  },
+  {
+    question: "Why choose National Engineers & Steel Fabricators?",
+    answer:
+      "Clients choose National Engineers & Steel Fabricators for custom industrial equipment manufacturing, reliable fabrication services, quality workmanship, and industry-focused engineering solutions.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: aboutFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
+const schemas = [aboutPageSchema, breadcrumbSchema, faqSchema];
 export default function AboutPage() {
   const title = " Industrial Fabrication Company in Surat | National Engineers & Steel Fabricators";
   const breadcrumbCurrent = "About NESF";
@@ -129,6 +196,7 @@ export default function AboutPage() {
 
       <MissionVisionSection />
       <AboutPageMdDeskSection />
+      <FaqSection faqs={aboutFaqs} />
     </>
   );
 }

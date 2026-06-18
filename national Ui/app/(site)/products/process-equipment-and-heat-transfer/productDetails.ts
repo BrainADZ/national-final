@@ -7,23 +7,23 @@ export const CATEGORY_NAME = "Process Equipment & Heat Transfer";
 export const processEquipmentNav = [
   {
     label: "Condensers & Water Condensers",
-    href: "/products/process-equipment-and-heat-transfer/condensers-water-condensers",
+    href: "/products/condensers-water-condensers",
   },
   {
     label: "Heat Exchanger Shells / Columns",
-    href: "/products/process-equipment-and-heat-transfer/heat-exchanger-shells-columns",
+    href: "/products/heat-exchanger-shells-columns",
   },
   {
     label: "Process Skids & Packages",
-    href: "/products/process-equipment-and-heat-transfer/process-skids-packages",
+    href: "/products/process-skids-packages",
   },
   {
     label: "Special Purpose Process Vessels",
-    href: "/products/process-equipment-and-heat-transfer/special-purpose-process-vessels",
+    href: "/products/special-purpose-process-vessels",
   },
   {
     label: "Chemical Process Equipment (Custom)",
-    href: "/products/process-equipment-and-heat-transfer/custom-chemical-process-equipment",
+    href: "/products/custom-chemical-process-equipment",
   },
 ];
 
@@ -34,7 +34,7 @@ export const productDetails = {
     description:
       "Industrial condensers and water condensers engineered for heat duty, corrosion resistance, serviceability, and reliable continuous-duty performance.",
     pagePath:
-      "/products/process-equipment-and-heat-transfer/condensers-water-condensers",
+      "/products/condensers-water-condensers",
     image: "/product/25.png",
     imageAlt:
       "Industrial water condenser fabricated by National Engineers and Steel Fabricators",
@@ -130,7 +130,7 @@ export const productDetails = {
     description:
       "Precision-fabricated heat exchanger shells and process columns with controlled fit-up, nozzle orientation accuracy, documented inspection, and project-ready deliverables.",
     pagePath:
-      "/products/process-equipment-and-heat-transfer/heat-exchanger-shells-columns",
+      "/products/heat-exchanger-shells-columns",
     image: "/product/23.jpeg",
     imageAlt:
       "Heat exchanger shell and process column fabricated by National Engineers and Steel Fabricators",
@@ -230,7 +230,7 @@ export const productDetails = {
     description:
       "Skid-mounted process packages fabricated for fast installation with equipment mounting, piping provisions, structural supports, testing, and documentation included as per scope.",
     pagePath:
-      "/products/process-equipment-and-heat-transfer/process-skids-packages",
+      "/products/process-skids-packages",
     image: "/product/22.jpeg",
     imageAlt:
       "Skid-mounted process package fabricated by National Engineers and Steel Fabricators",
@@ -329,7 +329,7 @@ export const productDetails = {
     description:
       "Industrial process vessels fabricated for specific duties with robust construction, inspection-ready welding, and project documentation.",
     pagePath:
-      "/products/process-equipment-and-heat-transfer/special-purpose-process-vessels",
+      "/products/special-purpose-process-vessels",
     image: "/product/24.jpeg",
     imageAlt:
       "Special purpose industrial process vessel fabricated by National Engineers and Steel Fabricators",
@@ -429,7 +429,7 @@ export const productDetails = {
     description:
       "Custom-built chemical process equipment engineered for corrosion resistance, operational safety, maintainability, and smooth plant integration.",
     pagePath:
-      "/products/process-equipment-and-heat-transfer/custom-chemical-process-equipment",
+      "/products/custom-chemical-process-equipment",
     image: "/product/Final_half_coil_vessel.jpeg",
     imageAlt:
       "Custom chemical process equipment fabricated by National Engineers and Steel Fabricators",
@@ -535,5 +535,6 @@ export function buildProductMetadata(product: ProductDetail): Metadata {
     path: product.pagePath,
     image: product.image,
     keywords: product.seo.keywords,
+    robots: { index: false, follow: false },
   });
 }

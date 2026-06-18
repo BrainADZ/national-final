@@ -7,23 +7,23 @@ export const CATEGORY_NAME = "Fabrication Components & Structural";
 export const fabricationStructuralNav = [
   {
     label: "Base Plates",
-    href: "/products/fabrication-components-and-structural/base-plates",
+    href: "/products/base-plates",
   },
   {
     label: "Pipe Saddles & Supports",
-    href: "/products/fabrication-components-and-structural/pipe-saddles-supports",
+    href: "/products/pipe-saddles-supports",
   },
   {
     label: "Jack Stools / Temporary Supports",
-    href: "/products/fabrication-components-and-structural/jack-stools-temporary-supports",
+    href: "/products/jack-stools-temporary-supports",
   },
   {
     label: "Liners (Hard Plate / Wear Plate)",
-    href: "/products/fabrication-components-and-structural/liners-hard-wear-plate",
+    href: "/products/liners-hard-wear-plate",
   },
   {
     label: "Heavy Structural Fabrication (Custom)",
-    href: "/products/fabrication-components-and-structural/custom-heavy-structural-fabrication",
+    href: "/products/custom-heavy-structural-fabrication",
   },
 ];
 
@@ -33,7 +33,7 @@ export const productDetails = {
     headline: "Precision Base Plates for Stable Equipment and Structural Installation",
     description:
       "Fabricated steel base plates, sole plates, and mounting plates built for accurate load transfer, anchoring, leveling, and alignment.",
-    pagePath: "/products/fabrication-components-and-structural/base-plates",
+    pagePath: "/products/base-plates",
     image: "/product/18.jpg",
     imageAlt: "Industrial base plates fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -120,7 +120,7 @@ export const productDetails = {
     headline: "Custom Pipe Saddles and Supports for Reliable Load Control",
     description:
       "Pipe saddles and support assemblies fabricated to carry piping loads, maintain elevation, control movement, and protect piping and equipment nozzles.",
-    pagePath: "/products/fabrication-components-and-structural/pipe-saddles-supports",
+    pagePath: "/products/pipe-saddles-supports",
     image: "/product/17.jpg",
     imageAlt: "Industrial pipe saddles and supports fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -207,7 +207,7 @@ export const productDetails = {
     headline: "Rugged Temporary Supports for Erection and Maintenance Work",
     description:
       "Jack stools and temporary support frames fabricated for safe spool, piping, and equipment support during erection, alignment, testing, and shutdown activities.",
-    pagePath: "/products/fabrication-components-and-structural/jack-stools-temporary-supports",
+    pagePath: "/products/jack-stools-temporary-supports",
     image: "/product/19.jpeg",
     imageAlt: "Industrial jack stool temporary support fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -295,7 +295,7 @@ export const productDetails = {
     headline: "Replaceable Wear Liners for Abrasion and Impact Protection",
     description:
       "Hard plate and wear-plate liners fabricated for chutes, hoppers, bins, ducts, and abrasive zones to extend equipment life and reduce downtime.",
-    pagePath: "/products/fabrication-components-and-structural/liners-hard-wear-plate",
+    pagePath: "/products/liners-hard-wear-plate",
     image: "/product/21.jpeg",
     imageAlt: "Hard plate and wear plate liners fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -383,7 +383,7 @@ export const productDetails = {
     headline: "Build-to-Drawing Heavy Structural Fabrication for Industrial Projects",
     description:
       "Custom heavy structural assemblies fabricated with controlled fit-up, dimensional accuracy, site-friendly modules, and project documentation.",
-    pagePath: "/products/fabrication-components-and-structural/custom-heavy-structural-fabrication",
+    pagePath: "/products/custom-heavy-structural-fabrication",
     image: "/product/16.jpg",
     imageAlt: "Custom heavy structural fabrication by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -474,5 +474,6 @@ export function buildProductMetadata(product: ProductDetail): Metadata {
     path: product.pagePath,
     image: product.image,
     keywords: product.seo.keywords,
+    robots: { index: false, follow: false },
   });
 }

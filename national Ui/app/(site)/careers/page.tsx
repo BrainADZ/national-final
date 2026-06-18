@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CareersClient from "./careersClient";
 import { buildMetadata } from "@/lib/seo";
+import FaqSection from "@/sections/Accordian";
 
 export const metadata: Metadata = buildMetadata({
   title: "Careers at National Engineers | Fabrication Jobs",
@@ -98,8 +99,64 @@ const careerAreasSchema = {
   ],
 };
 
+const careerFaqs = [
+  {
+    question: "What career opportunities are available at National Engineers?",
+    answer:
+      "National Engineers offers career opportunities in mechanical engineering, fabrication, welding, production supervision, quality control, project coordination, and shop-floor operations.",
+  },
+  {
+    question: "Do you offer engineering jobs in the fabrication industry?",
+    answer:
+      "Yes, we offer engineering jobs in the fabrication industry for candidates interested in industrial manufacturing, pressure vessels, storage tanks, ducting systems, and custom fabrication work.",
+  },
+  {
+    question: "Can freshers apply for fabrication careers?",
+    answer:
+      "Yes, freshers can apply for suitable entry-level roles based on their technical knowledge, learning attitude, and interest in industrial fabrication and manufacturing.",
+  },
+  {
+    question: "Do you hire for welding and shop-floor jobs?",
+    answer:
+      "Yes, we hire for welding fabrication jobs, shop-floor technician roles, production support, fabrication fitting, and manufacturing-related positions.",
+  },
+  {
+    question: "What documents are required to apply?",
+    answer:
+      "Candidates should submit an updated resume with contact details, current location, total experience, notice period, and preferred job role.",
+  },
+  {
+    question: "Do you provide manufacturing company jobs in India?",
+    answer:
+      "Yes, National Engineers provides manufacturing company jobs in India for skilled professionals, engineers, technicians, welders, supervisors, and quality inspection staff.",
+  },
+  {
+    question: "What skills are preferred for fabrication jobs?",
+    answer:
+      "Preferred skills include drawing understanding, welding knowledge, fabrication experience, measurement accuracy, safety awareness, teamwork, and practical shop-floor execution.",
+  },
+  {
+    question: "How can I apply for a job at National Engineers?",
+    answer:
+      "You can apply through the Careers page by selecting a role or submitting a general application with your resume and basic professional details.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: careerFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function CareersPage() {
-  const schemas = [careersPageSchema, breadcrumbSchema, careerAreasSchema];
+  const schemas = [careersPageSchema, breadcrumbSchema, careerAreasSchema, faqSchema];
   return (
     <>
       <script
@@ -107,6 +164,7 @@ export default function CareersPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
       <CareersClient />
+      <FaqSection faqs={careerFaqs} />
     </>
   )
 }

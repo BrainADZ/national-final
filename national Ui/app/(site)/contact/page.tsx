@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import { Building2, Phone, Mail, Clock, MapPin, Send, FileText } from "lucide-react";
@@ -101,23 +100,64 @@ const INFO = [
     },
 ];
 
-const FAQ = [
+const contactFaqs = [
     {
-        q: "What information should I share for an accurate quotation?",
-        a: "Share equipment type, size/capacity, material of construction, operating pressure and temperature, applicable code/standard, and preferred delivery timeline. Drawings/specifications help speed up the process.",
+        question: "How can I contact National Engineers for a fabrication enquiry?",
+        answer:
+            "You can contact National Engineers by calling, emailing, or submitting the enquiry form with your fabrication requirement, drawings, specifications, and project details.",
     },
     {
-        q: "Do you support custom fabrication and complex engineered equipment?",
-        a: "Yes. We fabricate custom-built equipment such as pressure vessels, heat exchangers, reactors, storage tanks, silos and structural jobs as per national/international standards and project requirements.",
+        question: "What details should I share for a quotation?",
+        answer:
+            "For accurate quotation, share equipment type, size, MOC, capacity, pressure, temperature, drawing, delivery location, and required project timeline.",
     },
     {
-        q: "How soon will I get a response after submitting the form?",
-        a: "Typically within 24 working hours. If clarifications are needed, our team will reach out by phone/email.",
+        question: "Can I send technical drawings for custom fabrication?",
+        answer:
+            "Yes, you can share technical drawings, PDF files, DWG files, STEP files, or basic specifications for custom fabrication and industrial equipment manufacturing.",
+    },
+    {
+        question: "How soon will I get a response after enquiry?",
+        answer:
+            "National Engineers typically responds within 24 working hours with next steps, technical clarifications, or quotation-related discussion.",
+    },
+    {
+        question: "Can I visit your fabrication facility in Surat?",
+        answer:
+            "Yes, you can schedule a facility visit in Surat for technical discussion, inspection, project review, or fabrication requirement understanding.",
+    },
+    {
+        question: "Do you handle urgent industrial fabrication enquiries?",
+        answer:
+            "Yes, for urgent fabrication or equipment manufacturing requirements, you can call directly during working hours for faster communication.",
+    },
+    {
+        question: "What type of enquiries can I submit?",
+        answer:
+            "You can submit enquiries for pressure vessels, storage tanks, air receiver tanks, ducting systems, process equipment, structural fabrication, and custom industrial fabrication work.",
+    },
+    {
+        question: "Do you provide support before finalizing the order?",
+        answer:
+            "Yes, our technical team reviews your requirement, drawings, material needs, and application details before suggesting the right fabrication approach.",
     },
 ];
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: contactFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+        },
+    })),
+};
+
 export default function ContactPage() {
-      const schemas = [contactPageSchema, breadcrumbSchema];
+      const schemas = [contactPageSchema, breadcrumbSchema, faqSchema];
 
     return (
         <>
@@ -384,7 +424,7 @@ export default function ContactPage() {
                 </section>
 
                 {/* FAQ */}
-                <FaqSection />
+                <FaqSection faqs={contactFaqs} />
             </main>
         </>
     );

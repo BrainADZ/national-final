@@ -7,19 +7,19 @@ export const CATEGORY_NAME = "HVAC & Industrial Ducting";
 export const hvacDuctingNav = [
   {
     label: "AHU Ducts (GI / SS)",
-    href: "/products/hvac-and-industrial-ducting/ahu-ducts-gi-ss",
+    href: "/products/ahu-ducts-gi-ss",
   },
   {
     label: "Industrial Ducting Systems",
-    href: "/products/hvac-and-industrial-ducting/industrial-ducting-systems",
+    href: "/products/industrial-ducting-systems",
   },
   {
     label: "Transitions / Reducers / Elbows",
-    href: "/products/hvac-and-industrial-ducting/transitions-reducers-elbows",
+    href: "/products/transitions-reducers-elbows",
   },
   {
     label: "Insulated Duct Casing",
-    href: "/products/hvac-and-industrial-ducting/insulated-duct-casing",
+    href: "/products/insulated-duct-casing",
   },
 ];
 
@@ -29,7 +29,7 @@ export const productDetails = {
     headline: "Low-Leakage AHU Ductwork for Reliable Air Distribution",
     description:
       "GI and stainless-steel AHU ducting fabricated for stable airflow, low leakage, clean finishes, accurate fit-up, and long service life.",
-    pagePath: "/products/hvac-and-industrial-ducting/ahu-ducts-gi-ss",
+    pagePath: "/products/ahu-ducts-gi-ss",
     image: "/product/13.jpg",
     imageAlt: "GI and stainless steel AHU ducts fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -116,7 +116,7 @@ export const productDetails = {
     headline: "Robust Industrial Ducting for Ventilation and Process Air",
     description:
       "Industrial ducting systems fabricated for ventilation, exhaust, dust and fume extraction, and process-air handling across complex plant layouts.",
-    pagePath: "/products/hvac-and-industrial-ducting/industrial-ducting-systems",
+    pagePath: "/products/industrial-ducting-systems",
     image: "/product/13.jpg",
     imageAlt: "Industrial ducting system fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -202,7 +202,7 @@ export const productDetails = {
     headline: "Precision Duct Fittings for Smooth Airflow and Accurate Fitment",
     description:
       "Custom duct transitions, reducers, elbows, and branch fittings fabricated for smooth airflow, controlled geometry, and clean equipment integration.",
-    pagePath: "/products/hvac-and-industrial-ducting/transitions-reducers-elbows",
+    pagePath: "/products/transitions-reducers-elbows",
     image: "/product/21.jpeg",
     imageAlt: "Custom duct transitions reducers and elbows fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -289,7 +289,7 @@ export const productDetails = {
     headline: "Insulated Duct Casings for Thermal and Condensation Control",
     description:
       "Insulated duct casings fabricated to control heat loss or gain, condensation, surface temperature, and energy loss across indoor and outdoor duct runs.",
-    pagePath: "/products/hvac-and-industrial-ducting/insulated-duct-casing",
+    pagePath: "/products/insulated-duct-casing",
     image: "/product/8.jpg",
     imageAlt: "Insulated industrial duct casing fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -377,5 +377,6 @@ export function buildProductMetadata(product: ProductDetail): Metadata {
     path: product.pagePath,
     image: product.image,
     keywords: product.seo.keywords,
+    robots: { index: false, follow: false },
   });
 }

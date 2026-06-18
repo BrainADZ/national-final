@@ -235,10 +235,10 @@ export default function ProductsPage() {
 
                 <div className="mt-auto pt-5">
                   <Link
-                    href={category.href}
+                    href="/contact"
                     className="inline-flex items-center justify-center rounded-xl border border-[#F98636] bg-[#F98636] px-4 py-2 text-sm font-semibold text-white/90 hover:bg-gray-50 hover:text-[#F98636]"
                   >
-                    Read More
+                    Enquiry Now
                   </Link>
                 </div>
               </div>
