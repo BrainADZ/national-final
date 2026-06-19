@@ -47,7 +47,7 @@ export default function GoogleAdsThankYouClient() {
 
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <Link
-            href="/google-ads"
+            href="/industrial-fabrication"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-[#ee9d54] px-5 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-[#d88c45]"
           >
             Back to Landing Page

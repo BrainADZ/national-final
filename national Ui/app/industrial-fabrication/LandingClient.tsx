@@ -3,15 +3,19 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import {
   ArrowRight,
+  Building2,
   CheckCircle2,
+  ClipboardList,
   Clock,
   Factory,
+  Gauge,
   Instagram,
   Linkedin,
   Mail,
+  Paperclip,
   Phone,
   Send,
   ShieldCheck,
@@ -47,27 +51,27 @@ const PRODUCTS = [
 ];
 
 const trustPoints = [
-  "35+ years of fabrication experience",
-  "Custom build as per drawing and site requirement",
-  "Certified materials and disciplined QA checks",
-  "PAN India industrial project support",
+  "35+ Years of Fabrication Excellence",
+  "Custom Engineered to Your Specifications",
+  "Certified Materials & Rigorous QA/QC",
+  "Global Industrial Project Support",
 ];
 
 const capabilities = [
   {
     icon: Factory,
-    title: "In-house fabrication",
-    text: "Heavy fabrication capability for tanks, vessels, ducting, structures, skids, and custom assemblies.",
+    title: "Integrated Fabrication Capability",
+    text: "Complete fabrication of pressure vessels, tanks, process equipment, structural assemblies, and custom-engineered systems under one roof.",
   },
   {
     icon: ShieldCheck,
-    title: "Quality-first execution",
-    text: "Stage-wise checks, dimensional inspection, material traceability, welding discipline, and testing support.",
+    title: "Rigorous Quality Assurance",
+    text: "Certified materials, welding procedures, dimensional verification, inspection records, and stage-wise quality control throughout fabrication.",
   },
   {
     icon: Clock,
-    title: "Schedule-driven delivery",
-    text: "Practical planning from drawing review to dispatch so industrial buyers can keep projects moving.",
+    title: "Committed Project Delivery",
+    text: "Structured project planning, manufacturing discipline, and proactive coordination to support project timelines.",
   },
 ];
 
@@ -80,7 +84,7 @@ const faqs = [
   {
     question: "Which products can we enquire for from this page?",
     answer:
-      "You can enquire for Dowtherm boilers, surge tanks, silos, storage tanks, jacketed vessels, and custom fabrication requirements.",
+      "You can enquire for dowtherm boilers, surge tanks, silos, storage tanks, jacketed vessels, and custom fabrication requirements.",
   },
   {
     question: "Do you support custom material and sizes?",
@@ -90,7 +94,7 @@ const faqs = [
   {
     question: "How fast will your team respond?",
     answer:
-      "After form submission, the enquiry goes to the NESF team. They can call back to understand the requirement and discuss next steps.",
+      "Our team will review your enquiry and contact you to discuss the most suitable fabrication approach for your project.",
   },
 ];
 
@@ -122,13 +126,17 @@ type LeadFormProps = {
 function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
   const router = useRouter();
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const [fullName, setFullName] = useState("");
   const [company, setCompany] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [product, setProduct] = useState(PRODUCTS[0].title);
-  const [message, setMessage] = useState("");
+  const [productInterest, setProductInterest] = useState(PRODUCTS[0].title);
+  const [technicalSpecifications, setTechnicalSpecifications] = useState("");
+  const [operatingParameters, setOperatingParameters] = useState("");
+  const [drawingAvailability, setDrawingAvailability] = useState("Drawings available");
+  const [drawingFile, setDrawingFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
@@ -137,9 +145,27 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
     setCompany("");
     setPhone("");
     setEmail("");
-    setProduct(PRODUCTS[0].title);
-    setMessage("");
+    setProductInterest(PRODUCTS[0].title);
+    setTechnicalSpecifications("");
+    setOperatingParameters("");
+    setDrawingAvailability("Drawings available");
+    setDrawingFile(null);
     setErrorMsg(null);
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  };
+
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0] || null;
+    setErrorMsg(null);
+
+    if (file && file.size > 10 * 1024 * 1024) {
+      setDrawingFile(null);
+      event.target.value = "";
+      setErrorMsg("Drawing file must be 10 MB or smaller.");
+      return;
+    }
+
+    setDrawingFile(file);
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -151,8 +177,10 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
       company: company.trim(),
       phone: phone.trim(),
       email: email.trim(),
-      product: product.trim(),
-      message: message.trim(),
+      productInterest: productInterest.trim(),
+      technicalSpecifications: technicalSpecifications.trim(),
+      operatingParameters: operatingParameters.trim(),
+      drawingAvailability: drawingAvailability.trim(),
     };
 
     if (!API) {
@@ -160,8 +188,13 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
       return;
     }
 
-    if (!payload.fullName || !payload.phone || !payload.product) {
-      setErrorMsg("Please fill name, phone, and product interest.");
+    if (
+      !payload.fullName ||
+      !payload.phone ||
+      !payload.productInterest ||
+      !payload.technicalSpecifications
+    ) {
+      setErrorMsg("Please fill name, phone, product interest, and technical specifications.");
       return;
     }
 
@@ -169,12 +202,6 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
       setErrorMsg("Please enter a valid email address.");
       return;
     }
-
-    const finalMessage = [
-      `Google Ads landing page enquiry - ${source}`,
-      `Product interest: ${payload.product}`,
-      payload.message ? `Requirement: ${payload.message}` : "Requirement: Please call back with details.",
-    ].join("\n");
 
     try {
       setLoading(true);
@@ -184,9 +211,15 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
       if (payload.company) fd.append("company", payload.company);
       fd.append("phone", payload.phone);
       if (payload.email) fd.append("email", payload.email);
-      fd.append("message", finalMessage);
+      fd.append("productInterest", payload.productInterest);
+      fd.append("technicalSpecifications", payload.technicalSpecifications);
+      if (payload.operatingParameters) fd.append("operatingParameters", payload.operatingParameters);
+      fd.append("drawingAvailability", payload.drawingAvailability);
+      fd.append("source", source);
+      if (typeof window !== "undefined") fd.append("pageUrl", window.location.href);
+      if (drawingFile) fd.append("drawing", drawingFile);
 
-      const res = await fetch(`${API}/enquiry`, {
+      const res = await fetch(`${API}/ads-enquiry`, {
         method: "POST",
         body: fd,
       });
@@ -199,7 +232,7 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
       }
 
       resetForm();
-      router.push("/google-ads/thank-you");
+      router.push("/industrial-fabrication/thank-you");
     } catch {
       setErrorMsg("Server not reachable. Please try again later.");
     } finally {
@@ -216,7 +249,7 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
     >
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ee9d54]">
-          Quick Enquiry
+          QUICK INQUIRY
         </p>
         <h2 className="mt-2 text-2xl font-bold text-gray-950">{title}</h2>
         <p className="mt-2 text-sm leading-6 text-gray-600">{subtitle}</p>
@@ -254,12 +287,15 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
 
         <label className="block">
           <span className="text-xs font-semibold text-gray-700">Company</span>
-          <input
-            value={company}
-            onChange={(event) => setCompany(event.target.value)}
-            placeholder="Company name"
-            className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm outline-none placeholder:text-gray-400 focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
-          />
+          <div className="mt-1 flex items-center gap-2 rounded-md border border-gray-300 px-3 py-2.5 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
+            <Building2 className="h-4 w-4 text-gray-400" />
+            <input
+              value={company}
+              onChange={(event) => setCompany(event.target.value)}
+              placeholder="Company name"
+              className="w-full bg-transparent text-sm outline-none placeholder:text-gray-400"
+            />
+          </div>
         </label>
 
         <label className="block">
@@ -278,10 +314,10 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
       </div>
 
       <label className="mt-3 block">
-        <span className="text-xs font-semibold text-gray-700">Product Interest</span>
+        <span className="text-xs font-semibold text-gray-700">Product / Equipment Interest</span>
         <select
-          value={product}
-          onChange={(event) => setProduct(event.target.value)}
+          value={productInterest}
+          onChange={(event) => setProductInterest(event.target.value)}
           className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
         >
           {PRODUCTS.map((item) => (
@@ -289,20 +325,79 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
               {item.title}
             </option>
           ))}
+          <option value="Pressure Vessel">Pressure Vessel</option>
+          <option value="Storage Tank">Storage Tank</option>
           <option value="Custom Fabrication Requirement">Custom Fabrication Requirement</option>
         </select>
       </label>
 
       <label className="mt-3 block">
-        <span className="text-xs font-semibold text-gray-700">Requirement</span>
+        <span className="inline-flex items-center gap-2 text-xs font-semibold text-gray-700">
+          <ClipboardList className="h-4 w-4 text-gray-400" />
+          Technical Specifications
+        </span>
         <textarea
+          required
           rows={compact ? 3 : 4}
-          value={message}
-          onChange={(event) => setMessage(event.target.value)}
-          placeholder="Share capacity, MOC, dimensions, pressure, temperature, or drawing availability."
+          value={technicalSpecifications}
+          onChange={(event) => setTechnicalSpecifications(event.target.value)}
+          placeholder="Share MOC, capacity, dimensions, thickness, quantity, standards, inspection needs, or site constraints."
           className="mt-1 w-full resize-none rounded-md border border-gray-300 px-3 py-2.5 text-sm outline-none placeholder:text-gray-400 focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
         />
       </label>
+
+      <label className="mt-3 block">
+        <span className="inline-flex items-center gap-2 text-xs font-semibold text-gray-700">
+          <Gauge className="h-4 w-4 text-gray-400" />
+          Operating Parameters
+        </span>
+        <textarea
+          rows={compact ? 2 : 3}
+          value={operatingParameters}
+          onChange={(event) => setOperatingParameters(event.target.value)}
+          placeholder="Pressure, temperature, flow rate, media handled, duty cycle, or other operating conditions."
+          className="mt-1 w-full resize-none rounded-md border border-gray-300 px-3 py-2.5 text-sm outline-none placeholder:text-gray-400 focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
+        />
+      </label>
+
+      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+        <label className="block">
+          <span className="text-xs font-semibold text-gray-700">Drawing Status</span>
+          <select
+            value={drawingAvailability}
+            onChange={(event) => setDrawingAvailability(event.target.value)}
+            className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
+          >
+            <option value="Drawings available">Drawings available</option>
+            <option value="Drawings not available">Drawings not available</option>
+            <option value="Will share later">Will share later</option>
+          </select>
+        </label>
+
+        <label className="block">
+          <span className="text-xs font-semibold text-gray-700">Upload Drawing</span>
+          <div className="mt-1 flex items-center gap-2 rounded-md border border-gray-300 px-3 py-2.5 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
+            <Paperclip className="h-4 w-4 text-gray-400" />
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg,.webp"
+              onChange={handleFileChange}
+              className="w-full text-xs text-gray-600 file:mr-3 file:rounded-md file:border-0 file:bg-gray-100 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-gray-700 hover:file:bg-orange-50"
+            />
+          </div>
+        </label>
+      </div>
+
+      {drawingFile ? (
+        <p className="mt-2 text-xs font-semibold text-gray-600">
+          Attached: {drawingFile.name}
+        </p>
+      ) : (
+        <p className="mt-2 text-xs text-gray-500">
+          Accepted: PDF, DOC, DOCX, XLS, XLSX, PNG, JPG, WEBP up to 10 MB.
+        </p>
+      )}
 
       {errorMsg ? (
         <p className="mt-3 rounded-md bg-red-50 px-3 py-2 text-xs font-semibold text-red-700">
@@ -315,12 +410,12 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
         disabled={loading}
         className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#ee9d54] px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition hover:bg-[#d88c45] disabled:cursor-not-allowed disabled:opacity-70"
       >
-        {loading ? "Submitting..." : "Get Quote"}
+        {loading ? "Submitting..." : "Submit Requirement"}
         <Send className="h-4 w-4" />
       </button>
 
       <p className="mt-3 text-center text-xs leading-5 text-gray-500">
-        No spam. Your enquiry goes directly to the NESF team.
+        Your enquiry goes directly to the NESF engineering team for review.
       </p>
     </form>
   );
@@ -331,7 +426,7 @@ export default function GoogleAdsLandingClient() {
     <main className="bg-white text-gray-950">
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white">
         <div className="mx-auto flex max-w-425 flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <Link href="/google-ads" className="flex items-center gap-3">
+          <Link href="/industrial-fabrication" className="flex items-center gap-3">
             <img src="/logo222.png" alt="National Engineers" className="h-12 w-auto" />
             <span className="sr-only">National Engineers & Steel Fabricators</span>
           </Link>
@@ -368,7 +463,7 @@ export default function GoogleAdsLandingClient() {
           <div className="grid gap-10 py-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(380px,0.95fr)] lg:items-center lg:py-18">
             <div className="max-w-3xl text-white">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ee9d54]">
-                Industrial Fabrication - Gujarat & PAN India
+                Industrial Fabrication - Worldwide
               </p>
               <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
                 Get Custom Industrial Equipment Fabricated to Your Requirement
@@ -391,7 +486,7 @@ export default function GoogleAdsLandingClient() {
                   href="#lead-form"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-[#ee9d54] px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-[#d88c45]"
                 >
-                  Request Pricing
+                  Request Quote
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a
@@ -407,8 +502,8 @@ export default function GoogleAdsLandingClient() {
 
             <div id="lead-form" className="scroll-mt-8">
               <LeadForm
-                title="Request a Fast Quote"
-                subtitle="Share your requirement. We will call back with the right fabrication scope."
+                title="Discuss Your Project Requirements"
+                subtitle="Submit your project requirements, and our engineering team will evaluate the specifications and provide a tailored fabrication proposal. Share technical specifications, operating parameters, and available drawings."
                 source="Hero Form"
               />
             </div>
@@ -419,9 +514,9 @@ export default function GoogleAdsLandingClient() {
       <section className="border-b border-gray-100 bg-white">
         <div className="mx-auto grid max-w-425 gap-4 px-4 py-8 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
           {[
-            ["35+", "Years of industrial fabrication"],
-            ["PAN India", "Project supply and support"],
-            ["Custom", "Build as per drawing"],
+            ["35+", " Years of Fabrication Excellence"],
+            ["Worldwide", "Project supply and support"],
+            // ["Custom", "Build as per drawing"],
             ["QA/QC", "Inspection-led manufacturing"],
           ].map(([value, label]) => (
             <div key={value} className="border-l-2 border-[#ee9d54] pl-4">
@@ -447,7 +542,7 @@ export default function GoogleAdsLandingClient() {
               About NESF
             </p>
             <h2 className="mt-3 text-3xl font-bold text-gray-950 sm:text-4xl">
-              Industrial equipment fabrication backed by practical engineering
+              Custom Process Equipment Built with Engineering Precision
             </h2>
             <p className="mt-4 text-sm leading-7 text-gray-600 sm:text-base">
               National Engineers & Steel Fabricators manufactures process equipment, tanks, vessels, heating systems, storage systems, and custom fabricated assemblies for demanding industrial applications.
@@ -458,10 +553,10 @@ export default function GoogleAdsLandingClient() {
 
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {[
-                "Drawing-based fabrication",
-                "Pressure and storage equipment",
-                "Custom MOC and dimensions",
-                "Industrial project support",
+                "Engineered to Client Requirements",
+                "Certified Materials & QA/QC",
+                "Custom Design & Fabrication",
+                "35+ Years of Industry Experience"
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-md border border-gray-200 bg-gray-50 px-4 py-3">
                   <CheckCircle2 className="h-4 w-4 shrink-0 text-[#ee9d54]" />
@@ -480,10 +575,10 @@ export default function GoogleAdsLandingClient() {
               Featured Equipment
             </p>
             <h2 className="mt-3 text-3xl font-bold text-gray-950 sm:text-4xl">
-              High-intent Products for Industrial Buyers
+              Custom Equipment for Industrial Applications
             </h2>
             <p className="mt-3 text-sm leading-7 text-gray-600">
-              These are the key products currently promoted on the homepage, prepared here for quick enquiry and faster quote conversations.
+              Explore our range of custom-fabricated process equipment engineered for demanding industrial applications.
             </p>
           </div>
 
@@ -508,7 +603,7 @@ export default function GoogleAdsLandingClient() {
                     href="#lead-form"
                     className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-[#d88942]"
                   >
-                    Enquire for this product
+                    Enquire for this Product
                     <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>
@@ -522,13 +617,13 @@ export default function GoogleAdsLandingClient() {
         <div className="mx-auto max-w-425">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#ee9d54]">
-              Why NESF
+              THE NESF ADVANTAGE
             </p>
             <h2 className="mt-3 text-3xl font-bold text-gray-950 sm:text-4xl">
-              A practical fabrication partner for real plant requirements
+              Reliable Fabrication Solutions for Critical Industrial Applications
             </h2>
             <p className="mt-4 text-sm leading-7 text-gray-600">
-              Send drawings, duty conditions, dimensions, MOC, pressure, temperature, capacity, or site constraints. NESF can review the requirement and guide the right fabrication scope.
+              Every project begins with a thorough understanding of your process requirements, operating conditions, material specifications, inspection standards, and site constraints. This ensures equipment that performs reliably throughout its service life.
             </p>
           </div>
 
@@ -553,7 +648,7 @@ export default function GoogleAdsLandingClient() {
               FAQs
             </p>
             <h2 className="mt-3 text-3xl font-bold text-gray-950 sm:text-4xl">
-              Common questions before you request a quote
+              Everything You Need to Know Before Requesting A Quote
             </h2>
 
             <div className="mt-7 divide-y divide-gray-200">
@@ -573,8 +668,8 @@ export default function GoogleAdsLandingClient() {
 
           <div className="scroll-mt-8" id="faq-enquiry">
             <LeadForm
-              title="Still Have a Requirement?"
-              subtitle="Send your details and our team will help you with the right fabrication scope."
+              title="Discuss Your Project Requirements"
+              subtitle="Submit your project requirements, and our engineering team will evaluate the specifications and provide a tailored fabrication proposal. Share technical specifications, operating parameters, and available drawings."
               source="FAQ Section Form"
               compact
             />

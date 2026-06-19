@@ -3,17 +3,18 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowRight, Briefcase, FileText, MessageSquare, Star } from "lucide-react";
+import { ArrowRight, Briefcase, FileText, Megaphone, MessageSquare, Star } from "lucide-react";
 
 type Stats = {
   activeJobs: number;
   applications: number;
   enquiries: number;
+  adsEnquiries: number;
   feedback: number;
 };
 
 type ActivityItem = {
-  type: "job" | "application" | "enquiry" | "feedback";
+  type: "job" | "application" | "enquiry" | "adsEnquiry" | "feedback";
   title: string;
   meta: string;
   createdAt: string;
@@ -37,6 +38,7 @@ export default function AdminDashboardPage() {
     activeJobs: 0,
     applications: 0,
     enquiries: 0,
+    adsEnquiries: 0,
     feedback: 0,
   });
 
@@ -135,7 +137,7 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* KPI cards */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         <KpiCard
           title="Active Jobs"
           value={loading ? "—" : String(stats.activeJobs)}
@@ -150,6 +152,11 @@ export default function AdminDashboardPage() {
           title="Enquiries"
           value={loading ? "—" : String(stats.enquiries)}
           hint="Website enquiries"
+        />
+        <KpiCard
+          title="Ads Enquiries"
+          value={loading ? "—" : String(stats.adsEnquiries)}
+          hint="Landing page enquiries"
         />
         <KpiCard
           title="Feedback"
@@ -177,6 +184,12 @@ export default function AdminDashboardPage() {
           desc="Track website enquiry form submissions."
           href="/admin/enquiries"
           icon={<MessageSquare className="h-5 w-5 text-[#ee9d54]" />}
+        />
+        <QuickCard
+          title="Ads Enquiries"
+          desc="Review fabrication landing page enquiries."
+          href="/admin/ads-enquiries"
+          icon={<Megaphone className="h-5 w-5 text-[#ee9d54]" />}
         />
         <QuickCard
           title="Feedback"

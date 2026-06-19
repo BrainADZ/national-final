@@ -10,6 +10,7 @@ import {
 } from "../controllers/job.controller";
 import { deleteFeedback, listFeedback } from "../controllers/feedback.controller";
 import { deleteEnquiry, listEnquiries } from "../controllers/enquiry.controller";
+import { deleteAdsEnquiry, listAdsEnquiries } from "../controllers/adsEnquiry.controller";
 import { getAdminDashboard } from "../controllers/dashboard.controller";
 
 
@@ -26,6 +27,8 @@ router.post("/jobs/", createJob);
 router.patch("/jobs/:id", updateJob);
 router.patch("/jobs/:id/toggle", toggleJob);
 router.delete("/jobs/:id", deleteJob);
+router.get("/ads-enquiries", listAdsEnquiries);
+router.delete("/ads-enquiries/:id", deleteAdsEnquiry);
 router.delete("/enquiries/:id", deleteEnquiry);
 router.delete("/feedback/:id", deleteFeedback);
 router.get("/applications", adminGetApplications);

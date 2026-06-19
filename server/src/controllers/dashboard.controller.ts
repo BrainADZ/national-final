@@ -2,10 +2,11 @@ import type { Request, Response } from "express";
 import { Job } from "../models/Job.model";
 import { Application } from "../models/Application.model";
 import { Enquiry } from "../models/Enquiry.model";
+import { AdsEnquiry } from "../models/AdsEnquiry.model";
 import { Feedback } from "../models/Feedback.model";
 
 type ActivityItem = {
-  type: "job" | "application" | "enquiry" | "feedback";
+  type: "job" | "application" | "enquiry" | "adsEnquiry" | "feedback";
   title: string;
   meta: string;
   createdAt: Date;
@@ -14,15 +15,16 @@ type ActivityItem = {
 export const getAdminDashboard = async (_req: Request, res: Response) => {
   try {
     // counts
-    const [activeJobs, applications, enquiries, feedback] = await Promise.all([
+    const [activeJobs, applications, enquiries, adsEnquiries, feedback] = await Promise.all([
       Job.countDocuments({ isActive: true }),
       Application.countDocuments({}),
       Enquiry.countDocuments({}),
+      AdsEnquiry.countDocuments({}),
       Feedback.countDocuments({}),
     ]);
 
     // latest (fetch separately then merge + sort)
-    const [latestApps, latestEnqs, latestFbs, latestJobs] = await Promise.all([
+    const [latestApps, latestEnqs, latestAdsEnqs, latestFbs, latestJobs] = await Promise.all([
       Application.find({})
         .sort({ createdAt: -1 })
         .limit(3)
@@ -30,11 +32,15 @@ export const getAdminDashboard = async (_req: Request, res: Response) => {
       Enquiry.find({})
         .sort({ createdAt: -1 })
         .limit(3)
-        .select("name email phone createdAt"),
+        .select("fullName email phone createdAt"),
+      AdsEnquiry.find({})
+        .sort({ createdAt: -1 })
+        .limit(3)
+        .select("fullName productInterest phone createdAt"),
       Feedback.find({})
         .sort({ createdAt: -1 })
         .limit(3)
-        .select("name email message createdAt"),
+        .select("fullName email message createdAt"),
       Job.find({})
         .sort({ createdAt: -1 })
         .limit(3)
@@ -55,8 +61,17 @@ export const getAdminDashboard = async (_req: Request, res: Response) => {
     latestEnqs.forEach((e: any) => {
       activity.push({
         type: "enquiry",
-        title: `New enquiry: ${e.name || "Visitor"}`,
+        title: `New enquiry: ${e.fullName || "Visitor"}`,
         meta: e.email ? `${e.email}` : e.phone ? `${e.phone}` : "Website enquiry",
+        createdAt: e.createdAt,
+      });
+    });
+
+    latestAdsEnqs.forEach((e: any) => {
+      activity.push({
+        type: "adsEnquiry",
+        title: `New ads enquiry: ${e.fullName || "Visitor"}`,
+        meta: e.productInterest ? `${e.productInterest}` : e.phone ? `${e.phone}` : "Ads enquiry",
         createdAt: e.createdAt,
       });
     });
@@ -64,7 +79,7 @@ export const getAdminDashboard = async (_req: Request, res: Response) => {
     latestFbs.forEach((f: any) => {
       activity.push({
         type: "feedback",
-        title: `New feedback: ${f.name || "User"}`,
+        title: `New feedback: ${f.fullName || "User"}`,
         meta: f.message ? `${String(f.message).slice(0, 60)}...` : "Feedback submitted",
         createdAt: f.createdAt,
       });
@@ -88,6 +103,7 @@ export const getAdminDashboard = async (_req: Request, res: Response) => {
           activeJobs,
           applications,
           enquiries,
+          adsEnquiries,
           feedback,
         },
         latest: activity.slice(0, 6).map((x) => ({

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Request a quote for Dowtherm boilers, surge tanks, silos, storage tanks, jacketed vessels, and custom industrial fabrication by National Engineers.",
   alternates: {
-    canonical: "https://nationalengrs.com/google-ads",
+    canonical: "https://nationalengrs.com/industrial-fabrication",
   },
   robots: {
     index: false,

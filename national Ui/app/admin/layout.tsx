@@ -7,6 +7,7 @@ import {
   LayoutDashboard,
   Briefcase,
   FileText,
+  Megaphone,
   MessageSquare,
   Star,
   LogOut,
@@ -18,6 +19,7 @@ const NAV = [
   { name: "Jobs", href: "/admin/jobs", icon: Briefcase },
   { name: "Applications", href: "/admin/application", icon: FileText },
   { name: "Enquiries", href: "/admin/enquiries", icon: MessageSquare },
+  { name: "Ads Enquiries", href: "/admin/ads-enquiries", icon: Megaphone },
   { name: "Feedback", href: "/admin/feedback", icon: Star },
 ];
 
