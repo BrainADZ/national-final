@@ -7,6 +7,20 @@ export type ProductSection = {
   title: string;
   body?: string[];
   bullets?: string[];
+  table?: {
+    columns: string[];
+    rows: string[][];
+  };
+  groups?: {
+    title: string;
+    body?: string[];
+    bullets?: string[];
+  }[];
+  links?: {
+    label: string;
+    href: string;
+    description?: string;
+  }[];
 };
 
 export type ProductDetail = {
@@ -27,6 +41,15 @@ export type ProductDetail = {
     productName: string;
     buttonText: string;
   };
+  contactDetails?: {
+    label: string;
+    value: string;
+    href?: string;
+  }[];
+  faqs?: {
+    question: string;
+    answer: string;
+  }[];
   seo: {
     title: string;
     description: string;
@@ -37,7 +60,7 @@ export type ProductDetail = {
 export const pressureVesselNav = [
   {
     label: "Air Receiver Vessels",
-    href: "/products/air-receiver-vessels",
+    href: "/products/air-receiver-vessels-manufacturer",
   },
   {
     label: "Nitrogen Buffer / Gas Storage Tanks",
@@ -71,97 +94,375 @@ export const pressureVesselNav = [
 
 export const productDetails = {
   "air-receiver-vessels": {
-    title: "Air Receiver Vessels",
-    headline: "Industrial Compressed Air Storage Solutions",
+    title: "Air Receiver Vessel Manufacturer in India",
+    headline: "Industrial-Grade Air Receiver Vessels for Compressed Air Systems",
     description:
-      "Air receiver vessels built to stabilize pressure, reduce compressor cycling, and support reliable plant air systems.",
-    pagePath: "/products/air-receiver-vessels",
+      "National Engineers & Steel Fabricators manufactures industrial-grade air receiver vessels designed for compressed air systems across manufacturing plants, process industries, and infrastructure projects.",
+    pagePath: "/products/air-receiver-vessels-manufacturer",
     image: "/product/7.jpg",
     imageAlt: "Air receiver vessel fabricated by National Engineers",
     imagePosition: "center",
     quickFacts: [
-      { label: "Application", value: "Compressed air storage" },
-      { label: "Configuration", value: "Vertical or horizontal" },
-      { label: "Materials", value: "Carbon steel / stainless steel" },
-      { label: "Documentation", value: "QAP, ITP, test reports" },
+      { label: "Capacity", value: "50 litres to 50,000+ litres" },
+      { label: "Design Pressure", value: "Up to 25 bar g, higher on request" },
+      { label: "Orientation", value: "Vertical or horizontal" },
+      { label: "Location", value: "Sachin GIDC, Surat" },
     ],
     overview: [
-      "NESF manufactures air receiver vessels for compressed air systems to stabilize pressure, reduce compressor cycling, and improve plant air quality and reliability.",
-      "Each vessel is fabricated for industrial duty with robust welding, traceable materials, and disciplined QA/QC practices from fit-up to final inspection.",
+      "Each vessel is fabricated to stabilize system pressure, reduce compressor cycling, buffer peak air demand, and protect downstream pneumatic equipment.",
+      "With fabrication facilities in Sachin GIDC, Surat, NESF delivers air receiver vessels in vertical and horizontal configurations, custom-built to your design pressure, capacity, and inspection requirements.",
     ],
     sections: [
       {
-        title: "What it's used for",
-        bullets: [
-          "Buffer storage to handle peak air demand.",
-          "Pressure stabilization to protect downstream tools and equipment.",
-          "Moisture separation when supplied with drain and accessories.",
-          "Improved compressor efficiency and longer equipment lifecycle.",
+        title: "What Is an Air Receiver Vessel?",
+        body: [
+          "An air receiver vessel is a pressure vessel used in compressed air systems to store pressurized air between the compressor and the point of use. It acts as a buffer reservoir that absorbs demand fluctuations, prevents the compressor from short-cycling, and allows moisture and oil to settle before the air reaches process equipment.",
+          "Air receiver vessels are a critical component in any industrial compressed air network, from textile mills and auto plants to chemical facilities and food processing units. Proper sizing and fabrication quality directly impact compressor life, air quality, and system uptime.",
         ],
       },
       {
-        title: "Typical Construction & Options",
-        bullets: [
-          "Vertical or horizontal orientation.",
-          "Inlet, outlet, drain, vent, manhole, or handhole nozzles.",
-          "Supports such as saddles, legs, or skirt as required.",
-          "Safety valve, pressure gauge, moisture drain, NRV, and isolation valves.",
-          "Optional internal lining or coating based on service conditions.",
+        title: "Why Choose NESF as Your Air Receiver Vessel Manufacturer?",
+        groups: [
+          {
+            title: "Custom Fabrication to Your Exact Specification",
+            body: [
+              "NESF does not manufacture standard off-the-shelf vessels. Every air receiver vessel is fabricated to your design pressure, operating temperature, capacity requirement, nozzle configuration, and inspection standard.",
+              "Whether you need a 500-litre skid-mounted vertical vessel or a 10,000-litre horizontal air storage tank with a manhole and multiple nozzles, NESF builds it to drawing.",
+            ],
+          },
+          {
+            title: "Qualified Welding and Disciplined QA/QC",
+            body: [
+              "All fabrication at NESF follows qualified welding procedures with stage-wise inspection. Welder qualification records are maintained, and fit-up checks are performed before every weld.",
+              "NDT options include Dye Penetrant Testing (DPT), Magnetic Particle Testing (MPT), Ultrasonic Testing (UT), and Radiographic Testing (RT) as required by your specification or applicable code.",
+            ],
+          },
+          {
+            title: "Hydro and Pneumatic Testing",
+            body: [
+              "Every air receiver vessel undergoes hydraulic or pneumatic pressure testing before dispatch. Test pressures, test media, and acceptance criteria are documented in the inspection report provided with the vessel.",
+            ],
+          },
+          {
+            title: "Traceable Materials and Documentation",
+            body: [
+              "Material traceability is maintained from procurement to delivery. Mill test certificates (MTCs), heat numbers, and dimensional inspection reports are part of the standard documentation package.",
+              "NESF can provide full quality dossiers including QAP, ITP, and test certificates for critical orders.",
+            ],
+          },
+          {
+            title: "IS / ASME / IBR-Compliant Fabrication",
+            body: [
+              "NESF fabricates air receiver vessels in compliance with applicable Indian and international codes including IS 2825, ASME Section VIII Div 1, and IBR where applicable.",
+              "Third-party inspection from BVIS, SGS, Lloyds, or client-appointed inspectors is accommodated on request.",
+            ],
+          },
         ],
       },
       {
-        title: "Materials of Construction",
-        bullets: [
-          "Carbon steel or stainless steel as per service requirement.",
-          "Internals and nozzles designed for corrosion and temperature conditions.",
+        title: "Air Receiver Vessel Technical Specifications",
+        table: {
+          columns: ["Parameter", "Range / Details"],
+          rows: [
+            ["Capacity / Volume", "50 litres to 50,000+ litres (custom)"],
+            ["Design Pressure", "Up to 25 bar g (higher on request)"],
+            ["Operating Temperature", "-10 C to 200 C"],
+            ["Orientation", "Vertical or Horizontal"],
+            [
+              "Material of Construction",
+              "IS 2062 Carbon Steel, SA 516 Gr. 70, SS 304 / 316 for corrosive service",
+            ],
+            ["Shell Thickness", "As per design calculation, with corrosion allowance included"],
+            [
+              "Nozzle Configuration",
+              "Inlet, outlet, drain, vent, safety valve, pressure gauge, NRV, manhole / handhole",
+            ],
+            [
+              "Supports",
+              "Saddle supports for horizontal vessels; leg supports or skirt base for vertical vessels",
+            ],
+            [
+              "Surface Finish",
+              "Shot blasting with primer and enamel / epoxy paint as agreed",
+            ],
+            ["Applicable Codes", "IS 2825, ASME Sec VIII Div 1, IBR if applicable"],
+            ["Testing", "Hydrostatic / Pneumatic as per applicable code"],
+            ["NDT Options", "DPT, MPT, UT, RT as specified"],
+            [
+              "Documentation",
+              "GA Drawing, ITP, QAP, MTCs, Hydro Test Report, Dimensional Report",
+            ],
+          ],
+        },
+      },
+      {
+        title: "Industries and Applications",
+        body: [
+          "NESF air receiver vessels are supplied to a wide range of industries where compressed air systems are critical to plant operations.",
+        ],
+        groups: [
+          {
+            title: "Textile and Garment Industry",
+            bullets: [
+              "Air receiver vessels for loom machines, air-jet weaving, and pneumatic clamping.",
+              "Buffer storage to manage varying demand from multiple pneumatic tools.",
+            ],
+          },
+          {
+            title: "Automotive and Auto Ancillaries",
+            bullets: [
+              "Compressed air storage for painting booths, assembly line pneumatics, and robotic fixtures.",
+              "High-cycle duty vessels with robust drain and safety valve configuration.",
+            ],
+          },
+          {
+            title: "Chemical and Petrochemical Plants",
+            bullets: [
+              "Stainless steel air receiver vessels for corrosive or clean-room compressed air.",
+              "IBR-compliant vessels with third-party inspection for plant insurance requirements.",
+            ],
+          },
+          {
+            title: "Food and Beverage Processing",
+            bullets: [
+              "SS 304 / 316 vessels for hygienic compressed air service.",
+              "Internal lining or passivation on request.",
+            ],
+          },
+          {
+            title: "General Manufacturing and Engineering Plants",
+            bullets: [
+              "Medium-pressure air storage for compressor rooms in fabrication shops.",
+              "Retrofit vessels to expand existing compressed air system capacity.",
+            ],
+          },
+          {
+            title: "Infrastructure and EPC Projects",
+            bullets: [
+              "Skid-mounted air receiver packages for utility stations.",
+              "Multiple vessel assemblies with interconnecting pipework.",
+            ],
+          },
         ],
       },
       {
-        title: "Fabrication & Quality Controls",
-        bullets: [
-          "Qualified welding procedures and controlled fit-up.",
-          "Stage-wise inspection and quality monitoring.",
-          "NDT as specified, including DPT, MPT, UT, or RT where required.",
-          "Hydro or pneumatic testing as applicable.",
-          "Dimensional checks and final documentation package.",
+        title: "Construction and Configuration Options",
+        groups: [
+          {
+            title: "Vertical Air Receiver Vessel",
+            body: [
+              "Vertical orientation is the standard configuration for most plant rooms due to its compact floor footprint. NESF fabricates vertical air receiver tanks with leg supports or skirt base, dished ends such as torispherical or hemispherical as per design, and a full nozzle set.",
+              "The nozzle set can include top inlet, side outlet, bottom drain, safety valve branch, pressure gauge connection, and handhole or manhole for internal inspection.",
+            ],
+          },
+          {
+            title: "Horizontal Air Receiver Vessel",
+            body: [
+              "Horizontal air receiver tanks are preferred where headroom is limited or where the vessel needs to be installed outdoors on a structural frame or skid.",
+              "NESF fabricates horizontal vessels with saddle supports designed and positioned per ASME / IS norms, with proper reinforcement on the shell.",
+            ],
+          },
+          {
+            title: "Standard Nozzle Set",
+            bullets: [
+              "Air inlet from compressor.",
+              "Air outlet to distribution network.",
+              "Safety Relief Valve (SRV) branch.",
+              "Pressure Gauge (PG) connection.",
+              "Condensate drain with isolating valve.",
+              "Vent valve nozzle.",
+              "Handhole for vessels up to 600mm diameter or manhole for larger vessels.",
+              "NRV / check valve connection on inlet.",
+            ],
+          },
+          {
+            title: "Accessories and Fittings - Optional Supply",
+            bullets: [
+              "Safety relief valve calibrated to set pressure.",
+              "Bourdon tube pressure gauge with syphon.",
+              "Automatic drain valve, float or timer type.",
+              "Pressure switch / transmitter tapping.",
+              "Isolation ball valves on all nozzles.",
+              "Sight glass for condensate level.",
+            ],
+          },
         ],
       },
       {
-        title: "Scope of Supply",
-        bullets: [
-          "Complete vessel with nozzles and supports.",
-          "Surface preparation with primer, paint, or coating system.",
-          "QAP, ITP, test certificates, and inspection reports as agreed.",
+        title: "Quality Assurance and Testing",
+        body: [
+          "NESF follows a structured QA/QC framework for all pressure vessel fabrication.",
+        ],
+        groups: [
+          {
+            title: "Pre-Fabrication",
+            bullets: [
+              "Material traceability with MTCs verified against order specification before cutting.",
+              "Dimensional check of incoming plates, pipes, and forgings.",
+              "Welding Procedure Specification (WPS) reviewed and qualified.",
+              "Welder qualification records (WQR/WPQ) maintained.",
+            ],
+          },
+          {
+            title: "In-Process Inspection",
+            bullets: [
+              "Fit-up check before root pass on all pressure-boundary welds.",
+              "Visual inspection of welds after each pass.",
+              "Stage-wise dimensional checks against approved drawing.",
+              "Heat number stamping and material identification maintained throughout.",
+            ],
+          },
+          {
+            title: "Final Inspection and Testing",
+            bullets: [
+              "Hydrostatic test at 1.5x design pressure or as per applicable code.",
+              "NDT including DPT on all nozzle welds; RT or UT on shell seams as specified.",
+              "Dimensional check against GA drawing.",
+              "Surface preparation and paint DFT measurement.",
+              "Final visual inspection.",
+            ],
+          },
+          {
+            title: "Documents Provided",
+            bullets: [
+              "General Arrangement (GA) Drawing.",
+              "Material Test Certificates (MTCs) with heat traceability.",
+              "Weld Map and Weld Summary.",
+              "NDT Reports including DPT, RT, and UT as applicable.",
+              "Hydrostatic / Pneumatic Test Report.",
+              "Dimensional Inspection Report.",
+              "QAP and ITP for inspected orders.",
+              "Paint / coating system records.",
+              "Third-party inspection certificate if TPI is appointed.",
+            ],
+          },
         ],
       },
       {
-        title: "Quotation Inputs",
+        title: "Related Products",
+        links: [
+          {
+            label: "Nitrogen Buffer / Gas Storage Tanks",
+            href: "/products/nitrogen-buffer-gas-storage-tanks",
+            description: "Also Read",
+          },
+          {
+            label: "Custom Pressure Vessels (As per Drawing/Spec)",
+            href: "/products/custom-pressure-vessels",
+            description: "Also Read",
+          },
+          {
+            label: "Blowdown / Flash Tanks",
+            href: "/products/blowdown-flash-tanks",
+            description: "Also Read",
+          },
+          {
+            label: "Horizontal Storage Tanks",
+            href: "/products/horizontal-storage-tanks",
+            description: "Also Read",
+          },
+          {
+            label: "Vertical Storage Tanks",
+            href: "/products/vertical-storage-tanks",
+            description: "Also Read",
+          },
+        ],
+      },
+      {
+        title: "Request a Quote for Air Receiver Vessel Fabrication",
+        body: [
+          "To receive a competitive quotation, share the following details with NESF.",
+        ],
         bullets: [
-          "Design pressure and temperature with operating conditions.",
-          "Required capacity, volume, or airflow demand.",
-          "Material preference, corrosion allowance, and painting system.",
-          "Code, inspection requirements, and accessories list.",
+          "Design pressure in bar g and operating pressure.",
+          "Required vessel capacity / volume in litres or m3.",
+          "Orientation - vertical or horizontal.",
+          "Material of construction preference.",
+          "Applicable code such as IS 2825, ASME Sec VIII, or IBR.",
+          "Nozzle list and accessories required.",
+          "Inspection requirements, including in-house, TPI, or IBR.",
+          "Delivery location and required lead time.",
         ],
       },
     ],
     note:
-      "Share your compressed air duty details and NESF will size the vessel around your plant requirement.",
+      "Share your compressor specifications and plant air demand profile with NESF, and the team will recommend an appropriate vessel volume and fabrication scope.",
     enquiry: {
-      title: "Request a quote for an Air Receiver Vessel",
+      title: "Request a Quote for Air Receiver Vessel Fabrication",
       subtitle:
-        "Custom sizes and configurations available based on your plant requirements.",
+        "Share design pressure, capacity, orientation, MOC, code, nozzle list, inspection requirements, and delivery location.",
       productName: "Air Receiver Vessel",
       buttonText: "Request Quote",
     },
+    contactDetails: [
+      {
+        label: "Call / WhatsApp",
+        value: "+91 95740 11132",
+        href: "tel:919574011132",
+      },
+      {
+        label: "Email",
+        value: "admin@nationalengrs.com",
+        href: "mailto:admin@nationalengrs.com",
+      },
+      {
+        label: "Address",
+        value: "Plot No. 1022, Cross Road No. 87, Sachin GIDC, Surat - 394230",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is the standard design pressure for an air receiver vessel?",
+        answer:
+          "Most industrial compressed air systems operate between 7 and 10 bar g. NESF fabricates air receiver vessels up to 25 bar g as standard, with higher-pressure vessels available on request based on design and wall thickness calculations.",
+      },
+      {
+        question: "What size air receiver vessel do I need for my compressor?",
+        answer:
+          "A general rule of thumb is to size the air receiver at 6-10 times the compressor's free air delivery (FAD) in litres per minute. However, correct sizing depends on system pressure, compressor duty cycle, peak demand, and downstream tool consumption. Share your compressor specifications and plant air demand profile with NESF and the team will recommend an appropriate vessel volume.",
+      },
+      {
+        question: "What materials are used for air receiver vessel fabrication?",
+        answer:
+          "Carbon steel such as IS 2062 Gr. B or SA 516 Gr. 70 is standard for most industrial air service. Stainless steel such as SS 304 or SS 316 is used where moisture content, cleanliness, or corrosion requirements demand it, such as food processing, pharmaceutical, or offshore applications.",
+      },
+      {
+        question: "Is NESF a certified pressure vessel manufacturer?",
+        answer:
+          "NESF fabricates pressure vessels in compliance with IS 2825 and ASME Section VIII Div 1 where required. Third-party inspection from BVIS, SGS, Lloyds, or client-nominated inspection agencies is accommodated. Specific certifications can be discussed based on your order requirements.",
+      },
+      {
+        question: "What is the minimum and maximum vessel capacity NESF manufactures?",
+        answer:
+          "NESF fabricates air receiver vessels from 50 litres to 50,000+ litres. Larger multi-vessel battery arrangements are also possible. Share your project requirement and NESF will confirm the feasibility and fabrication scope.",
+      },
+      {
+        question: "How long does it take to manufacture an air receiver vessel?",
+        answer:
+          "Lead time depends on vessel size, complexity, material availability, and inspection requirements. Standard vessels typically have a lead time of 2-4 weeks. Larger vessels with third-party inspection requirements may take 4-8 weeks. NESF will confirm lead time at the time of order placement.",
+      },
+      {
+        question: "Can NESF supply the vessel with fittings, valves, and accessories?",
+        answer:
+          "Yes. NESF can supply air receiver vessels complete with safety relief valves, pressure gauges, drain valves, NRVs, and isolation valves as per your BOM or P&ID. Accessory sourcing and assembly on the vessel nozzles can be included in the supply scope.",
+      },
+    ],
     seo: {
-      title: "Air Receiver Vessels | National Engineers",
+      title:
+        "Air Receiver Vessel Manufacturer in India | National Engineers & Steel Fabricators",
       description:
-        "Explore industrial air receiver vessels by National Engineers for compressed air storage, pressure stabilization, and reliable plant performance.",
+        "National Engineers & Steel Fabricators manufactures industrial air receiver vessels for compressed air systems. Custom sizes, IS/ASME-compliant fabrication, vertical & horizontal orientation. Get a quote today.",
       keywords: [
         "air receiver vessel manufacturer",
-        "compressed air storage vessel",
-        "industrial air receiver tank",
+        "compressed air receiver tank manufacturer India",
+        "industrial air receiver vessel Ahmedabad/Surat",
         "pressure vessel fabrication india",
+        "ASME air receiver vessel",
+        "vertical air receiver tank",
+        "horizontal air receiver vessel",
+        "air storage tank manufacturer",
+        "compressor air receiver tank",
+        "certified pressure vessel manufacturer",
       ],
     },
   },

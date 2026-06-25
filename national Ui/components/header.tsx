@@ -33,7 +33,7 @@ const NAV_ITEMS: NavItem[] = [
       {
         label: "Pressure Vessels & Storage",
         children: [
-          { label: "Air Receiver Vessels", href: "/products/air-receiver-vessels" },
+          { label: "Air Receiver Vessels", href: "/products/air-receiver-vessels-manufacturer" },
           {
             label: "Nitrogen Buffer / Gas Storage Tanks",
             href: "/products/nitrogen-buffer-gas-storage-tanks",

@@ -36,7 +36,7 @@ export default function ProductDetailLayout({
   const resolvedCategoryPath =
     categoryPath || product.pagePath.split("/").slice(0, -1).join("/") || "/products";
 
-  const schemas = [
+  const schemas: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -88,6 +88,22 @@ export default function ProductDetailLayout({
       ],
     },
   ];
+
+  if (product.faqs?.length) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${absoluteUrl(product.pagePath)}#faq`,
+      mainEntity: product.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    });
+  }
 
   return (
     <>
@@ -258,49 +274,196 @@ export default function ProductDetailLayout({
                       {product.note}
                     </p>
                   </div>
+
+                  {product.quickFacts.length ? (
+                    <dl className="mt-7 grid gap-3 sm:grid-cols-2">
+                      {product.quickFacts.map((fact) => (
+                        <div
+                          key={fact.label}
+                          className="rounded-md border border-gray-200 bg-gray-50 p-4"
+                        >
+                          <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ee9d54]">
+                            {fact.label}
+                          </dt>
+                          <dd className="mt-2 text-sm font-semibold leading-6 text-gray-950">
+                            {fact.value}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  ) : null}
                 </div>
               </section>
 
               <section className="mt-10 grid gap-5 md:grid-cols-2">
-                {product.sections.map((section) => (
-                  <section
-                    key={section.title}
-                    className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
-                  >
-                    <div className="mb-4 flex items-center gap-3">
-                      <div className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gray-950 text-[#ee9d54]">
-                        <FileText className="h-4 w-4" />
+                {product.sections.map((section) => {
+                  const isWide = section.table || section.groups || section.links;
+
+                  return (
+                    <section
+                      key={section.title}
+                      className={`rounded-lg border border-gray-200 bg-white p-6 shadow-sm ${
+                        isWide ? "md:col-span-2" : ""
+                      }`}
+                    >
+                      <div className="mb-4 flex items-center gap-3">
+                        <div className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gray-950 text-[#ee9d54]">
+                          <FileText className="h-4 w-4" />
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-950">
+                          {section.title}
+                        </h3>
                       </div>
-                      <h3 className="text-xl font-bold text-gray-950">
-                        {section.title}
-                      </h3>
-                    </div>
 
-                    {section.body?.map((paragraph) => (
-                      <p
-                        key={paragraph}
-                        className="mt-3 text-sm leading-7 text-gray-600"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
+                      {section.body?.map((paragraph) => (
+                        <p
+                          key={paragraph}
+                          className="mt-3 text-sm leading-7 text-gray-600"
+                        >
+                          {paragraph}
+                        </p>
+                      ))}
 
-                    {section.bullets ? (
-                      <ul className="mt-4 space-y-3">
-                        {section.bullets.map((item) => (
-                          <li
-                            key={item}
-                            className="flex gap-3 text-sm leading-7 text-gray-700"
-                          >
-                            <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#ee9d54]" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </section>
-                ))}
+                      {section.bullets ? (
+                        <ul className="mt-4 space-y-3">
+                          {section.bullets.map((item) => (
+                            <li
+                              key={item}
+                              className="flex gap-3 text-sm leading-7 text-gray-700"
+                            >
+                              <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#ee9d54]" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+
+                      {section.table ? (
+                        <div className="mt-6 overflow-x-auto rounded-lg border border-gray-200">
+                          <table className="w-full min-w-180 border-collapse text-left text-sm">
+                            <thead className="bg-gray-950 text-white">
+                              <tr>
+                                {section.table.columns.map((column) => (
+                                  <th
+                                    key={column}
+                                    scope="col"
+                                    className="px-4 py-3 font-semibold"
+                                  >
+                                    {column}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-200">
+                              {section.table.rows.map((row) => (
+                                <tr key={row.join("-")} className="align-top">
+                                  {row.map((cell, index) => (
+                                    <td
+                                      key={`${row[0]}-${cell}`}
+                                      className={`px-4 py-3 leading-6 ${
+                                        index === 0
+                                          ? "w-64 font-semibold text-gray-950"
+                                          : "text-gray-700"
+                                      }`}
+                                    >
+                                      {cell}
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      ) : null}
+
+                      {section.groups ? (
+                        <div className="mt-5 space-y-5">
+                          {section.groups.map((group) => (
+                            <div
+                              key={group.title}
+                              className="border-t border-gray-200 pt-5 first:border-t-0 first:pt-0"
+                            >
+                              <h4 className="text-base font-bold text-gray-950">
+                                {group.title}
+                              </h4>
+
+                              {group.body?.map((paragraph) => (
+                                <p
+                                  key={paragraph}
+                                  className="mt-2 text-sm leading-7 text-gray-600"
+                                >
+                                  {paragraph}
+                                </p>
+                              ))}
+
+                              {group.bullets ? (
+                                <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+                                  {group.bullets.map((item) => (
+                                    <li
+                                      key={item}
+                                      className="flex gap-3 text-sm leading-7 text-gray-700"
+                                    >
+                                      <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#ee9d54]" />
+                                      <span>{item}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              ) : null}
+                            </div>
+                          ))}
+                        </div>
+                      ) : null}
+
+                      {section.links ? (
+                        <div className="mt-5 divide-y divide-gray-200 border-y border-gray-200">
+                          {section.links.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className="flex flex-col gap-1 py-4 text-sm transition hover:text-[#ee9d54] sm:flex-row sm:items-center sm:justify-between"
+                            >
+                              <span className="font-semibold text-gray-950">
+                                {item.label}
+                              </span>
+                              {item.description ? (
+                                <span className="text-gray-600">
+                                  {item.description}
+                                </span>
+                              ) : null}
+                            </Link>
+                          ))}
+                        </div>
+                      ) : null}
+                    </section>
+                  );
+                })}
               </section>
+
+              {product.faqs?.length ? (
+                <section className="mt-10 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gray-950 text-[#ee9d54]">
+                      <FileText className="h-4 w-4" />
+                    </div>
+                    <h2 className="text-xl font-bold text-gray-950">
+                      Frequently Asked Questions
+                    </h2>
+                  </div>
+
+                  <div className="divide-y divide-gray-200">
+                    {product.faqs.map((faq) => (
+                      <div key={faq.question} className="py-5 first:pt-0 last:pb-0">
+                        <h3 className="text-base font-bold text-gray-950">
+                          {faq.question}
+                        </h3>
+                        <p className="mt-2 text-sm leading-7 text-gray-600">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ) : null}
 
               <section className="mt-10 rounded-lg bg-gray-950 p-6 text-white sm:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ee9d54]">
@@ -324,6 +487,32 @@ export default function ProductDetailLayout({
                   </Link>
                 </div>
               </section>
+
+              {product.contactDetails?.length ? (
+                <section className="mt-10 rounded-lg border border-gray-200 bg-gray-50 p-6">
+                  <h2 className="text-xl font-bold text-gray-950">
+                    Contact Details
+                  </h2>
+                  <dl className="mt-5 grid gap-4 sm:grid-cols-2">
+                    {product.contactDetails.map((item) => (
+                      <div key={item.label}>
+                        <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ee9d54]">
+                          {item.label}
+                        </dt>
+                        <dd className="mt-1 text-sm font-semibold leading-6 text-gray-950">
+                          {item.href ? (
+                            <Link href={item.href} className="hover:text-[#ee9d54]">
+                              {item.value}
+                            </Link>
+                          ) : (
+                            item.value
+                          )}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </section>
+              ) : null}
 
               <section id="enquiry" className="scroll-mt-28 pt-10">
                 <ProductEnquiryForm
