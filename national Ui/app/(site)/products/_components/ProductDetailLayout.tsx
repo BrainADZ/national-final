@@ -2,7 +2,7 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  CheckCircle2,
+  ChevronDown,
   ChevronRight,
   FileText,
   PhoneCall,
@@ -26,6 +26,25 @@ type ProductDetailLayoutProps = {
   categoryPath?: string;
   navItems?: ProductNavItem[];
 };
+
+function ProductBulletList({
+  items,
+  columns = false,
+}: {
+  items: string[];
+  columns?: boolean;
+}) {
+  return (
+    <ul className={`mt-4 ${columns ? "grid gap-3 sm:grid-cols-2" : "space-y-3"}`}>
+      {items.map((item) => (
+        <li key={item} className="flex gap-3 text-sm leading-7 text-gray-700">
+          <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ee9d54] shadow-[0_0_0_3px_rgba(238,157,84,0.16)]" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default function ProductDetailLayout({
   product,
@@ -295,19 +314,173 @@ export default function ProductDetailLayout({
                 </div>
               </section>
 
-              <section className="mt-10 grid gap-5 md:grid-cols-2">
+              <section className="mt-12 space-y-10">
                 {product.sections.map((section) => {
-                  const isWide = section.table || section.groups || section.links;
+                  if (section.table) {
+                    return (
+                      <section
+                        key={section.title}
+                        className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm"
+                      >
+                        <div className="border-b border-gray-800 bg-gray-950 px-5 py-5 text-white sm:px-6">
+                          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ee9d54]">
+                            Technical Data
+                          </p>
+                          <h3 className="mt-2 text-2xl font-bold">
+                            {section.title}
+                          </h3>
+                        </div>
+
+                        {section.body?.length ? (
+                          <div className="px-5 pt-5 sm:px-6">
+                            {section.body.map((paragraph) => (
+                              <p
+                                key={paragraph}
+                                className="mt-3 text-sm leading-7 text-gray-600 first:mt-0"
+                              >
+                                {paragraph}
+                              </p>
+                            ))}
+                          </div>
+                        ) : null}
+
+                        <div className="overflow-x-auto">
+                          <table className="w-full min-w-180 border-collapse text-left text-sm">
+                            <thead className="bg-[#fff7ef] text-gray-950">
+                              <tr>
+                                {section.table.columns.map((column) => (
+                                  <th
+                                    key={column}
+                                    scope="col"
+                                    className="border-b border-[#ee9d54]/25 px-5 py-4 font-bold sm:px-6"
+                                  >
+                                    {column}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-200">
+                              {section.table.rows.map((row) => (
+                                <tr
+                                  key={row.join("-")}
+                                  className="align-top transition hover:bg-gray-50"
+                                >
+                                  {row.map((cell, index) => (
+                                    <td
+                                      key={`${row[0]}-${index}`}
+                                      className={`px-5 py-4 leading-6 sm:px-6 ${
+                                        index === 0
+                                          ? "w-64 bg-gray-50/70 font-semibold text-gray-950"
+                                          : "text-gray-700"
+                                      }`}
+                                    >
+                                      {cell}
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    );
+                  }
+
+                  if (section.groups) {
+                    return (
+                      <section
+                        key={section.title}
+                        className="border-t border-gray-200 pt-10"
+                      >
+                        <div className="mb-6 max-w-3xl border-l-4 border-[#ee9d54] pl-4">
+                          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ee9d54]">
+                            Details
+                          </p>
+                          <h3 className="mt-2 text-2xl font-bold text-gray-950">
+                            {section.title}
+                          </h3>
+                          {section.body?.map((paragraph) => (
+                            <p
+                              key={paragraph}
+                              className="mt-3 text-sm leading-7 text-gray-600"
+                            >
+                              {paragraph}
+                            </p>
+                          ))}
+                        </div>
+
+                        <div className="grid gap-4 lg:grid-cols-2">
+                          {section.groups.map((group) => (
+                            <article
+                              key={group.title}
+                              className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition hover:border-[#ee9d54]/45 hover:shadow-md"
+                            >
+                              <h4 className="text-base font-bold text-gray-950">
+                                {group.title}
+                              </h4>
+
+                              {group.body?.map((paragraph) => (
+                                <p
+                                  key={paragraph}
+                                  className="mt-3 text-sm leading-7 text-gray-600"
+                                >
+                                  {paragraph}
+                                </p>
+                              ))}
+
+                              {group.bullets ? (
+                                <ProductBulletList items={group.bullets} columns />
+                              ) : null}
+                            </article>
+                          ))}
+                        </div>
+                      </section>
+                    );
+                  }
+
+                  if (section.links) {
+                    return (
+                      <section
+                        key={section.title}
+                        className="rounded-lg border border-gray-200 bg-gray-50 p-5 sm:p-6"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="h-9 w-1 rounded-full bg-[#ee9d54]" />
+                          <h3 className="text-2xl font-bold text-gray-950">
+                            {section.title}
+                          </h3>
+                        </div>
+
+                        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                          {section.links.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className="group rounded-md border border-gray-200 bg-white p-4 text-sm shadow-sm transition hover:border-[#ee9d54]/60 hover:shadow-md"
+                            >
+                              {item.description ? (
+                                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ee9d54]">
+                                  {item.description}
+                                </span>
+                              ) : null}
+                              <span className="mt-2 flex items-center justify-between gap-3 font-semibold leading-6 text-gray-950">
+                                {item.label}
+                                <ChevronRight className="h-4 w-4 shrink-0 text-gray-400 transition group-hover:translate-x-1 group-hover:text-[#ee9d54]" />
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      </section>
+                    );
+                  }
 
                   return (
                     <section
                       key={section.title}
-                      className={`rounded-lg border border-gray-200 bg-white p-6 shadow-sm ${
-                        isWide ? "md:col-span-2" : ""
-                      }`}
+                      className="rounded-lg border border-gray-200 border-l-[#ee9d54] border-l-4 bg-white p-6 shadow-sm"
                     >
-                      <div className="mb-4 flex items-center gap-3">
-                        <div className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gray-950 text-[#ee9d54]">
+                      <div className="mb-4 flex items-start gap-3">
+                        <div className="mt-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gray-950 text-[#ee9d54]">
                           <FileText className="h-4 w-4" />
                         </div>
                         <h3 className="text-xl font-bold text-gray-950">
@@ -325,114 +498,7 @@ export default function ProductDetailLayout({
                       ))}
 
                       {section.bullets ? (
-                        <ul className="mt-4 space-y-3">
-                          {section.bullets.map((item) => (
-                            <li
-                              key={item}
-                              className="flex gap-3 text-sm leading-7 text-gray-700"
-                            >
-                              <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#ee9d54]" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      ) : null}
-
-                      {section.table ? (
-                        <div className="mt-6 overflow-x-auto rounded-lg border border-gray-200">
-                          <table className="w-full min-w-180 border-collapse text-left text-sm">
-                            <thead className="bg-gray-950 text-white">
-                              <tr>
-                                {section.table.columns.map((column) => (
-                                  <th
-                                    key={column}
-                                    scope="col"
-                                    className="px-4 py-3 font-semibold"
-                                  >
-                                    {column}
-                                  </th>
-                                ))}
-                              </tr>
-                            </thead>
-                            <tbody className="divide-y divide-gray-200">
-                              {section.table.rows.map((row) => (
-                                <tr key={row.join("-")} className="align-top">
-                                  {row.map((cell, index) => (
-                                    <td
-                                      key={`${row[0]}-${cell}`}
-                                      className={`px-4 py-3 leading-6 ${
-                                        index === 0
-                                          ? "w-64 font-semibold text-gray-950"
-                                          : "text-gray-700"
-                                      }`}
-                                    >
-                                      {cell}
-                                    </td>
-                                  ))}
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-                      ) : null}
-
-                      {section.groups ? (
-                        <div className="mt-5 space-y-5">
-                          {section.groups.map((group) => (
-                            <div
-                              key={group.title}
-                              className="border-t border-gray-200 pt-5 first:border-t-0 first:pt-0"
-                            >
-                              <h4 className="text-base font-bold text-gray-950">
-                                {group.title}
-                              </h4>
-
-                              {group.body?.map((paragraph) => (
-                                <p
-                                  key={paragraph}
-                                  className="mt-2 text-sm leading-7 text-gray-600"
-                                >
-                                  {paragraph}
-                                </p>
-                              ))}
-
-                              {group.bullets ? (
-                                <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-                                  {group.bullets.map((item) => (
-                                    <li
-                                      key={item}
-                                      className="flex gap-3 text-sm leading-7 text-gray-700"
-                                    >
-                                      <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#ee9d54]" />
-                                      <span>{item}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              ) : null}
-                            </div>
-                          ))}
-                        </div>
-                      ) : null}
-
-                      {section.links ? (
-                        <div className="mt-5 divide-y divide-gray-200 border-y border-gray-200">
-                          {section.links.map((item) => (
-                            <Link
-                              key={item.href}
-                              href={item.href}
-                              className="flex flex-col gap-1 py-4 text-sm transition hover:text-[#ee9d54] sm:flex-row sm:items-center sm:justify-between"
-                            >
-                              <span className="font-semibold text-gray-950">
-                                {item.label}
-                              </span>
-                              {item.description ? (
-                                <span className="text-gray-600">
-                                  {item.description}
-                                </span>
-                              ) : null}
-                            </Link>
-                          ))}
-                        </div>
+                        <ProductBulletList items={section.bullets} />
                       ) : null}
                     </section>
                   );
@@ -440,26 +506,38 @@ export default function ProductDetailLayout({
               </section>
 
               {product.faqs?.length ? (
-                <section className="mt-10 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-                  <div className="mb-4 flex items-center gap-3">
-                    <div className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gray-950 text-[#ee9d54]">
-                      <FileText className="h-4 w-4" />
-                    </div>
-                    <h2 className="text-xl font-bold text-gray-950">
+                <section className="mt-12 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+                  <div className="bg-gray-950 px-5 py-6 text-white sm:px-6">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ee9d54]">
+                      FAQ
+                    </p>
+                    <h2 className="mt-2 text-2xl font-bold">
                       Frequently Asked Questions
                     </h2>
+                    <p className="mt-2 max-w-2xl text-sm leading-7 text-white/70">
+                      Quick answers about sizing, materials, inspection, lead time, and supply scope for this product.
+                    </p>
                   </div>
 
                   <div className="divide-y divide-gray-200">
-                    {product.faqs.map((faq) => (
-                      <div key={faq.question} className="py-5 first:pt-0 last:pb-0">
-                        <h3 className="text-base font-bold text-gray-950">
-                          {faq.question}
-                        </h3>
-                        <p className="mt-2 text-sm leading-7 text-gray-600">
+                    {product.faqs.map((faq, index) => (
+                      <details
+                        key={faq.question}
+                        className="group"
+                        open={index === 0}
+                      >
+                        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-5 text-left transition hover:bg-gray-50 sm:px-6 [&::-webkit-details-marker]:hidden">
+                          <span className="text-sm font-bold leading-6 text-gray-950 sm:text-base">
+                            {faq.question}
+                          </span>
+                          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition group-open:border-[#ee9d54]/40 group-open:bg-[#fff7ef] group-open:text-[#ee9d54]">
+                            <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+                          </span>
+                        </summary>
+                        <p className="px-5 pb-5 text-sm leading-7 text-gray-600 sm:px-6">
                           {faq.answer}
                         </p>
-                      </div>
+                      </details>
                     ))}
                   </div>
                 </section>
