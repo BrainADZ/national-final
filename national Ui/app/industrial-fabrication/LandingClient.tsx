@@ -341,7 +341,7 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
           rows={compact ? 3 : 4}
           value={technicalSpecifications}
           onChange={(event) => setTechnicalSpecifications(event.target.value)}
-          placeholder="Share MOC, capacity, dimensions, thickness, quantity, standards, inspection needs, or site constraints."
+          placeholder="Share capacity, quantity, standards, etc here."
           className="mt-1 w-full resize-none rounded-md border border-gray-300 px-3 py-2.5 text-sm outline-none placeholder:text-gray-400 focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
         />
       </label>
@@ -415,7 +415,7 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
       </button>
 
       <p className="mt-3 text-center text-xs leading-5 text-gray-500">
-        Your enquiry goes directly to the NESF engineering team for review.
+        Your enquiry goes directly to the NESF team for review.
       </p>
     </form>
   );
@@ -472,14 +472,14 @@ export default function GoogleAdsLandingClient() {
                 Pressure vessels, storage tanks, boilers, surge tanks, silos, jacketed vessels, and custom fabricated assemblies built with practical engineering and disciplined quality control.
               </p>
 
-              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {/* <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 {trustPoints.map((point) => (
                   <div key={point} className="flex items-start gap-3 rounded-md border border-white/15 bg-white/8 px-4 py-3 backdrop-blur">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#ee9d54]" />
                     <span className="text-sm leading-6 text-white/88">{point}</span>
                   </div>
                 ))}
-              </div>
+              </div> */}
 
               <div className="mt-9 flex flex-wrap gap-3">
                 <a
@@ -516,7 +516,7 @@ export default function GoogleAdsLandingClient() {
           {[
             ["35+", " Years of Fabrication Excellence"],
             ["Worldwide", "Project supply and support"],
-            // ["Custom", "Build as per drawing"],
+            ["Custom", "Build as per drawing"],
             ["QA/QC", "Inspection-led manufacturing"],
           ].map(([value, label]) => (
             <div key={value} className="border-l-2 border-[#ee9d54] pl-4">
@@ -551,19 +551,7 @@ export default function GoogleAdsLandingClient() {
               The team works around client drawings, duty conditions, materials, inspection needs, and site requirements, so every quotation starts with the real application instead of a generic catalogue item.
             </p>
 
-            <div className="mt-7 grid gap-3 sm:grid-cols-2">
-              {[
-                "Engineered to Client Requirements",
-                "Certified Materials & QA/QC",
-                "Custom Design & Fabrication",
-                "35+ Years of Industry Experience"
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3 rounded-md border border-gray-200 bg-gray-50 px-4 py-3">
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-[#ee9d54]" />
-                  <span className="text-sm font-semibold text-gray-800">{item}</span>
-                </div>
-              ))}
-            </div>
+            
           </div>
         </div>
       </section>
