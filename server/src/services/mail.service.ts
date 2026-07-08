@@ -142,7 +142,6 @@ export async function sendAdsEnquiryMail(params: {
   email?: string;
   productInterest: string;
   technicalSpecifications: string;
-  operatingParameters?: string;
   drawingAvailability?: string;
   source?: string;
   pageUrl?: string;
@@ -165,9 +164,6 @@ export async function sendAdsEnquiryMail(params: {
   const safeEmail = params.email ? escapeHtml(params.email) : "";
   const safeProduct = escapeHtml(params.productInterest);
   const safeSpecs = escapeHtml(params.technicalSpecifications).replace(/\n/g, "<br/>");
-  const safeParameters = params.operatingParameters
-    ? escapeHtml(params.operatingParameters).replace(/\n/g, "<br/>")
-    : "";
   const safeDrawingAvailability = params.drawingAvailability
     ? escapeHtml(params.drawingAvailability)
     : "";
@@ -224,17 +220,6 @@ export async function sendAdsEnquiryMail(params: {
             ${safeSpecs}
           </div>
         </div>
-
-        ${
-          params.operatingParameters
-            ? `<div style="margin-top:16px;">
-                <div style="font-size:13px;color:#667085;margin-bottom:8px;">Operating Parameters</div>
-                <div style="background:#f9fafb;border:1px solid #eef0f2;border-radius:10px;padding:14px;color:#101828;font-size:14px;line-height:1.6;">
-                  ${safeParameters}
-                </div>
-              </div>`
-            : ""
-        }
 
         <div style="margin-top:18px;padding-top:14px;border-top:1px solid #eef0f2;color:#98a2b3;font-size:12px;">
           Sent from NESF ads landing enquiry form.

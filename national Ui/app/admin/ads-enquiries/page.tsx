@@ -35,7 +35,6 @@ type AdsEnquiry = {
   email?: string;
   productInterest: string;
   technicalSpecifications: string;
-  operatingParameters?: string;
   drawingAvailability?: string;
   source?: string;
   pageUrl?: string;
@@ -188,7 +187,6 @@ export default function AdminAdsEnquiriesPage() {
           item.email || "",
           item.productInterest,
           item.technicalSpecifications,
-          item.operatingParameters || "",
           item.drawingAvailability || "",
           item.source || "",
         ]
@@ -223,7 +221,6 @@ export default function AdminAdsEnquiriesPage() {
       Email: item.email || "",
       ProductInterest: item.productInterest,
       TechnicalSpecifications: item.technicalSpecifications,
-      OperatingParameters: item.operatingParameters || "",
       DrawingAvailability: item.drawingAvailability || "",
       Source: item.source || "",
       PageUrl: item.pageUrl || "",
@@ -242,7 +239,6 @@ export default function AdminAdsEnquiriesPage() {
       { wch: 24 },
       { wch: 28 },
       { wch: 60 },
-      { wch: 45 },
       { wch: 22 },
       { wch: 18 },
       { wch: 40 },
@@ -297,7 +293,7 @@ export default function AdminAdsEnquiriesPage() {
           <input
             value={q}
             onChange={(event) => setQ(event.target.value)}
-            placeholder="Search by name, phone, product, specs, parameters or source..."
+            placeholder="Search by name, phone, product, specs or source..."
             className="w-full text-sm outline-none placeholder:text-gray-400"
           />
         </div>
@@ -526,15 +522,6 @@ export default function AdminAdsEnquiriesPage() {
                 </p>
                 <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-gray-700">
                   {selected.technicalSpecifications}
-                </p>
-              </div>
-
-              <div className="mt-4 rounded-xl border border-gray-100 bg-white p-4">
-                <p className="text-sm font-semibold text-gray-900">
-                  Operating Parameters
-                </p>
-                <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-gray-700">
-                  {selected.operatingParameters || "-"}
                 </p>
               </div>
 

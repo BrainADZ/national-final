@@ -11,7 +11,6 @@ import {
   ClipboardList,
   Clock,
   Factory,
-  Gauge,
   Instagram,
   Linkedin,
   Mail,
@@ -77,24 +76,59 @@ const capabilities = [
 
 const faqs = [
   {
-    question: "Can you fabricate equipment as per our drawing?",
+    question: "Can you manufacture equipment according to our drawings and specifications?",
     answer:
-      "Yes. NESF can review client drawings, MOC, dimensions, duty conditions, and inspection requirements to prepare a suitable fabrication scope.",
+      "Yes, we manufacture equipment based on customer-provided drawings, technical specifications, and applicable industry standards.",
   },
   {
-    question: "Which products can we enquire for from this page?",
+    question: "Which products can I request a quotation for?",
     answer:
-      "You can enquire for dowtherm boilers, surge tanks, silos, storage tanks, jacketed vessels, and custom fabrication requirements.",
+      "You can request quotations for any equipment or fabrication service offered by NESF, including pressure vessels, reactors, storage tanks, heat exchangers, boilers, process piping, process skids, structural steel fabrication, HVAC ducting, silos, air receivers, and other custom-fabricated equipment.",
   },
   {
-    question: "Do you support custom material and sizes?",
+    question: "Do you offer custom materials, dimensions, and fabrication specifications?",
     answer:
-      "Yes. Material, thickness, nozzle layout, supports, coating, and dimensions can be planned around the application and project requirements.",
+      "Yes, we manufacture equipment to your required material grade, dimensions, thickness, pressure rating, design code, and project specifications. Custom fabrication is one of our core strengths.",
   },
   {
-    question: "How fast will your team respond?",
+    question: "How quickly can I expect a response to my inquiry?",
     answer:
-      "Our team will review your enquiry and contact you to discuss the most suitable fabrication approach for your project.",
+      "Our team will review your enquiry and contact you to discuss the most suitable fabrication approach for your project, depending on the complexity of the project and the information provided.",
+  },
+  {
+    question: "Which materials do you work with?",
+    answer:
+      "We work with a wide range of materials, including stainless steel, alloy steel, mild steel, copper and other special materials based on project requirements. If your project requires a specific material grade, our team will be happy to discuss the most suitable solution.",
+  },
+  {
+    question: "Which design codes and standards do you follow?",
+    answer:
+      "Our equipment is manufactured in accordance with applicable national and international codes and standards, based on project requirements. We can fabricate equipment to standards such as ASME, IS, TEMA, API, and other customer-specified codes where applicable.",
+  },
+  {
+    question: "Can you supply third-party inspection and test certificates?",
+    answer:
+      "Yes, we can arrange third-party inspections and provide relevant test certificates, material test certificates (MTCs), inspection reports, and quality documentation as specified in your project requirements.",
+  },
+  {
+    question: "Do you provide installation and commissioning support?",
+    answer:
+      "Yes, depending on the scope of the project, we can provide installation supervision, commissioning assistance, and technical support to ensure successful equipment installation and operation.",
+  },
+  {
+    question: "Can you manufacture equipment for export projects?",
+    answer:
+      "Yes, we have the capability to manufacture equipment for export in accordance with international specifications, documentation requirements, and applicable quality standards.",
+  },
+  {
+    question: "What information should I provide to receive an accurate quotation?",
+    answer:
+      "To help us prepare an accurate quotation, please share available drawings, material specifications, dimensions, design pressure and temperature, capacity, applicable design codes, quantity, inspection requirements, delivery location, and any other project-specific details. The more information you provide, the more accurate and timely our proposal will be.",
+  },
+  {
+    question: "Do you provide engineering and design support?",
+    answer:
+      "Yes, our experienced engineering team can assist with equipment design, detailing, fabrication drawings, and technical recommendations. Whether you have a complete design or only a project concept, we can help develop a practical and cost-effective fabrication solution.",
   },
 ];
 
@@ -134,7 +168,6 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
   const [email, setEmail] = useState("");
   const [productInterest, setProductInterest] = useState(PRODUCTS[0].title);
   const [technicalSpecifications, setTechnicalSpecifications] = useState("");
-  const [operatingParameters, setOperatingParameters] = useState("");
   const [drawingAvailability, setDrawingAvailability] = useState("Drawings available");
   const [drawingFile, setDrawingFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
@@ -147,7 +180,6 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
     setEmail("");
     setProductInterest(PRODUCTS[0].title);
     setTechnicalSpecifications("");
-    setOperatingParameters("");
     setDrawingAvailability("Drawings available");
     setDrawingFile(null);
     setErrorMsg(null);
@@ -179,7 +211,6 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
       email: email.trim(),
       productInterest: productInterest.trim(),
       technicalSpecifications: technicalSpecifications.trim(),
-      operatingParameters: operatingParameters.trim(),
       drawingAvailability: drawingAvailability.trim(),
     };
 
@@ -213,7 +244,6 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
       if (payload.email) fd.append("email", payload.email);
       fd.append("productInterest", payload.productInterest);
       fd.append("technicalSpecifications", payload.technicalSpecifications);
-      if (payload.operatingParameters) fd.append("operatingParameters", payload.operatingParameters);
       fd.append("drawingAvailability", payload.drawingAvailability);
       fd.append("source", source);
       if (typeof window !== "undefined") fd.append("pageUrl", window.location.href);
@@ -342,20 +372,6 @@ function LeadForm({ title, subtitle, source, compact = false }: LeadFormProps) {
           value={technicalSpecifications}
           onChange={(event) => setTechnicalSpecifications(event.target.value)}
           placeholder="Share capacity, quantity, standards, etc here."
-          className="mt-1 w-full resize-none rounded-md border border-gray-300 px-3 py-2.5 text-sm outline-none placeholder:text-gray-400 focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
-        />
-      </label>
-
-      <label className="mt-3 block">
-        <span className="inline-flex items-center gap-2 text-xs font-semibold text-gray-700">
-          <Gauge className="h-4 w-4 text-gray-400" />
-          Operating Parameters
-        </span>
-        <textarea
-          rows={compact ? 2 : 3}
-          value={operatingParameters}
-          onChange={(event) => setOperatingParameters(event.target.value)}
-          placeholder="Pressure, temperature, flow rate, media handled, duty cycle, or other operating conditions."
           className="mt-1 w-full resize-none rounded-md border border-gray-300 px-3 py-2.5 text-sm outline-none placeholder:text-gray-400 focus:border-[#ee9d54] focus:ring-1 focus:ring-[#ee9d54]"
         />
       </label>
@@ -503,7 +519,7 @@ export default function GoogleAdsLandingClient() {
             <div id="lead-form" className="scroll-mt-8">
               <LeadForm
                 title="Discuss Your Project Requirements"
-                subtitle="Submit your project requirements, and our engineering team will evaluate the specifications and provide a tailored fabrication proposal. Share technical specifications, operating parameters, and available drawings."
+                subtitle="Submit your project requirements, and our engineering team will evaluate the specifications and provide a tailored fabrication proposal. Share technical specifications, project details, and available drawings."
                 source="Hero Form"
               />
             </div>
@@ -657,7 +673,7 @@ export default function GoogleAdsLandingClient() {
           <div className="scroll-mt-8" id="faq-enquiry">
             <LeadForm
               title="Discuss Your Project Requirements"
-              subtitle="Submit your project requirements, and our engineering team will evaluate the specifications and provide a tailored fabrication proposal. Share technical specifications, operating parameters, and available drawings."
+              subtitle="Submit your project requirements, and our engineering team will evaluate the specifications and provide a tailored fabrication proposal. Share technical specifications, project details, and available drawings."
               source="FAQ Section Form"
               compact
             />

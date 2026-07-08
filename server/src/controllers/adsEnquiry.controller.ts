@@ -15,7 +15,6 @@ export const createAdsEnquiry = async (req: Request, res: Response) => {
     const email = readBodyString(req.body.email).toLowerCase();
     const productInterest = readBodyString(req.body.productInterest);
     const technicalSpecifications = readBodyString(req.body.technicalSpecifications);
-    const operatingParameters = readBodyString(req.body.operatingParameters);
     const drawingAvailability = readBodyString(req.body.drawingAvailability);
     const source = readBodyString(req.body.source);
     const pageUrl = readBodyString(req.body.pageUrl);
@@ -46,7 +45,6 @@ export const createAdsEnquiry = async (req: Request, res: Response) => {
       email: email || undefined,
       productInterest,
       technicalSpecifications,
-      operatingParameters: operatingParameters || undefined,
       drawingAvailability: drawingAvailability || undefined,
       source: source || undefined,
       pageUrl: pageUrl || undefined,
@@ -68,7 +66,6 @@ export const createAdsEnquiry = async (req: Request, res: Response) => {
       email: email || undefined,
       productInterest,
       technicalSpecifications,
-      operatingParameters: operatingParameters || undefined,
       drawingAvailability: drawingAvailability || undefined,
       source: source || undefined,
       pageUrl: pageUrl || undefined,

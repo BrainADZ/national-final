@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import GoogleAdsLandingClient from "./LandingClient";
 
 export const metadata: Metadata = {
@@ -15,5 +16,21 @@ export const metadata: Metadata = {
 };
 
 export default function GoogleAdsLandingPage() {
-  return <GoogleAdsLandingClient />;
+  return (
+    <>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18228480390"
+        strategy="afterInteractive"
+      />
+      <Script id="google-ads-industrial-fabrication" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18228480390');
+        `}
+      </Script>
+      <GoogleAdsLandingClient />
+    </>
+  );
 }
