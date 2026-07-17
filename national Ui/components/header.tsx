@@ -194,6 +194,13 @@ export default function Navbar() {
 
   useEffect(() => { setMounted(true); }, []);
 
+  // Always clear transient menu state after a successful route change.
+  useEffect(() => {
+    setMobileOpen(false);
+    setOpenMobileCategory(null);
+    setOpenMobileSubCategory(null);
+  }, [pathname]);
+
   useEffect(() => {
     if (!mobileOpen) return;
     const original = document.body.style.overflow;
@@ -211,7 +218,7 @@ export default function Navbar() {
 
   const logo = useMemo(
     () => (
-      <Link href="/" className="flex items-center gap-3 min-w-0">
+      <Link href="/" prefetch={false} className="flex items-center gap-3 min-w-0">
         <div className="relative h-12 w-37.5 shrink-0 rounded-sm bg-white sm:h-14 sm:w-47.5">
           <img src="/logo222.png" alt="National Engineers Logo" className="h-full w-full object-contain px-3" />
         </div>
@@ -279,6 +286,7 @@ export default function Navbar() {
                                   <Link
                                     key={subItem.label}
                                     href={subItem.href}
+                                    prefetch={false}
                                     onClick={() => { setMobileOpen(false); setOpenMobileCategory(null); setOpenMobileSubCategory(null); }}
                                     className={`block border-b border-gray-50 px-6 py-2 text-sm transition last:border-0 ${isActive(subItem.href) ? "font-medium text-[#ee9d54]" : "text-gray-600 hover:text-[#ee9d54]"}`}
                                   >
@@ -300,6 +308,7 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href ?? "#"}
+                prefetch={false}
                 target={item.href?.startsWith("http") ? "_blank" : undefined}
                 rel={item.href?.startsWith("http") ? "noopener noreferrer" : undefined}
                 onClick={() => setMobileOpen(false)}
@@ -313,6 +322,7 @@ export default function Navbar() {
           <div className="p-4">
             <Link
               href="/contact"
+              prefetch={false}
               onClick={() => setMobileOpen(false)}
               className="block w-full bg-[#ee9d54] px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-[#d88c45]"
             >
@@ -343,7 +353,7 @@ export default function Navbar() {
                     <div
                       className={`flex items-center gap-1 text-sm font-semibold transition-colors hover:text-[#ee9d54] ${active ? "text-[#ee9d54]" : "text-gray-900"}`}
                     >
-                      <Link href={item.href ?? "#"} className="outline-none">
+                      <Link href={item.href ?? "#"} prefetch={false} className="outline-none">
                         {item.label}
                       </Link>
                       <ChevronDown className="h-3.5 w-3.5 transition-transform duration-150 group-hover:rotate-180" />
@@ -378,6 +388,7 @@ export default function Navbar() {
                                     <Link
                                       key={subItem.label}
                                       href={subItem.href}
+                                      prefetch={false}
                                       className={`block border-b border-gray-100 px-4 py-2.5 text-[13px] last:border-0 transition ${
                                         isActive(subItem.href)
                                           ? "bg-orange-50 font-medium text-[#ee9d54]"
@@ -402,6 +413,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href ?? "#"}
+                  prefetch={false}
                   target={item.href?.startsWith("http") ? "_blank" : undefined}
                   rel={item.href?.startsWith("http") ? "noopener noreferrer" : undefined}
                   className={`text-sm font-semibold transition-colors hover:text-[#ee9d54] ${active ? "text-[#ee9d54]" : "text-gray-900"}`}
@@ -413,6 +425,7 @@ export default function Navbar() {
 
             <Link
               href="/contact"
+              prefetch={false}
               className="ml-2 bg-[#ee9d54] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#d88c45]"
             >
               Enquiry
@@ -430,7 +443,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {mounted ? createPortal(MobileDrawer, document.body) : null}
+      {mounted && mobileOpen ? createPortal(MobileDrawer, document.body) : null}
     </>
   );
 }

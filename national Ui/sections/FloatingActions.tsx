@@ -4,8 +4,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { X, Phone, Mail, Building2, Paperclip } from "lucide-react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { getThankYouUrl } from "@/lib/thankYou";
 
 type Props = {
@@ -53,16 +51,6 @@ export default function FloatingActions({
 
   const linkedinHref = normalizeUrl(linkedinUrl);
 
-  // AOS init
-  useEffect(() => {
-    AOS.init({
-      duration: 500,
-      once: true,
-      easing: "ease-out",
-      offset: 10,
-    });
-  }, []);
-
   // ESC to close modal
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -80,11 +68,6 @@ export default function FloatingActions({
     return () => {
       document.body.style.overflow = original;
     };
-  }, [open]);
-
-  // modal open/close pe AOS refresh
-  useEffect(() => {
-    AOS.refreshHard();
   }, [open]);
 
   const resetForm = () => {
