@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Mail } from "lucide-react";
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 function stripHtml(html = "") {
   return html.replace(/<[^>]*>/g, "").trim();
@@ -11,8 +11,8 @@ function stripHtml(html = "") {
 
 async function getPosts() {
   const res = await fetch(
-    `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?per_page=8&_embed`,
-    { next: { revalidate: 60 } }
+    `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?per_page=8&_embed=wp:featuredmedia&_fields=id,slug,date,title,excerpt,_links,_embedded`,
+    { next: { revalidate: 3600 } }
   );
   if (!res.ok) throw new Error("Failed to fetch posts");
   const data = await res.json();

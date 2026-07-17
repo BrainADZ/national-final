@@ -7,7 +7,6 @@ import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import {
   ArrowRight,
   Building2,
-  CheckCircle2,
   ClipboardList,
   Clock,
   Factory,

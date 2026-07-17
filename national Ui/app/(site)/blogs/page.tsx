@@ -2,18 +2,46 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import BlogPostsGrid from "./BlogPostsGrid";
 
-export const revalidate = 60;
+// Blog content does not need to make a WordPress round-trip every minute.
+// A longer ISR window keeps normal requests on the fast, pre-rendered path.
+export const revalidate = 3600;
+
+type BlogCardPost = {
+  id: number;
+  slug: string;
+  date: string;
+  title: string;
+  excerpt: string;
+  featuredImage: string;
+};
 
 async function getPosts() {
   const res = await fetch(
-    `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?per_page=100&_embed`,
-    { next: { revalidate: 60 } }
+    `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?per_page=100&_embed=wp:featuredmedia&_fields=id,slug,date,title,excerpt,_links,_embedded`,
+    { next: { revalidate: 3600 } }
   );
 
   if (!res.ok) throw new Error("Failed to fetch posts");
 
   const data = await res.json();
-  return Array.isArray(data) ? data : [];
+  if (!Array.isArray(data)) return [];
+
+  // BlogPostsGrid is a Client Component. Passing the raw `_embedded` objects
+  // made Next.js serialize all WordPress image metadata for up to 100 posts
+  // into the HTML/RSC response (roughly 2.4 MB in production). Keep only the
+  // fields the cards actually render.
+  return data.map((post): BlogCardPost => ({
+    id: post.id,
+    slug: post.slug,
+    date: post.date,
+    title: post?.title?.rendered || "",
+    excerpt: post?.excerpt?.rendered || "",
+    featuredImage:
+      post?._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes?.medium_large
+        ?.source_url ||
+      post?._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+      "",
+  }));
 }
 
 export const metadata: Metadata = buildMetadata({

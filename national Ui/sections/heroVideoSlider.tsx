@@ -1,5 +1,3 @@
-"use client";
-
 /**
  * Put your video here:
  * /public/videos/hero.mp4

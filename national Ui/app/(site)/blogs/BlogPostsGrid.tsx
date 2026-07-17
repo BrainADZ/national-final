@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState } from "react";
@@ -12,7 +11,16 @@ function stripHtml(html = "") {
   return html.replace(/<[^>]*>/g, "").trim();
 }
 
-export default function BlogPostsGrid({ posts }: { posts: any[] }) {
+type BlogCardPost = {
+  id: number;
+  slug: string;
+  date: string;
+  title: string;
+  excerpt: string;
+  featuredImage: string;
+};
+
+export default function BlogPostsGrid({ posts }: { posts: BlogCardPost[] }) {
   const [visibleCount, setVisibleCount] = useState(INITIAL_POST_COUNT);
   const visiblePosts = posts.slice(0, visibleCount);
   const hasMorePosts = visibleCount < posts.length;
@@ -20,10 +28,9 @@ export default function BlogPostsGrid({ posts }: { posts: any[] }) {
   return (
     <>
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-        {visiblePosts.map((post: any) => {
+        {visiblePosts.map((post) => {
           const postHref = `/blogs/${post.slug}`;
-          const featured =
-            post?._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "";
+          const featured = post.featuredImage;
           const date = post?.date ? new Date(post.date) : null;
 
           return (
@@ -31,12 +38,12 @@ export default function BlogPostsGrid({ posts }: { posts: any[] }) {
               <Link
                 href={postHref}
                 className="relative aspect-16/10 w-full overflow-hidden bg-white no-underline hover:no-underline"
-                aria-label={stripHtml(post?.title?.rendered)}
+                aria-label={stripHtml(post.title)}
               >
                 {featured ? (
                   <img
                     src={featured}
-                    alt={stripHtml(post?.title?.rendered)}
+                    alt={stripHtml(post.title)}
                     className="h-full w-full object-contain"
                     loading="lazy"
                   />
@@ -64,12 +71,12 @@ export default function BlogPostsGrid({ posts }: { posts: any[] }) {
                   <Link
                     href={postHref}
                     className="no-underline hover:no-underline"
-                    dangerouslySetInnerHTML={{ __html: post.title?.rendered }}
+                    dangerouslySetInnerHTML={{ __html: post.title }}
                   />
                 </h3>
 
                 <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-gray-600">
-                  {stripHtml(post?.excerpt?.rendered)}
+                  {stripHtml(post.excerpt)}
                 </p>
 
                 <div className="mt-5 flex items-center gap-3">

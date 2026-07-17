@@ -6,7 +6,20 @@ import EasyAccordionEnhancer from "@/components/EasyAccordionEnhancer";
 import EasyTocEnhancer from "@/components/EasyTocEnhancer";
 import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/seo";
 
-export const revalidate = 60;
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const res = await fetch(
+    `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?per_page=100&_fields=slug`,
+    { next: { revalidate: 3600 } }
+  );
+  if (!res.ok) return [];
+
+  const posts = await res.json();
+  return Array.isArray(posts)
+    ? posts.filter((post) => post?.slug).map((post) => ({ slug: post.slug }))
+    : [];
+}
 
 function stripHtml(html = "") {
   return html.replace(/<[^>]*>/g, "").trim();
@@ -24,7 +37,7 @@ async function getPost(slug: string) {
     `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?slug=${encodeURIComponent(
       slug
     )}&_embed`,
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 3600 } }
   );
   if (!res.ok) return null;
   const data = await res.json();
@@ -34,7 +47,7 @@ async function getPost(slug: string) {
 async function getCategories() {
   const res = await fetch(
     `${process.env.WORDPRESS_URL}/wp-json/wp/v2/categories?per_page=50&hide_empty=true&orderby=count&order=desc`,
-    { next: { revalidate: 300 } }
+    { next: { revalidate: 3600 } }
   );
   if (!res.ok) return [];
   const data = await res.json();

@@ -4,7 +4,6 @@
 # Global Rules (Apply to All Bots)
 # =========================
 User-agent: *
-Disallow: /blogs/category/
 Allow: /
 
 # =========================
@@ -12,199 +11,159 @@ Allow: /
 # =========================
 User-agent: Googlebot
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: Googlebot-Image
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: Googlebot-Mobile
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: Googlebot-News
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: Google-Extended
 Allow: /
-Disallow: /blogs/category/
 
 # =========================
 # Microsoft / Bing
 # =========================
 User-agent: Bingbot
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: BingPreview
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: MSNBot
 Allow: /
-Disallow: /blogs/category/
 
 # =========================
 # Yahoo
 # =========================
 User-agent: Slurp
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: yahoo-mmcrawler
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: yahoo-blogs/v3.9
 Allow: /
-Disallow: /blogs/category/
 
 # =========================
 # Yandex
 # =========================
 User-agent: Yandex
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: YandexBot
 Allow: /
-Disallow: /blogs/category/
 
 # =========================
 # Baidu
 # =========================
 User-agent: Baiduspider
 Allow: /
-Disallow: /blogs/category/
 
 # =========================
 # DuckDuckGo
 # =========================
 User-agent: DuckDuckBot
 Allow: /
-Disallow: /blogs/category/
 
 # =========================
 # OpenAI
 # =========================
 User-agent: ChatGPT-User
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: GPTBot
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: OAI-SearchBot
 Allow: /
-Disallow: /blogs/category/
 
 # =========================
 # Anthropic (Claude)
 # =========================
 User-agent: ClaudeBot
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: Claude-Web
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: anthropic-ai
 Allow: /
-Disallow: /blogs/category/
 
 # =========================
 # Perplexity
 # =========================
 User-agent: PerplexityBot
 Allow: /
-Disallow: /blogs/category/
 
 # =========================
 # Apple
 # =========================
 User-agent: Applebot
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: Applebot-Extended
 Allow: /
-Disallow: /blogs/category/
 
 # =========================
 # Social Media Crawlers
 # =========================
 User-agent: facebookexternalhit
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: Facebot
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: Twitterbot
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: LinkedInBot
 Allow: /
-Disallow: /blogs/category/
 
 # =========================
 # SEO Tools
 # =========================
 User-agent: AhrefsBot
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: SemrushBot
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: MJ12bot
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: DotBot
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: ScreamingFrog
 Allow: /
-Disallow: /blogs/category/
 
 # =========================
 # Other Crawlers
 # =========================
 User-agent: Teoma
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: Gigabot
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: Robozilla
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: Nutch
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: ia_archiver
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: naverbot
 Allow: /
-Disallow: /blogs/category/
 
 User-agent: psbot
 Allow: /
-Disallow: /blogs/category/
 
 # =========================
 # Sitemap
