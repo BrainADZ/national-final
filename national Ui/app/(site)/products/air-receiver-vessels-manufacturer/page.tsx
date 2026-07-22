@@ -22,7 +22,6 @@ export default function AirReceiverVesselsManufacturerPage() {
     <ProductDetailLayout
       product={product}
       categoryName={CATEGORY_NAME}
-      categoryPath="/products/pressure-vessels-and-storage"
       navItems={pressureVesselNav}
     />
   );

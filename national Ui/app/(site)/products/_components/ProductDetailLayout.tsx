@@ -23,7 +23,6 @@ type ProductNavItem = {
 type ProductDetailLayoutProps = {
   product: ProductDetail;
   categoryName?: string;
-  categoryPath?: string;
   navItems?: ProductNavItem[];
 };
 
@@ -49,12 +48,8 @@ function ProductBulletList({
 export default function ProductDetailLayout({
   product,
   categoryName = DEFAULT_CATEGORY_NAME,
-  categoryPath,
   navItems = pressureVesselNav,
 }: ProductDetailLayoutProps) {
-  const resolvedCategoryPath =
-    categoryPath || product.pagePath.split("/").slice(0, -1).join("/") || "/products";
-
   const schemas: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
@@ -95,12 +90,6 @@ export default function ProductDetailLayout({
         {
           "@type": "ListItem",
           position: 3,
-          name: categoryName,
-          item: absoluteUrl(resolvedCategoryPath),
-        },
-        {
-          "@type": "ListItem",
-          position: 4,
           name: product.title,
           item: absoluteUrl(product.pagePath),
         },
@@ -161,14 +150,6 @@ export default function ProductDetailLayout({
                 <li>
                   <Link href="/products" className="transition hover:text-white">
                     Products
-                  </Link>
-                </li>
-                <li aria-hidden="true" className="text-white/35">
-                  /
-                </li>
-                <li>
-                  <Link href={resolvedCategoryPath} className="transition hover:text-white">
-                    {categoryName}
                   </Link>
                 </li>
                 <li aria-hidden="true" className="text-white/35">

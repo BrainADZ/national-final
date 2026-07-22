@@ -33,7 +33,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
     <ProductDetailLayout
       product={entry.product}
       categoryName={entry.categoryName}
-      categoryPath={entry.categoryPath}
       navItems={entry.navItems}
     />
   );

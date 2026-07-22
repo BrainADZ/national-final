@@ -6,35 +6,27 @@ import FaqSection from "@/sections/Accordian";
 const productCategoryItems = [
   {
     name: "Pressure Vessels & Storage",
-    url: "https://nationalengrs.com/products/pressure-vessels-and-storage",
   },
   {
     name: "Material Handling & Storage",
-    url: "https://nationalengrs.com/products/material-handling-and-storage",
   },
   {
     name: "Process Equipment & Heat Transfer",
-    url: "https://nationalengrs.com/products/process-equipment-and-heat-transfer",
   },
   {
     name: "Pollution Control & Gas Handling",
-    url: "https://nationalengrs.com/products/pollution-control-and-gas-handling",
   },
   {
     name: "Piping & Pipeline Systems",
-    url: "https://nationalengrs.com/products/piping-and-pipeline-systems",
   },
   {
     name: "Fabrication Components & Structural",
-    url: "https://nationalengrs.com/products/fabrication-components-and-structural",
   },
   {
     name: "HVAC & Industrial Ducting",
-    url: "https://nationalengrs.com/products/hvac-and-industrial-ducting",
   },
   {
     name: "Custom Manufacturing",
-    url: "https://nationalengrs.com/products/custom-manufacturing",
   },
 ];
 
@@ -87,7 +79,6 @@ const itemListSchema = {
     "@type": "ListItem",
     position: index + 1,
     name: item.name,
-    url: item.url,
   })),
 };
 

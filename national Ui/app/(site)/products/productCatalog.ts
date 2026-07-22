@@ -49,7 +49,6 @@ type ProductNavItem = {
 
 type ProductCategorySource = {
   categoryName: string;
-  categoryPath: string;
   navItems: ProductNavItem[];
   products: Record<string, ProductDetail>;
 };
@@ -58,56 +57,47 @@ export type ProductCatalogEntry = {
   slug: string;
   product: ProductDetail;
   categoryName: string;
-  categoryPath: string;
   navItems: ProductNavItem[];
 };
 
 const productCategorySources: ProductCategorySource[] = [
   {
     categoryName: PRESSURE_VESSELS_CATEGORY_NAME,
-    categoryPath: "/products/pressure-vessels-and-storage",
     navItems: pressureVesselNav,
     products: pressureVesselDetails,
   },
   {
     categoryName: MATERIAL_HANDLING_CATEGORY_NAME,
-    categoryPath: "/products/material-handling-and-storage",
     navItems: materialHandlingNav,
     products: materialHandlingDetails,
   },
   {
     categoryName: PROCESS_EQUIPMENT_CATEGORY_NAME,
-    categoryPath: "/products/process-equipment-and-heat-transfer",
     navItems: processEquipmentNav,
     products: processEquipmentDetails,
   },
   {
     categoryName: POLLUTION_CONTROL_CATEGORY_NAME,
-    categoryPath: "/products/pollution-control-and-gas-handling",
     navItems: pollutionControlNav,
     products: pollutionControlDetails,
   },
   {
     categoryName: PIPING_PIPELINE_CATEGORY_NAME,
-    categoryPath: "/products/piping-and-pipeline-systems",
     navItems: pipingPipelineNav,
     products: pipingPipelineDetails,
   },
   {
     categoryName: FABRICATION_STRUCTURAL_CATEGORY_NAME,
-    categoryPath: "/products/fabrication-components-and-structural",
     navItems: fabricationStructuralNav,
     products: fabricationStructuralDetails,
   },
   {
     categoryName: HVAC_DUCTING_CATEGORY_NAME,
-    categoryPath: "/products/hvac-and-industrial-ducting",
     navItems: hvacDuctingNav,
     products: hvacDuctingDetails,
   },
   {
     categoryName: CUSTOM_MANUFACTURING_CATEGORY_NAME,
-    categoryPath: "/products/custom-manufacturing",
     navItems: customManufacturingNav,
     products: customManufacturingDetails,
   },
@@ -119,7 +109,6 @@ export const productCatalog: ProductCatalogEntry[] = productCategorySources.flat
       slug,
       product,
       categoryName: source.categoryName,
-      categoryPath: source.categoryPath,
       navItems: source.navItems,
     }))
 );

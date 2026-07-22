@@ -7,7 +7,6 @@ type ProductCategory = {
   title: string;
   description: string;
   image: string;
-  href: string;
   highlights: string[];
 };
 
@@ -17,7 +16,6 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       "Air receivers, nitrogen buffer tanks, storage tanks, blowdown vessels, filter vessels, and custom pressure vessels for industrial plants.",
     image: "/product/7.jpg",
-    href: "/products/pressure-vessels-and-storage",
     highlights: ["Air Receiver Vessels", "Storage Tanks", "Filter Vessels"],
   },
   {
@@ -25,7 +23,6 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       "Hoppers, flakes hoppers, silos, storage bins, tow cans, chutes, transitions, and bulk handling fabrication.",
     image: "/product/00.jpg",
-    href: "/products/material-handling-and-storage",
     highlights: ["Hoppers & Flakes Hoppers", "Silos & Storage Bins", "Tow Bin / Tow Can"],
   },
   {
@@ -33,7 +30,6 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       "Condensers, process skids, heat exchanger shells, columns, and special-purpose vessels built around process requirements.",
     image: "/product/25.png",
-    href: "/products/process-equipment-and-heat-transfer",
     highlights: ["Condensers", "Process Skids", "Special Purpose Vessels"],
   },
   {
@@ -41,7 +37,6 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       "Venturi scrubbers, wet scrubber systems, ducting, flue gas lines, scrubber internals, liners, and gas handling fabrication.",
     image: "/product/3.jpg",
-    href: "/products/pollution-control-and-gas-handling",
     highlights: ["Venturi Scrubbers", "Wet Scrubber Systems", "Flue Gas Lines"],
   },
   {
@@ -49,7 +44,6 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       "Pig launcher and receiver systems, pipeline spools, headers, manifolds, compressor ducting, and piping supports.",
     image: "/product/26.jpeg",
-    href: "/products/piping-and-pipeline-systems",
     highlights: ["Pig Launcher / Receiver", "Pipeline Spools", "Piping Supports"],
   },
   {
@@ -57,7 +51,6 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       "Base plates, pipe saddles, jack stools, wear plate liners, and heavy structural fabrication for industrial assemblies.",
     image: "/product/18.jpg",
-    href: "/products/fabrication-components-and-structural",
     highlights: ["Base Plates", "Pipe Saddles", "Jack Stools"],
   },
   {
@@ -65,7 +58,6 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       "AHU ducts, GI and SS ducting, insulated ducts, industrial ducting systems, transitions, reducers, and elbows.",
     image: "/product/13.jpg",
-    href: "/products/hvac-and-industrial-ducting",
     highlights: ["AHU Ducts", "Industrial Ducting", "Transitions & Elbows"],
   },
   {
@@ -73,7 +65,6 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       "Build-to-drawing heavy plate fabrication, SS / CS / alloy steel fabrication, on-site erection support, and repair jobs.",
     image: "/product/16.jpg",
-    href: "/products/custom-manufacturing",
     highlights: ["Heavy Plate Fabrication", "SS / CS / Alloy Fabrication", "Repair / Modification"],
   },
 ];
@@ -189,7 +180,7 @@ export default function ProductsPage() {
             Explore Product Categories
           </h2>
           <p className="text-sm text-gray-600 md:text-base">
-            Select a category to view detailed product pages and request specifications.
+            Browse our product categories and request specifications for your requirement.
           </p>
         </div>
       </section>
@@ -202,7 +193,7 @@ export default function ProductsPage() {
               key={category.title}
               className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
             >
-              <Link href={category.href} className="block">
+              <div className="block">
                 <div className="relative">
                   <img
                     src={category.image}
@@ -214,7 +205,7 @@ export default function ProductsPage() {
                     Category
                   </span>
                 </div>
-              </Link>
+              </div>
 
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="text-base font-extrabold text-gray-900">
