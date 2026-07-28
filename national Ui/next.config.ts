@@ -13,11 +13,6 @@ const nextConfig: NextConfig = {
         destination: "/products/air-receiver-vessels-manufacturer",
         permanent: true,
       },
-      {
-        source: "/products/:category/:slug",
-        destination: "/products/:slug",
-        permanent: true,
-      },
     ];
   },
   async headers() {

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 // import Navbar from "@/components/header";
 // import Footer from "@/components/footer";
@@ -8,15 +7,6 @@ import { fontBody, fontHeading } from "./fonts";
 // import FloatingActions from "@/sections/FloatingActions";
 import AOSProvider from "@/components/AOSProvider";
 import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/seo";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -53,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${fontBody.variable} ${fontHeading.variable} antialiased`}
+        className={`${fontBody.variable} ${fontHeading.variable} antialiased`}
       >
         {/* <Navbar/> */}
         <AOSProvider />

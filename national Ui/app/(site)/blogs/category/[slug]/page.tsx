@@ -4,12 +4,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/seo";
 
-export const revalidate = 3600;
+export const revalidate = 0;
 
 export async function generateStaticParams() {
   const res = await fetch(
     `${process.env.WORDPRESS_URL}/wp-json/wp/v2/categories?per_page=100&hide_empty=true&_fields=slug`,
-    { next: { revalidate: 3600 } }
+    { cache: "no-store" }
   );
   if (!res.ok) return [];
 
@@ -30,7 +30,7 @@ async function getCategoryBySlug(slug: string) {
     `${process.env.WORDPRESS_URL}/wp-json/wp/v2/categories?slug=${encodeURIComponent(
       slug
     )}`,
-    { next: { revalidate: 3600 } }
+    { cache: "no-store" }
   );
   if (!res.ok) return null;
   const data = await res.json();

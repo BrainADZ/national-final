@@ -6,12 +6,12 @@ import EasyAccordionEnhancer from "@/components/EasyAccordionEnhancer";
 import EasyTocEnhancer from "@/components/EasyTocEnhancer";
 import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/seo";
 
-export const revalidate = 3600;
+export const revalidate = 0;
 
 export async function generateStaticParams() {
   const res = await fetch(
     `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?per_page=100&_fields=slug`,
-    { next: { revalidate: 3600 } }
+    { cache: "no-store" }
   );
   if (!res.ok) return [];
 
@@ -37,7 +37,7 @@ async function getPost(slug: string) {
     `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?slug=${encodeURIComponent(
       slug
     )}&_embed`,
-    { next: { revalidate: 3600 } }
+    { cache: "no-store" }
   );
   if (!res.ok) return null;
   const data = await res.json();

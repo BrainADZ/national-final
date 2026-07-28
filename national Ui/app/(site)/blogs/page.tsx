@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import BlogPostsGrid from "./BlogPostsGrid";
 
-// Blog content does not need to make a WordPress round-trip every minute.
-// A longer ISR window keeps normal requests on the fast, pre-rendered path.
-export const revalidate = 3600;
+// Published WordPress posts must be visible immediately.
+export const revalidate = 0;
 
 type BlogCardPost = {
   id: number;
@@ -18,7 +17,7 @@ type BlogCardPost = {
 async function getPosts() {
   const res = await fetch(
     `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?per_page=100&_embed=wp:featuredmedia&_fields=id,slug,date,title,excerpt,_links,_embedded`,
-    { next: { revalidate: 3600 } }
+    { cache: "no-store" }
   );
 
   if (!res.ok) throw new Error("Failed to fetch posts");
