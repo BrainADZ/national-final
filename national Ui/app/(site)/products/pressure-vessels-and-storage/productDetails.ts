@@ -63,8 +63,12 @@ export const pressureVesselNav = [
     href: "/products/air-receiver-vessels-manufacturer",
   },
   {
-    label: "Nitrogen Buffer / Gas Storage Tanks",
-    href: "/products/nitrogen-buffer-gas-storage-tanks",
+    label: "Nitrogen Buffer Tank",
+    href: "/products/nitrogen-buffer-tank-manufacturer",
+  },
+  {
+    label: "Gas Storage Tank",
+    href: "/products/gas-storage-tank-manufacturer",
   },
   {
     label: "Horizontal Storage Tanks",
@@ -342,8 +346,8 @@ export const productDetails = {
         title: "Related Products",
         links: [
           {
-            label: "Nitrogen Buffer / Gas Storage Tanks",
-            href: "/products/nitrogen-buffer-gas-storage-tanks",
+            label: "Nitrogen Buffer Tank",
+            href: "/products/nitrogen-buffer-tank-manufacturer",
             description: "Also Read",
           },
           {
@@ -466,97 +470,205 @@ export const productDetails = {
       ],
     },
   },
-  "nitrogen-buffer-gas-storage-tanks": {
-    title: "Nitrogen Buffer / Gas Storage Tanks",
-    headline: "Stable Gas Availability for Demanding Plant Operations",
+  "nitrogen-buffer-tank-manufacturer": {
+    title: "Nitrogen Buffer Tank Manufacturer and Supplier in India",
+    headline: "Nitrogen Buffer Tank Manufacturer in Surat",
     description:
-      "Nitrogen buffer and gas storage tanks fabricated for demand fluctuation control, line stability, and uninterrupted operations.",
-    pagePath:
-      "/products/nitrogen-buffer-gas-storage-tanks",
+      "National Engineers & Steel Fabricators is a trusted nitrogen buffer tank manufacturer and supplier in India, offering custom-built nitrogen buffer tanks for PSA nitrogen plants, nitrogen gas systems, industrial process lines and continuous nitrogen supply applications.",
+    pagePath: "/products/nitrogen-buffer-tank-manufacturer",
     image: "/product/6.jpg",
-    imageAlt: "Nitrogen buffer gas storage tank fabricated by National Engineers",
+    imageAlt: "Nitrogen buffer tank manufactured by National Engineers",
     imagePosition: "center",
     quickFacts: [
-      { label: "Application", value: "N2 and gas buffering" },
-      { label: "Integration", value: "Cylinder bank, PSA, or vaporizer outlet" },
-      { label: "Safety", value: "PSV, PRV, gauges, rupture disc options" },
-      { label: "Inputs", value: "P&ID, gas data, storage capacity" },
+      { label: "Product Type", value: "Nitrogen Buffer Tank" },
+      { label: "Gas Type", value: "Nitrogen / N2" },
+      { label: "Orientation", value: "Vertical or horizontal" },
+      { label: "Customization", value: "As per drawing, gas data, MOC and site layout" },
     ],
     overview: [
-      "NESF fabricates nitrogen buffer and gas storage tanks to ensure stable gas availability, manage demand fluctuations, and support uninterrupted plant operations.",
-      "The build can be adapted for cylinder banks, PSA systems, or liquid nitrogen vaporizer outlets depending on the plant layout and duty cycle.",
+      "As an experienced nitrogen buffer tank manufacturer in Surat, Gujarat, we manufacture tanks as per client drawings, P&ID, gas data, pressure requirements, storage capacity, nozzle orientation, MOC and site conditions. Our nitrogen buffer tanks are designed to support stable nitrogen availability, pressure balancing, demand fluctuation control and uninterrupted plant operations.",
+      "National Engineers & Steel Fabricators manufactures industrial nitrogen buffer tanks for plants where nitrogen is required for purging, blanketing, inerting, packaging, pressure balancing and process gas supply. These tanks help maintain stable gas pressure between the nitrogen generation system and the end-use process.",
+      "We are a reliable nitrogen buffer tank supplier in Surat, Gujarat, providing customized fabrication solutions for PSA nitrogen plants, cylinder bank systems, vaporizer outlet systems and industrial gas distribution lines. Each tank is fabricated with proper welding, nozzle layout, support design, testing and documentation as per project requirement.",
     ],
     sections: [
       {
-        title: "What it's used for",
-        bullets: [
-          "Buffering N2 supply for purging, blanketing, and inerting.",
-          "Managing demand spikes in process lines.",
-          "Improving regulator and line stability while reducing pressure drop issues.",
+        title: "Nitrogen Buffer Tank for PSA Nitrogen Plants",
+        body: [
+          "A nitrogen buffer tank is commonly used with PSA nitrogen generation systems to store nitrogen temporarily and maintain steady gas flow during process demand changes. PSA nitrogen systems can have fluctuating output and varying consumption patterns, so a buffer tank helps stabilize pressure and improve line performance.",
+          "Our PSA nitrogen buffer tanks are suitable for industrial units where continuous nitrogen supply is required for production, safety, packaging, chemical processing, pharma processes, food processing, laser cutting, heat treatment and other plant operations.",
         ],
       },
       {
-        title: "Typical Construction & Options",
-        bullets: [
-          "Vertical or horizontal storage configuration.",
-          "Nozzle arrangements as per P&ID.",
-          "PSV, PRV, pressure gauges, and rupture disc if required.",
-          "Earthing lug, lifting lugs, nameplate, and inspection openings.",
-          "Skid mounting option with buffer vessel and valve station.",
-        ],
+        title: "Why Nitrogen Buffer Tanks Are Used",
+        body: ["Nitrogen buffer tanks are used to manage gas demand variations, reduce pressure fluctuation and support stable nitrogen supply in industrial systems. They act as an intermediate storage vessel between the nitrogen generation source and the process line.", "Common uses include:"],
+        bullets: ["Buffering nitrogen supply from PSA nitrogen plants", "Maintaining stable nitrogen pressure in process lines", "Managing sudden demand spikes", "Supporting uninterrupted nitrogen gas availability", "Improving regulator and line stability", "Reducing pressure drop issues", "Supporting purging, blanketing and inerting applications", "Providing temporary nitrogen storage for plant operations"],
+      },
+      {
+        title: "Key Features of Our Nitrogen Buffer Tanks",
+        bullets: ["Custom-built nitrogen buffer tanks as per project requirement", "Suitable for PSA nitrogen plants and industrial nitrogen gas systems", "Designed for pressure balancing and demand fluctuation control", "Mild steel, carbon steel and stainless steel construction options", "Nozzle orientation as per P&ID or client drawing", "Vertical or horizontal configuration as per site layout", "PSV, PRV, pressure gauge and rupture disc options", "Lifting lugs, earthing lug, nameplate and inspection openings", "Skid-mounted buffer tank option with valve station", "Surface coating, painting or lining as per environment", "Leak testing and pressure testing as per requirement", "Documentation support as agreed for inspection and maintenance"],
+      },
+      {
+        title: "Applications of Nitrogen Buffer Tanks",
+        body: ["As a nitrogen buffer tank manufacturer and supplier, we provide tanks for various industrial applications, including:"],
+        bullets: ["PSA nitrogen plants", "Nitrogen gas generation systems", "Nitrogen purging systems", "Nitrogen blanketing systems", "Inert gas applications", "Chemical process plants", "Pharmaceutical industries", "Food and beverage processing units", "Packaging industries", "Laser cutting systems", "Heat treatment plants", "Oil and gas process lines", "Industrial gas distribution systems", "Manufacturing plants requiring continuous nitrogen supply"],
       },
       {
         title: "Materials of Construction",
-        bullets: [
-          "Carbon steel or stainless steel selected as per gas purity, environment, and corrosion conditions.",
-        ],
+        body: ["We manufacture nitrogen buffer tanks using suitable materials based on gas purity, operating pressure, temperature, corrosion condition, site environment and project specification.", "Common MOC options include:"],
+        bullets: ["Mild Steel", "Carbon Steel", "Stainless Steel", "Alloy Steel as per requirement", "Internally coated tanks as required", "Externally painted or coated tanks as per site condition"],
       },
       {
-        title: "Fabrication & Quality Controls",
-        bullets: [
-          "Controlled welding and full traceability aligned with NESF QA/QC systems.",
-          "Pressure testing and leakage checks as applicable.",
-          "Documentation pack for audits and maintenance.",
-        ],
+        title: "Technical Specifications of Nitrogen Buffer Tank",
+        body: ["National Engineers & Steel Fabricators manufactures nitrogen buffer tanks as per client drawings, P&ID, gas data and industrial application requirements. Specifications can be customized based on storage capacity, pressure condition, site layout and system requirement."],
+        table: {
+          columns: ["Specification", "Details"],
+          rows: [["Product Type", "Nitrogen Buffer Tank"], ["Application", "PSA nitrogen plant, nitrogen gas buffering and pressure stabilization"], ["Tank Orientation", "Vertical or horizontal as per site requirement"], ["Material of Construction", "Mild Steel, Carbon Steel, Stainless Steel or as per requirement"], ["Gas Type", "Nitrogen / N2"], ["Capacity", "As per client requirement"], ["Design Pressure", "As per process and safety requirement"], ["Operating Pressure", "As per nitrogen system requirement"], ["Operating Temperature", "As per project specification"], ["Nozzle Connection", "As per P&ID or client drawing"], ["Safety Accessories", "PSV, PRV, pressure gauge, rupture disc if required"], ["Support Type", "Leg support, saddle support or skid-mounted arrangement"], ["Surface Finish", "Painted, coated or finished as per environment"], ["Testing", "Leak testing / pressure testing as per requirement"], ["Documentation", "As agreed for inspection, audit and maintenance"], ["Customization", "Available as per drawing, gas data, MOC and site layout"]],
+        },
       },
       {
-        title: "Scope of Supply",
-        bullets: [
-          "Tank with supports, standard fittings, and paint or coating system.",
-          "Testing, marking, and documentation as agreed.",
-          "Optional skid-mounted valve station and accessories.",
-        ],
+        title: "Custom Nitrogen Buffer Tank Manufacturing",
+        body: ["Every nitrogen system has different pressure, storage and process requirements. That is why our nitrogen buffer tanks are manufactured as per client-specific technical details instead of a standard fixed design.", "Customization options include:"],
+        bullets: ["Storage capacity as per requirement", "Vertical or horizontal tank design", "Shell and dish-end thickness selection", "Nozzle orientation as per P&ID", "PSV, PRV and pressure gauge provision", "Rupture disc provision if required", "Inlet and outlet connection arrangement", "Drain, vent and inspection opening", "Lifting lug and earthing lug arrangement", "Skid-mounted valve station option", "Paint, coating or lining system", "Testing and documentation as per project scope"],
       },
       {
-        title: "Quotation Inputs",
-        bullets: [
-          "Gas type and purity.",
-          "Design and operating pressure / temperature.",
-          "Required storage capacity in Nm3 and duty cycle.",
-          "Accessories, instrumentation, line requirements, and site conditions.",
-        ],
+        title: "Fabrication and Quality Control",
+        body: ["At National Engineers & Steel Fabricators, every nitrogen buffer tank is fabricated with proper attention to material selection, fit-up, welding quality, dimensional accuracy, nozzle alignment and inspection requirements. Our fabrication process focuses on safety, durability and reliable performance in industrial nitrogen systems.", "Quality checks may include:"],
+        bullets: ["Material verification", "Fit-up inspection", "Welding quality checks", "Dimensional inspection", "Nozzle orientation checking", "Pressure testing as applicable", "Leakage checks as required", "Final painting and finishing inspection", "Documentation support as agreed"],
+      },
+      {
+        title: "Why Choose National Engineers for Nitrogen Buffer Tanks?",
+        body: ["National Engineers & Steel Fabricators is a trusted pressure vessel manufacturer in Surat, Gujarat, offering custom nitrogen buffer tanks, storage tanks, process vessels and industrial fabrication solutions for different plant requirements.", "Reasons to work with us:"],
+        bullets: ["Experienced nitrogen buffer tank manufacturer in India", "Reliable nitrogen buffer tank supplier in Surat, Gujarat", "Custom fabrication as per drawing, P&ID and gas data", "Manufacturing support for PSA nitrogen plants", "MS, CS and SS pressure vessel fabrication capability", "Proper nozzle, support and safety accessory planning", "Fabrication for chemical, pharma, food, packaging and process industries", "Testing and documentation support as agreed", "Industrial-grade fabrication for long service life", "Custom pressure vessel manufacturing as per project requirement"],
+      },
+      {
+        title: "Details Required for Quotation",
+        body: ["To provide the right quotation for a nitrogen buffer tank, please share the following details:"],
+        bullets: ["Gas type and purity", "Required storage capacity", "Design pressure", "Operating pressure", "Operating temperature", "Material of construction", "Tank orientation requirement", "P&ID or technical drawing", "Nozzle details", "Safety accessory requirement", "Site condition and installation layout", "Testing and documentation requirement"],
       },
     ],
-    note:
-      "Share your P&ID or specification to get a compliant nitrogen buffer tank.",
+    note: "Share your gas data, storage capacity, design pressure, P&ID, MOC, site condition and testing requirement with National Engineers & Steel Fabricators. Our team will review your requirement and provide a suitable nitrogen buffer tank fabrication solution for your application.",
     enquiry: {
-      title: "Request a quote for a Nitrogen Buffer Tank",
-      subtitle:
-        "Share your P&ID, gas data, storage capacity, and site requirements for a compliant solution.",
-      productName: "Nitrogen Buffer / Gas Storage Tank",
+      title: "Get a Quote for Nitrogen Buffer Tank",
+      subtitle: "Looking for a nitrogen buffer tank manufacturer and supplier in India for your PSA nitrogen plant or industrial nitrogen system?",
+      productName: "Nitrogen Buffer Tank",
       buttonText: "Request Quote",
     },
+    faqs: [
+      { question: "What is a nitrogen buffer tank?", answer: "A nitrogen buffer tank is a pressure vessel used to store nitrogen temporarily and maintain stable gas supply in industrial nitrogen systems. It is commonly used with PSA nitrogen plants, cylinder bank systems and process gas lines." },
+      { question: "What is the use of a nitrogen buffer tank in a PSA nitrogen plant?", answer: "In a PSA nitrogen plant, a nitrogen buffer tank helps balance pressure, manage demand fluctuation and maintain continuous nitrogen supply between the nitrogen generator and the process line." },
+      { question: "Who is a nitrogen buffer tank manufacturer in Surat?", answer: "National Engineers & Steel Fabricators is a nitrogen buffer tank manufacturer in Surat, Gujarat, offering custom nitrogen buffer tanks for PSA nitrogen plants, industrial nitrogen systems and pressure stabilization applications." },
+      { question: "Do you supply nitrogen buffer tanks in India?", answer: "Yes, National Engineers & Steel Fabricators is a nitrogen buffer tank manufacturer and supplier in India. We manufacture tanks as per client drawings, gas data, storage capacity, pressure requirement and site conditions." },
+      { question: "Which materials are used for nitrogen buffer tanks?", answer: "Nitrogen buffer tanks can be manufactured in mild steel, carbon steel, stainless steel or alloy steel as per pressure condition, gas purity, site environment and client specification." },
+      { question: "Can nitrogen buffer tanks be customized?", answer: "Yes, nitrogen buffer tanks can be customized as per capacity, pressure, orientation, nozzle arrangement, MOC, safety accessories, skid mounting and testing requirements." },
+      { question: "What safety accessories are provided with nitrogen buffer tanks?", answer: "Safety accessories may include PSV, PRV, pressure gauge, rupture disc, earthing lug, lifting lugs, nameplate, inspection openings and other fittings as per project requirement." },
+      { question: "Are nitrogen buffer tanks available in vertical and horizontal designs?", answer: "Yes, nitrogen buffer tanks can be manufactured in vertical or horizontal configuration based on site layout, installation space, capacity and process requirement." },
+      { question: "What details are required to get a quotation for a nitrogen buffer tank?", answer: "To get a quotation, you can share gas type, gas purity, storage capacity, design pressure, operating pressure, temperature, MOC, P&ID, nozzle details and testing requirements." },
+      { question: "Is a nitrogen buffer tank different from a gas storage tank?", answer: "Yes, a nitrogen buffer tank is mainly used for nitrogen pressure balancing and temporary storage in nitrogen systems, while a gas storage tank is a broader term used for storing different types of industrial gases." },
+    ],
     seo: {
-      title: "Nitrogen Buffer & Gas Storage Tanks | National Engineers",
-      description:
-        "NESF fabricates nitrogen buffer and gas storage tanks for stable gas availability, demand fluctuation control, and uninterrupted plant operations.",
-      keywords: [
-        "nitrogen buffer tank manufacturer",
-        "gas storage tank manufacturer",
-        "nitrogen storage tank fabrication",
-        "industrial gas buffer vessel",
-        "pressure vessel fabrication india",
-      ],
+      title: "Nitrogen Buffer Tank Manufacturer & Supplier in India | NESF",
+      description: "Nitrogen buffer tank manufacturer and supplier in Surat, India, offering custom PSA nitrogen buffer tanks and pressure vessels.",
+    },
+  },
+  "gas-storage-tank-manufacturer": {
+    title: "Gas Storage Tank Manufacturer and Supplier in India",
+    headline: "Gas Storage Tank Manufacturer in Surat",
+    description: "National Engineers & Steel Fabricators is a trusted gas storage tank manufacturer and supplier in India, offering custom-built gas storage tanks for industrial gas systems, process plants, utility lines, PSA systems, cylinder bank systems and vaporizer outlet applications.",
+    pagePath: "/products/gas-storage-tank-manufacturer",
+    image: "/product/6.jpg",
+    imageAlt: "Gas storage tank manufactured by National Engineers",
+    imagePosition: "center",
+    quickFacts: [
+      { label: "Product Type", value: "Gas Storage Tank / Gas Pressure Vessel" },
+      { label: "Orientation", value: "Vertical or horizontal" },
+      { label: "Materials", value: "Mild Steel, Carbon Steel or Stainless Steel" },
+      { label: "Customization", value: "As per drawing, gas data, MOC and site layout" },
+    ],
+    overview: [
+      "As an experienced gas storage tank manufacturer in Surat, Gujarat, we manufacture industrial gas storage tanks as per client drawings, P&ID, gas data, storage capacity, pressure requirements, nozzle orientation, material of construction and site conditions. Our gas storage tanks are designed to support safe gas storage, stable pressure, demand fluctuation control and uninterrupted plant operations.",
+      "National Engineers & Steel Fabricators manufactures gas storage tanks for industries that require safe and reliable storage of industrial gases for plant operations. These tanks are used where gas availability, line stability and pressure control are important for continuous production and process performance.",
+      "We are a reliable gas storage tank supplier in Surat, Gujarat, providing customized fabrication solutions for chemical plants, process industries, manufacturing units, utility systems, pharma, food processing, engineering and industrial gas applications. Each tank is fabricated with proper welding quality, support arrangement, nozzle layout, safety accessory planning, testing and documentation as per project requirement.",
+    ],
+    sections: [
+      {
+        title: "Industrial Gas Storage Tanks for Plant Operations",
+        body: ["Industrial gas storage tanks are used to store and manage gases required in different plant processes. These tanks act as storage vessels between the gas source and the process line, helping maintain gas availability during demand changes, line pressure variation and operational load fluctuation.", "National Engineers manufactures industrial gas storage tanks for applications where gases are used for purging, blanketing, inerting, pressure balancing, utility supply, gas distribution and process support. The tank design can be customized based on gas type, pressure, capacity, purity, site layout and process requirement."],
+      },
+      {
+        title: "Gas Storage Tank as a Pressure Vessel",
+        body: ["A gas storage tank is a type of pressure vessel designed to store gas under specified pressure conditions. Because gas storage involves pressure holding, safety accessories, design pressure, testing and material selection are important parts of the manufacturing process.", "As a pressure vessel manufacturer in Surat, National Engineers & Steel Fabricators manufactures gas storage vessels with attention to safety, durability, dimensional accuracy and industrial performance. Our tanks can be supplied with required fittings, supports, inspection openings and safety accessories based on the project scope."],
+      },
+      {
+        title: "Key Features of Our Gas Storage Tanks",
+        bullets: ["Custom-built gas storage tanks as per project requirement", "Suitable for industrial gas storage and process gas applications", "Designed for pressure stability and demand fluctuation control", "Mild steel, carbon steel and stainless steel construction options", "Nozzle orientation as per P&ID or client drawing", "Vertical or horizontal configuration as per site layout", "PSV, PRV, pressure gauge and rupture disc options", "Lifting lugs, earthing lug, nameplate and inspection openings", "Skid-mounted gas storage vessel option with valve station", "Surface coating, painting or lining as per environment", "Leak testing and pressure testing as per requirement", "Documentation support as agreed for inspection and maintenance"],
+      },
+      {
+        title: "Applications of Gas Storage Tanks",
+        body: ["As a gas storage tank manufacturer and supplier, we provide tanks for different industrial applications, including:"],
+        bullets: ["Industrial gas storage", "Process gas storage", "Gas buffering systems", "Gas distribution lines", "Purging applications", "Blanketing applications", "Inert gas applications", "Pressure stabilization systems", "Cylinder bank outlet systems", "PSA system integration", "Vaporizer outlet systems", "Chemical process plants", "Pharmaceutical industries", "Food and beverage processing units", "Packaging industries", "Manufacturing plants", "Utility and process gas systems"],
+      },
+      {
+        title: "Types of Gas Storage Tanks We Manufacture",
+        body: ["National Engineers & Steel Fabricators manufactures gas storage tanks based on application, gas type, pressure condition and installation layout.", "Common types include:"],
+        bullets: ["Industrial gas storage tanks", "Nitrogen gas storage tanks", "N2 gas storage tanks", "Gas buffer tanks", "Vertical gas storage tanks", "Horizontal gas storage tanks", "Gas pressure vessels", "Custom gas storage vessels", "Skid-mounted gas storage tanks", "Gas storage tanks with valve station"],
+      },
+      {
+        title: "Materials of Construction",
+        body: ["We manufacture gas storage tanks using suitable material based on gas type, gas purity, pressure, temperature, corrosion condition, site environment and project specification.", "Common MOC options include:"],
+        bullets: ["Mild Steel", "Carbon Steel", "Stainless Steel", "Alloy Steel as per requirement", "Internally coated tanks as required", "Externally painted or coated tanks as per site condition"],
+      },
+      {
+        title: "Technical Specifications of Gas Storage Tank",
+        body: ["National Engineers & Steel Fabricators manufactures gas storage tanks as per client drawings, P&ID, gas data, pressure condition and industrial application requirements. Specifications can be customized based on storage capacity, gas type, site layout and process requirement."],
+        table: {
+          columns: ["Specification", "Details"],
+          rows: [["Product Type", "Gas Storage Tank / Gas Pressure Vessel"], ["Application", "Industrial gas storage, buffering and pressure stabilization"], ["Tank Orientation", "Vertical or horizontal as per site requirement"], ["Material of Construction", "Mild Steel, Carbon Steel, Stainless Steel or as per requirement"], ["Gas Type", "Nitrogen, inert gas or other industrial gas as per requirement"], ["Capacity", "As per client requirement"], ["Design Pressure", "As per process and safety requirement"], ["Operating Pressure", "As per gas system requirement"], ["Operating Temperature", "As per project specification"], ["Nozzle Connection", "As per P&ID or client drawing"], ["Safety Accessories", "PSV, PRV, pressure gauge, rupture disc if required"], ["Support Type", "Leg support, saddle support or skid-mounted arrangement"], ["Surface Finish", "Painted, coated or finished as per environment"], ["Testing", "Leak testing / pressure testing as per requirement"], ["Documentation", "As agreed for inspection, audit and maintenance"], ["Customization", "Available as per drawing, gas data, MOC and site layout"]],
+        },
+      },
+      {
+        title: "Custom Gas Storage Tank Manufacturing",
+        body: ["Every industrial gas system has different storage, pressure and installation requirements. That is why our gas storage tanks are manufactured as per client-specific drawings and technical inputs instead of a fixed standard design.", "Customization options include:"],
+        bullets: ["Storage capacity as per requirement", "Vertical or horizontal tank design", "Shell and dish-end thickness selection", "Nozzle orientation as per P&ID", "PSV, PRV and pressure gauge provision", "Rupture disc provision if required", "Inlet and outlet connection arrangement", "Drain, vent and inspection opening", "Lifting lug and earthing lug arrangement", "Skid-mounted valve station option", "Paint, coating or lining system", "Testing and documentation as per project scope"],
+      },
+      {
+        title: "Fabrication and Quality Control",
+        body: ["At National Engineers & Steel Fabricators, every gas storage tank is fabricated with proper attention to material selection, fit-up, welding quality, dimensional accuracy, nozzle alignment and inspection requirements. Our fabrication process focuses on safety, durability and reliable performance in industrial gas systems.", "Quality checks may include:"],
+        bullets: ["Material verification", "Fit-up inspection", "Welding quality checks", "Dimensional inspection", "Nozzle orientation checking", "Pressure testing as applicable", "Leakage checks as required", "Final painting and finishing inspection", "Documentation support as agreed"],
+      },
+      {
+        title: "Why Choose National Engineers for Gas Storage Tanks?",
+        body: ["National Engineers & Steel Fabricators is a trusted gas storage tank manufacturer in India and pressure vessel manufacturer in Surat, Gujarat, offering custom fabrication solutions for industrial gas storage tanks, pressure vessels, process vessels, storage tanks and heavy fabrication products.", "Reasons to work with us:"],
+        bullets: ["Experienced gas storage tank manufacturer in India", "Reliable gas storage tank supplier in Surat, Gujarat", "Custom fabrication as per drawing, P&ID and gas data", "Industrial pressure vessel fabrication capability", "MS, CS and SS gas storage tank manufacturing", "Proper nozzle, support and safety accessory planning", "Fabrication for chemical, pharma, food, packaging and process industries", "Testing and documentation support as agreed", "Industrial-grade fabrication for long service life", "Custom pressure vessel manufacturing as per project requirement"],
+      },
+      {
+        title: "Details Required for Quotation",
+        body: ["To provide the right quotation for a gas storage tank, please share the following details:"],
+        bullets: ["Gas type and purity", "Required storage capacity", "Design pressure", "Operating pressure", "Operating temperature", "Material of construction", "Tank orientation requirement", "P&ID or technical drawing", "Nozzle details", "Safety accessory requirement", "Site condition and installation layout", "Testing and documentation requirement"],
+      },
+    ],
+    note: "Share your gas data, storage capacity, design pressure, P&ID, MOC, site condition and testing requirement with National Engineers & Steel Fabricators. Our team will review your requirement and provide a suitable gas storage tank fabrication solution for your application.",
+    enquiry: {
+      title: "Get a Quote for Gas Storage Tank",
+      subtitle: "Looking for a gas storage tank manufacturer and supplier in India for your industrial gas system or process plant?",
+      productName: "Gas Storage Tank",
+      buttonText: "Request Quote",
+    },
+    faqs: [
+      { question: "What is a gas storage tank?", answer: "A gas storage tank is a pressure vessel used to store industrial gases under specified pressure conditions. It helps maintain gas availability, pressure stability and continuous supply for plant operations." },
+      { question: "Who is a gas storage tank manufacturer in Surat?", answer: "National Engineers & Steel Fabricators is a gas storage tank manufacturer in Surat, Gujarat, offering custom industrial gas storage tanks and gas pressure vessels as per client drawings, gas data and site requirements." },
+      { question: "Do you supply gas storage tanks in India?", answer: "Yes, National Engineers & Steel Fabricators is a gas storage tank manufacturer and supplier in India. We manufacture custom gas storage tanks for industrial gas systems, process plants and utility applications." },
+      { question: "Is a gas storage tank a pressure vessel?", answer: "Yes, a gas storage tank is a type of pressure vessel because it stores gas under pressure. Its design, material, fittings, testing and safety accessories are selected according to pressure and application requirements." },
+      { question: "Which materials are used for gas storage tanks?", answer: "Gas storage tanks can be manufactured in mild steel, carbon steel, stainless steel or alloy steel depending on gas type, gas purity, pressure, temperature, corrosion condition and project specification." },
+      { question: "Can gas storage tanks be customized?", answer: "Yes, gas storage tanks can be customized as per capacity, pressure, MOC, vertical or horizontal layout, nozzle orientation, safety accessories, coating, support arrangement and testing requirements." },
+      { question: "What safety accessories are used in gas storage tanks?", answer: "Safety accessories may include PSV, PRV, pressure gauge, rupture disc, earthing lug, lifting lugs, nameplate, inspection openings and other fittings as per project requirement." },
+      { question: "What is the difference between a gas storage tank and a nitrogen buffer tank?", answer: "A gas storage tank is a broader vessel used for storing industrial gases, while a nitrogen buffer tank is specifically used for nitrogen gas buffering, pressure balancing and continuous nitrogen supply." },
+      { question: "What details are required to get a quotation for a gas storage tank?", answer: "To get a quotation, you can share gas type, purity, storage capacity, design pressure, operating pressure, temperature, MOC, P&ID, nozzle details and testing requirements." },
+      { question: "How is gas storage tank price calculated?", answer: "Gas storage tank price depends on capacity, material of construction, pressure rating, thickness, accessories, coating, testing, documentation and customization requirements." },
+    ],
+    seo: {
+      title: "Gas Storage Tank Manufacturer & Supplier in India | NESF",
+      description: "Gas storage tank manufacturer and supplier in Surat, India, offering custom industrial gas tanks and pressure vessels for plant operations.",
+      keywords: ["Gas Storage Tank Manufacturer", "gas storage tank supplier", "gas storage tank manufacturer in India", "gas storage tank manufacturer in Surat", "industrial gas storage tank", "custom gas storage tank", "gas pressure vessel manufacturer", "industrial pressure vessel manufacturer", "pressure vessel manufacturer in India", "pressure vessel manufacturer in Surat", "gas storage vessel", "gas storage tank fabrication", "nitrogen gas storage tank", "N2 gas storage tank"],
     },
   },
   "horizontal-storage-tanks": {

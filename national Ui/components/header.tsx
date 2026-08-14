@@ -35,8 +35,12 @@ const NAV_ITEMS: NavItem[] = [
         children: [
           { label: "Air Receiver Vessels", href: "/products/air-receiver-vessels-manufacturer" },
           {
-            label: "Nitrogen Buffer / Gas Storage Tanks",
-            href: "/products/nitrogen-buffer-gas-storage-tanks",
+            label: "Nitrogen Buffer Tank",
+            href: "/products/nitrogen-buffer-tank-manufacturer",
+          },
+          {
+            label: "Gas Storage Tank",
+            href: "/products/gas-storage-tank-manufacturer",
           },
           {
             label: "Horizontal Storage Tanks",
@@ -72,8 +76,12 @@ const NAV_ITEMS: NavItem[] = [
             href: "/products/condensers-water-condensers",
           },
           {
-            label: "Heat Exchanger Shells / Columns",
-            href: "/products/heat-exchanger-shells-columns",
+            label: "Heat Exchanger Shell",
+            href: "/products/heat-exchanger-shell-manufacturer",
+          },
+          {
+            label: "Process Column",
+            href: "/products/process-column-manufacturer",
           },
           {
             label: "Process Skids & Packages",
@@ -150,7 +158,9 @@ const NAV_ITEMS: NavItem[] = [
         children: [
           { label: "AHU Ducts (GI / SS)", href: "/products/ahu-ducts-gi-ss" },
           { label: "Industrial Ducting Systems", href: "/products/industrial-ducting-systems" },
-          { label: "Transitions / Reducers / Elbows", href: "/products/transitions-reducers-elbows" },
+          { label: "Duct Transition", href: "/products/duct-transition-manufacturer" },
+          { label: "Duct Reducer", href: "/products/duct-reducer-manufacturer" },
+          { label: "Duct Elbow", href: "/products/duct-elbow-manufacturer" },
           { label: "Insulated Duct Casing", href: "/products/insulated-duct-casing" },
         ],
       },

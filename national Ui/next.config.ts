@@ -13,6 +13,21 @@ const nextConfig: NextConfig = {
         destination: "/products/air-receiver-vessels-manufacturer",
         permanent: true,
       },
+      {
+        source: "/products/nitrogen-buffer-gas-storage-tanks",
+        destination: "/products/nitrogen-buffer-tank-manufacturer",
+        permanent: true,
+      },
+      {
+        source: "/products/heat-exchanger-shells-columns",
+        destination: "/products/heat-exchanger-shell-manufacturer",
+        permanent: true,
+      },
+      {
+        source: "/products/transitions-reducers-elbows",
+        destination: "/products/duct-transition-manufacturer",
+        permanent: true,
+      },
     ];
   },
   async headers() {
