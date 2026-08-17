@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -5,12 +6,13 @@ import type { Metadata } from "next";
 import EasyAccordionEnhancer from "@/components/EasyAccordionEnhancer";
 import EasyTocEnhancer from "@/components/EasyTocEnhancer";
 import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/seo";
+import { WORDPRESS_URL } from "@/lib/wordpress";
 
 export const revalidate = 0;
 
 export async function generateStaticParams() {
   const res = await fetch(
-    `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?per_page=100&_fields=slug`,
+    `${WORDPRESS_URL}/wp-json/wp/v2/posts?per_page=100&_fields=slug`,
     { cache: "no-store" }
   );
   if (!res.ok) return [];
@@ -34,7 +36,7 @@ function estimateReadingTime(html = "") {
 
 async function getPost(slug: string) {
   const res = await fetch(
-    `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?slug=${encodeURIComponent(
+    `${WORDPRESS_URL}/wp-json/wp/v2/posts?slug=${encodeURIComponent(
       slug
     )}&_embed`,
     { cache: "no-store" }
@@ -46,7 +48,7 @@ async function getPost(slug: string) {
 
 async function getCategories() {
   const res = await fetch(
-    `${process.env.WORDPRESS_URL}/wp-json/wp/v2/categories?per_page=50&hide_empty=true&orderby=count&order=desc`,
+    `${WORDPRESS_URL}/wp-json/wp/v2/categories?per_page=50&hide_empty=true&orderby=count&order=desc`,
     { next: { revalidate: 3600 } }
   );
   if (!res.ok) return [];

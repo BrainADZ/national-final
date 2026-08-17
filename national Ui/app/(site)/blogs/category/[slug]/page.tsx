@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/seo";
+import { WORDPRESS_URL } from "@/lib/wordpress";
 
 export const revalidate = 0;
 
 export async function generateStaticParams() {
   const res = await fetch(
-    `${process.env.WORDPRESS_URL}/wp-json/wp/v2/categories?per_page=100&hide_empty=true&_fields=slug`,
+    `${WORDPRESS_URL}/wp-json/wp/v2/categories?per_page=100&hide_empty=true&_fields=slug`,
     { cache: "no-store" }
   );
   if (!res.ok) return [];
@@ -27,7 +28,7 @@ function stripHtml(html = "") {
 
 async function getCategoryBySlug(slug: string) {
   const res = await fetch(
-    `${process.env.WORDPRESS_URL}/wp-json/wp/v2/categories?slug=${encodeURIComponent(
+    `${WORDPRESS_URL}/wp-json/wp/v2/categories?slug=${encodeURIComponent(
       slug
     )}`,
     { cache: "no-store" }
@@ -39,7 +40,7 @@ async function getCategoryBySlug(slug: string) {
 
 async function getPostsByCategoryId(catId: number) {
   const res = await fetch(
-    `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?categories=${catId}&per_page=12&_embed=wp:featuredmedia&_fields=id,slug,date,title,excerpt,_links,_embedded`,
+    `${WORDPRESS_URL}/wp-json/wp/v2/posts?categories=${catId}&per_page=12&_embed=wp:featuredmedia&_fields=id,slug,date,title,excerpt,_links,_embedded`,
     { next: { revalidate: 3600 } }
   );
   if (!res.ok) return [];

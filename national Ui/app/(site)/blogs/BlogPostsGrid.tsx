@@ -86,7 +86,7 @@ export default function BlogPostsGrid({ posts }: { posts: BlogCardPost[] }) {
                     aria-label="Author: Deepak Awasthi"
                   >
                     <img
-                      src="/deepak.png"
+                      src="/deepak.webp"
                       alt="Deepak Awasthi"
                       className="h-9 w-9 rounded-full object-cover"
                       loading="lazy"

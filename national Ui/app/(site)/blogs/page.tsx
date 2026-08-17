@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { WORDPRESS_URL } from "@/lib/wordpress";
 import BlogPostsGrid from "./BlogPostsGrid";
 
 // Published WordPress posts must be visible immediately.
@@ -16,7 +17,7 @@ type BlogCardPost = {
 
 async function getPosts() {
   const res = await fetch(
-    `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?per_page=100&_embed=wp:featuredmedia&_fields=id,slug,date,title,excerpt,_links,_embedded`,
+    `${WORDPRESS_URL}/wp-json/wp/v2/posts?per_page=100&_embed=wp:featuredmedia&_fields=id,slug,date,title,excerpt,_links,_embedded`,
     { cache: "no-store" }
   );
 
