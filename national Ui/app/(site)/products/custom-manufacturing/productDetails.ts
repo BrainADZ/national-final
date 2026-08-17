@@ -19,7 +19,7 @@ export const customManufacturingNav = [
   },
   {
     label: "Repair / Modification Jobs",
-    href: "/products/repair-modification-jobs",
+    href: "/products/industrial-repair-modification-jobs",
   },
 ];
 
@@ -287,12 +287,12 @@ export const productDetails = {
       ],
     },
   },
-  "repair-modification-jobs": {
+  "industrial-repair-modification-jobs": {
     title: "Industrial Repair and Modification Jobs in India",
     headline: "Repair and Modification Jobs in Surat",
     description:
       "National Engineers & Steel Fabricators provides industrial repair and modification jobs in India for fabricated equipment, heavy welded assemblies, ducting systems, structural components, supports, brackets, replacement parts, retrofit sections and plant equipment that require repair, reinforcement, modification or shutdown support.",
-    pagePath: "/products/repair-modification-jobs",
+    pagePath: "/products/industrial-repair-modification-jobs",
     image: "/gallery/Work in progress (38).jpg",
     imageAlt: "Industrial repair and modification fabrication work by National Engineers",
     imagePosition: "center",

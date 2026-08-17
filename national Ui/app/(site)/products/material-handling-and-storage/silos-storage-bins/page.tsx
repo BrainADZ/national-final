@@ -1,7 +1,7 @@
 import ProductDetailLayout from "../../_components/ProductDetailLayout";
 import { CATEGORY_NAME, buildProductMetadata, materialHandlingNav, productDetails } from "../productDetails";
 
-const product = productDetails["silos-storage-bins"];
+const product = productDetails["silo-storage-bin-manufacturer"];
 export const metadata = buildProductMetadata(product);
 
 export default function SilosStorageBinsPage() {

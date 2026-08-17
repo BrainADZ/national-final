@@ -7,11 +7,11 @@ export const CATEGORY_NAME = "HVAC & Industrial Ducting";
 export const hvacDuctingNav = [
   {
     label: "AHU Ducts (GI / SS)",
-    href: "/products/ahu-ducts-gi-ss",
+    href: "/products/ahu-duct-manufacturer",
   },
   {
     label: "Industrial Ducting Systems",
-    href: "/products/industrial-ducting-systems",
+    href: "/products/industrial-ducting-system-manufacturer",
   },
   {
     label: "Duct Transition",
@@ -27,17 +27,17 @@ export const hvacDuctingNav = [
   },
   {
     label: "Insulated Duct Casing",
-    href: "/products/insulated-duct-casing",
+    href: "/products/insulated-duct-casing-manufacturer",
   },
 ];
 
 export const productDetails = {
-  "ahu-ducts-gi-ss": {
+  "ahu-duct-manufacturer": {
     title: "AHU Duct Manufacturer and Supplier in India",
     headline: "AHU Duct Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted AHU duct manufacturer and supplier in India, offering custom GI and SS AHU ducting for air handling units, HVAC systems, supply air lines, return air lines, fresh air lines, plant HVAC rooms, clean areas, utility buildings and industrial air distribution systems.",
-    pagePath: "/products/ahu-ducts-gi-ss",
+    pagePath: "/products/ahu-duct-manufacturer",
     image: "/product/13.jpg",
     imageAlt: "GI and stainless steel AHU ducts fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -156,12 +156,12 @@ export const productDetails = {
       ],
     },
   },
-  "industrial-ducting-systems": {
+  "industrial-ducting-system-manufacturer": {
     title: "Industrial Ducting System Manufacturer in India",
     headline: "Industrial Ducting System Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted industrial ducting system manufacturer in India, offering custom industrial ducting for ventilation, exhaust, dust extraction, fume extraction, process-air handling, utility-air routing and equipment interconnection across complex plant layouts.",
-    pagePath: "/products/industrial-ducting-systems",
+    pagePath: "/products/industrial-ducting-system-manufacturer",
     image: "/product/13.jpg",
     imageAlt: "Industrial ducting system fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -426,12 +426,12 @@ export const productDetails = {
     ],
     seo: { title: "Duct Elbow Manufacturer in India | NESF", description: "Duct elbow manufacturer in Surat, India, offering custom radius, segmented, gored and vaned elbows for HVAC and ducting.", keywords: ["Duct Elbow Manufacturer","duct elbow manufacturer in India","duct elbow manufacturer in Surat","duct elbow supplier","custom duct elbow","industrial duct elbow","HVAC duct elbow","duct elbow fabrication","radius duct elbow","segmented duct elbow","gored duct elbow","vaned duct elbow","rectangular duct elbow","round duct elbow","45 degree duct elbow","90 degree duct elbow","custom angle duct elbow","fan duct elbow","AHU duct elbow","blower duct elbow","scrubber duct elbow","cyclone duct elbow","process air duct elbow","ventilation duct elbow","exhaust duct elbow","dust extraction duct elbow","fume extraction duct elbow","GI duct elbow","MS duct elbow","SS duct elbow","duct fabrication company in Surat","custom HVAC duct fabrication","industrial ducting fabrication"] },
   },
-  "insulated-duct-casing": {
+  "insulated-duct-casing-manufacturer": {
     title: "Insulated Duct Casing Manufacturer in India",
     headline: "Insulated Duct Casing Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted insulated duct casing manufacturer in India, offering custom insulated duct casings for HVAC systems, industrial ducting systems, supply air ducts, return air ducts, outdoor duct runs, hot exhaust ducting, cold air lines and process air ducting applications.",
-    pagePath: "/products/insulated-duct-casing",
+    pagePath: "/products/insulated-duct-casing-manufacturer",
     image: "/product/8.jpg",
     imageAlt: "Insulated industrial duct casing fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",

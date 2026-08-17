@@ -7,7 +7,7 @@ export const CATEGORY_NAME = "Process Equipment & Heat Transfer";
 export const processEquipmentNav = [
   {
     label: "Condensers & Water Condensers",
-    href: "/products/condensers-water-condensers",
+    href: "/products/condenser-manufacturer",
   },
   {
     label: "Heat Exchanger Shell",
@@ -19,26 +19,26 @@ export const processEquipmentNav = [
   },
   {
     label: "Process Skids & Packages",
-    href: "/products/process-skids-packages",
+    href: "/products/process-skid-manufacturer",
   },
   {
     label: "Special Purpose Process Vessels",
-    href: "/products/special-purpose-process-vessels",
+    href: "/products/special-purpose-process-vessel-manufacturer",
   },
   {
     label: "Chemical Process Equipment (Custom)",
-    href: "/products/custom-chemical-process-equipment",
+    href: "/products/custom-chemical-process-equipment-manufacturer",
   },
 ];
 
 export const productDetails = {
-  "condensers-water-condensers": {
+  "condenser-manufacturer": {
     title: "Condensers Manufacturer and Supplier in India",
     headline: "Condenser Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted condensers manufacturer and supplier in India, offering custom-built industrial condensers and water condensers for process cooling, heat transfer, vapor condensation, utility circuits and continuous-duty plant operations.",
     pagePath:
-      "/products/condensers-water-condensers",
+      "/products/condenser-manufacturer",
     image: "/product/25.png",
     imageAlt:
       "Industrial water condenser fabricated by National Engineers and Steel Fabricators",
@@ -336,13 +336,13 @@ export const productDetails = {
     ],
     seo: { title: "Process Column Manufacturer & Supplier in India | NESF", description: "Process column manufacturer in Surat, India, offering custom industrial columns, nozzles, manways, supports and heavy fabrication.", keywords: ["process column manufacturer", "process column supplier", "process column manufacturer in India", "process column manufacturer in Surat", "industrial process columns", "custom process columns", "process column fabrication", "column fabrication", "industrial column manufacturer", "process equipment manufacturer in India", "process equipment manufacturer in Surat", "heavy fabrication manufacturer", "heavy fabrication company in Surat", "MS process column", "CS process column", "SS process column", "custom process equipment fabrication", "pressure vessel fabrication", "ASME-ready fabrication", "NDT", "pressure testing", "leak testing"] },
   },
-  "process-skids-packages": {
+  "process-skid-manufacturer": {
     title: "Process Skid Manufacturer and Supplier in India",
     headline: "Process Skid Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted process skid manufacturer and supplier in India, offering custom process skids and skid-mounted process packages for chemical plants, water treatment systems, utility systems, filtration packages, dosing systems, process equipment and industrial plant applications.",
     pagePath:
-      "/products/process-skids-packages",
+      "/products/process-skid-manufacturer",
     image: "/product/22.jpeg",
     imageAlt:
       "Skid-mounted process package fabricated by National Engineers and Steel Fabricators",
@@ -540,13 +540,13 @@ export const productDetails = {
       ],
     },
   },
-  "special-purpose-process-vessels": {
+  "special-purpose-process-vessel-manufacturer": {
     title: "Special Purpose Process Vessel Manufacturer and Supplier in India",
     headline: "Special Purpose Process Vessel Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted special purpose process vessel manufacturer and supplier in India, offering custom fabricated process vessels for chemical plants, process industries, utility systems, water treatment plants, specialty manufacturing, pharma, food processing and industrial plant applications.",
     pagePath:
-      "/products/special-purpose-process-vessels",
+      "/products/special-purpose-process-vessel-manufacturer",
     image: "/product/24.jpeg",
     imageAlt:
       "Special purpose industrial process vessel fabricated by National Engineers and Steel Fabricators",
@@ -770,13 +770,13 @@ export const productDetails = {
       ],
     },
   },
-  "custom-chemical-process-equipment": {
+  "custom-chemical-process-equipment-manufacturer": {
     title: "Custom Chemical Process Equipment Manufacturer in India",
     headline: "Chemical Process Equipment Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted custom chemical process equipment manufacturer in India, offering custom fabricated process equipment for chemical plants, process industries, utility systems, specialty manufacturing, pharma, food processing, water treatment and industrial plant applications.",
     pagePath:
-      "/products/custom-chemical-process-equipment",
+      "/products/custom-chemical-process-equipment-manufacturer",
     image: "/product/Final_half_coil_vessel.jpeg",
     imageAlt:
       "Custom chemical process equipment fabricated by National Engineers and Steel Fabricators",

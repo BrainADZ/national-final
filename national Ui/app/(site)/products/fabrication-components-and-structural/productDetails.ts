@@ -7,19 +7,19 @@ export const CATEGORY_NAME = "Fabrication Components & Structural";
 export const fabricationStructuralNav = [
   {
     label: "Base Plates",
-    href: "/products/base-plates",
+    href: "/products/base-plate-manufacturer",
   },
   {
     label: "Pipe Saddles & Supports",
-    href: "/products/pipe-saddles-supports",
+    href: "/products/pipe-saddle-manufacturer",
   },
   {
     label: "Jack Stools / Temporary Supports",
-    href: "/products/jack-stools-temporary-supports",
+    href: "/products/jack-stool-manufacturer",
   },
   {
     label: "Liners (Hard Plate / Wear Plate)",
-    href: "/products/liners-hard-wear-plate",
+    href: "/products/wear-plate-liner-manufacturer",
   },
   {
     label: "Heavy Structural Fabrication (Custom)",
@@ -28,12 +28,12 @@ export const fabricationStructuralNav = [
 ];
 
 export const productDetails = {
-  "base-plates": {
+  "base-plate-manufacturer": {
     title: "Base Plate Manufacturer and Supplier in India",
     headline: "Base Plate Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted base plate manufacturer and supplier in India, offering custom steel base plates, sole plates, mounting plates, equipment base plates, skid base plates and structural base plates for industrial equipment, columns, skids, pipe racks, platforms and foundation interfaces.",
-    pagePath: "/products/base-plates",
+    pagePath: "/products/base-plate-manufacturer",
     image: "/product/18.jpg",
     imageAlt: "Industrial base plates fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -164,12 +164,12 @@ export const productDetails = {
       ],
     },
   },
-  "pipe-saddles-supports": {
+  "pipe-saddle-manufacturer": {
     title: "Pipe Saddle Manufacturer and Supplier in India",
     headline: "Pipe Saddle Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted pipe saddle manufacturer and supplier in India, offering custom pipe saddles, pipe support saddles, pipe shoes, guides, line stops, hold-down clamps, sliding supports and pipe support assemblies for industrial piping systems.",
-    pagePath: "/products/pipe-saddles-supports",
+    pagePath: "/products/pipe-saddle-manufacturer",
     image: "/product/17.jpg",
     imageAlt: "Industrial pipe saddles and supports fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -292,12 +292,12 @@ export const productDetails = {
       ],
     },
   },
-  "jack-stools-temporary-supports": {
+  "jack-stool-manufacturer": {
     title: "Jack Stool Manufacturer and Supplier in India",
     headline: "Jack Stool Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted jack stool manufacturer and supplier in India, offering custom jack stools, temporary supports, adjustable jack stools, fixed-height stools, saddle-top stools and temporary support frames for piping erection, spool alignment, equipment maintenance, hydrotesting and shutdown activities.",
-    pagePath: "/products/jack-stools-temporary-supports",
+    pagePath: "/products/jack-stool-manufacturer",
     image: "/product/19.jpeg",
     imageAlt: "Industrial jack stool temporary support fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -428,12 +428,12 @@ export const productDetails = {
       ],
     },
   },
-  "liners-hard-wear-plate": {
+  "wear-plate-liner-manufacturer": {
     title: "Wear Plate Liner Manufacturer in India",
     headline: "Wear Plate Liner Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted wear plate liner manufacturer in India, offering custom hard plate liners, wear plate liners, abrasion-resistant liners, bolt-on liner panels, weld-on liner panels, curved liners, segmented liners and wear protection components for chutes, hoppers, bins, ducts, cyclones, transfer points and abrasive process areas.",
-    pagePath: "/products/liners-hard-wear-plate",
+    pagePath: "/products/wear-plate-liner-manufacturer",
     image: "/product/21.jpeg",
     imageAlt: "Hard plate and wear plate liners fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",

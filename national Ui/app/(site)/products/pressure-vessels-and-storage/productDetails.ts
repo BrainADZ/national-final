@@ -72,27 +72,27 @@ export const pressureVesselNav = [
   },
   {
     label: "Horizontal Storage Tanks",
-    href: "/products/horizontal-storage-tanks",
+    href: "/products/horizontal-storage-tank-manufacturer",
   },
   {
     label: "Vertical Storage Tanks",
-    href: "/products/vertical-storage-tanks",
+    href: "/products/vertical-storage-tank-manufacturer",
   },
   {
     label: "Blowdown / Flash Tanks",
-    href: "/products/blowdown-flash-tanks",
+    href: "/products/blowdown-flash-tank-manufacturer",
   },
   {
     label: "Water Holding / Utility Vessels",
-    href: "/products/water-holding-utility-vessels",
+    href: "/products/water-holding-utility-vessel-manufacturer",
   },
   {
     label: "Filter Vessels (Activated Carbon / Softener)",
-    href: "/products/filter-vessels",
+    href: "/products/filter-vessel-manufacturer",
   },
   {
     label: "Custom Pressure Vessels (As per drawing/spec)",
-    href: "/products/custom-pressure-vessels",
+    href: "/products/custom-pressure-vessel-manufacturer",
   },
 ];
 
@@ -103,7 +103,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators manufactures industrial-grade air receiver vessels designed for compressed air systems across manufacturing plants, process industries, and infrastructure projects.",
     pagePath: "/products/air-receiver-vessels-manufacturer",
-    image: "/product/7.jpg",
+    image: "/product/7.webp",
     imageAlt: "Air receiver vessel fabricated by National Engineers",
     imagePosition: "center",
     quickFacts: [
@@ -352,22 +352,22 @@ export const productDetails = {
           },
           {
             label: "Custom Pressure Vessels (As per Drawing/Spec)",
-            href: "/products/custom-pressure-vessels",
+            href: "/products/custom-pressure-vessel-manufacturer",
             description: "Also Read",
           },
           {
             label: "Blowdown / Flash Tanks",
-            href: "/products/blowdown-flash-tanks",
+            href: "/products/blowdown-flash-tank-manufacturer",
             description: "Also Read",
           },
           {
             label: "Horizontal Storage Tanks",
-            href: "/products/horizontal-storage-tanks",
+            href: "/products/horizontal-storage-tank-manufacturer",
             description: "Also Read",
           },
           {
             label: "Vertical Storage Tanks",
-            href: "/products/vertical-storage-tanks",
+            href: "/products/vertical-storage-tank-manufacturer",
             description: "Also Read",
           },
         ],
@@ -671,12 +671,12 @@ export const productDetails = {
       keywords: ["Gas Storage Tank Manufacturer", "gas storage tank supplier", "gas storage tank manufacturer in India", "gas storage tank manufacturer in Surat", "industrial gas storage tank", "custom gas storage tank", "gas pressure vessel manufacturer", "industrial pressure vessel manufacturer", "pressure vessel manufacturer in India", "pressure vessel manufacturer in Surat", "gas storage vessel", "gas storage tank fabrication", "nitrogen gas storage tank", "N2 gas storage tank"],
     },
   },
-  "horizontal-storage-tanks": {
+  "horizontal-storage-tank-manufacturer": {
     title: "Horizontal Storage Tank Manufacturer and Supplier in India",
     headline: "Industrial Horizontal Storage Tank Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted horizontal storage tank manufacturer and supplier in India, offering custom-built storage tanks for industrial liquid storage, utility fluids, process liquids, chemicals, fuel and water storage applications.",
-    pagePath: "/products/horizontal-storage-tanks",
+    pagePath: "/products/horizontal-storage-tank-manufacturer",
     image: "/product/14.jpg",
     imageAlt: "Horizontal storage tank fabricated by National Engineers",
     imagePosition: "center",
@@ -861,12 +861,12 @@ export const productDetails = {
       ],
     },
   },
-  "vertical-storage-tanks": {
+  "vertical-storage-tank-manufacturer": {
     title: "Vertical Storage Tank Manufacturer and Supplier in India",
     headline: "Vertical Storage Tank Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted vertical storage tank manufacturer and supplier in India, offering custom-built vertical storage tanks for bulk liquid storage, utility storage, chemical storage, water storage, process liquid storage and industrial plant applications.",
-    pagePath: "/products/vertical-storage-tanks",
+    pagePath: "/products/vertical-storage-tank-manufacturer",
     image: "/product/2.jpg",
     imageAlt: "Vertical storage tank fabricated by National Engineers",
     imagePosition: "center",
@@ -1064,12 +1064,12 @@ export const productDetails = {
       ],
     },
   },
-  "blowdown-flash-tanks": {
+  "blowdown-flash-tank-manufacturer": {
     title: "Blowdown Flash Tank Manufacturer and Supplier in India",
     headline: "Blowdown Flash Tank Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted blowdown flash tank manufacturer and supplier in India, offering custom-built blowdown tanks and flash tanks for boiler blowdown handling, flash steam separation, condensate management and industrial steam systems.",
-    pagePath: "/products/blowdown-flash-tanks",
+    pagePath: "/products/blowdown-flash-tank-manufacturer",
     image: "/product/11.jpg",
     imageAlt: "Blowdown flash tank fabricated by National Engineers",
     imagePosition: "center",
@@ -1282,13 +1282,13 @@ export const productDetails = {
       ],
     },
   },
-  "water-holding-utility-vessels": {
+  "water-holding-utility-vessel-manufacturer": {
     title: "Water Holding Utility Vessel Manufacturer and Supplier in India",
     headline: "Water Holding Vessel Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted water holding utility vessel manufacturer and supplier in India, offering custom-built utility vessels for raw water, DM water, soft water, service water, cooling water, process water and industrial plant utility applications.",
     pagePath:
-      "/products/water-holding-utility-vessels",
+      "/products/water-holding-utility-vessel-manufacturer",
     image: "/product/9.jpg",
     imageAlt: "Water holding utility vessel fabricated by National Engineers",
     imagePosition: "center",
@@ -1506,12 +1506,12 @@ export const productDetails = {
       ],
     },
   },
-  "filter-vessels": {
+  "filter-vessel-manufacturer": {
     title: "Filter Vessel Manufacturer and Supplier in India",
     headline: "Filter Vessel Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted filter vessel manufacturer and supplier in India, offering custom-built filter vessels for activated carbon filtration, softener systems, media filtration, water treatment plants, process water systems and industrial utility applications.",
-    pagePath: "/products/filter-vessels",
+    pagePath: "/products/filter-vessel-manufacturer",
     image: "/product/12.jpg",
     imageAlt: "Filter vessel and softener tank fabricated by National Engineers",
     imagePosition: "center",
@@ -1721,12 +1721,12 @@ export const productDetails = {
       ],
     },
   },
-  "custom-pressure-vessels": {
+  "custom-pressure-vessel-manufacturer": {
     title: "Custom Pressure Vessel Manufacturer and Supplier in India",
     headline: "Custom Pressure Vessel Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted custom pressure vessel manufacturer and supplier in India, offering custom fabricated pressure vessels for chemical plants, process industries, oil and gas projects, utility systems, pharma, food processing, engineering and manufacturing applications.",
-    pagePath: "/products/custom-pressure-vessels",
+    pagePath: "/products/custom-pressure-vessel-manufacturer",
     image: "/product/23.jpeg",
     imageAlt: "Custom pressure vessel fabricated by National Engineers",
     imagePosition: "center",
