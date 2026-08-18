@@ -24,25 +24,25 @@ import {
 const PRODUCTS = [
   {
     title: "Dowtherm Boiler",
-    image: "/product/boiler.jpeg",
+    image: "/product/boiler.webp",
     description:
       "Thermal oil heating systems for stable, uniform process heating with precise temperature control and reliable continuous operation.",
   },
   {
     title: "Surge Tanks",
-    image: "/product/surgeTank.jpeg",
+    image: "/product/surgeTank.webp",
     description:
       "Surge tanks built to stabilize pressure and flow, reduce water hammer, protect pumps, and improve plant reliability.",
   },
   {
     title: "Silos & Storage Tanks",
-    image: "/product/soilTank.jpeg",
+    image: "/product/soilTank.webp",
     description:
       "Durable silos and storage tanks for liquids and bulk materials with custom access, venting, filling, and discharge connections.",
   },
   {
     title: "Immersion Coil / Jacketed Vessel",
-    image: "/product/Final_half_coil_vessel.jpeg",
+    image: "/product/Final_half_coil_vessel.webp",
     description:
       "Heating and cooling vessels designed for mixing, batching, holding, and process operations with controlled temperature performance.",
   },
@@ -442,7 +442,7 @@ export default function GoogleAdsLandingClient() {
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white">
         <div className="mx-auto flex max-w-425 flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <Link href="/industrial-fabrication" className="flex items-center gap-3">
-            <img src="/logo222.png" alt="National Engineers" className="h-12 w-auto" />
+          <img src="/logo222.webp" alt="National Engineers" className="h-12 w-auto" />
             <span className="sr-only">National Engineers & Steel Fabricators</span>
           </Link>
 
@@ -467,7 +467,7 @@ export default function GoogleAdsLandingClient() {
 
       <section className="relative isolate min-h-[calc(100vh-81px)] overflow-hidden bg-black">
         <img
-          src="/DSCN2685.jpg"
+              src="/DSCN2685.webp"
           alt="Industrial fabrication facility"
           className="absolute inset-0 h-full w-full object-cover opacity-55"
         />
@@ -546,7 +546,7 @@ export default function GoogleAdsLandingClient() {
         <div className="mx-auto grid max-w-425 gap-9 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="overflow-hidden rounded-lg border border-gray-200 bg-gray-100 shadow-sm">
             <img
-              src="/Pho 0042.jpg"
+              src="/Pho.webp"
               alt="National Engineers fabrication work"
               className="h-82 w-full object-cover sm:h-105"
             />
@@ -684,7 +684,7 @@ export default function GoogleAdsLandingClient() {
         <div className="mx-auto max-w-425">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <img src="/logo222.png" alt="National Engineers" className="h-12 w-auto" />
+          <img src="/logo222.webp" alt="National Engineers" className="h-12 w-auto" />
               <p className="mt-3 max-w-xl text-sm leading-6 text-gray-600">
                 National Engineers & Steel Fabricators - industrial fabrication, tanks, vessels, process equipment, and custom manufacturing support.
               </p>

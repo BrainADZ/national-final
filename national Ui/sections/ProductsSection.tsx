@@ -10,7 +10,7 @@ const PRODUCTS = [
   {
     title: "Dowtherm Boiler",
     image:
-      "/product/boiler.jpeg",
+    "/product/boiler.webp",
     tag: "Material Handling",
     description:
       "Electric and gas-fired thermal oil (Dowtherm) heating systems are designed for stable, uniform process heating without steam. They provide precise temperature control, efficient heat transfer, and reliable continuous operation, making them ideal when consistent high-temperature performance and clean, controlled heating are required.",
@@ -18,7 +18,7 @@ const PRODUCTS = [
   {
     title: "Surge Tanks",
     image:
-      "/product/surgeTank.jpeg",
+    "/product/surgeTank.webp",
     tag: "Agriculture",
     description:
       "Surge tanks help stabilize pressure and flow by absorbing sudden spikes and fluctuations in the system. They reduce water hammer and pump cycling, protecting pumps, valves, and piping while improving overall system reliability and smooth operation.",
@@ -26,7 +26,7 @@ const PRODUCTS = [
   {
     title: "Silos & Storage Tanks",
     image:
-      "/product/soilTank.jpeg",
+    "/product/soilTank.webp",
     tag: "Railways",
     description:
       "Silos and storage are tanks built for safe, long-term storage of liquids and bulk materials with controlled filling and discharge. Designed for durability and easy integration, they can be customized with access points, venting, and required connections to suit site and process needs.",
@@ -34,7 +34,7 @@ const PRODUCTS = [
   {
     title: "Immersion Coil / Jacketed Vessel",
     image:
-      "/product/Final_half_coil_vessel.jpeg",
+    "/product/Final_half_coil_vessel.webp",
     tag: "Power Backup",
     description:
       "Vessels with immersion coils or external jackets are designed for efficient heating or cooling during mixing, batching, holding, or process operations. They deliver more consistent product temperatures and can be tailored with the right connections and configurations to match your heating and cooling circuit.",

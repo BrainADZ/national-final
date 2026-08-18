@@ -12,7 +12,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "National Engineers is a Surat based industrial fabrication company offering heavy steel fabrication, custom process equipment and engineered manufacturing solutions.",
   path: "/about",
-  image: "/about hero.jpg",
+  image: "/about.webp",
   keywords: [
     "industrial fabrication company in surat",
     "engineering fabrication experts",
@@ -40,7 +40,7 @@ const aboutPageSchema = {
   },
   primaryImageOfPage: {
     "@type": "ImageObject",
-    url: "https://nationalengrs.com/logo222.png",
+    url: "https://nationalengrs.com/logo222.webp",
   },
 };
 
@@ -134,7 +134,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema, faqSchema];
 export default function AboutPage() {
   const title = " Industrial Fabrication Company in Surat | National Engineers & Steel Fabricators";
   const breadcrumbCurrent = "About NESF";
-  const imageUrl = "/about hero.jpg";
+  const imageUrl = "/about.webp";
 
   return (
     <>

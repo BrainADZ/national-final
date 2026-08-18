@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const SITE_NAME = "National Engineers & Steel Fabricators";
 export const SITE_URL = "https://nationalengrs.com";
-export const DEFAULT_OG_IMAGE = "/logo222.png";
+export const DEFAULT_OG_IMAGE = "/logo222.webp";
 
 type BuildMetadataInput = {
   title: string;

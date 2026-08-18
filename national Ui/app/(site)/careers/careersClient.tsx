@@ -246,7 +246,7 @@ export default function CareersPage() {
       {/* HERO */}
       <section className="relative">
         <div className="absolute inset-0">
-          <img src="/careerBanner.jpg" alt="Gallery" className="h-full w-full object-cover" />
+              <img src="/careerBanner.webp" alt="Gallery" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/45 to-black/15" />
           <div className="absolute inset-0 bg-orange-500/10 mix-blend-multiply" />
         </div>
@@ -288,7 +288,7 @@ export default function CareersPage() {
               <div className="absolute -bottom-4 left-24 h-3 w-32 rounded-full bg-[#ee9d54]/90" />
 
               <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-sm">
-                <img src="/Team.jpg" alt="Team at National Engineers" className="h-80 w-full object-cover sm:h-105" />
+              <img src="/Team.webp" alt="Team at National Engineers" className="h-80 w-full object-cover sm:h-105" />
                 <div className="pointer-events-none absolute inset-0 bg-linear-to-tr from-black/10 via-transparent to-transparent" />
               </div>
             </div>

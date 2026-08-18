@@ -18,7 +18,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "NESF provides industrial steel fabrication, pressure vessels, storage tanks and process equipment manufacturing services across Gujarat and PAN India.",
   path: "/",
-  image: "/logo222.png",
+  image: "/logo222.webp",
   keywords: [
     "industrial steel fabrication company in india",
     "process equipment manufacturer in india",
@@ -39,7 +39,7 @@ const organizationSchema = {
   "name": "National Engineers & Steel Fabricators",
   "alternateName": "NESF",
   "url": "https://nationalengrs.com/",
-  "logo": "https://nationalengrs.com/logo222.png",
+    "logo": "https://nationalengrs.com/logo222.webp",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+919574611152",

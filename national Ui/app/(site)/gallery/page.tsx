@@ -12,7 +12,7 @@ export const metadata: Metadata = buildMetadata({
     description:
         "View real industrial fabrication projects, heavy engineering works and manufacturing setups by National Engineers across Gujarat and India.",
     path: "/gallery",
-    image: "/gallery hero.jpeg",
+    image: "/gallery.webp",
     keywords: [
         "industrial fabrication projects",
         "steel fabrication work india",
@@ -106,7 +106,7 @@ export default async function GalleryPage() {
                 {/* Background image */}
                 <div className="absolute inset-0">
                     <img
-                        src="/gallery hero.jpeg"
+                        src="/gallery.webp"
                         alt="Gallery"
                         className="h-full w-full object-cover"
                     />

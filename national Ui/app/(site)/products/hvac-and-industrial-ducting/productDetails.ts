@@ -38,7 +38,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators is a trusted AHU duct manufacturer and supplier in India, offering custom GI and SS AHU ducting for air handling units, HVAC systems, supply air lines, return air lines, fresh air lines, plant HVAC rooms, clean areas, utility buildings and industrial air distribution systems.",
     pagePath: "/products/ahu-duct-manufacturer",
-    image: "/product/13.jpg",
+    image: "/product/13.webp",
     imageAlt: "GI and stainless steel AHU ducts fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [
@@ -162,7 +162,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators is a trusted industrial ducting system manufacturer in India, offering custom industrial ducting for ventilation, exhaust, dust extraction, fume extraction, process-air handling, utility-air routing and equipment interconnection across complex plant layouts.",
     pagePath: "/products/industrial-ducting-system-manufacturer",
-    image: "/product/13.jpg",
+    image: "/product/13.webp",
     imageAlt: "Industrial ducting system fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [
@@ -296,7 +296,7 @@ export const productDetails = {
     headline: "Duct Transition Manufacturer in Surat",
     description: "National Engineers & Steel Fabricators is a trusted duct transition manufacturer in India, offering custom duct transitions for HVAC systems, industrial ducting systems, AHU interfaces, fan connections, blower packages, scrubber connections, cyclone lines, dust extraction systems, fume extraction systems and process-air ducting applications.",
     pagePath: "/products/duct-transition-manufacturer",
-    image: "/product/21.jpeg",
+    image: "/product/21.webp",
     imageAlt: "Duct transition manufactured by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [{"label":"Product Type","value":"Duct Transition"},{"label":"Equipment Category","value":"HVAC & Industrial Ducting"},{"label":"Build Basis","value":"Drawing, duct layout and equipment interface"},{"label":"Customization","value":"Shape, size, offset and material as required"}],
@@ -340,7 +340,7 @@ export const productDetails = {
     headline: "Duct Reducer Manufacturer in Surat",
     description: "National Engineers & Steel Fabricators is a trusted duct reducer manufacturer in India, offering custom duct reducers for HVAC systems, industrial ducting systems, AHU interfaces, fan connections, blower packages, scrubber connections, cyclone lines, dust extraction systems, fume extraction systems, ventilation systems and process-air ducting applications.",
     pagePath: "/products/duct-reducer-manufacturer",
-    image: "/product/21.jpeg",
+    image: "/product/21.webp",
     imageAlt: "Duct reducer manufactured by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [{"label":"Product Type","value":"Duct Reducer / Duct Expander"},{"label":"Equipment Category","value":"HVAC & Industrial Ducting"},{"label":"Build Basis","value":"Drawing, duct layout and equipment interface"},{"label":"Customization","value":"Concentric, eccentric, round or rectangular"}],
@@ -385,7 +385,7 @@ export const productDetails = {
     headline: "Duct Elbow Manufacturer in Surat",
     description: "National Engineers & Steel Fabricators is a trusted duct elbow manufacturer in India, offering custom duct elbows for HVAC systems, industrial ducting systems, AHU interfaces, fan connections, blower packages, scrubber connections, cyclone lines, dust extraction systems, fume extraction systems, ventilation systems and process-air ducting applications.",
     pagePath: "/products/duct-elbow-manufacturer",
-    image: "/product/21.jpeg",
+    image: "/product/21.webp",
     imageAlt: "Duct elbow manufactured by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [{"label":"Product Type","value":"Duct Elbow"},{"label":"Equipment Category","value":"HVAC & Industrial Ducting"},{"label":"Build Basis","value":"Drawing, duct layout and equipment interface"},{"label":"Customization","value":"Radius, angle, shape and material as required"}],
@@ -432,7 +432,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators is a trusted insulated duct casing manufacturer in India, offering custom insulated duct casings for HVAC systems, industrial ducting systems, supply air ducts, return air ducts, outdoor duct runs, hot exhaust ducting, cold air lines and process air ducting applications.",
     pagePath: "/products/insulated-duct-casing-manufacturer",
-    image: "/product/8.jpg",
+    image: "/product/8.webp",
     imageAlt: "Insulated industrial duct casing fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [

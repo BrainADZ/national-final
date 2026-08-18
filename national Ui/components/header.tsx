@@ -230,7 +230,7 @@ export default function Navbar() {
     () => (
       <Link href="/" prefetch={false} className="flex items-center gap-3 min-w-0">
         <div className="relative h-12 w-37.5 shrink-0 rounded-sm bg-white sm:h-14 sm:w-47.5">
-          <img src="/logo222.png" alt="National Engineers Logo" className="h-full w-full object-contain px-3" />
+          <img src="/logo222.webp" alt="National Engineers Logo" className="h-full w-full object-contain px-3" />
         </div>
       </Link>
     ),
@@ -246,7 +246,7 @@ export default function Navbar() {
       <div className={`absolute right-0 top-0 h-dvh w-[85%] max-w-sm overflow-y-auto bg-white shadow-2xl transition-transform ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
         <div className="flex items-center justify-between border-b border-gray-200 px-4 py-4">
           <div className="relative h-14 w-40 shrink-0">
-            <img src="/logo222.png" alt="National Engineers Logo" className="h-full w-full object-contain" />
+            <img src="/logo222.webp" alt="National Engineers Logo" className="h-full w-full object-contain" />
           </div>
           <button
             type="button"

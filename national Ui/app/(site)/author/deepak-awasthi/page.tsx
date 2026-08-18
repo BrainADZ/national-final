@@ -31,7 +31,7 @@ export default async function AuthorPage() {
           <div className="grid gap-10 md:grid-cols-[220px_1fr] items-center">
             <div className="flex justify-center md:justify-start">
               <Image
-                src="/deepak.png"
+            src="/deepak.webp"
                 alt="Deepak Awasthi - Industrial Engineering Author"
                 width={220}
                 height={220}

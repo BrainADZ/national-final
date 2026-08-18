@@ -34,7 +34,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators is a trusted hopper and flakes hopper manufacturer in India, offering custom industrial hoppers for bulk material storage, gravity discharge, controlled feeding and smooth handling of powders, granules, flakes, chips, regrind and other bulk-solid materials.",
     pagePath: "/products/hopper-flakes-hopper-manufacturer",
-    image: "/product/00.jpg",
+    image: "/product/00.webp",
     imageAlt: "Industrial flakes hopper fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [
@@ -257,7 +257,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators is a trusted silo and storage bin manufacturer in India, offering custom storage silos, bulk storage bins, day bins, discharge cones, hopper-bottom bins and support structures for dry bulk material storage and handling applications.",
     pagePath: "/products/silo-storage-bin-manufacturer",
-    image: "/product/soilTank.jpeg",
+    image: "/product/soilTank.webp",
     imageAlt: "Industrial storage silos fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [
@@ -499,7 +499,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators is a trusted chute and transition manufacturer in India, offering custom bulk material chutes, transfer chutes, conveyor chutes, discharge chutes, receiving chutes, feed spouts, drop chutes, diverter housings and bulk handling transitions for dry bulk material transfer applications.",
     pagePath: "/products/chute-transition-manufacturer",
-    image: "/product/13.jpg",
+    image: "/product/13.webp",
     imageAlt: "Industrial chutes and transitions fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [
@@ -646,7 +646,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators is a trusted tow bin and tow can manufacturer in India, offering custom towable bins, industrial tow cans and heavy-duty material handling bins for internal plant logistics, scrap handling, chips handling, flakes movement, production waste transfer and bulk-solid movement between plant stations.",
     pagePath: "/products/tow-bin-tow-can-manufacturer",
-    image: "/product/4.jpg",
+    image: "/product/4.webp",
     imageAlt: "Industrial tow bin and tow can fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [
@@ -792,7 +792,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators provides custom bulk handling fabrication in India for industries that require built-to-spec bulk-solid handling equipment, storage equipment, discharge systems, support structures, access frames, chutes, transitions, wear packages and plant-ready fabricated assemblies.",
     pagePath: "/products/custom-bulk-handling-fabrication",
-    image: "/product/23.jpeg",
+    image: "/product/23.webp",
     imageAlt: "Custom bulk handling equipment fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [

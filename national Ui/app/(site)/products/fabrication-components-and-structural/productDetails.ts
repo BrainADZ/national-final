@@ -34,7 +34,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators is a trusted base plate manufacturer and supplier in India, offering custom steel base plates, sole plates, mounting plates, equipment base plates, skid base plates and structural base plates for industrial equipment, columns, skids, pipe racks, platforms and foundation interfaces.",
     pagePath: "/products/base-plate-manufacturer",
-    image: "/product/18.jpg",
+    image: "/product/18.webp",
     imageAlt: "Industrial base plates fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [
@@ -170,7 +170,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators is a trusted pipe saddle manufacturer and supplier in India, offering custom pipe saddles, pipe support saddles, pipe shoes, guides, line stops, hold-down clamps, sliding supports and pipe support assemblies for industrial piping systems.",
     pagePath: "/products/pipe-saddle-manufacturer",
-    image: "/product/17.jpg",
+    image: "/product/17.webp",
     imageAlt: "Industrial pipe saddles and supports fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [
@@ -298,7 +298,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators is a trusted jack stool manufacturer and supplier in India, offering custom jack stools, temporary supports, adjustable jack stools, fixed-height stools, saddle-top stools and temporary support frames for piping erection, spool alignment, equipment maintenance, hydrotesting and shutdown activities.",
     pagePath: "/products/jack-stool-manufacturer",
-    image: "/product/19.jpeg",
+    image: "/product/19.webp",
     imageAlt: "Industrial jack stool temporary support fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [
@@ -434,7 +434,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators is a trusted wear plate liner manufacturer in India, offering custom hard plate liners, wear plate liners, abrasion-resistant liners, bolt-on liner panels, weld-on liner panels, curved liners, segmented liners and wear protection components for chutes, hoppers, bins, ducts, cyclones, transfer points and abrasive process areas.",
     pagePath: "/products/wear-plate-liner-manufacturer",
-    image: "/product/21.jpeg",
+    image: "/product/21.webp",
     imageAlt: "Hard plate and wear plate liners fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [
@@ -583,7 +583,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators provides custom heavy structural fabrication in India for industrial projects that require strong, accurate and site-ready fabricated steel structures, equipment frames, pipe racks, platforms, walkways, ladders, handrails, skid frames, base frames, lifting beams, bracing frames, built-up sections and modular structural assemblies.",
     pagePath: "/products/custom-heavy-structural-fabrication",
-    image: "/product/16.jpg",
+    image: "/product/16.webp",
     imageAlt: "Custom heavy structural fabrication by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [

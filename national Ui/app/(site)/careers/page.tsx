@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Join National Engineers for careers in industrial fabrication, welding, engineering and manufacturing with opportunities in Surat and Gujarat.",
   path: "/careers",
-  image: "/careerBanner.jpg",
+  image: "/careerBanner.webp",
   keywords: [
     "engineering jobs in fabrication industry",
     "industrial fabrication careers",

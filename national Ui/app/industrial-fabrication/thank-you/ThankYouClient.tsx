@@ -28,7 +28,7 @@ export default function GoogleAdsThankYouClient() {
   return (
     <main className="min-h-screen bg-gray-950 text-white">
       <section className="mx-auto flex min-h-screen max-w-425 flex-col items-center justify-center px-4 py-16 text-center sm:px-6 lg:px-8">
-        <img src="/logo white.png" alt="National Engineers" className="mb-8 h-14 w-auto" />
+        <img src="/logo white.webp" alt="National Engineers" className="mb-8 h-14 w-auto" />
         <div className="mx-auto flex h-18 w-18 items-center justify-center rounded-full bg-[#ee9d54]/15 text-[#ee9d54]">
           <CheckCircle2 className="h-10 w-10" />
         </div>

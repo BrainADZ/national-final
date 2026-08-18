@@ -30,7 +30,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators provides heavy plate fabrication in India for industrial projects that require custom plate cutting, forming, rolling, fit-up, welding, machining support, inspection and delivery of heavy-duty plate-built components and welded assemblies.",
     pagePath: "/products/heavy-plate-fabrication",
-    image: "/product/16.jpg",
+    image: "/product/16.webp",
     imageAlt: "Heavy plate fabrication by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [
@@ -118,7 +118,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators provides SS CS alloy steel fabrication in India for industries that require custom-built equipment, welded assemblies, plate-built components, structural parts, process equipment, ducting sections, support frames and heavy fabrication as per client drawings and project specifications.",
     pagePath: "/products/ss-cs-alloy-steel-fabrication",
-    image: "/product/24.jpeg",
+    image: "/product/24.webp",
     imageAlt: "Stainless steel carbon steel and alloy steel fabrication by National Engineers",
     imagePosition: "center",
     quickFacts: [
@@ -208,7 +208,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators provides on-site erection support in India for clients who require installation assistance, positioning support, alignment support, fit-up coordination and site integration support for fabricated equipment, heavy fabricated assemblies, structural components, ducting systems, skids, support frames, tanks, vessels and custom-manufactured items.",
     pagePath: "/products/on-site-erection-support",
-    image: "/gallery/Work in progress (46).JPG",
+    image: "/gallery/Work (2).webp",
     imageAlt: "Industrial fabrication and erection support by National Engineers",
     imagePosition: "center",
     quickFacts: [
@@ -293,7 +293,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators provides industrial repair and modification jobs in India for fabricated equipment, heavy welded assemblies, ducting systems, structural components, supports, brackets, replacement parts, retrofit sections and plant equipment that require repair, reinforcement, modification or shutdown support.",
     pagePath: "/products/industrial-repair-modification-jobs",
-    image: "/gallery/Work in progress (38).jpg",
+    image: "/gallery/Work (1).webp",
     imageAlt: "Industrial repair and modification fabrication work by National Engineers",
     imagePosition: "center",
     quickFacts: [

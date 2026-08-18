@@ -133,7 +133,7 @@ export default async function BlogPost({
 
   const rt = estimateReadingTime(post?.content?.rendered || "");
 
-  const bannerSrc = "/bgblog.png";
+  const bannerSrc = "/bgblog.webp";
 
   return (
     <div className="bg-white">

@@ -77,7 +77,7 @@ export async function generateMetadata(
       siteName: SITE_NAME,
       images: [
         {
-          url: absoluteUrl("/blogpage.png"),
+      url: absoluteUrl("/blogpage.webp"),
           alt: title,
         },
       ],
@@ -86,7 +86,7 @@ export async function generateMetadata(
       card: "summary_large_image",
       title,
       description: shortDescription,
-      images: [absoluteUrl("/blogpage.png")],
+    images: [absoluteUrl("/blogpage.webp")],
     },
   };
 }
@@ -104,11 +104,11 @@ export default async function CategoryPage({
   const posts = await getPostsByCategoryId(category.id);
 
   // Same hero bg like blog list
-  const heroBg = "/blogpage.png";
+  const heroBg = "/blogpage.webp";
 
   // ✅ Static author (same for all)
   const authorName = "Deepak Awasthi";
-  const authorAvatar = "/deepak.png";
+  const authorAvatar = "/deepak.webp";
   const authorHref = "/author/deepak-awasthi";
 
   return (

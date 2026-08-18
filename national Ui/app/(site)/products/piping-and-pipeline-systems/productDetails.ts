@@ -253,7 +253,7 @@ export const productDetails = {
       "National Engineers & Steel Fabricators provides reliable pipeline spool fabrication in India for industrial piping, process piping, utility piping, plant piping, shutdown jobs, revamp projects and new project installations.",
     pagePath:
       "/products/pipeline-spool-fabrication",
-    image: "/product/8.jpg",
+    image: "/product/8.webp",
     imageAlt:
       "Fabricated industrial pipeline section by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -663,7 +663,7 @@ export const productDetails = {
       "National Engineers & Steel Fabricators is a trusted compressor ducting manufacturer and supplier in India, offering custom compressor suction and discharge ducting for compressor packages, plant air systems, gas handling lines, utility systems and industrial process applications.",
     pagePath:
       "/products/compressor-suction-discharge-ducting-manufacturer",
-    image: "/product/13.jpg",
+    image: "/product/13.webp",
     imageAlt:
       "Industrial compressor suction and discharge ducting fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -870,7 +870,7 @@ export const productDetails = {
     description:
       "National Engineers & Steel Fabricators is a trusted piping supports manufacturer and supplier in India, offering custom pipe supports, piping support assemblies, pipe shoes, pipe saddles, pipe clamps, pipe guides, trunnion supports, dummy supports and structural support assemblies for industrial piping systems.",
     pagePath: "/products/piping-supports-manufacturer",
-    image: "/product/17.jpg",
+    image: "/product/17.webp",
     imageAlt:
       "Industrial piping support assembly fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",

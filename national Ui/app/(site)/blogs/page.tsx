@@ -49,7 +49,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Read expert blogs on steel fabrication, skid systems, piping, HVAC ducting, and industrial equipment manufacturing by NESF Surat.",
   path: "/blogs",
-  image: "/blogpage.png",
+  image: "/blogpage.webp",
 });
 
 const blogSchema = {
@@ -107,7 +107,7 @@ export default async function BlogPage() {
         <section className="relative">
           <div
             className="h-80 w-full bg-cover bg-center sm:h-95"
-            style={{ backgroundImage: "url(/blogpage.png)" }}
+          style={{ backgroundImage: "url(/blogpage.webp)" }}
           />
           <div className="absolute inset-0 bg-black/60" />
 
