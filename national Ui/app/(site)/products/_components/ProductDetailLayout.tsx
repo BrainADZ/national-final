@@ -123,13 +123,13 @@ export default function ProductDetailLayout({
       <main className="bg-white text-gray-950">
         <section className="relative isolate overflow-hidden bg-black">
           <img
-            src={product.image}
+            src="/products-banner.webp"
             alt=""
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover opacity-[0.55]"
             style={{ objectPosition: product.imagePosition ?? "center" }}
           />
-          <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/70 to-black/35" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/55 via-black/20 to-transparent" />
           <div className="absolute inset-0 bg-[#ee9d54]/10 mix-blend-overlay" />
           <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-white to-transparent" />
 
