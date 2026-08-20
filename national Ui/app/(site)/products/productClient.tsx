@@ -201,9 +201,7 @@ export default function ProductsPage() {
                     className="h-72 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-70" />
-                  <span className="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#ee9d54]">
-                    Category
-                  </span>
+  
                 </div>
               </div>
 
