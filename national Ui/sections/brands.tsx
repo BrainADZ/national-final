@@ -25,7 +25,7 @@ const BRAND_LOGOS: BrandLogo[] = [
   { name: "Brand 13", src: "/brands/brand13.webp" },
   { name: "Brand 14", src: "/brands/brand14.webp" },
   { name: "Brand 15", src: "/brands/brand15.webp" },
-  { name: "Brand 15", src: "/brands/brand16.webp" },
+  { name: "Brand 16", src: "/brands/brand16.webp" },
 ];
 
 export default function BrandLogosCarousel() {
