@@ -27,6 +27,26 @@ type ProductDetailLayoutProps = {
   navItems?: ProductNavItem[];
 };
 
+const FULL_COMPANY_NAME = "National Engineers & Steel Fabricators";
+const FULL_COMPANY_NAME_PATTERN = /National Engineers\s*(?:&|and)\s*Steel Fabricators/i;
+
+function normalizeOverview(overview: string[]) {
+  const normalized = overview.map((paragraph) =>
+    paragraph
+      .replace(/National Engineers\s+and\s+Steel Fabricators/gi, FULL_COMPANY_NAME)
+      .replace(/\bNESF\b/gi, FULL_COMPANY_NAME),
+  );
+
+  if (normalized.some((paragraph) => FULL_COMPANY_NAME_PATTERN.test(paragraph))) {
+    return normalized;
+  }
+
+  return [
+    `${FULL_COMPANY_NAME} provides this product as a project-specific industrial fabrication solution.`,
+    ...normalized,
+  ];
+}
+
 function ProductBulletList({
   items,
   columns = false,
@@ -39,7 +59,7 @@ function ProductBulletList({
       {items.map((item) => (
         <li key={item} className="flex gap-3 text-sm leading-7 text-gray-700">
           <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ee9d54] shadow-[0_0_0_3px_rgba(238,157,84,0.16)]" />
-          <span><BrandHomeLink text={item} /></span>
+          <span>{item}</span>
         </li>
       ))}
     </ul>
@@ -51,6 +71,10 @@ export default function ProductDetailLayout({
   categoryName = DEFAULT_CATEGORY_NAME,
   navItems = pressureVesselNav,
 }: ProductDetailLayoutProps) {
+  const overview = normalizeOverview(product.overview);
+  const linkedOverviewIndex = overview.findIndex((paragraph) =>
+    FULL_COMPANY_NAME_PATTERN.test(paragraph),
+  );
   const schemas: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
@@ -156,19 +180,19 @@ export default function ProductDetailLayout({
                 <li aria-hidden="true" className="text-white/35">
                   /
                 </li>
-                <li className="text-[#ee9d54]"><BrandHomeLink text={product.title} /></li>
+                <li className="text-[#ee9d54]">{product.title}</li>
               </ol>
             </nav>
 
             <div className="max-w-4xl">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ee9d54]">
-                <BrandHomeLink text={categoryName} />
+                {categoryName}
               </p>
               <h1 className="mt-4 max-w-3xl text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-                <BrandHomeLink text={product.title} />
+                {product.title}
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-8 text-white/85 sm:text-lg">
-                <BrandHomeLink text={product.description} />
+                {product.description}
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -198,7 +222,7 @@ export default function ProductDetailLayout({
                   Product Range
                 </p>
                 <h2 className="px-2 pt-2 text-xl font-bold text-gray-950">
-                  <BrandHomeLink text={categoryName} />
+                  {categoryName}
                 </h2>
 
                 <div className="mt-5 space-y-1">
@@ -216,7 +240,7 @@ export default function ProductDetailLayout({
                             : "text-gray-700 hover:bg-gray-50 hover:text-gray-950"
                         }`}
                       >
-                        <span><BrandHomeLink text={item.label} /></span>
+                        <span>{item.label}</span>
                         <ChevronRight
                           className={`mt-1 h-4 w-4 shrink-0 ${
                             isActive ? "text-[#ee9d54]" : "text-gray-400"
@@ -234,7 +258,7 @@ export default function ProductDetailLayout({
                 </div>
                 <h3 className="mt-4 text-lg font-bold">Need a custom build?</h3>
                 <p className="mt-2 text-sm leading-6 text-white/70">
-                  Send drawings, datasheets, or duty conditions. <BrandHomeLink text="NESF" /> will review the requirement and respond with the right fabrication scope.
+                  Send drawings, datasheets, or duty conditions. NESF will review the requirement and respond with the right fabrication scope.
                 </p>
                 <Link
                   href="tel:919574011132"
@@ -262,17 +286,19 @@ export default function ProductDetailLayout({
                     Overview
                   </p>
                   <h2 className="mt-3 text-3xl font-bold text-gray-950 sm:text-4xl">
-                    <BrandHomeLink text={product.headline} />
+                    {product.headline}
                   </h2>
                   <div className="mt-5 space-y-4 text-[15px] leading-8 text-gray-600">
-                    {product.overview.map((paragraph) => (
-                      <p key={paragraph}><BrandHomeLink text={paragraph} /></p>
+                    {overview.map((paragraph, index) => (
+                      <p key={paragraph}>
+                        {index === linkedOverviewIndex ? <BrandHomeLink text={paragraph} /> : paragraph}
+                      </p>
                     ))}
                   </div>
 
                   <div className="mt-7 rounded-lg border border-[#ee9d54]/25 bg-[#fff7ef] p-5">
                     <p className="text-sm font-semibold leading-7 text-gray-950">
-                      <BrandHomeLink text={product.note} />
+                      {product.note}
                     </p>
                   </div>
 
@@ -284,10 +310,10 @@ export default function ProductDetailLayout({
                           className="rounded-md border border-gray-200 bg-gray-50 p-4"
                         >
                           <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ee9d54]">
-                            <BrandHomeLink text={fact.label} />
+                            {fact.label}
                           </dt>
                           <dd className="mt-2 text-sm font-semibold leading-6 text-gray-950">
-                            <BrandHomeLink text={fact.value} />
+                            {fact.value}
                           </dd>
                         </div>
                       ))}
@@ -309,7 +335,7 @@ export default function ProductDetailLayout({
                             Technical Data
                           </p>
                           <h3 className="mt-2 text-2xl font-bold">
-                            <BrandHomeLink text={section.title} />
+                            {section.title}
                           </h3>
                         </div>
 
@@ -320,7 +346,7 @@ export default function ProductDetailLayout({
                                 key={paragraph}
                                 className="mt-3 text-sm leading-7 text-gray-600 first:mt-0"
                               >
-                                <BrandHomeLink text={paragraph} />
+                                {paragraph}
                               </p>
                             ))}
                           </div>
@@ -356,7 +382,7 @@ export default function ProductDetailLayout({
                                           : "text-gray-700"
                                       }`}
                                     >
-                                      <BrandHomeLink text={cell} />
+                                      {cell}
                                     </td>
                                   ))}
                                 </tr>
@@ -379,14 +405,14 @@ export default function ProductDetailLayout({
                             Details
                           </p>
                           <h3 className="mt-2 text-2xl font-bold text-gray-950">
-                            <BrandHomeLink text={section.title} />
+                            {section.title}
                           </h3>
                           {section.body?.map((paragraph) => (
                             <p
                               key={paragraph}
                               className="mt-3 text-sm leading-7 text-gray-600"
                             >
-                              <BrandHomeLink text={paragraph} />
+                              {paragraph}
                             </p>
                           ))}
                         </div>
@@ -398,7 +424,7 @@ export default function ProductDetailLayout({
                               className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition hover:border-[#ee9d54]/45 hover:shadow-md"
                             >
                               <h4 className="text-base font-bold text-gray-950">
-                                <BrandHomeLink text={group.title} />
+                                {group.title}
                               </h4>
 
                               {group.body?.map((paragraph) => (
@@ -406,7 +432,7 @@ export default function ProductDetailLayout({
                                   key={paragraph}
                                   className="mt-3 text-sm leading-7 text-gray-600"
                                 >
-                                  <BrandHomeLink text={paragraph} />
+                                  {paragraph}
                                 </p>
                               ))}
 
@@ -429,7 +455,7 @@ export default function ProductDetailLayout({
                         <div className="flex items-center gap-3">
                           <div className="h-9 w-1 rounded-full bg-[#ee9d54]" />
                           <h3 className="text-2xl font-bold text-gray-950">
-                            <BrandHomeLink text={section.title} />
+                            {section.title}
                           </h3>
                         </div>
 
@@ -442,11 +468,11 @@ export default function ProductDetailLayout({
                             >
                               {item.description ? (
                                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ee9d54]">
-                                  <BrandHomeLink text={item.description} />
+                                  {item.description}
                                 </span>
                               ) : null}
                               <span className="mt-2 flex items-center justify-between gap-3 font-semibold leading-6 text-gray-950">
-                                <BrandHomeLink text={item.label} />
+                                {item.label}
                                 <ChevronRight className="h-4 w-4 shrink-0 text-gray-400 transition group-hover:translate-x-1 group-hover:text-[#ee9d54]" />
                               </span>
                             </Link>
@@ -466,7 +492,7 @@ export default function ProductDetailLayout({
                           <FileText className="h-4 w-4" />
                         </div>
                         <h3 className="text-xl font-bold text-gray-950">
-                          <BrandHomeLink text={section.title} />
+                          {section.title}
                         </h3>
                       </div>
 
@@ -475,7 +501,7 @@ export default function ProductDetailLayout({
                           key={paragraph}
                           className="mt-3 text-sm leading-7 text-gray-600"
                         >
-                            <BrandHomeLink text={paragraph} />
+                            {paragraph}
                         </p>
                       ))}
 
@@ -510,14 +536,14 @@ export default function ProductDetailLayout({
                       >
                         <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-5 text-left transition hover:bg-gray-50 sm:px-6 [&::-webkit-details-marker]:hidden">
                           <span className="text-sm font-bold leading-6 text-gray-950 sm:text-base">
-                            <BrandHomeLink text={faq.question} />
+                            {faq.question}
                           </span>
                           <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition group-open:border-[#ee9d54]/40 group-open:bg-[#fff7ef] group-open:text-[#ee9d54]">
                             <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
                           </span>
                         </summary>
                         <p className="px-5 pb-5 text-sm leading-7 text-gray-600 sm:px-6">
-                          <BrandHomeLink text={faq.answer} />
+                          {faq.answer}
                         </p>
                       </details>
                     ))}
@@ -535,7 +561,7 @@ export default function ProductDetailLayout({
                       Built around your drawings, duty conditions, and inspection needs.
                     </h2>
                     <p className="mt-3 max-w-2xl text-sm leading-7 text-white/70">
-                      Share specifications, P&ID, MOC, dimensions, and testing requirements. The <BrandHomeLink text="NESF" /> team can align fabrication, documentation, and delivery around your project.
+                      Share specifications, P&ID, MOC, dimensions, and testing requirements. The NESF team can align fabrication, documentation, and delivery around your project.
                     </p>
                   </div>
                   <Link
@@ -557,15 +583,15 @@ export default function ProductDetailLayout({
                     {product.contactDetails.map((item) => (
                       <div key={item.label}>
                         <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ee9d54]">
-                          <BrandHomeLink text={item.label} />
+                          {item.label}
                         </dt>
                         <dd className="mt-1 text-sm font-semibold leading-6 text-gray-950">
                           {item.href ? (
                             <Link href={item.href} className="hover:text-[#ee9d54]">
-                              <BrandHomeLink text={item.value} />
+                              {item.value}
                             </Link>
                           ) : (
-                            <BrandHomeLink text={item.value} />
+                            item.value
                           )}
                         </dd>
                       </div>

@@ -2,7 +2,6 @@
 "use client";
 
 import Link from "next/link";
-import BrandHomeLink from "./_components/BrandHomeLink";
 
 type ProductCategory = {
   title: string;
@@ -244,7 +243,7 @@ export default function ProductsPage() {
         </h2>
 
         <p className="mt-3 text-sm leading-6 text-gray-600 md:text-base">
-          <BrandHomeLink text="National Engineers & Steel Fabricators" /> is a trusted pressure vessel manufacturer in India delivering engineered vessels and tanks for high-pressure and industrial applications.
+          National Engineers & Steel Fabricators is a trusted pressure vessel manufacturer in India delivering engineered vessels and tanks for high-pressure and industrial applications.
         </p>
 
         <p className="mt-2 text-sm leading-6 text-gray-600 md:text-base">
@@ -297,7 +296,7 @@ export default function ProductsPage() {
         </h3>
 
         <p className="mt-2 text-sm text-gray-600">
-          <BrandHomeLink text="NESF" /> is a dependable pig launcher manufacturer India, supplying pig launching and receiving systems for pipeline cleaning, inspection, and maintenance operations.
+          NESF is a dependable pig launcher manufacturer India, supplying pig launching and receiving systems for pipeline cleaning, inspection, and maintenance operations.
         </p>
 
         <h3 className="mt-6 text-xl font-extrabold text-gray-900">
@@ -332,7 +331,7 @@ export default function ProductsPage() {
         </p>
 
         <h2 className="mt-10 text-2xl font-extrabold text-gray-900 md:text-3xl">
-          Why Choose <BrandHomeLink text="NESF" /> as Your Industrial Fabrication Partner?
+          Why Choose NESF as Your Industrial Fabrication Partner?
         </h2>
 
         <ul className="mt-4 list-inside list-disc space-y-1 text-sm text-gray-600">
