@@ -129,8 +129,8 @@ export function buildProductDetailMetadata(product: ProductDetail): Metadata {
     image: product.image,
     keywords: product.seo.keywords,
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   });
 }

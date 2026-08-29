@@ -930,6 +930,6 @@ export function buildProductMetadata(product: ProductDetail): Metadata {
     path: product.pagePath,
     image: product.image,
     keywords: product.seo.keywords,
-    robots: { index: false, follow: false },
+    robots: { index: true, follow: true },
   });
 }
