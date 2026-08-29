@@ -90,7 +90,7 @@ export default function AboutSection() {
         <div className="flex-1 flex items-center justify-center">
           <div className="relative h-65 w-full overflow-hidden rounded-lg shadow-lg sm:h-80 lg:h-95">
             <img
-              src="/about hero.jpg"
+              src="/about.webp"
               alt="National Engineers facility"
               className="object-cover w-full h-full"
             />

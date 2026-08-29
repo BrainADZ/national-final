@@ -12,7 +12,7 @@ export const metadata: Metadata = buildMetadata({
     description:
         "Get in touch with National Engineers for steel fabrication, process equipment manufacturing and custom industrial solutions in Surat, Gujarat and PAN India.",
     path: "/contact",
-    image: "/logo222.png",
+  image: "/logo222.webp",
     keywords: [
         "steel fabrication company surat",
         "industrial fabrication enquiry",

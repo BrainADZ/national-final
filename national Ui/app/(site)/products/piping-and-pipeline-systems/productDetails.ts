@@ -7,34 +7,34 @@ export const CATEGORY_NAME = "Piping & Pipeline Systems";
 export const pipingPipelineNav = [
   {
     label: "Pig Launcher / Pig Receiver Systems",
-    href: "/products/pig-launcher-pig-receiver-systems",
+    href: "/products/pig-launcher-receiver-system-manufacturer",
   },
   {
     label: "Pipeline Spools & Fabrication",
-    href: "/products/pipeline-spools-fabrication",
+    href: "/products/pipeline-spool-fabrication",
   },
   {
     label: "Headers, Manifolds & Special Piping",
-    href: "/products/headers-manifolds-special-piping",
+    href: "/products/headers-manifolds-manufacturer",
   },
   {
     label: "Compressor Suction / Discharge Ducting",
-    href: "/products/compressor-suction-discharge-ducting",
+    href: "/products/compressor-suction-discharge-ducting-manufacturer",
   },
   {
     label: "Piping Supports",
-    href: "/products/piping-supports",
+    href: "/products/piping-supports-manufacturer",
   },
 ];
 
 export const productDetails = {
-  "pig-launcher-pig-receiver-systems": {
+  "pig-launcher-receiver-system-manufacturer": {
     title: "Pig Launcher and Pig Receiver System Manufacturer in India",
     headline: "Pig Launcher Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted pig launcher and pig receiver system manufacturer in India, offering custom pig launchers, pig receivers, pig traps and skid-mounted pigging systems for industrial pipeline cleaning, batching, dewatering and inline inspection applications.",
     pagePath:
-      "/products/pig-launcher-pig-receiver-systems",
+      "/products/pig-launcher-receiver-system-manufacturer",
     image: "/product/26.jpeg",
     imageAlt:
       "Pig launcher and pig receiver system fabricated by National Engineers and Steel Fabricators",
@@ -246,14 +246,14 @@ export const productDetails = {
       ],
     },
   },
-  "pipeline-spools-fabrication": {
+  "pipeline-spool-fabrication": {
     title: "Pipeline Spool Fabrication in India",
     headline: "Pipeline Spool Fabrication in Surat",
     description:
       "National Engineers & Steel Fabricators provides reliable pipeline spool fabrication in India for industrial piping, process piping, utility piping, plant piping, shutdown jobs, revamp projects and new project installations.",
     pagePath:
-      "/products/pipeline-spools-fabrication",
-    image: "/product/8.jpg",
+      "/products/pipeline-spool-fabrication",
+    image: "/product/8.webp",
     imageAlt:
       "Fabricated industrial pipeline section by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -452,13 +452,13 @@ export const productDetails = {
       ],
     },
   },
-  "headers-manifolds-special-piping": {
+  "headers-manifolds-manufacturer": {
     title: "Headers and Manifolds Manufacturer and Supplier in India",
     headline: "Headers Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted headers and manifolds manufacturer and supplier in India, offering custom industrial headers, piping manifolds and special piping assemblies for process plants, utility systems, gas distribution, compressed air systems, chemical injection lines, filtration networks and industrial piping applications.",
     pagePath:
-      "/products/headers-manifolds-special-piping",
+      "/products/headers-manifolds-manufacturer",
     image: "/product/26.jpeg",
     imageAlt:
       "Custom header manifold and special piping assembly fabricated by National Engineers and Steel Fabricators",
@@ -656,14 +656,14 @@ export const productDetails = {
       ],
     },
   },
-  "compressor-suction-discharge-ducting": {
+  "compressor-suction-discharge-ducting-manufacturer": {
     title: "Compressor Ducting Manufacturer and Supplier in India",
     headline: "Compressor Ducting Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted compressor ducting manufacturer and supplier in India, offering custom compressor suction and discharge ducting for compressor packages, plant air systems, gas handling lines, utility systems and industrial process applications.",
     pagePath:
-      "/products/compressor-suction-discharge-ducting",
-    image: "/product/13.jpg",
+      "/products/compressor-suction-discharge-ducting-manufacturer",
+    image: "/product/13.webp",
     imageAlt:
       "Industrial compressor suction and discharge ducting fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -864,13 +864,13 @@ export const productDetails = {
       ],
     },
   },
-  "piping-supports": {
+  "piping-supports-manufacturer": {
     title: "Piping Supports Manufacturer and Supplier in India",
     headline: "Piping Supports Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted piping supports manufacturer and supplier in India, offering custom pipe supports, piping support assemblies, pipe shoes, pipe saddles, pipe clamps, pipe guides, trunnion supports, dummy supports and structural support assemblies for industrial piping systems.",
-    pagePath: "/products/piping-supports",
-    image: "/product/17.jpg",
+    pagePath: "/products/piping-supports-manufacturer",
+    image: "/product/17.webp",
     imageAlt:
       "Industrial piping support assembly fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",

@@ -1,21 +1,5 @@
-import ProductDetailLayout from "../../_components/ProductDetailLayout";
-import {
-  CATEGORY_NAME,
-  buildProductMetadata,
-  processEquipmentNav,
-  productDetails,
-} from "../productDetails";
-
-const product = productDetails["heat-exchanger-shells-columns"];
-
-export const metadata = buildProductMetadata(product);
+import { redirect } from "next/navigation";
 
 export default function HeatExchangerShellsColumnsPage() {
-  return (
-    <ProductDetailLayout
-      product={product}
-      categoryName={CATEGORY_NAME}
-      navItems={processEquipmentNav}
-    />
-  );
+  redirect("/products/heat-exchanger-shell-manufacturer");
 }

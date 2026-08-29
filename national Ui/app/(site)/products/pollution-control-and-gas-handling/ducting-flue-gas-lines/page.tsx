@@ -6,7 +6,7 @@ import {
   productDetails,
 } from "../productDetails";
 
-const product = productDetails["ducting-flue-gas-lines"];
+const product = productDetails["ducting-flue-gas-lines-manufacturer"];
 
 export const metadata = buildProductMetadata(product);
 

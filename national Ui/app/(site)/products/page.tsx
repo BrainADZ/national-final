@@ -35,7 +35,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Explore pressure vessels, storage tanks, process equipment, pipeline systems, HVAC ducting, pollution control equipment, and custom fabricated industrial products by National Engineers.",
   path: "/products",
-  image: "/product/7.jpg",
+    image: "/product/7.webp",
   keywords: [
     "industrial process equipment manufacturer",
     "pressure vessel fabrication gujarat",

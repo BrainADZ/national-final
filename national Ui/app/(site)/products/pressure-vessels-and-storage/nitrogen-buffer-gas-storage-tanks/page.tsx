@@ -1,10 +1,5 @@
-import ProductDetailLayout from "../../_components/ProductDetailLayout";
-import { buildProductMetadata, productDetails } from "../productDetails";
-
-const product = productDetails["nitrogen-buffer-gas-storage-tanks"];
-
-export const metadata = buildProductMetadata(product);
+import { redirect } from "next/navigation";
 
 export default function NitrogenBufferGasStorageTanksPage() {
-  return <ProductDetailLayout product={product} />;
+  redirect("/products/nitrogen-buffer-tank-manufacturer");
 }

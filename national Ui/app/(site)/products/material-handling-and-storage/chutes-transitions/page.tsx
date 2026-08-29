@@ -1,7 +1,7 @@
 import ProductDetailLayout from "../../_components/ProductDetailLayout";
 import { CATEGORY_NAME, buildProductMetadata, materialHandlingNav, productDetails } from "../productDetails";
 
-const product = productDetails["chutes-transitions"];
+const product = productDetails["chute-transition-manufacturer"];
 export const metadata = buildProductMetadata(product);
 
 export default function ChutesTransitionsPage() {

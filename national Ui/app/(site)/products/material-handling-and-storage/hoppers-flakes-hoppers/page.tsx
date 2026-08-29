@@ -1,7 +1,7 @@
 import ProductDetailLayout from "../../_components/ProductDetailLayout";
 import { CATEGORY_NAME, buildProductMetadata, materialHandlingNav, productDetails } from "../productDetails";
 
-const product = productDetails["hoppers-flakes-hoppers"];
+const product = productDetails["hopper-flakes-hopper-manufacturer"];
 export const metadata = buildProductMetadata(product);
 
 export default function HoppersFlakesHoppersPage() {

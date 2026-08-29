@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Mail } from "lucide-react";
+import { WORDPRESS_URL } from "@/lib/wordpress";
 
 export const revalidate = 0;
 
@@ -11,7 +12,7 @@ function stripHtml(html = "") {
 
 async function getPosts() {
   const res = await fetch(
-    `${process.env.WORDPRESS_URL}/wp-json/wp/v2/posts?per_page=8&_embed=wp:featuredmedia&_fields=id,slug,date,title,excerpt,_links,_embedded`,
+    `${WORDPRESS_URL}/wp-json/wp/v2/posts?per_page=8&_embed=wp:featuredmedia&_fields=id,slug,date,title,excerpt,_links,_embedded`,
     { cache: "no-store" }
   );
   if (!res.ok) throw new Error("Failed to fetch posts");
@@ -30,7 +31,7 @@ export default async function AuthorPage() {
           <div className="grid gap-10 md:grid-cols-[220px_1fr] items-center">
             <div className="flex justify-center md:justify-start">
               <Image
-                src="/deepak.png"
+            src="/deepak.webp"
                 alt="Deepak Awasthi - Industrial Engineering Author"
                 width={220}
                 height={220}

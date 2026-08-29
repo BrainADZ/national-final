@@ -7,30 +7,30 @@ export const CATEGORY_NAME = "Pollution Control & Gas Handling";
 export const pollutionControlNav = [
   {
     label: "Venturi Scrubbers",
-    href: "/products/venturi-scrubbers",
+    href: "/products/venturi-scrubber-manufacturer",
   },
   {
     label: "Wet Scrubber Systems",
-    href: "/products/wet-scrubber-systems",
+    href: "/products/wet-scrubber-system-manufacturer",
   },
   {
     label: "Ducting & Flue Gas Lines",
-    href: "/products/ducting-flue-gas-lines",
+    href: "/products/ducting-flue-gas-lines-manufacturer",
   },
   {
     label: "Scrubber Internals & Liners",
-    href: "/products/scrubber-internals-liners",
+    href: "/products/scrubber-internals-liners-manufacturer",
   },
 ];
 
 export const productDetails = {
-  "venturi-scrubbers": {
+  "venturi-scrubber-manufacturer": {
     title: "Venturi Scrubber Manufacturer and Supplier in India",
     headline: "Venturi Scrubber Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted Venturi scrubber manufacturer and supplier in India, offering custom Venturi scrubbers for fine dust control, fume removal, mist capture, gas cleaning and industrial pollution control applications.",
-    pagePath: "/products/venturi-scrubbers",
-    image: "/product/3.jpg",
+    pagePath: "/products/venturi-scrubber-manufacturer",
+    image: "/product/3.webp",
     imageAlt:
       "Industrial venturi scrubber assembly fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -236,13 +236,13 @@ export const productDetails = {
       ],
     },
   },
-  "wet-scrubber-systems": {
+  "wet-scrubber-system-manufacturer": {
     title: "Wet Scrubber System Manufacturer and Supplier in India",
     headline: "Wet Scrubber System Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted wet scrubber system manufacturer and supplier in India, offering custom wet scrubber systems for dust control, acid gas reduction, odor control, soluble vapor removal and industrial gas cleaning applications.",
-    pagePath: "/products/wet-scrubber-systems",
-    image: "/product/24.jpeg",
+    pagePath: "/products/wet-scrubber-system-manufacturer",
+    image: "/product/24.webp",
     imageAlt:
       "Industrial wet scrubber system fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -457,13 +457,13 @@ export const productDetails = {
       ],
     },
   },
-  "ducting-flue-gas-lines": {
+  "ducting-flue-gas-lines-manufacturer": {
     title: "Ducting and Flue Gas Lines Manufacturer in India",
     headline: "Ducting and Flue Gas Lines Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted ducting and flue gas lines manufacturer in India, offering custom industrial ducting, flue gas ducting, exhaust ducting and gas handling ducting for pollution control systems, scrubber systems, stack connections, process plants and industrial exhaust applications.",
-    pagePath: "/products/ducting-flue-gas-lines",
-    image: "/product/13.jpg",
+    pagePath: "/products/ducting-flue-gas-lines-manufacturer",
+    image: "/product/13.webp",
     imageAlt:
       "Industrial ducting and flue gas lines fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -684,13 +684,13 @@ export const productDetails = {
       ],
     },
   },
-  "scrubber-internals-liners": {
+  "scrubber-internals-liners-manufacturer": {
     title: "Scrubber Internals and Liners Manufacturer in India",
     headline: "Scrubber Internals and Liners Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted scrubber internals and liners manufacturer in India, offering custom scrubber internal components, spray headers, nozzle mounting arrangements, mist eliminator frames, demister frames, baffles, perforated plates, flow straighteners, drain arrangements and protective liner support for industrial scrubber systems.",
-    pagePath: "/products/scrubber-internals-liners",
-    image: "/product/21.jpeg",
+    pagePath: "/products/scrubber-internals-liners-manufacturer",
+    image: "/product/21.webp",
     imageAlt:
       "Scrubber internals and protective liner components fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",

@@ -1,7 +1,4 @@
-import ProductDetailLayout from "../../_components/ProductDetailLayout";
-import { CATEGORY_NAME, buildProductMetadata, hvacDuctingNav, productDetails } from "../productDetails";
-const product = productDetails["transitions-reducers-elbows"];
-export const metadata = buildProductMetadata(product);
+import { redirect } from "next/navigation";
 export default function TransitionsReducersElbowsPage() {
-  return <ProductDetailLayout product={product} categoryName={CATEGORY_NAME} navItems={hvacDuctingNav} />;
+  redirect("/products/duct-transition-manufacturer");
 }

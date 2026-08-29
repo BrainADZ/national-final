@@ -8,6 +8,7 @@ import {
   PhoneCall,
 } from "lucide-react";
 import ProductEnquiryForm from "@/components/ProductEnquiryForm";
+import BrandHomeLink from "./BrandHomeLink";
 import { absoluteUrl, SITE_NAME, SITE_URL } from "@/lib/seo";
 import {
   CATEGORY_NAME as DEFAULT_CATEGORY_NAME,
@@ -25,6 +26,26 @@ type ProductDetailLayoutProps = {
   categoryName?: string;
   navItems?: ProductNavItem[];
 };
+
+const FULL_COMPANY_NAME = "National Engineers & Steel Fabricators";
+const FULL_COMPANY_NAME_PATTERN = /National Engineers\s*(?:&|and)\s*Steel Fabricators/i;
+
+function normalizeOverview(overview: string[]) {
+  const normalized = overview.map((paragraph) =>
+    paragraph
+      .replace(/National Engineers\s+and\s+Steel Fabricators/gi, FULL_COMPANY_NAME)
+      .replace(/\bNESF\b/gi, FULL_COMPANY_NAME),
+  );
+
+  if (normalized.some((paragraph) => FULL_COMPANY_NAME_PATTERN.test(paragraph))) {
+    return normalized;
+  }
+
+  return [
+    `${FULL_COMPANY_NAME} provides this product as a project-specific industrial fabrication solution.`,
+    ...normalized,
+  ];
+}
 
 function ProductBulletList({
   items,
@@ -50,6 +71,10 @@ export default function ProductDetailLayout({
   categoryName = DEFAULT_CATEGORY_NAME,
   navItems = pressureVesselNav,
 }: ProductDetailLayoutProps) {
+  const overview = normalizeOverview(product.overview);
+  const linkedOverviewIndex = overview.findIndex((paragraph) =>
+    FULL_COMPANY_NAME_PATTERN.test(paragraph),
+  );
   const schemas: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
@@ -123,13 +148,13 @@ export default function ProductDetailLayout({
       <main className="bg-white text-gray-950">
         <section className="relative isolate overflow-hidden bg-black">
           <img
-            src={product.image}
+            src="/products-banner.webp"
             alt=""
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover opacity-[0.55]"
             style={{ objectPosition: product.imagePosition ?? "center" }}
           />
-          <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/70 to-black/35" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/55 via-black/20 to-transparent" />
           <div className="absolute inset-0 bg-[#ee9d54]/10 mix-blend-overlay" />
           <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-white to-transparent" />
 
@@ -264,8 +289,10 @@ export default function ProductDetailLayout({
                     {product.headline}
                   </h2>
                   <div className="mt-5 space-y-4 text-[15px] leading-8 text-gray-600">
-                    {product.overview.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
+                    {overview.map((paragraph, index) => (
+                      <p key={paragraph}>
+                        {index === linkedOverviewIndex ? <BrandHomeLink text={paragraph} /> : paragraph}
+                      </p>
                     ))}
                   </div>
 
@@ -474,7 +501,7 @@ export default function ProductDetailLayout({
                           key={paragraph}
                           className="mt-3 text-sm leading-7 text-gray-600"
                         >
-                          {paragraph}
+                            {paragraph}
                         </p>
                       ))}
 

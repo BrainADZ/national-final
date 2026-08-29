@@ -35,32 +35,36 @@ const NAV_ITEMS: NavItem[] = [
         children: [
           { label: "Air Receiver Vessels", href: "/products/air-receiver-vessels-manufacturer" },
           {
-            label: "Nitrogen Buffer / Gas Storage Tanks",
-            href: "/products/nitrogen-buffer-gas-storage-tanks",
+            label: "Nitrogen Buffer Tank",
+            href: "/products/nitrogen-buffer-tank-manufacturer",
+          },
+          {
+            label: "Gas Storage Tank",
+            href: "/products/gas-storage-tank-manufacturer",
           },
           {
             label: "Horizontal Storage Tanks",
-            href: "/products/horizontal-storage-tanks",
+            href: "/products/horizontal-storage-tank-manufacturer",
           },
           {
             label: "Vertical Storage Tanks",
-            href: "/products/vertical-storage-tanks",
+            href: "/products/vertical-storage-tank-manufacturer",
           },
           {
             label: "Blowdown / Flash Tanks",
-            href: "/products/blowdown-flash-tanks",
+            href: "/products/blowdown-flash-tank-manufacturer",
           },
           {
             label: "Water Holding / Utility Vessels",
-            href: "/products/water-holding-utility-vessels",
+            href: "/products/water-holding-utility-vessel-manufacturer",
           },
           {
             label: "Filter Vessels (Activated Carbon / Softener)",
-            href: "/products/filter-vessels",
+            href: "/products/filter-vessel-manufacturer",
           },
           {
             label: "Custom Pressure Vessels (As per drawing/spec)",
-            href: "/products/custom-pressure-vessels",
+            href: "/products/custom-pressure-vessel-manufacturer",
           },
         ],
       },
@@ -69,23 +73,27 @@ const NAV_ITEMS: NavItem[] = [
         children: [
           {
             label: "Condensers & Water Condensers",
-            href: "/products/condensers-water-condensers",
+            href: "/products/condenser-manufacturer",
           },
           {
-            label: "Heat Exchanger Shells / Columns",
-            href: "/products/heat-exchanger-shells-columns",
+            label: "Heat Exchanger Shell",
+            href: "/products/heat-exchanger-shell-manufacturer",
+          },
+          {
+            label: "Process Column",
+            href: "/products/process-column-manufacturer",
           },
           {
             label: "Process Skids & Packages",
-            href: "/products/process-skids-packages",
+            href: "/products/process-skid-manufacturer",
           },
           {
             label: "Special Purpose Process Vessels",
-            href: "/products/special-purpose-process-vessels",
+            href: "/products/special-purpose-process-vessel-manufacturer",
           },
           {
             label: "Chemical Process Equipment (Custom)",
-            href: "/products/custom-chemical-process-equipment",
+            href: "/products/custom-chemical-process-equipment-manufacturer",
           },
         ],
       },
@@ -94,23 +102,23 @@ const NAV_ITEMS: NavItem[] = [
         children: [
           {
             label: "Pig Launcher / Pig Receiver Systems",
-            href: "/products/pig-launcher-pig-receiver-systems",
+            href: "/products/pig-launcher-receiver-system-manufacturer",
           },
           {
             label: "Pipeline Spools & Fabrication",
-            href: "/products/pipeline-spools-fabrication",
+            href: "/products/pipeline-spool-fabrication",
           },
           {
             label: "Headers, Manifolds & Special Piping",
-            href: "/products/headers-manifolds-special-piping",
+            href: "/products/headers-manifolds-manufacturer",
           },
           {
             label: "Compressor Suction / Discharge Ducting",
-            href: "/products/compressor-suction-discharge-ducting",
+            href: "/products/compressor-suction-discharge-ducting-manufacturer",
           },
           {
             label: "Piping Supports",
-            href: "/products/piping-supports",
+            href: "/products/piping-supports-manufacturer",
           },
         ],
       },
@@ -119,48 +127,50 @@ const NAV_ITEMS: NavItem[] = [
         children: [
           {
             label: "Venturi Scrubbers",
-            href: "/products/venturi-scrubbers",
+            href: "/products/venturi-scrubber-manufacturer",
           },
           {
             label: "Wet Scrubber Systems",
-            href: "/products/wet-scrubber-systems",
+            href: "/products/wet-scrubber-system-manufacturer",
           },
           {
             label: "Ducting & Flue Gas Lines",
-            href: "/products/ducting-flue-gas-lines",
+            href: "/products/ducting-flue-gas-lines-manufacturer",
           },
           {
             label: "Scrubber Internals & Liners",
-            href: "/products/scrubber-internals-liners",
+            href: "/products/scrubber-internals-liners-manufacturer",
           },
         ],
       },
       {
         label: "Material Handling & Storage (Bulk / Solid)",
         children: [
-          { label: "Hoppers & Flakes Hoppers", href: "/products/hoppers-flakes-hoppers" },
-          { label: "Silos & Storage Bins", href: "/products/silos-storage-bins" },
-          { label: "Chutes & Transitions", href: "/products/chutes-transitions" },
-          { label: "Tow Bin / Tow Can", href: "/products/tow-bin-tow-can" },
+          { label: "Hoppers & Flakes Hoppers", href: "/products/hopper-flakes-hopper-manufacturer" },
+          { label: "Silos & Storage Bins", href: "/products/silo-storage-bin-manufacturer" },
+          { label: "Chutes & Transitions", href: "/products/chute-transition-manufacturer" },
+          { label: "Tow Bin / Tow Can", href: "/products/tow-bin-tow-can-manufacturer" },
           { label: "Bulk Handling Fabrication (Custom)", href: "/products/custom-bulk-handling-fabrication" },
         ],
       },
       {
         label: "HVAC & Industrial Ducting",
         children: [
-          { label: "AHU Ducts (GI / SS)", href: "/products/ahu-ducts-gi-ss" },
-          { label: "Industrial Ducting Systems", href: "/products/industrial-ducting-systems" },
-          { label: "Transitions / Reducers / Elbows", href: "/products/transitions-reducers-elbows" },
-          { label: "Insulated Duct Casing", href: "/products/insulated-duct-casing" },
+          { label: "AHU Ducts (GI / SS)", href: "/products/ahu-duct-manufacturer" },
+          { label: "Industrial Ducting Systems", href: "/products/industrial-ducting-system-manufacturer" },
+          { label: "Duct Transition", href: "/products/duct-transition-manufacturer" },
+          { label: "Duct Reducer", href: "/products/duct-reducer-manufacturer" },
+          { label: "Duct Elbow", href: "/products/duct-elbow-manufacturer" },
+          { label: "Insulated Duct Casing", href: "/products/insulated-duct-casing-manufacturer" },
         ],
       },
       {
         label: "Fabrication Components & Structural",
         children: [
-          { label: "Base Plates", href: "/products/base-plates" },
-          { label: "Pipe Saddles & Supports", href: "/products/pipe-saddles-supports" },
-          { label: "Jack Stools / Temporary Supports", href: "/products/jack-stools-temporary-supports" },
-          { label: "Liners (Hard Plate / Wear Plate)", href: "/products/liners-hard-wear-plate" },
+          { label: "Base Plates", href: "/products/base-plate-manufacturer" },
+          { label: "Pipe Saddles & Supports", href: "/products/pipe-saddle-manufacturer" },
+          { label: "Jack Stools / Temporary Supports", href: "/products/jack-stool-manufacturer" },
+          { label: "Liners (Hard Plate / Wear Plate)", href: "/products/wear-plate-liner-manufacturer" },
           { label: "Heavy Structural Fabrication (Custom)", href: "/products/custom-heavy-structural-fabrication" },
         ],
       },
@@ -170,7 +180,7 @@ const NAV_ITEMS: NavItem[] = [
           { label: "Heavy Plate Fabrication", href: "/products/heavy-plate-fabrication" },
           { label: "SS / CS / Alloy Steel Fabrication", href: "/products/ss-cs-alloy-steel-fabrication" },
           { label: "On-site Erection Support", href: "/products/on-site-erection-support" },
-          { label: "Repair / Modification Jobs", href: "/products/repair-modification-jobs" },
+          { label: "Repair / Modification Jobs", href: "/products/industrial-repair-modification-jobs" },
         ],
       },
     ],
@@ -220,7 +230,7 @@ export default function Navbar() {
     () => (
       <Link href="/" prefetch={false} className="flex items-center gap-3 min-w-0">
         <div className="relative h-12 w-37.5 shrink-0 rounded-sm bg-white sm:h-14 sm:w-47.5">
-          <img src="/logo222.png" alt="National Engineers Logo" className="h-full w-full object-contain px-3" />
+          <img src="/logo222.webp" alt="National Engineers Logo" className="h-full w-full object-contain px-3" />
         </div>
       </Link>
     ),
@@ -236,7 +246,7 @@ export default function Navbar() {
       <div className={`absolute right-0 top-0 h-dvh w-[85%] max-w-sm overflow-y-auto bg-white shadow-2xl transition-transform ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
         <div className="flex items-center justify-between border-b border-gray-200 px-4 py-4">
           <div className="relative h-14 w-40 shrink-0">
-            <img src="/logo222.png" alt="National Engineers Logo" className="h-full w-full object-contain" />
+            <img src="/logo222.webp" alt="National Engineers Logo" className="h-full w-full object-contain" />
           </div>
           <button
             type="button"

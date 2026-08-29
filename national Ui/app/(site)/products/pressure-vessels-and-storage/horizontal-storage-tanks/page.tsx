@@ -1,7 +1,7 @@
 import ProductDetailLayout from "../../_components/ProductDetailLayout";
 import { buildProductMetadata, productDetails } from "../productDetails";
 
-const product = productDetails["horizontal-storage-tanks"];
+const product = productDetails["horizontal-storage-tank-manufacturer"];
 
 export const metadata = buildProductMetadata(product);
 

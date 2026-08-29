@@ -15,28 +15,28 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
     title: "Pressure Vessels & Storage",
     description:
       "Air receivers, nitrogen buffer tanks, storage tanks, blowdown vessels, filter vessels, and custom pressure vessels for industrial plants.",
-    image: "/product/7.jpg",
+    image: "/product/7.webp",
     highlights: ["Air Receiver Vessels", "Storage Tanks", "Filter Vessels"],
   },
   {
     title: "Material Handling & Storage",
     description:
       "Hoppers, flakes hoppers, silos, storage bins, tow cans, chutes, transitions, and bulk handling fabrication.",
-    image: "/product/00.jpg",
+    image: "/product/00.webp",
     highlights: ["Hoppers & Flakes Hoppers", "Silos & Storage Bins", "Tow Bin / Tow Can"],
   },
   {
     title: "Process Equipment & Heat Transfer",
     description:
       "Condensers, process skids, heat exchanger shells, columns, and special-purpose vessels built around process requirements.",
-    image: "/product/25.png",
+    image: "/product/25.webp",
     highlights: ["Condensers", "Process Skids", "Special Purpose Vessels"],
   },
   {
     title: "Pollution Control & Gas Handling",
     description:
       "Venturi scrubbers, wet scrubber systems, ducting, flue gas lines, scrubber internals, liners, and gas handling fabrication.",
-    image: "/product/3.jpg",
+    image: "/product/3.webp",
     highlights: ["Venturi Scrubbers", "Wet Scrubber Systems", "Flue Gas Lines"],
   },
   {
@@ -50,21 +50,21 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
     title: "Fabrication Components & Structural",
     description:
       "Base plates, pipe saddles, jack stools, wear plate liners, and heavy structural fabrication for industrial assemblies.",
-    image: "/product/18.jpg",
+    image: "/product/18.webp",
     highlights: ["Base Plates", "Pipe Saddles", "Jack Stools"],
   },
   {
     title: "HVAC & Industrial Ducting",
     description:
       "AHU ducts, GI and SS ducting, insulated ducts, industrial ducting systems, transitions, reducers, and elbows.",
-    image: "/product/13.jpg",
+    image: "/product/13.webp",
     highlights: ["AHU Ducts", "Industrial Ducting", "Transitions & Elbows"],
   },
   {
     title: "Custom Manufacturing",
     description:
       "Build-to-drawing heavy plate fabrication, SS / CS / alloy steel fabrication, on-site erection support, and repair jobs.",
-    image: "/product/16.jpg",
+    image: "/product/16.webp",
     highlights: ["Heavy Plate Fabrication", "SS / CS / Alloy Fabrication", "Repair / Modification"],
   },
 ];
@@ -75,7 +75,7 @@ export default function ProductsPage() {
       {/* HERO */}
       <section className="relative">
         <div className="absolute inset-0">
-          <img src="/DSCN2685.jpg" alt="Gallery" className="h-full w-full object-cover" />
+            <img src="/DSCN2685.webp" alt="Gallery" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/45 to-black/15" />
           <div className="absolute inset-0 bg-orange-500/10 mix-blend-multiply" />
         </div>
@@ -126,7 +126,7 @@ export default function ProductsPage() {
         <div className="grid gap-8 md:grid-cols-2 md:items-center">
           <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
             <img
-              src="/Pho 0042.jpg"
+              src="/Pho.webp"
               alt="Industrial fabrication"
               className="h-65 w-full object-cover md:h-90"
             />
@@ -201,9 +201,7 @@ export default function ProductsPage() {
                     className="h-72 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-70" />
-                  <span className="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#ee9d54]">
-                    Category
-                  </span>
+  
                 </div>
               </div>
 

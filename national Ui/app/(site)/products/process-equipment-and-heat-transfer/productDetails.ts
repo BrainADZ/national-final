@@ -7,35 +7,39 @@ export const CATEGORY_NAME = "Process Equipment & Heat Transfer";
 export const processEquipmentNav = [
   {
     label: "Condensers & Water Condensers",
-    href: "/products/condensers-water-condensers",
+    href: "/products/condenser-manufacturer",
   },
   {
-    label: "Heat Exchanger Shells / Columns",
-    href: "/products/heat-exchanger-shells-columns",
+    label: "Heat Exchanger Shell",
+    href: "/products/heat-exchanger-shell-manufacturer",
+  },
+  {
+    label: "Process Column",
+    href: "/products/process-column-manufacturer",
   },
   {
     label: "Process Skids & Packages",
-    href: "/products/process-skids-packages",
+    href: "/products/process-skid-manufacturer",
   },
   {
     label: "Special Purpose Process Vessels",
-    href: "/products/special-purpose-process-vessels",
+    href: "/products/special-purpose-process-vessel-manufacturer",
   },
   {
     label: "Chemical Process Equipment (Custom)",
-    href: "/products/custom-chemical-process-equipment",
+    href: "/products/custom-chemical-process-equipment-manufacturer",
   },
 ];
 
 export const productDetails = {
-  "condensers-water-condensers": {
+  "condenser-manufacturer": {
     title: "Condensers Manufacturer and Supplier in India",
     headline: "Condenser Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted condensers manufacturer and supplier in India, offering custom-built industrial condensers and water condensers for process cooling, heat transfer, vapor condensation, utility circuits and continuous-duty plant operations.",
     pagePath:
-      "/products/condensers-water-condensers",
-    image: "/product/25.png",
+      "/products/condenser-manufacturer",
+    image: "/product/25.webp",
     imageAlt:
       "Industrial water condenser fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -232,114 +236,114 @@ export const productDetails = {
       ],
     },
   },
-  "heat-exchanger-shells-columns": {
-    title: "Heat Exchanger Shells & Columns",
-    headline: "Precision-Fabricated Shells and Columns for Industrial Projects",
-    description:
-      "Precision-fabricated heat exchanger shells and process columns with controlled fit-up, nozzle orientation accuracy, documented inspection, and project-ready deliverables.",
-    pagePath:
-      "/products/heat-exchanger-shells-columns",
-    image: "/product/23.jpeg",
-    imageAlt:
-      "Heat exchanger shell and process column fabricated by National Engineers and Steel Fabricators",
+  "heat-exchanger-shell-manufacturer": {
+    title: "Heat Exchanger Shell Manufacturer and Supplier in India",
+    headline: "Heat Exchanger Shell Manufacturer in Surat",
+    description: "National Engineers & Steel Fabricators is a trusted heat exchanger shell manufacturer and supplier in India, offering custom heat exchanger shell fabrication for shell and tube heat exchangers, condenser shells, heat transfer equipment and industrial process equipment.",
+    pagePath: "/products/heat-exchanger-shell-manufacturer",
+    image: "/product/23.webp",
+    imageAlt: "Heat exchanger shell manufactured by National Engineers and Steel Fabricators",
     imagePosition: "center",
     quickFacts: [
-      { label: "Build Scope", value: "Shells, channels, heads, columns" },
-      { label: "Accuracy", value: "Fit-up and nozzle orientation checks" },
-      { label: "Inspection", value: "NDT, pressure, and leak tests" },
-      { label: "Deliverables", value: "Inspection and documentation pack" },
+      { label: "Product Type", value: "Heat Exchanger Shell" },
+      { label: "Equipment Category", value: "Heat Transfer / Process Equipment" },
+      { label: "Orientation", value: "Horizontal or vertical" },
+      { label: "Fabrication", value: "Custom-built as per drawing and datasheet" },
     ],
     overview: [
-      "NESF fabricates heat exchanger shells and process columns for demanding industrial environments.",
-      "We focus on dimensional accuracy, weld integrity, nozzle orientation accuracy, and inspection readiness so your equipment integrates smoothly with piping, instrumentation, and structural supports.",
+      "Based in Sachin GIDC, Surat, Gujarat, we manufacture heat exchanger shells as per client drawings, datasheets, shell dimensions, material of construction, nozzle orientation, support arrangement, pressure condition, temperature requirement, inspection plan and documentation needs.",
+      "Our heat exchanger shell fabrication solutions are suitable for industries that require accurate fit-up, controlled welding, dimensional accuracy, pressure integrity and project-ready fabricated shells instead of standard off-the-shelf components.",
+      "National Engineers & Steel Fabricators is an experienced heat exchanger shell manufacturer in Surat, offering custom shell fabrication for chemical plants, pharmaceutical units, process industries, utility systems, water treatment plants, engineering companies and manufacturing facilities.",
+      "As a heat exchanger shell manufacturer in India, we fabricate industrial heat exchanger shells, condenser shells, shell sections, channels, covers, heads, nozzles, saddles and supports as per approved drawings and project specifications. Each shell is manufactured with proper attention to shell roundness, fit-up accuracy, welding quality, nozzle alignment, support positioning, inspection readiness and long service life.",
     ],
     sections: [
-      {
-        title: "Scope of Fabrication",
-        bullets: [
-          "Shells, channels, covers, and heads as per design.",
-          "Small to heavy-duty process columns with platforms and supports when required.",
-          "Nozzles, manways, lifting lugs, supports, and saddles.",
-          "Internals handling support as applicable to the project scope.",
-        ],
-      },
-      {
-        title: "Engineering & Compliance",
-        body: [
-          "Fabrication is aligned to client specifications and applicable project requirements.",
-        ],
-        bullets: [
-          "TEMA expectations for shell-and-tube mechanical construction where applicable to the exchanger shell scope.",
-          "ASME BPVC-aligned pressure equipment practices where specified by the client.",
-          "Project-specific drawings, inspection plans, and acceptance criteria.",
-        ],
-      },
-      {
-        title: "QA / Inspection Readiness",
-        bullets: [
-          "Controlled welding and fit-up practices.",
-          "NDT as specified, including UT or RT where required.",
-          "Pressure and leak tests where applicable.",
-          "Dimensional checks and nozzle orientation verification.",
-          "Inspection records and documentation pack.",
-        ],
-      },
-      {
-        title: "Typical Industries",
-        body: [
-          "Chemical processing, petroleum-related processing, utilities, specialty manufacturing, and custom industrial projects.",
-        ],
-      },
-      {
-        title: "What You Receive",
-        bullets: [
-          "Fabricated exchanger shells or process columns as per agreed scope.",
-          "Fit-up, dimensional, and nozzle orientation inspection records.",
-          "NDT and pressure or leak test reports where applicable.",
-          "Project-ready documentation aligned to the agreed format.",
-        ],
-      },
-      {
-        title: "Quotation Inputs",
-        bullets: [
-          "Client drawing, datasheet, or basic process data and layout.",
-          "Material of construction and corrosion allowance.",
-          "Design and operating pressure and temperature.",
-          "Inspection plan, NDT, testing, and documentation requirements.",
-          "Platform, support, internals handling, and delivery requirements.",
-        ],
-      },
+      { title: "Custom Heat Exchanger Shell Fabrication", body: ["Every heat exchanger shell has different size, pressure, temperature, media, nozzle layout and inspection requirements. That is why National Engineers & Steel Fabricators provides custom heat exchanger shell fabrication as per client-specific drawings, datasheets and duty conditions.", "Our heat exchanger fabrication scope can include:"], bullets: ["Shell rolling and fabrication", "Shell section fit-up and welding", "Channel and cover fabrication", "Head and dish-end fit-up", "Nozzle fabrication and orientation", "Saddle and support fabrication", "Lifting lug arrangement", "Vent, drain and instrument nozzle provision", "Dimensional inspection", "Nozzle orientation verification", "Surface preparation and painting", "Pressure testing and leak testing as applicable", "NDT support as per project requirement", "Documentation and inspection records as agreed"] },
+      { title: "Shell and Tube Heat Exchanger Shell Manufacturer", body: ["National Engineers & Steel Fabricators manufactures shell and tube heat exchanger shells for industrial heat transfer applications. These shells are fabricated to house tube bundles and support the mechanical structure of shell and tube heat exchangers.", "As a shell and tube heat exchanger shell manufacturer, we focus on accurate shell fabrication, nozzle placement, support alignment, flange fit-up and dimensional control so that the fabricated shell can integrate properly with tubes, channels, covers, piping and connected equipment.", "Our shell and tube heat exchanger shell fabrication support can be aligned with client specifications, inspection plans and TEMA-aligned fabrication expectations where applicable."] },
+      { title: "Condenser Shell Fabrication", body: ["National Engineers & Steel Fabricators also provides condenser shell fabrication for water condensers, process condensers and industrial heat transfer systems. Condenser shells require controlled fabrication because they must support heat transfer duty, pressure conditions, inlet-outlet connections and inspection requirements.", "As a condenser shell manufacturer and heat transfer equipment manufacturer, we fabricate condenser shells, headers, nozzles, saddles and related components as per client drawings and project requirements."] },
+      { title: "Heat Exchanger Components We Manufacture", body: ["National Engineers & Steel Fabricators manufactures heat exchanger shells and related fabricated components for process and heat transfer equipment.", "Common fabrication scope includes:"], bullets: ["Heat exchanger shells", "Shell and tube heat exchanger shells", "Industrial heat exchanger shells", "Custom heat exchanger shells", "Condenser shells", "Heat exchanger channels", "Heat exchanger covers", "Heat exchanger heads", "Nozzles and manways", "Saddles and supports", "Lifting lugs", "Shell sections as per drawing", "Skid-ready heat exchanger shell components"] },
+      { title: "Key Features", bullets: ["Custom-built heat exchanger shells as per drawing and datasheet", "Suitable for shell and tube heat exchangers and condenser applications", "MS, CS, SS and alloy steel fabrication options", "Controlled shell rolling, fit-up and welding", "Accurate nozzle orientation as per P&ID or client drawing", "Shell roundness and dimensional checking", "Channel, cover, head and support fabrication support", "Saddle, lifting lug and bracket provision as required", "Vent, drain and instrument nozzle provision", "TEMA-aligned fabrication support where applicable", "ASME-ready fabrication support where specified", "NDT support such as UT or RT as per project requirement", "Pressure testing and leak testing as applicable", "Surface preparation, painting or coating support", "Inspection records and documentation support as agreed"] },
+      { title: "Applications", body: ["Our heat exchanger shells are used across different industrial and process applications, including:"], bullets: ["Shell and tube heat exchangers", "Industrial condensers", "Water condensers", "Process heat exchangers", "Utility heat exchangers", "Heat transfer equipment", "Chemical process plants", "Pharmaceutical industries", "Food and beverage processing units", "Water treatment plants", "Utility plants", "Process skids and package units", "Manufacturing plants", "Engineering industries", "Custom industrial projects"] },
+      { title: "Materials of Construction", body: ["National Engineers & Steel Fabricators manufactures heat exchanger shells using suitable material based on service media, pressure, temperature, corrosion condition, cooling medium and project specification.", "Common material options include:"], bullets: ["Mild Steel", "Carbon Steel", "Stainless Steel", "Alloy Steel as per requirement", "Internally coated construction if required", "Externally painted or coated construction", "Special MOC as per client specification", "As an MS heat exchanger shell manufacturer, CS heat exchanger shell manufacturer and SS heat exchanger shell manufacturer, we fabricate shells based on the client’s duty condition, corrosion requirement and inspection scope."] },
+      { title: "Technical Specifications", table: { columns: ["Specification", "Details"], rows: [["Product Type", "Heat Exchanger Shell"], ["Equipment Category", "Heat Transfer Equipment / Process Equipment"], ["Application", "Shell and tube heat exchanger, condenser shell, process and utility heat transfer service"], ["Material of Construction", "Mild Steel, Carbon Steel, Stainless Steel, Alloy Steel or as per requirement"], ["Fabrication Scope", "Shells, channels, covers, heads, nozzles, saddles and supports"], ["Shell Size", "As per client drawing and project requirement"], ["Shell Thickness", "As per design, pressure condition and client specification"], ["Orientation", "Horizontal or vertical as per equipment design"], ["Nozzle Connection", "As per P&ID, nozzle schedule or client drawing"], ["Support Type", "Saddle support, bracket support, structural support or skid-mounted arrangement"], ["Design Basis", "Client drawing, datasheet, P&ID or project specification"], ["Inspection", "Dimensional checks, nozzle orientation checks and NDT as specified"], ["Testing", "Pressure testing / leak testing where applicable"], ["NDT", "UT, RT or other NDT as per project requirement"], ["Surface Finish", "Painted, coated, lined or finished as per service condition"], ["Documentation", "Inspection reports, test reports and documentation pack as agreed"], ["Customization", "Available as per drawing, MOC, pressure condition, duty requirement and site layout"]] } },
+      { title: "Fabrication and Quality Control", body: ["Every heat exchanger shell is fabricated with proper attention to material verification, shell rolling, fit-up, welding quality, dimensional accuracy, shell roundness, nozzle orientation and support alignment.", "Quality checks may include:"], bullets: ["Material verification", "Drawing and datasheet review", "Shell rolling inspection", "Fit-up inspection", "Welding quality checks", "Shell roundness checking", "Dimensional inspection", "Nozzle orientation verification", "Support alignment checking", "NDT such as UT or RT as specified", "Pressure testing as applicable", "Leak testing as required", "Final painting and finishing inspection", "Documentation compilation as agreed"] },
+      { title: "Engineering and Compliance Support", body: ["National Engineers & Steel Fabricators manufactures heat exchanger shells as per client specifications, approved drawings, inspection plans and project requirements.", "Where applicable, fabrication can be aligned with:"], bullets: ["TEMA-aligned expectations for shell and tube heat exchanger shell scope", "ASME-ready pressure equipment fabrication support where specified", "Project-specific inspection plans", "Client-defined acceptance criteria", "Third-party inspection requirements", "Documentation and traceability requirements", "Final code compliance, design approval and certification requirements should be confirmed as per applicable design code, client specification and authorized engineering review."] },
+      { title: "Why Choose National Engineers?", body: ["National Engineers & Steel Fabricators is a trusted heat exchanger shell manufacturer, heat exchanger shell supplier and process equipment manufacturer in Surat, Gujarat. We provide custom fabrication support for industries that require accurate, durable and inspection-ready heat exchanger shells.", "Reasons to work with us:"], bullets: ["Experienced heat exchanger shell manufacturer in India", "Reliable heat exchanger shell supplier in Surat, Gujarat", "Custom heat exchanger shell fabrication as per drawing", "Shell and tube heat exchanger shell manufacturing support", "Condenser shell fabrication for industrial applications", "MS, CS, SS and alloy steel fabrication capability", "Controlled fit-up, welding and nozzle alignment", "TEMA-aligned fabrication support where applicable", "ASME-ready fabrication support where specified", "NDT, pressure testing and documentation support as agreed", "Fabrication for chemical, pharma, food, water treatment, utility and process industries"] },
+      { title: "Details Required for Quotation", body: ["To provide the right quotation for a heat exchanger shell, please share:"], bullets: ["Drawing or datasheet", "Shell diameter and length", "Material of construction", "Shell thickness", "Design pressure and operating pressure", "Design temperature and operating temperature", "Service media", "Corrosion allowance", "Nozzle schedule or P&ID", "Support arrangement", "NDT requirement", "Pressure or leak testing requirement", "Surface finish, coating or painting requirement", "Documentation requirement", "Delivery location and timeline"] },
     ],
-    note:
-      "Send your drawing or specification, or share your basic process data and layout. NESF can fabricate to your inspection plan and documentation format.",
-    enquiry: {
-      title: "Request a quote for Heat Exchanger Shells & Columns",
-      subtitle:
-        "Share your drawings, process data, material requirements, inspection plan, and documentation format.",
-      productName: "Heat Exchanger Shells & Columns",
-      buttonText: "Request Quote",
-    },
-    seo: {
-      title: "Heat Exchanger Shells & Columns | Heavy Fabrication by NESF",
-      description:
-        "Precision-fabricated exchanger shells and columns with documented inspection, fit-up accuracy, and project-ready deliverables.",
-      keywords: [
-        "heat exchanger shell manufacturer",
-        "process column fabrication",
-        "heavy fabrication india",
-        "exchanger shell fabrication",
-        "industrial process column manufacturer",
-      ],
-    },
+    note: "Share your drawings, datasheets, shell dimensions, MOC, nozzle schedule, inspection plan and documentation requirements with National Engineers & Steel Fabricators. Our team will review your requirement and provide a suitable heat exchanger shell fabrication solution for your industrial project.",
+    enquiry: { title: "Get a Quote for Heat Exchanger Shell", subtitle: "Looking for a heat exchanger shell manufacturer and supplier in India?", productName: "Heat Exchanger Shell", buttonText: "Request Quote" },
+    faqs: [
+      { question: "What is a heat exchanger shell?", answer: "A heat exchanger shell is the fabricated outer body of a shell and tube heat exchanger. It houses the tube bundle and provides the main pressure-retaining structure for heat transfer applications." },
+      { question: "Who is a heat exchanger shell manufacturer in Surat?", answer: "National Engineers & Steel Fabricators is a heat exchanger shell manufacturer in Surat, Gujarat, offering custom shell fabrication as per client drawings, datasheets, MOC, nozzle schedule and inspection requirements." },
+      { question: "Do you manufacture heat exchanger shells in India?", answer: "Yes, National Engineers & Steel Fabricators is a heat exchanger shell manufacturer and supplier in India, providing custom heat exchanger shells, condenser shells, channels, covers, heads, nozzles and supports." },
+      { question: "Can heat exchanger shells be fabricated as per drawing?", answer: "Yes, heat exchanger shells can be fabricated as per client drawings, datasheets, shell dimensions, MOC, nozzle orientation, support arrangement, testing scope and documentation requirements." },
+      { question: "What is shell and tube heat exchanger shell fabrication?", answer: "Shell and tube heat exchanger shell fabrication includes shell rolling, fit-up, welding, nozzle installation, support fabrication, dimensional checking, pressure testing and documentation as per project requirement." },
+      { question: "Which materials are used for heat exchanger shells?", answer: "Heat exchanger shells can be fabricated in mild steel, carbon steel, stainless steel, alloy steel or special materials depending on service media, pressure, temperature and corrosion requirements." },
+      { question: "Do you provide condenser shell fabrication?", answer: "Yes, National Engineers & Steel Fabricators provides condenser shell fabrication for industrial condensers, water condensers, process condensers and heat transfer equipment." },
+      { question: "Do you support TEMA or ASME-ready fabrication?", answer: "Yes, TEMA-aligned fabrication support and ASME-ready pressure equipment fabrication support can be provided where specified by the client and agreed in the project scope." },
+      { question: "What testing is done for heat exchanger shells?", answer: "Testing may include dimensional inspection, shell roundness checking, nozzle orientation verification, NDT such as UT or RT, pressure testing and leak testing as per project requirement." },
+      { question: "How is heat exchanger shell price calculated?", answer: "Heat exchanger shell price depends on shell size, MOC, thickness, nozzle quantity, support arrangement, NDT, pressure testing, coating, documentation and customization requirements." },
+    ],
+    seo: { title: "Heat Exchanger Shell Manufacturer & Supplier in India | NESF", description: "Heat exchanger shell manufacturer in Surat, India, offering custom shell fabrication, condenser shells, nozzles and supports.", keywords: ["Heat Exchanger Shell Manufacturer", "heat exchanger shell supplier", "heat exchanger shell manufacturer in India", "heat exchanger shell manufacturer in Surat", "industrial heat exchanger shell", "custom heat exchanger shell", "heat exchanger shell fabrication", "heat exchanger fabrication", "shell and tube heat exchanger shell", "shell and tube heat exchanger shell manufacturer", "condenser shell fabrication", "condenser shell manufacturer", "heat exchanger components manufacturer", "heat transfer equipment manufacturer", "process equipment manufacturer in India", "process equipment manufacturer in Surat", "MS heat exchanger shell", "CS heat exchanger shell", "SS heat exchanger shell", "TEMA-aligned fabrication", "ASME-ready fabrication", "NDT", "pressure testing", "leak testing"] },
   },
-  "process-skids-packages": {
+  "process-column-manufacturer": {
+    title: "Process Column Manufacturer and Supplier in India",
+    headline: "Process Column Manufacturer in Surat",
+    description: "National Engineers & Steel Fabricators is a trusted process column manufacturer and supplier in India, offering custom process column fabrication for chemical plants, process industries, utility systems, specialty manufacturing, engineering projects and heavy industrial applications.",
+    pagePath: "/products/process-column-manufacturer",
+    image: "/product/23.webp",
+    imageAlt: "Process column manufactured by National Engineers and Steel Fabricators",
+    imagePosition: "center",
+    quickFacts: [
+      { label: "Product Type", value: "Process Column" },
+      { label: "Equipment Category", value: "Process Equipment / Heavy Fabrication" },
+      { label: "Orientation", value: "Vertical" },
+      { label: "Fabrication", value: "Custom-built as per drawing and datasheet" },
+    ],
+    overview: [
+      "Based in Sachin GIDC, Surat, Gujarat, we manufacture industrial process columns as per client drawings, datasheets, P&ID, column height, diameter, material of construction, nozzle schedule, manway arrangement, support requirement, platform requirement, inspection plan and documentation needs.",
+      "Our process column fabrication solutions are suitable for industries that require accurate shell alignment, controlled welding, proper nozzle orientation, verticality control, inspection readiness and project-ready fabricated equipment.",
+      "National Engineers & Steel Fabricators is an experienced process column manufacturer in Surat, offering custom process columns for industrial and process plant applications.",
+      "As a process column manufacturer in India, we fabricate column shells, shell sections, nozzles, manways, lifting lugs, support brackets, internal support rings, platform supports, ladder supports and other required fabrication components as per approved drawings and project specifications. Each process column is manufactured with proper attention to fit-up, welding quality, shell alignment, dimensional accuracy, nozzle location, manway positioning, support planning and long service life.",
+    ],
+    sections: [
+      { title: "Custom Process Column Fabrication", body: ["Every process column has different height, diameter, service condition, nozzle layout, support arrangement and inspection requirement. That is why National Engineers & Steel Fabricators provides custom process column fabrication as per client-specific drawings, datasheets and duty conditions.", "Our process column fabrication scope can include:"], bullets: ["Column shell fabrication", "Column section rolling and fit-up", "Shell section welding", "Nozzle fabrication and installation", "Manway fabrication and fitment", "Internal support ring fabrication", "Platform and ladder support provision", "Lifting lug and erection support provision", "Skirt, base ring or support arrangement", "Dimensional and verticality checks", "NDT support as per project requirement", "Pressure testing and leak testing where applicable", "Surface preparation and painting", "Documentation and inspection records as agreed"] },
+      { title: "Industrial Process Columns for Plant Applications", body: ["Industrial process columns are used in process plants where tall fabricated equipment is required for application-specific process duties. These columns may be used in chemical processing, utility systems, specialty manufacturing and other industrial projects depending on the plant requirement.", "As an industrial column manufacturer and process equipment manufacturer in India, National Engineers & Steel Fabricators manufactures process columns that integrate properly with connected piping, instrumentation, platforms, supports and plant layout.", "Our focus is on practical fabrication quality, safe handling, accurate nozzle orientation, strong support design and reliable project execution."] },
+      { title: "Heavy Fabrication for Process Columns", body: ["Process columns often require heavy fabrication capability because of their size, height, thickness, lifting arrangement, support requirement and site installation needs.", "National Engineers & Steel Fabricators is a heavy fabrication company in Surat, providing process column fabrication and custom process equipment fabrication for industries that need durable, accurate and inspection-ready fabricated equipment.", "Our heavy fabrication support includes column shells, structural supports, lifting lugs, base supports, platform brackets, manways, nozzles and project-specific fabricated attachments."] },
+      { title: "Types of Process Columns We Manufacture", body: ["National Engineers & Steel Fabricators manufactures custom process columns based on client drawings, service conditions and industrial project requirements.", "Common types include:"], bullets: ["Industrial process columns", "Custom process columns", "MS process columns", "CS process columns", "SS process columns", "Vertical process columns", "Fabricated column shells", "Column shell sections", "Process columns with nozzles and manways", "Process columns with platform supports", "Process columns with ladder supports", "Process equipment columns as per drawing", "Heavy fabricated process columns", "Special-purpose process columns"] },
+      { title: "Key Features", bullets: ["Custom-built process columns as per drawing and datasheet", "Suitable for chemical, utility and process plant applications", "MS, CS, SS and alloy steel fabrication options", "Column shell fabrication as per required height and diameter", "Accurate nozzle orientation as per P&ID or client drawing", "Manway, vent, drain and instrument nozzle provisions", "Internal support rings and brackets as required", "Platform and ladder support provision if required", "Lifting lug and erection support arrangement", "Skirt, base ring or support arrangement as per design", "Controlled fit-up, welding and dimensional accuracy", "Verticality and alignment checks", "NDT support such as UT or RT as per project requirement", "Pressure testing and leak testing where applicable", "Surface preparation, painting or coating support", "Documentation support as agreed"] },
+      { title: "Applications", body: ["Our process columns are used across different industries and applications, including:"], bullets: ["Chemical process plants", "Specialty chemical manufacturing", "Pharmaceutical industries", "Utility plants", "Oil and gas related processing", "Process skids and package units", "Industrial process equipment", "Manufacturing plants", "Engineering industries", "Heavy fabrication projects", "Custom industrial projects", "Process plant expansion projects", "Utility and service systems", "Application-specific process operations"] },
+      { title: "Materials of Construction", body: ["National Engineers & Steel Fabricators manufactures process columns using suitable material based on service media, pressure, temperature, corrosion condition, site environment and client specification.", "Common material options include:"], bullets: ["Mild Steel", "Carbon Steel", "Stainless Steel", "Alloy Steel as per requirement", "Internally coated construction if required", "Externally painted or coated construction", "Special MOC as per client specification", "As an MS process column manufacturer, CS process column manufacturer and SS process column manufacturer, we fabricate process columns based on the client’s duty condition, material requirement, corrosion allowance and inspection scope."] },
+      { title: "Technical Specifications", table: { columns: ["Specification", "Details"], rows: [["Product Type", "Process Column"], ["Equipment Category", "Process Equipment / Heavy Fabrication"], ["Application", "Chemical processing, utility systems, process plants and industrial fabrication"], ["Material of Construction", "Mild Steel, Carbon Steel, Stainless Steel, Alloy Steel or as per requirement"], ["Fabrication Scope", "Column shells, shell sections, nozzles, manways, supports, lifting lugs and platform supports"], ["Column Height", "As per client drawing and project requirement"], ["Column Diameter", "As per client drawing and process requirement"], ["Shell Thickness", "As per design, duty condition and client specification"], ["Orientation", "Vertical"], ["Nozzle Connection", "As per P&ID, nozzle schedule or client drawing"], ["Manway", "Provided as per inspection and maintenance requirement"], ["Support Type", "Skirt support, base ring, leg support, bracket support or structural support"], ["Internals Support", "Internal support rings, brackets or internals handling support as applicable"], ["Platform Support", "Platform, ladder and handrail support provision if required"], ["Design Basis", "Client drawing, datasheet, P&ID or project specification"], ["Inspection", "Dimensional checks, verticality checks, nozzle orientation checks and NDT as specified"], ["Testing", "Pressure testing / leak testing where applicable"], ["NDT", "UT, RT or other NDT as per project requirement"], ["Surface Finish", "Painted, coated, lined or finished as per service condition"], ["Documentation", "Inspection reports, test reports and documentation pack as agreed"], ["Customization", "Available as per drawing, MOC, nozzle schedule, support requirement and site layout"]] } },
+      { title: "Fabrication and Quality Control", body: ["Every process column is fabricated with proper attention to material verification, shell rolling, fit-up, welding quality, dimensional accuracy, verticality, nozzle orientation and support alignment.", "Quality checks may include:"], bullets: ["Material verification", "Drawing and datasheet review", "Shell rolling inspection", "Fit-up inspection", "Welding quality checks", "Shell alignment checking", "Dimensional inspection", "Verticality checking", "Nozzle orientation verification", "Manway location checking", "Support alignment checking", "Internal support checking if applicable", "NDT such as UT or RT as specified", "Pressure testing where applicable", "Leak testing as required", "Final painting and finishing inspection", "Documentation compilation as agreed"] },
+      { title: "Engineering and Compliance Support", body: ["National Engineers & Steel Fabricators manufactures process columns as per client specifications, approved drawings, inspection plans and project requirements.", "Where applicable, fabrication can be aligned with:"], bullets: ["ASME-ready pressure equipment fabrication support where specified", "Project-specific inspection plans", "Client-defined acceptance criteria", "Third-party inspection requirements", "Documentation and traceability requirements", "Pressure vessel fabrication practices where applicable to the scope", "Final code compliance, design approval and certification requirements should be confirmed as per applicable design code, client specification and authorized engineering review."] },
+      { title: "Why Choose National Engineers?", body: ["National Engineers & Steel Fabricators is a trusted process column manufacturer, process column supplier and process equipment manufacturer in Surat, Gujarat. We provide custom process column fabrication support for industries that require accurate, durable and inspection-ready heavy fabricated equipment.", "Reasons to work with us:"], bullets: ["Experienced process column manufacturer in India", "Reliable process column supplier in Surat, Gujarat", "Custom process column fabrication as per drawing", "Industrial process columns for plant applications", "Heavy fabrication manufacturer in Surat for process industries", "MS, CS, SS and alloy steel fabrication capability", "Accurate shell alignment and nozzle orientation", "Platform, ladder, manway and support fabrication support", "ASME-ready fabrication support where specified", "NDT, pressure testing and documentation support as agreed", "Fabrication for chemical, pharma, utility, process and manufacturing industries"] },
+      { title: "Details Required for Quotation", body: ["To provide the right quotation for a process column, please share:"], bullets: ["Drawing or datasheet", "P&ID or nozzle schedule", "Column height and diameter", "Material of construction", "Shell thickness", "Design pressure and operating pressure", "Design temperature and operating temperature", "Service media", "Corrosion allowance", "Nozzle and manway details", "Support arrangement", "Platform or ladder support requirement", "Internals handling requirement if any", "NDT requirement", "Pressure or leak testing requirement", "Surface finish, coating or painting requirement", "Documentation requirement", "Delivery location and timeline"] },
+    ],
+    note: "Share your drawings, datasheets, column dimensions, MOC, nozzle schedule, support requirement, inspection plan and documentation requirements with National Engineers & Steel Fabricators. Our team will review your requirement and provide a suitable process column fabrication solution for your industrial project.",
+    enquiry: { title: "Get a Quote for Process Column", subtitle: "Looking for a process column manufacturer and supplier in India?", productName: "Process Column", buttonText: "Request Quote" },
+    faqs: [
+      { question: "What is a process column?", answer: "A process column is tall fabricated industrial equipment used in process plants for application-specific processing, separation, gas-liquid contact, utility or chemical process requirements." },
+      { question: "Who is a process column manufacturer in Surat?", answer: "National Engineers & Steel Fabricators is a process column manufacturer in Surat, Gujarat, offering custom process column fabrication as per client drawings, datasheets, MOC, nozzle schedule and inspection requirements." },
+      { question: "Do you manufacture process columns in India?", answer: "Yes, National Engineers & Steel Fabricators is a process column manufacturer and supplier in India, providing custom industrial process columns, column shells, nozzles, manways, supports and platform support fabrication." },
+      { question: "Can process columns be fabricated as per drawing?", answer: "Yes, process columns can be fabricated as per client drawings, datasheets, P&ID, column dimensions, MOC, nozzle orientation, support arrangement, inspection scope and documentation requirements." },
+      { question: "Which materials are used for process columns?", answer: "Process columns can be fabricated in mild steel, carbon steel, stainless steel, alloy steel or special materials depending on service media, pressure, temperature, corrosion requirement and project specification." },
+      { question: "Do you manufacture MS, CS and SS process columns?", answer: "Yes, National Engineers & Steel Fabricators manufactures MS process columns, CS process columns and SS process columns as per client drawings, material requirements and industrial application needs." },
+      { question: "What fabrication scope is included in process columns?", answer: "Process column fabrication may include shell sections, nozzles, manways, lifting lugs, support brackets, internal support rings, platform supports, ladder supports, base supports and inspection requirements." },
+      { question: "Do you support ASME-ready process column fabrication?", answer: "Yes, ASME-ready fabrication support can be provided where specified by the client and agreed in the project scope, along with NDT, testing and documentation support." },
+      { question: "What testing is done for process columns?", answer: "Testing may include dimensional inspection, verticality checking, nozzle orientation verification, NDT such as UT or RT, pressure testing and leak testing as per project requirement." },
+      { question: "How is the process column price calculated?", answer: "Process column price depends on height, diameter, MOC, thickness, nozzle quantity, manways, support arrangement, platform supports, NDT, testing, coating, documentation and customization requirements." },
+    ],
+    seo: { title: "Process Column Manufacturer & Supplier in India | NESF", description: "Process column manufacturer in Surat, India, offering custom industrial columns, nozzles, manways, supports and heavy fabrication.", keywords: ["process column manufacturer", "process column supplier", "process column manufacturer in India", "process column manufacturer in Surat", "industrial process columns", "custom process columns", "process column fabrication", "column fabrication", "industrial column manufacturer", "process equipment manufacturer in India", "process equipment manufacturer in Surat", "heavy fabrication manufacturer", "heavy fabrication company in Surat", "MS process column", "CS process column", "SS process column", "custom process equipment fabrication", "pressure vessel fabrication", "ASME-ready fabrication", "NDT", "pressure testing", "leak testing"] },
+  },
+  "process-skid-manufacturer": {
     title: "Process Skid Manufacturer and Supplier in India",
     headline: "Process Skid Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted process skid manufacturer and supplier in India, offering custom process skids and skid-mounted process packages for chemical plants, water treatment systems, utility systems, filtration packages, dosing systems, process equipment and industrial plant applications.",
     pagePath:
-      "/products/process-skids-packages",
-    image: "/product/22.jpeg",
+      "/products/process-skid-manufacturer",
+    image: "/product/22.webp",
     imageAlt:
       "Skid-mounted process package fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -536,14 +540,14 @@ export const productDetails = {
       ],
     },
   },
-  "special-purpose-process-vessels": {
+  "special-purpose-process-vessel-manufacturer": {
     title: "Special Purpose Process Vessel Manufacturer and Supplier in India",
     headline: "Special Purpose Process Vessel Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted special purpose process vessel manufacturer and supplier in India, offering custom fabricated process vessels for chemical plants, process industries, utility systems, water treatment plants, specialty manufacturing, pharma, food processing and industrial plant applications.",
     pagePath:
-      "/products/special-purpose-process-vessels",
-    image: "/product/24.jpeg",
+      "/products/special-purpose-process-vessel-manufacturer",
+    image: "/product/24.webp",
     imageAlt:
       "Special purpose industrial process vessel fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
@@ -766,14 +770,14 @@ export const productDetails = {
       ],
     },
   },
-  "custom-chemical-process-equipment": {
+  "custom-chemical-process-equipment-manufacturer": {
     title: "Custom Chemical Process Equipment Manufacturer in India",
     headline: "Chemical Process Equipment Manufacturer in Surat",
     description:
       "National Engineers & Steel Fabricators is a trusted custom chemical process equipment manufacturer in India, offering custom fabricated process equipment for chemical plants, process industries, utility systems, specialty manufacturing, pharma, food processing, water treatment and industrial plant applications.",
     pagePath:
-      "/products/custom-chemical-process-equipment",
-    image: "/product/Final_half_coil_vessel.jpeg",
+      "/products/custom-chemical-process-equipment-manufacturer",
+    image: "/product/Final_half_coil_vessel.webp",
     imageAlt:
       "Custom chemical process equipment fabricated by National Engineers and Steel Fabricators",
     imagePosition: "center",
