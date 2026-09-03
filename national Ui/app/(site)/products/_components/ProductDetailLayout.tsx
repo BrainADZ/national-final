@@ -216,7 +216,7 @@ export default function ProductDetailLayout({
 
         <section className="mx-auto max-w-425 px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <div className="grid gap-10 lg:grid-cols-[300px_minmax(0,1fr)]">
-            <aside className="self-start lg:sticky lg:top-22">
+            <aside className="self-start lg:sticky lg:top-4">
               <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
                 <p className="px-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#ee9d54]">
                   Product Range
@@ -272,7 +272,7 @@ export default function ProductDetailLayout({
 
             <article className="min-w-0">
               <section className="grid gap-8 border-b border-gray-200 pb-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-                <div className="overflow-hidden rounded-lg border border-gray-200 bg-gray-100 shadow-sm">
+                <div className="overflow-hidden rounded-lg border border-gray-200 bg-gray-100 shadow-sm lg:sticky lg:top-22">
                   <img
                     src={product.image}
                     alt={product.imageAlt}
