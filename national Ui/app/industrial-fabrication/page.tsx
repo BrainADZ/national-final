@@ -28,6 +28,7 @@ export default function GoogleAdsLandingPage() {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'AW-18228480390');
+          gtag('config', 'AW-18315002999');
         `}
       </Script>
       <GoogleAdsLandingClient />

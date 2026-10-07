@@ -105,8 +105,8 @@ const productCategorySources: ProductCategorySource[] = [
 
 export const productCatalog: ProductCatalogEntry[] = productCategorySources.flatMap(
   (source) =>
-    Object.entries(source.products).map(([slug, product]) => ({
-      slug,
+    Object.values(source.products).map((product) => ({
+      slug: product.pagePath.slice(product.pagePath.lastIndexOf("/") + 1),
       product,
       categoryName: source.categoryName,
       navItems: source.navItems,
